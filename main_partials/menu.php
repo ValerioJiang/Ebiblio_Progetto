@@ -60,9 +60,20 @@
                     <input type="text" name="password" size="20" maxlength="50"/><br>
                     <br>
                 </div>
+
+                <div class="form-check m-3 text-center">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" value=""> Ricordami <!--diminuire distanza --->
+                    </label>
+                <div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" href ="#">Accedi</button>
-                    
+                </div>
+
+
+                <div class="m-3">
+                    <em>Utente non registrato? </em> <a href="#">Registrati</a>
                 </div>
                 </div>
             </div>
