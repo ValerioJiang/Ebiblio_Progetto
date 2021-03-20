@@ -37,7 +37,7 @@
     
             <div class="navbar-nav ml-auto">
                 <a href="#" class="nav-item nav-link" data-toggle="modal" data-target="#modalLogin">Login</a>
-                <a href="#" class="nav-item nav-link">Registrati</a>
+                <a href="registrazione.php" class="nav-item nav-link">Registrati</a>
             </div>
 
             <!--LOGIN-->
@@ -71,13 +71,10 @@
                         <button type="button" class="btn btn-danger" href ="#">Accedi</button>
                         </div>
                         <div class="m-3">
-                            <em>Utente non registrato? </em> <a href="#">Registrati</a>
+                            <em>Utente non registrato? </em> <a href="registrazione.php">Registrati</a>
                         </div>
                     </div>
                 </div>
             </div>
-
-    
-                
     </nav>
 </body>
