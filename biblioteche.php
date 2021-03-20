@@ -46,24 +46,13 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
         $res = $biblioCon -> list();
         
         for($i = 0; $i < count($res);$i++){
-            foreach($res[$i] as $r){
-                array_push();
-              }
+          echo '<tr>';  
+                echo '<td>'.$res[$i]['Nome'].'</td>';
+                echo '<td>'.$res[$i]['Indirizzo'].'</td>';
+            
+          echo '</tr>';
         }
       ?>
-      <tr>
-        <td>John</td>
-        <td>john@example.com</td>
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>mary@example.com</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>july@example.com</td>
-      </tr>
-  
       
      </tbody>
   </table>

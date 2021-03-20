@@ -11,7 +11,16 @@
      *       echo '<br>';
      *   }
      */
-    include('./model/Biblioteca.php');
+    
+        class Biblioteca{
+            public $Nome;
+            public $Email;
+            public $SitoWeb;
+            public $Indirizzo;
+            public $Latitudine;
+            public $Longitudine;
+        }
+    
 
     class BibliotecaController{
 
@@ -33,9 +42,6 @@
         /**
          * CREATE
          */
-        public function create($biblio){
-            
-        }
+        
 
     }
-?>
