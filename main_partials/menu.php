@@ -34,12 +34,13 @@
                 <a href="#" class="nav-item nav-link">Statistiche</a>
 
             </div>
+    
             <div class="navbar-nav ml-auto">
                 <a href="#" class="nav-item nav-link" data-toggle="modal" data-target="#modalLogin">Login</a>
-                <a href="#" class="nav-item nav-link" data-toggle="modal" data-target="#modalRegistrazione">Registrati</a>
+                <a href="#" class="nav-item nav-link">Registrati</a>
             </div>
 
-        <!--LOGIN-->
+            <!--LOGIN-->
             <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -69,20 +70,14 @@
                         <div class="modal-footer">
                         <button type="button" class="btn btn-danger" href ="#">Accedi</button>
                         </div>
-
-
                         <div class="m-3">
                             <em>Utente non registrato? </em> <a href="#">Registrati</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!--REGISTRAZIONE-->
-        <div class="modal fade" id="modalRegistrazione" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-
-            </div>
-        </div>
+    
+                
     </nav>
+</body>
