@@ -49,7 +49,7 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
               for ($i = 0; $i < count($res); $i++) {
                 echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/biblioinfo/' . $res[$i]['Nome'] . '\');"' . '>';
                 echo '<td>' . $res[$i]['Nome'] . '</td>';
-                echo '<td>' . $res[$i]['Indirizzo'] . '</td>';
+                echo '<td>'  .$res[$i]['Indirizzo'] . '</td>';
                 echo '</tr>';
               }
               ?>
