@@ -35,12 +35,12 @@
 
             </div>
             <div class="navbar-nav ml-auto">
-                <a href="#" class="nav-item nav-link" data-toggle="modal" data-target="#exampleModalCenter">Login</a>
-                <a href="#" class="nav-item nav-link">Registrati</a>
+                <a href="#" class="nav-item nav-link" data-toggle="modal" data-target="#modalLogin">Login</a>
+                <a href="#" class="nav-item nav-link" data-toggle="modal" data-target="#modalRegistrazione">Registrati</a>
             </div>
 
-        <!--login-->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
+        <!--LOGIN-->
+        <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -79,4 +79,46 @@
             </div>
             </div>
         </div>
+
+        <!--REGISTRAZIONE-->
+        <div class="modal fade" id="modalRegistrazione" tabindex="-1" role="dialog" aria-labelledby="registrazione" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="registrazione">Login</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                <div class="modal-body text-center">
+                
+                <p>Accedi al tuo profilo Ebiblio:<br><br>
+                    E-mail:
+                    <br>
+                    <input type="text" name="e-mail" size="20" maxlength="50"/><br>
+                    Password:
+                    <br>
+                    <input type="text" name="password" size="20" maxlength="50"/><br>
+                    <br>
+                </div>
+
+                <div class="form-check m-3 text-center">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" value=""> Ricordami <!--diminuire distanza --->
+                    </label>
+                <div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" href ="#">Accedi</button>
+                </div>
+
+
+                <div class="m-3">
+                    <em>Utente non registrato? </em> <a href="#">Registrati</a>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
     </nav>
