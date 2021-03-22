@@ -48,21 +48,7 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
               $param_biblio_info = '?Nome=';
 
               for ($i = 0; $i < count($res); $i++) {
-                echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/biblioinfo?Nome=' 
-                . $res[$i]['Nome'] 
-                .'&Email='
-                . $res[$i]['Email']
-                .'&SitoWeb='
-                . $res[$i]['SitoWeb']
-                .'&Indirizzo='
-                . $res[$i]['Indirizzo']
-                .'&Latitudine='
-                . $res[$i]['Latitudine']
-                .'&Longitudine='
-                . $res[$i]['Longitudine']
-                .'&Note='
-                . $res[$i]['Note']
-                . '\');"' . '>';
+                echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/biblioinfo?Nome='.$res[$i]['Nome'].'\');"'.'>';
                 echo '<td>' . $res[$i]['Nome'] . '</td>';
                 echo '<td>'  .$res[$i]['Indirizzo'] . '</td>';
                 echo '</tr>';

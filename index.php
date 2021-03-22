@@ -21,3 +21,4 @@ background: url('./images/bibliofull.jpg') no-repeat  ;
 <?php
 include('./main_partials/footer.php');
 ?>
+
