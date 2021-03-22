@@ -1,5 +1,8 @@
 <?php
     include '/xampp/htdocs/Ebiblio/includes/autoloader.inc.php';
+
+    $utente_con = new UtilizzatoreController();
+    $utente_res = $utente_con -> list();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -72,10 +75,10 @@
                                 <input type="checkbox" class="form-check-input" value=""> Ricordami <!--diminuire distanza --->
                             </label>
                         <div>
-
+                        
                         <div class="modal-footer">
-                        <button type="button" class="btn outline-danger" href ="#">Accedi</button>
-s                        </div>
+                        <button type="button" class="btn btn-outline-danger" href ="#">Accedi</button>
+                        </div>
                         <div class="m-3">
                             <em>Utente non registrato? </em> <a href="registrazione.php">Registrati</a>
                         </div>
@@ -83,4 +86,21 @@ s                        </div>
                 </div>
             </div>
     </nav>
+
+    <div>
+    
+        <?php
+        /*
+            echo var_dump($utente_res);
+            //echo '<br>'.$utente_res[0]['Email'];
+            for($i=0; $i<count($utente_res);$i++){
+                foreach($utente_res[$i] as $val){
+                    echo " ".$val." ";
+                }
+                echo '<br>';
+                
+            }*/
+        ?>
+    
+    </div>
 </body>

@@ -28,8 +28,9 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
         <div class="container">
           <h2>Ricerca</h2>
           </br>
-          <p>Nome</p>
-          <input type="text" placeholder="Inserire nome biblioteca">
+          <p>Cerca una biblioteca</p>
+          <input type="text" placeholder="Biblioteca...">
+          <button type="button" class="btn btn-outline-danger" href ="#">Cerca</button> <!--cambiare size del bottone-->
           </br>
           </br>
           <table class="table table-hover">
