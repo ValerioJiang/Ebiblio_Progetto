@@ -59,11 +59,11 @@
                             <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body text-center">
+                        <div class="modal-body text-center ">
                             <p>Accedi al tuo profilo Ebiblio:<br><br>
                             E-mail:
                             <br>
-                            <input type="text" name="e-mail" size="20" maxlength="50"/><br>
+                            <input type="text" name="e-mail" size="20" maxlength="50" /><br>
                             Password:
                             <br>
                             <input type="text" name="password" size="20" maxlength="50"/><br>
@@ -77,7 +77,8 @@
                         <div>
                         
                         <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-danger" href ="#">Accedi</button>
+                        <button type="submit" class="btn btn-outline-danger">Accedi</button>
+
                         </div>
                         <div class="m-3">
                             <em>Utente non registrato? </em> <a href="registrazione.php">Registrati</a>
