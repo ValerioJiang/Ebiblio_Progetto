@@ -28,8 +28,21 @@
          * LIST
          */
         public function list(){
-            $res = array();
             $query = "SELECT * FROM Biblioteca";
+
+            $stmt = Dbh::getInstance()
+                ->getDb()
+                ->prepare($query);
+            $stmt-> execute();
+    
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        /**
+         * RETRIEVE
+         */
+        public function getBiblioteca($NomeBiblio){
+            $query = "SELECT * FROM Biblioteca WHERE Nome = '$NomeBiblio'";
 
             $stmt = Dbh::getInstance()
                 ->getDb()
