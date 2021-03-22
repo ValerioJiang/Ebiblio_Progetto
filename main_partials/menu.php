@@ -74,8 +74,8 @@
                         <div>
 
                         <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" href ="#">Accedi</button>
-                        </div>
+                        <button type="button" class="btn outline-danger" href ="#">Accedi</button>
+s                        </div>
                         <div class="m-3">
                             <em>Utente non registrato? </em> <a href="registrazione.php">Registrati</a>
                         </div>

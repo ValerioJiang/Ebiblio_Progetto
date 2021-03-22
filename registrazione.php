@@ -11,45 +11,55 @@
 </head>
 <body>
 
-    <div class="container-fluid " style="  
-    background: url('./images/bibliofull.jpg') no-repeat  ;
+<?php
+include('./main_partials/menu.php')
+?>
 
-    ">
-        <div class="row justify-content-center">
-            <div class="card" style="width: 60%;">
-                <div class="card-body p-5 align-self-center">
-                    <h1 class="font-weight-light">Registrazione</h1>
-                    Nome:
-                    <br>
-                    <input type="text" name="nome" size="20" maxlength="50"/><br>
-                    Cognome:
-                    <br>
-                    <input type="text" name="cognome" size="20" maxlength="50"/><br>
-                    Data di nascita:
-                    <br>
-                    <input type="text" name="datanascita" size="20" maxlength="50"/><br>
-                    Luogo di nascita:
-                    <br>
-                    <input type="text" name="luogonascita" size="20" maxlength="50"/><br>
-                    Email:
-                    <br>
-                    <input type="text" name="email" size="20" maxlength="50"/><br>
-                    Password:
-                    <br>
-                    <input type="text" name="password" size="20" maxlength="50"/><br>
-                    Telefono:
-                    <br>
-                    <input type="text" name="telefono" size="20" maxlength="50"/><br>
-                    Professione:
-                    <br>
-                    <input type="text" name="professione" size="20" maxlength="50"/><br>
+<div class="container-fluid " style="  
+background: url('./images/bibliofull.jpg') no-repeat  ;
 
-                    <div style="height: 750px"></div>
-                </div>
+">
+<div class="row justify-content-center">
+  <div class="card" style="width: 60%;">
+    <div class="card-body p-5 align-self-center">
+    <h1 class="font-weight-light">Registrazione</h1>
+        <div class="row">
+            <div class="col-sm">
+                Nome:
+                <br>
+                <input type="text" name="nome" size="20" maxlength="50"/><br>
+                Data di nascita:
+                <br>
+                <input type="text" name="datanascita" size="20" maxlength="50"/><br>
+                Email:
+                <br>
+                <input type="text" name="email" size="20" maxlength="50"/><br>
+                Telefono:
+                <br>
+                <input type="text" name="telefono" size="20" maxlength="50"/><br>
             </div>
-        </div>
-    </div>
 
+            <div class="col-sm">
+                Cognome:
+                <br>
+                <input type="text" name="cognome" size="20" maxlength="50"/><br>
+                Luogo di nascita:
+                <br>
+                <input type="text" name="luogonascita" size="20" maxlength="50"/><br>
+                Password:
+                <br>
+                <input type="text" name="password" size="20" maxlength="50"/><br>
+                Professione:
+                <br>
+                <input type="text" name="professione" size="20" maxlength="50"/><br>
+            </div>           
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-danger">Iscriviti</button>
+        </div>
+        <!---se campi vuoti: btn-lg disabled-->
+    </div>
+</div>
 
     <?php
     include('./main_partials/footer.php');
