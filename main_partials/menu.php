@@ -7,10 +7,7 @@
 
 <?php
         /*inizio sessione*/
-        include("bibliotecaController.php")
-        session_start();
-        require_once('C:\xampp\htdocs\EBIBLIO\controller\dbh.class.php');
-       
+  
      
         /*
         echo var_dump($utente_res);
