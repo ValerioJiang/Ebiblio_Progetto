@@ -1,8 +1,8 @@
 <?php
-    include '/xampp/htdocs/Ebiblio/includes/autoloader.inc.php';
+include '/xampp/htdocs/Ebiblio/includes/autoloader.inc.php';
 
-    $utente_con = new UtilizzatoreController();
-    $utente_res = $utente_con -> list();
+$utente_con = new UtilizzatoreController();
+$utente_res = $utente_con->list();
 ?>
 
 <?php
@@ -31,17 +31,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-   crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-   crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+    <!-- Lib for leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <style>
+        /* Make the image fully responsive */
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
     <title>Ebiblio</title>
 </head>
 
 <body>
-    
+
     <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
         <a href="#" class="navbar-brand">
             <img src="http:\ebiblio\images\book-half.svg" height="28">
@@ -58,7 +67,7 @@
                 <a href="#" class="nav-item nav-link">Statistiche</a>
 
             </div>
-    
+
             <div class="navbar-nav ml-auto">
                 <a href="#" class="nav-item nav-link" data-toggle="modal" data-target="#modalLogin">Login</a>
                 <a href="registrazione.php" class="nav-item nav-link">Registrati</a>
@@ -71,7 +80,7 @@
                         <div class="modal-header">
                             <h5 class="modal-title" id="login">Login</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+                                <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body text-center ">
@@ -87,25 +96,34 @@
 
                         <!--<div class="form-check m-3 text-center">
                             <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input" value=""> Ricordami 
+                                <input type="checkbox" class="form-check-input" value=""> Ricordami <!--diminuire distanza --->
                             </label>
-                        <div>--->       
+                        <div>
+                        
+                        <div class="modal-footer">
+                        <button type="submit" class="btn btn-outline-danger">Accedi</button>
 
-
-                        <div class="modal-footer" >
-                            <form action="biblioteche.php">
-                            <button type="submit" class="btn btn-outline-danger">Accedi</button> 
-                            </form>
-                        </div>
-                        <div class="m-3">
-                            <em>Utente non registrato? </em> <a href="registrazione.php">Registrati</a>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </nav>
 
     <div>
+    
+        <?php
+        /*
+            echo var_dump($utente_res);
+            //echo '<br>'.$utente_res[0]['Email'];
+            for($i=0; $i<count($utente_res);$i++){
+                foreach($utente_res[$i] as $val){
+                    echo " ".$val." ";
+                }
+                echo '<br>';
+                
+            }*/
+        ?>
     
     </div>
 </body>
