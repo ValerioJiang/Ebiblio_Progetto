@@ -1,24 +1,12 @@
 <?php
     include '/xampp/htdocs/Ebiblio/includes/autoloader.inc.php';
-
-    $utente_con = new UtilizzatoreController();
-    $utente_res = $utente_con -> list();
 ?>
 
-<?php
-        /*inizio sessione*/
-  
-     
-        /*
-        echo var_dump($utente_res);
-        //echo '<br>'.$utente_res[0]['Email'];
-        for($i=0; $i<count($utente_res);$i++){
-            foreach($utente_res[$i] as $val){
-                echo " ".$val." ";
-            }
-            echo '<br>';    
-        }*/
-        ?>
+
+
+
+    
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -93,8 +81,8 @@
 
 
                         <div class="modal-footer" >
-                            <form action="biblioteche.php">
-                            <button type="submit" class="btn btn-outline-danger">Accedi</button> 
+                           <form action="biblioteche.php">
+                            <button type="submit" class="btn btn-outline-danger" name="accedi" id="accedi">Accedi</button> 
                             </form>
                         </div>
                         <div class="m-3">
@@ -108,4 +96,6 @@
     <div>
     
     </div>
+
+    
 </body>
