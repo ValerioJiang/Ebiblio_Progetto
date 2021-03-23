@@ -1,20 +1,27 @@
 <?php
-include '/xampp/htdocs/Ebiblio/includes/autoloader.inc.php';
+include ('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
 
 $utente_con = new UtilizzatoreController();
 $utente_res = $utente_con->list();
+
 ?>
 
 <?php
-//controllo bottone submit
-if (isset($_POST['submit'])){
-    //process for login
-    //get the data login from login form
-    echo $email =$_POST['email'];
-    echo $password=$_POST['password'];
-}
+//LOGIN
+if (isset($_POST['accedi'])){
+    //ottengo i dati inseriti dall'utilizzatore:
+    $email =$_POST['email'];
+    $password=$_POST['password'];
+    $utente_check = $utente_con -> checkEsistenza($email,$password); //creo utente_check che contiene il risultato di checkesistenza tramite utente_con
+    if(count($utente_check) == 1){
+        echo"Accesso eseguito";
+    }else{
+    echo"tu non puoi passare";
+    }
 
+}
 ?>
+
 
 
     
@@ -83,36 +90,33 @@ if (isset($_POST['submit'])){
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body text-center ">
+
+                        
+                        <form action ="biblioteche.php" method ="POST" class ="text-center"> 
                             <p>Accedi al tuo profilo Ebiblio:<br><br>
-                                E-mail:
-                                <br>
-                                <input type="text" name="e-mail" size="20" maxlength="50" required /><br>
-                                Password:
-                                <br>
-                                <input type="password" name="password" size="20" maxlength="50" required /><br>
-                                <br>
-                        </div>
+                            E-mail:
+                            <br>
+                            <input type="text" name="email" size="20" maxlength="50" /><br>
+                            Password:
+                            <br>
+                            <input type="password" name="password" size="20" maxlength="50"  /><br>
+                            <br>
 
-                        <!--<div class="form-check m-3 text-center">
-                            <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input" value=""> Ricordami
-                                
-                            </label>-->
-                            <div>
+                            <!--<div class="form-check m-3 text-center">
+                                <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" value=""> Ricordami     
+                                </label>
+                                </div>-->
 
-                                <div class="modal-footer">
-                                <form action ="prova.php">
-                                    <button type="submit" class="btn btn-outline-danger">Accedi</button>
-                                </form>
-                                </div>
-                                <div class="m-3">
-                                    <em>Utente non registrato? </em> <a href="registrazione.php">Registrati</a>
-                                </div>
-                            </div>
+                            <button type="submit" class="btn btn-outline-danger" name ="accedi">Accedi</button>
+                        </form>
+
+                        <div class="modal-footer m-3">
+                            <em>Utente non registrato? </em> <a href="registrazione.php">Registrati</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
+</body>
