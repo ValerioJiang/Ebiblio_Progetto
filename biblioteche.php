@@ -26,11 +26,15 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
     <div class="tab-content">
       <div id="home" class="container tab-pane active"><br>
         <div class="container">
-          <h2>Ricerca</h2>
+          <h2>Ricerca Biblioteca</h2>
           </br>
-          <p>Cerca una biblioteca</p>
-          <input type="text" placeholder="Biblioteca...">
-          <button type="button" class="btn btn-outline-danger" href ="#">Cerca</button> <!--cambiare size del bottone-->
+          <form action="" method="POST">
+            <div class="form-group">
+              <label for="nomeId">Nome</label>
+              <input type="text" class="form-control" name="Nome" id="nomeId" aria-describedby="emailHelp" placeholder="Inserire nome biblioteca">
+            </div>
+            <input type="submit" name="form_submitted" class="btn btn-primary"></input>
+          </form>
           </br>
           </br>
           <table class="table table-hover">
@@ -43,16 +47,37 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
             <tbody>
 
               <?php
-
               $biblioCon = new BibliotecaController();
-              $res = $biblioCon->list();
-              $param_biblio_info = '?Nome=';
+              if (isset($_POST['form_submitted'])) {
+                if(empty($_POST['Nome'])){
+                  echo "Nome ricerca biblioteca vuoto";
+                } 
+                else{
+                  $res = $biblioCon->getLikeBiblioteca($_POST['Nome']);
+                  $param_biblio_info = '?Nome=';
+                  if(count($res) <= 0){
+                    echo "Nessun risultato corrispondente";
+                  }
+                  for ($i = 0; $i < count($res); $i++) {
+                    echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/biblioinfo?Nome=' . $res[$i]['Nome'] . '\');"' . '>';
+                    echo '<td>' . $res[$i]['Nome'] . '</td>';
+                    echo '<td>'  . $res[$i]['Indirizzo'] . '</td>';
+                    echo '</tr>';
+                  }
+                }
+                
+              }
+              else {
+                
+                $res = $biblioCon->list();
+                $param_biblio_info = '?Nome=';
 
-              for ($i = 0; $i < count($res); $i++) {
-                echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/biblioinfo?Nome='.$res[$i]['Nome'].'\');"'.'>';
-                echo '<td>' . $res[$i]['Nome'] . '</td>';
-                echo '<td>'  .$res[$i]['Indirizzo'] . '</td>';
-                echo '</tr>';
+                for ($i = 0; $i < count($res); $i++) {
+                  echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/biblioinfo?Nome=' . $res[$i]['Nome'] . '\');"' . '>';
+                  echo '<td>' . $res[$i]['Nome'] . '</td>';
+                  echo '<td>'  . $res[$i]['Indirizzo'] . '</td>';
+                  echo '</tr>';
+                }
               }
               ?>
 

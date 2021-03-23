@@ -30,7 +30,7 @@
     <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
         <a href="#" class="navbar-brand">
             <img src="http:\ebiblio\images\book-half.svg" height="28">
-            UNIBOXEBIBLIO
+            EBIBLIOXUNIBO
         </a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
