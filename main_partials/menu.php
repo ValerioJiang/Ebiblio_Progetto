@@ -5,7 +5,16 @@ $utente_con = new UtilizzatoreController();
 $utente_res = $utente_con->list();
 ?>
 
+<?php
+//controllo bottone submit
+if (isset($_POST['submit'])){
+    //process for login
+    //get the data login from login form
+    echo $email =$_POST['email'];
+    echo $password=$_POST['password'];
+}
 
+?>
 
 
     
@@ -78,23 +87,24 @@ $utente_res = $utente_con->list();
                             <p>Accedi al tuo profilo Ebiblio:<br><br>
                                 E-mail:
                                 <br>
-                                <input type="text" name="e-mail" size="20" maxlength="50" /><br>
+                                <input type="text" name="e-mail" size="20" maxlength="50" required /><br>
                                 Password:
                                 <br>
-                                <input type="text" name="password" size="20" maxlength="50" /><br>
+                                <input type="password" name="password" size="20" maxlength="50" required /><br>
                                 <br>
                         </div>
 
                         <!--<div class="form-check m-3 text-center">
                             <label class="form-check-label">
                                 <input type="checkbox" class="form-check-input" value=""> Ricordami
-                                <!--diminuire distanza --->
-                            </label>
+                                
+                            </label>-->
                             <div>
 
                                 <div class="modal-footer">
+                                <form action ="prova.php">
                                     <button type="submit" class="btn btn-outline-danger">Accedi</button>
-
+                                </form>
                                 </div>
                                 <div class="m-3">
                                     <em>Utente non registrato? </em> <a href="registrazione.php">Registrati</a>
