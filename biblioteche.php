@@ -33,7 +33,7 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
               <label for="nomeId">Nome</label>
               <input type="text" class="form-control" name="Nome" id="nomeId" aria-describedby="emailHelp" placeholder="Inserire nome biblioteca">
             </div>
-            <input type="submit" name="form_submitted" class="btn btn-primary"></input>
+            <input type="submit" name="form_submitted" class="btn btn-outline-danger"></input>
           </form>
           </br>
           </br>

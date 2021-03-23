@@ -63,10 +63,10 @@
                             <p>Accedi al tuo profilo Ebiblio:<br><br>
                             E-mail:
                             <br>
-                            <input type="text" name="e-mail" size="20" maxlength="50" /><br>
+                            <input type="text" name="e-mail" id ="email" size="20" maxlength="50" /><br>
                             Password:
                             <br>
-                            <input type="text" name="password" size="20" maxlength="50"/><br>
+                            <input type="text" name="password" id="password" size="20" maxlength="50"/><br>
                             <br>
                         </div>
 
@@ -77,7 +77,7 @@
                         <div>
                         
                         <div class="modal-footer">
-                        <button type="submit" class="btn btn-outline-danger">Accedi</button>
+                        <button type="submit" class="btn btn-outline-danger" href="biblioteche.php">Accedi</button>
 
                         </div>
                         <div class="m-3">
@@ -91,6 +91,11 @@
     <div>
     
         <?php
+        /*inizio sessione*/
+       // session_start();
+       // require_once('database.php);
+       
+        
         /*
             echo var_dump($utente_res);
             //echo '<br>'.$utente_res[0]['Email'];
