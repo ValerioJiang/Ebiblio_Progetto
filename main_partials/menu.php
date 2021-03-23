@@ -3,7 +3,9 @@ include ('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
 
 $utente_con = new UtilizzatoreController();
 $utente_res = $utente_con->list();
-
+function infoBox($msg) {
+    echo '<script type="text/javascript">alert("' . $msg . '")</script>';
+}
 ?>
 
 <?php
@@ -14,14 +16,12 @@ if (isset($_POST['accedi'])){
     $password=$_POST['password'];
     $utente_check = $utente_con -> checkEsistenza($email,$password); //creo utente_check che contiene il risultato di checkesistenza tramite utente_con
     if(count($utente_check) == 1){
-        echo"Accesso eseguito";
+        infoBox("ACCESSO ESEGUITO");
     }else{
-    echo"tu non puoi passare";
+       infoBox("ACCESSO NEGATO: email o password errata");
     }
-
 }
 ?>
-
 
 
     
