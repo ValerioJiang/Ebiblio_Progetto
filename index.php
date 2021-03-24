@@ -24,8 +24,8 @@ background: url('./images/bibliofull.jpg') no-repeat  ;
             <!-- Indicators -->
             <ul class="carousel-indicators">
               <li data-target="#demo" data-slide-to="0" class="active"></li>
-              <li data-target="#demo" data-slide-to="1"></li>
-              <li data-target="#demo" data-slide-to="2"></li>
+              <li data-target="#demo" data-slide-to="1" class="active"></li>
+              <li data-target="#demo" data-slide-to="2" class="active"></li>
             </ul>
 
             <!-- The slideshow -->
