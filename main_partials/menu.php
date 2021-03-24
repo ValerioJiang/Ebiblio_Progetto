@@ -75,6 +75,8 @@ if (isset($_POST['accedi'])){
             <div class="navbar-nav ml-auto">
                 <a href="#" class="nav-item nav-link" data-toggle="modal" data-target="#modalLogin">Login</a>
                 <a href="registrazione.php" class="nav-item nav-link">Registrati</a>
+                <a href="registrazione.php" class="nav-item nav-link">Profilo</a>
+
             </div>
 
             <!--LOGIN-->
