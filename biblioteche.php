@@ -52,7 +52,7 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
                 if (empty($_POST['Nome'])) {
                   echo "Nome ricerca biblioteca vuoto";
                 } else {
-                  $res = $biblioCon->getLikeBiblioteca($_GET['Nome']);
+                  $res = $biblioCon->getLikeBiblioteca($_POST['Nome']);
                   if (count($res) <= 0) {
                     echo "Nessun risultato corrispondente";
                   }
