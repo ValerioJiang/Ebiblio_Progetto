@@ -23,7 +23,7 @@ if (isset($_POST['iscriviti'])){
     $utente_check = $utente_con -> checkIscrizione($email); //creo utente_check che contiene il risultato di checkesistenza tramite utente_con
     if(count($utente_check) == 0){
         echo '<script language="javascript">';
-        echo 'alert("Iscriione eseguita con successo")';
+        echo 'alert("Iscrizione eseguita con successo")';
         echo '</script>';
     }else{
         echo '<script language="javascript">';

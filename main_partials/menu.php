@@ -1,5 +1,6 @@
 <?php
 require_once ('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
+//include('C:\xampp\htdocs\EBIBLIO\config\constants.php');
 
 $utente_con = new UtilizzatoreController();
 $utente_res = $utente_con->list();
@@ -16,14 +17,14 @@ if (isset($_POST['accedi'])){
     $password=$_POST['password'];
     $utente_check = $utente_con -> checkEsistenza($email,$password); //creo utente_check che contiene il risultato di checkesistenza tramite utente_con
     if(count($utente_check) == 1){
-        infoBoxLogin("ACCESSO ESEGUITO");
+       infoBoxLogin("ACCESSO ESEGUITO");
+     /*  $_SESSION['login']= "<div class ='success'>Login succesful.</div>";
+       header('location:'.SITEURL.'C:\xampp\htdocs\EBIBLIO\biblioteche.php');*/
     }else{
        infoBoxLogin("ACCESSO NEGATO: email o password errata");
+     
     }
 
-    
-
-    
 }
 ?>
     
@@ -79,7 +80,8 @@ if (isset($_POST['accedi'])){
             <div class="navbar-nav ml-auto">
                 <a href="#" class="nav-item nav-link" data-toggle="modal" data-target="#modalLogin">Login</a>
                 <a href="registrazione.php" class="nav-item nav-link">Registrati</a>
-                <a href="registrazione.php" class="nav-item nav-link">Pro</a>
+                <a href="#" class="nav-item nav-link">Profilo</a>
+                <a href="#" class="nav-item nav-link">Logout</a>
 
             </div>
 
@@ -95,7 +97,7 @@ if (isset($_POST['accedi'])){
                         </div>
 
                         
-                        <form action ="biblioteche.php" method ="POST" class ="text-center"> 
+                        <form  method ="POST" class ="text-center"> 
                             <p>Accedi al tuo profilo Ebiblio:<br><br>
                             E-mail:
                             <br>
