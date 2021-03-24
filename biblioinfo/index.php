@@ -75,6 +75,48 @@ $posLet_res = $posLet_con->getPostoLettura($_GET['Nome']);
             </script>
         </div>
     </div>
+    <div class="row">
+    <div class="container-fluid">
+          <div id="demo" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="0" class="active"></li>
+              <li data-target="#demo" data-slide-to="1" class="active"></li>
+              <li data-target="#demo" data-slide-to="2" class="active"></li>
+              <?php
+                echo $dir = "C:\\xampp\\htdocs\\Ebiblio\\images\\Biblioteca Universitaria di Bologna\\'$_GET['Nome']'";
+                $fi = new FilesystemIterator($dir, FilesystemIterator::SKIP_DOTS);
+                for($i = 0; $i < iterator_count($fi); $i++){
+                    echo "<li data-target='#demo' data-slide-to='$i' class='active'></li>";
+                }
+                
+              ?>
+            </ul>
+
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="http:\ebiblio\images\Biblioteca Universitaria di Bologna\1.jpeg" alt="Los Angeles" width="1100" height="500">
+              </div>
+              <div class="carousel-item">
+                <img src="http:\ebiblio\images\Biblioteca Universitaria di Bologna\2.jpeg" alt="Chicago" width="1100" height="500">
+              </div>
+              <div class="carousel-item">
+                <img src="http:\ebiblio\images\Biblioteca Universitaria di Bologna\3.jpg" alt="Chicago" width="1100" height="500">
+              </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </a>
+          </div>
+        </div>
+    </div>
     
 </div>
 
