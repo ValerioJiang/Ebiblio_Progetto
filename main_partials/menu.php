@@ -20,6 +20,10 @@ if (isset($_POST['accedi'])){
     }else{
        infoBoxLogin("ACCESSO NEGATO: email o password errata");
     }
+
+    
+
+    
 }
 ?>
     
@@ -75,7 +79,7 @@ if (isset($_POST['accedi'])){
             <div class="navbar-nav ml-auto">
                 <a href="#" class="nav-item nav-link" data-toggle="modal" data-target="#modalLogin">Login</a>
                 <a href="registrazione.php" class="nav-item nav-link">Registrati</a>
-                <a href="registrazione.php" class="nav-item nav-link">Profilo</a>
+                <a href="registrazione.php" class="nav-item nav-link">Pro</a>
 
             </div>
 
@@ -101,12 +105,13 @@ if (isset($_POST['accedi'])){
                             <input type="password" name="password" size="20" maxlength="50"  /><br>
                             <br>
 
-                            <!--<div class="form-check m-3 text-center">
+<!--
+                            <div class="form-check m-3 text-center">
                                 <label class="form-check-label">
                                 <input type="checkbox" class="form-check-input" value=""> Ricordami     
                                 </label>
-                                </div>-->
-
+                            </div>
+-->
                             <button type="submit" class="btn btn-outline-danger" name ="accedi">Accedi</button>
                         </form>
 

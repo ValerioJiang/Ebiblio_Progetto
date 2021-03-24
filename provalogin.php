@@ -1,3 +1,13 @@
+<?php
+
+
+	session_start();
+	if(!(isset($_SESSION['email'])) && !(isset($_SESSION['password']))){
+			$_SESSION['email']=trim($_POST['email']);
+			$_SESSION['password']=$_POST['password'];
+	}
+?>
+
 <!--LOGIN-->
 <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -8,7 +18,6 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-
                         
                         <form action ="" method ="POST" class ="text-center"> <!--biblioteche.php-->
                             <p>Accedi al tuo profilo Ebiblio:<br><br>
@@ -36,7 +45,11 @@
                 </div>
             </div>
 
-            <?php
+
+
+
+
+<?php
 //controllo bottone submit
 if (isset($_POST['accedi'])){
     //process for login
