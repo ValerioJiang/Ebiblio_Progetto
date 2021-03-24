@@ -61,7 +61,7 @@ if (isset($_POST['accedi'])){
 <body>
 
     <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
-        <a href="#" class="navbar-brand">
+        <a href="/ebiblio" class="navbar-brand">
             <img src="http:\ebiblio\images\book-half.svg" height="28">
             EBIBLIOXUNIBO
         </a>
@@ -73,6 +73,8 @@ if (isset($_POST['accedi'])){
             <div class="navbar-nav">
                 <a href="/ebiblio" class="nav-item nav-link">Home</a>
                 <a href="/ebiblio/biblioteche.php" class="nav-item nav-link">Biblioteche</a>
+                <a href="/ebiblio/Libro.php" class="nav-item nav-link">Libro</a>
+                <a href="/ebiblio/Ebook.php" class="nav-item nav-link">Ebook</a>
                 <a href="#" class="nav-item nav-link">Statistiche</a>
 
             </div>

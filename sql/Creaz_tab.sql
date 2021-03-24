@@ -593,3 +593,5 @@ insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) valu
 insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (223, 'Biblioteca Universitaria di Bologna', true, true);
 insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (224, 'Biblioteca Universitaria di Bologna', true, true);
 
+insert into Cartaceo(Titolo, Edizione, Genere, AnnoPubblicazione) values("Il nome della rosa","Illustrata","Romanzo Storico",2014),
+("Io non ho paura","Prima","Romanzo",2001),("Il capitale nel XXI secolo","Prima","Saggio politico",2013),("1984","Prima","Fantascienza",1950),("La fattoria de

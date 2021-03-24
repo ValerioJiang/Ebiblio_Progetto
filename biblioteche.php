@@ -1,5 +1,12 @@
 <?php
 include('/xampp/htdocs/ebiblio/main_partials/menu.php');
+
+$biblioCon = new BibliotecaController();
+
+$cartaCon = new CartaceoController();
+$carta_res = $cartaCon -> list();
+
+
 ?>
 
 <div class="container-fluid " style="  
@@ -9,22 +16,6 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
 
   <div class="container" style="background-color: white;">
     <br>
-    <!-- Nav tabs -->
-    <ul class="nav nav-tabs" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="#home">Biblioteca</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#menu1">Libro</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#menu2">Ebook</a>
-      </li>
-    </ul>
-
-    <!-- Tab panes -->
-    <div class="tab-content">
-      <div id="home" class="container tab-pane active"><br>
         <div class="container">
           <h2>Ricerca Biblioteca</h2>
           </br>
@@ -33,7 +24,7 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
               <label for="nomeId">Nome</label>
               <input type="text" class="form-control" name="Nome" id="nomeId" aria-describedby="emailHelp" placeholder="Inserire nome biblioteca">
             </div>
-            <input type="submit" name="form_submitted" class="btn btn-primary" value="Ricerca"></input>
+            <input type="submit" name="biblioform_submitted" class="btn btn-primary" value="Ricerca"></input>
           </form>
           </br>
           </br>
@@ -47,9 +38,10 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
             <tbody>
 
               <?php
-              $biblioCon = new BibliotecaController();
-              if (isset($_POST['form_submitted'])) {
-                if (empty($_POST['Nome'])) {
+
+              if (isset($_POST['biblioform_submitted'])) {
+                $nometrim = trim($_POST['Nome']);
+                if (ctype_space($nometrim)||$nometrim=='') {
                   echo "Nome ricerca biblioteca vuoto";
                 } else {
                   $res = $biblioCon->getLikeBiblioteca($_POST['Nome']);
@@ -83,16 +75,6 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
 
             </tbody>
           </table>
-        </div>
-      </div>
-      <div id="menu1" class="container tab-pane fade"><br>
-        <h3>Menu 1</h3>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </div>
-      <div id="menu2" class="container tab-pane fade"><br>
-        <h3>Menu 2</h3>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-      </div>
     </div>
   </div>
 
