@@ -78,6 +78,9 @@ background: url('./images/bibliofull.jpg') no-repeat  ;
                         Telefono:
                         <br>
                         <input type="text" name="telefono" size="20" maxlength="50" placeholder="Telefono..."/><br>
+                        Professione:
+                        <br>
+                        <input type="text" name="professione" size="20" maxlength="50"placeholder ="Professione..."/><br>
                     </div>
 
                     <div class="col-sm">
@@ -90,9 +93,10 @@ background: url('./images/bibliofull.jpg') no-repeat  ;
                         Password:
                         <br>
                         <input type="password" name="password" size="20" maxlength="50"placeholder ="Password..."/><br>
-                        Professione:
+                        Ripeti password:
                         <br>
-                        <input type="text" name="professione" size="20" maxlength="50"placeholder ="Professione..."/><br>
+                        <input type="password" name="rptpassword" size="20" maxlength="50"placeholder ="Password..."/><br>
+                      
                     </div>           
                 </div>
                 <br>
