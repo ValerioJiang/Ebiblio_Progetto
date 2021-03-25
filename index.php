@@ -1,5 +1,6 @@
 <?php
-include('./main_partials/menu.php')
+include('/xampp/htdocs/ebiblio/main_partials/menu.php');
+
 ?>
 
 <div class="container-fluid " style="  
@@ -65,5 +66,5 @@ background: url('./images/bibliofull.jpg') no-repeat  ;
 
 
 <?php
-include('./main_partials/footer.php');
-?>
+  include('/xampp/htdocs/ebiblio/main_partials/footer.php');
+  ?>

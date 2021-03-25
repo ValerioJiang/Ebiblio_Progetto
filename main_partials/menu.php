@@ -1,33 +1,32 @@
 <?php
-require_once ('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
+require_once('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
 //include('C:\xampp\htdocs\EBIBLIO\config\constants.php');
 
 $utente_con = new UtilizzatoreController();
 $utente_res = $utente_con->list();
-function infoBoxLogin($msg) {
+function infoBoxLogin($msg)
+{
     echo '<script type="text/javascript">alert("' . $msg . '")</script>';
 }
 ?>
 
 <?php
 //LOGIN
-if (isset($_POST['accedi'])){
+if (isset($_POST['accedi'])) {
     //ottengo i dati inseriti dall'utilizzatore:
-    $email =$_POST['email'];
-    $password=$_POST['password'];
-    $utente_check = $utente_con -> checkEsistenza($email,$password); //creo utente_check che contiene il risultato di checkesistenza tramite utente_con
-    if(count($utente_check) == 1){
-       infoBoxLogin("ACCESSO ESEGUITO");
-     /*  $_SESSION['login']= "<div class ='success'>Login succesful.</div>";
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $utente_check = $utente_con->checkEsistenza($email, $password); //creo utente_check che contiene il risultato di checkesistenza tramite utente_con
+    if (count($utente_check) == 1) {
+        infoBoxLogin("ACCESSO ESEGUITO");
+        /*  $_SESSION['login']= "<div class ='success'>Login succesful.</div>";
        header('location:'.SITEURL.'C:\xampp\htdocs\EBIBLIO\biblioteche.php');*/
-    }else{
-       infoBoxLogin("ACCESSO NEGATO: email o password errata");
-     
+    } else {
+        infoBoxLogin("ACCESSO NEGATO: email o password errata");
     }
-
 }
 ?>
-    
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,10 +41,13 @@ if (isset($_POST['accedi'])){
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>  
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <!-- Lib for leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+ 
 
     <style>
         /* Make the image fully responsive */
@@ -73,10 +75,17 @@ if (isset($_POST['accedi'])){
             <div class="navbar-nav">
                 <a href="/ebiblio" class="nav-item nav-link">Home</a>
                 <a href="/ebiblio/biblioteche.php" class="nav-item nav-link">Biblioteche</a>
-                <a href="/ebiblio/Libro.php" class="nav-item nav-link">Libro</a>
-                <a href="/ebiblio/Ebook.php" class="nav-item nav-link">Ebook</a>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle nav-item nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Servizi
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="/ebiblio/prenot_posto_let/biblio_scelta.php">Prenotazione Posto Lettura</a>
+                        <a class="dropdown-item" href="/ebiblio/Libro.php">Prenotazione Libri</a>
+                        <a class="dropdown-item" href="/ebiblio/Ebook.php">Accesso Ebook</a>
+                    </div>
+                </div>
                 <a href="#" class="nav-item nav-link">Statistiche</a>
-
             </div>
 
             <div class="navbar-nav ml-auto">
@@ -98,8 +107,8 @@ if (isset($_POST['accedi'])){
                             </button>
                         </div>
 
-                        
-                        <form  method ="POST" class ="text-center"> 
+
+                        <form method="POST" class="text-center">
                             <p>Accedi al tuo profilo Ebiblio:<br><br>
                             E-mail:
                             <br>
@@ -109,14 +118,14 @@ if (isset($_POST['accedi'])){
                             <input type="password" name="password" size="20" maxlength="50" placeholder="Password..." /><br>
                             <br>
 
-<!--
+                                <!--
                             <div class="form-check m-3 text-center">
                                 <label class="form-check-label">
                                 <input type="checkbox" class="form-check-input" value=""> Ricordami     
                                 </label>
                             </div>
 -->
-                            <button type="submit" class="btn btn-outline-danger" name ="accedi">Accedi</button>
+                                <button type="submit" class="btn btn-outline-danger" name="accedi">Accedi</button>
                         </form>
 
                         <div class="modal-footer m-3">
@@ -127,4 +136,3 @@ if (isset($_POST['accedi'])){
             </div>
         </div>
     </nav>
-</body>

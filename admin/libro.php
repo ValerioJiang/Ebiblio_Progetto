@@ -1,5 +1,5 @@
 <?php
-include('/xampp/htdocs/ebiblio/main_partials/menu.php');
+include('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
 
 $cartaCon = new CartaceoController();
 $carta_res = $cartaCon->list();
@@ -72,5 +72,5 @@ $carta_res = $cartaCon->list();
 </div>
 
 <?php
-  include('/xampp/htdocs/ebiblio/main_partials/footer.php');
+  include('/xampp/htdocs/ebiblio/admin/admin_partials/footer.php');
   ?>
