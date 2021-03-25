@@ -103,10 +103,10 @@ if (isset($_POST['accedi'])){
                             <p>Accedi al tuo profilo Ebiblio:<br><br>
                             E-mail:
                             <br>
-                            <input type="text" name="email" size="20" maxlength="50" /><br>
+                            <input type="text" name="email" size="20" maxlength="50" placeholder="Email..." /><br>
                             Password:
                             <br>
-                            <input type="password" name="password" size="20" maxlength="50"  /><br>
+                            <input type="password" name="password" size="20" maxlength="50" placeholder="Password..." /><br>
                             <br>
 
 <!--
