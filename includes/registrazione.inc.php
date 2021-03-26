@@ -1,4 +1,5 @@
 <?php
+//include_once("../config/constants.php");
 
 if(isset($_POST["iscriviti"])){
     $nome =$_POST['nome'];
@@ -10,11 +11,11 @@ if(isset($_POST["iscriviti"])){
     $password =$_POST['password'];
     $rptpassword =$_POST['rptpassword'];
     $professione =$_POST['professione'];
-    
+    $conn; //???
+
     require_once("../controller/dbh.class.php");
-   /* CREARE FUNCTION.CLASS.PHP 
-   require_once("function.class.php");
-    */
+    require_once("function.inc.php");
+    
 
     //controllo inserimento dei dati:
     if(emptyInputUser($nome,$cognome,$data,$luogo,$telefono,$email,$password,$rptpassword,$professione)!==false){
