@@ -1,7 +1,9 @@
 <?php
 //include_once("../config/constants.php");
 //$conn; //???
-
+//per operazioni che richiedono accesso al database:
+$utilizzatore_con = new UtilizzatoreController();
+$utili_res = $utilizzatore_con->checkIscrizione($email);
 
 if(isset($_POST["iscriviti"])){
     $nome =$_POST['nome'];
@@ -20,25 +22,32 @@ if(isset($_POST["iscriviti"])){
     $utilizzatore_con = new UtilizzatoreController();
     $utili_res = $utilizzatore_con -> checkEsistenza();
     //controllo riempimento di tutti i campi:
-    if(emptyInputUser($nome,$cognome,$data,$luogo,$telefono,$email,$password,$rptpassword,$professione)!==false){
+    if(inserimentoVuoto($nome,$cognome,$data,$luogo,$telefono,$email,$password,$rptpassword,$professione)!==false){
         header("location: ../registrazione.php?error=emptyinput");
         exit();
     }
    
     //controllo validità formato email:
-    if(invalidEmail($email)!==false){
+    if(emailInvalida($email)!==false){
         header("location: ../registrazione.php?error=invalidemail");
         exit();
     }
 
 
     //controllo se il campo "Password" e il campo "Ripeti Password" coincidono:
-    if(passwordMatch($password,$rptpassword)!==false){
+    if(controlloPassword($password,$rptpassword)!==false){
         header("location: ../registrazione.php?error=passwordsdontmatch");
         exit();
     }
 
-    //controllo utilizzo email inserita: 
+    
+    $utilizzatore_con = new UtilizzatoreController();
+    $utili_res = $utilizzatore_con->checkIscrizione($email);
+  
+    var_dump($utili_res); //per leggere array associativi
+}
+
+    /*//controllo utilizzo email inserita: 
     if(emailExists($conn,$email)!==false){
         header("location: ../registrazione.php?error=usernametaken");
         exit();
@@ -49,4 +58,4 @@ if(isset($_POST["iscriviti"])){
 }else{
     header("location: ../registrazione.php?error=passwordsdontmatch");
     exit();
-}
+}*/
