@@ -1,5 +1,5 @@
 <?php
-require_once ('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
+include('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
 //require_once ('/xampp/htdocs/Ebiblio/includes/registrazione.inc.php');
 
 $utente_con = new UtilizzatoreController();
@@ -102,6 +102,31 @@ background: url('./images/bibliofull.jpg') no-repeat  ;
                 <br>
                 <button type="submit" class="btn btn-outline-danger" name="iscriviti">Iscriviti</button>
             </form>
+            <?php
+
+
+if(isset($_POST["iscriviti"])){
+    $nome =$_POST['nome'];
+    $cognome =$_POST['cognome'];
+    $data =$_POST['datanascita'];
+    $luogo =$_POST['luogonascita'];
+    $telefono =$_POST['telefono'];
+    $email =$_POST['email'];
+    $password =$_POST['password'];
+    $rptpassword =$_POST['rptpassword'];
+    $professione =$_POST['professione'];
+
+    
+
+   
+
+    //creazione profilo:
+    /*createUser($conn,$nome,$cognome,$data,$luogo,$telefono,$email,$password,$professione);
+}else{
+    header("location: ../registrazione.php?error=passwordsdontmatch");
+    exit();*/
+}
+?>
         </div>
        <!--<div class="modal-footer">-->
 
