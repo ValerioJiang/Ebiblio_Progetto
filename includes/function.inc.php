@@ -62,7 +62,7 @@ function emailExists($conn,$email){
         return $result;
     }
 
-    mysqli_stmt_close($stmt)
+    mysqli_stmt_close($stmt);
 }
 
 function  createUser($conn,$email,$password,$nome,$cognome,$data,$luogo,$telefono,$professione){
@@ -77,10 +77,9 @@ function  createUser($conn,$email,$password,$nome,$cognome,$data,$luogo,$telefon
 
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
    
-    mysqli_stmt_bind_param($stmt,"sssssssss",,$email,$password,$nome,$cognome,$data,$luogo,$telefono,$professione,$hashedPassword);
+    mysqli_stmt_bind_param($stmt,"sssssssss",$email,$password,$nome,$cognome,$data,$luogo,$telefono,$professione,$hashedPassword);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     header("location: ../registrazione.php?error=none");
-    exit()
-
+    exit();
 }

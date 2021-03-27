@@ -1,5 +1,6 @@
 <?php
 //include_once("../config/constants.php");
+$conn; //???
 
 if(isset($_POST["iscriviti"])){
     $nome =$_POST['nome'];
@@ -11,7 +12,6 @@ if(isset($_POST["iscriviti"])){
     $password =$_POST['password'];
     $rptpassword =$_POST['rptpassword'];
     $professione =$_POST['professione'];
-    $conn; //???
 
     require_once("../controller/dbh.class.php");
     require_once("function.inc.php");
