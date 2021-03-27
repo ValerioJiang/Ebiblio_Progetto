@@ -33,8 +33,7 @@ function controlloPassword($password,$rptpassword){
     $result;
     if($password!==$rptpassword){
         $result = true;
-    }
-    else{
+    }else{
         $result = false;
     }
 
