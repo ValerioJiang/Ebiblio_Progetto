@@ -130,57 +130,6 @@ include('./main_partials/menu.php')
        
     </div>
 </div>
-           <!-- <form  action="includes/registrazione.inc.php"method ="POST" class ="text-center"> 
-                <div class="row">
-                    <div class="col-sm">-->
-                       <!-- Nome:
-                        <br>
-                        <input type="text" name="nome" size="20" maxlength="50"placeholder="Nome..."/><br>
-                        Data di nascita:
-                        <br>
-                        <input type="text" name="datanascita" size="20" maxlength="50" placeholder="Data nascita..."/><br>
-                        Email:
-                        <br>
-                        <input type="text" name="email" size="20" maxlength="50" placeholder="Email..."/><br>-->
-                        <!--Telefono:
-                        <br>
-                        <input type="text" name="telefono" size="20" maxlength="50" placeholder="Telefono..."/><br>
-                    
-                        Professione:
-                        <br>
-                        <input type="text" name="professione" size="20" maxlength="50"placeholder ="Professione..."/><br>
-                    
-                    </div
-
-                    <div class="col-sm">
-                        Cognome:
-                        <br>
-                        <input type="text" name="cognome" size="20" maxlength="50"placeholder ="Cognome..."/><br>
-            
-                        Luogo di nascita:
-                        <br>
-                        <input type="text" name="luogonascita" size="20" maxlength="50"placeholder ="Luogo nascita..."/><br>
-                       
-                        Password:
-                        <br>
-                        <input type="password" name="password" size="20" maxlength="50"placeholder ="Password..."/><br>
-                        Ripeti password:
-                        <br>
-                        <input type="password" name="rptpassword" size="20" maxlength="50"placeholder ="Password..."/><br>
-                      
-                    </div>           
-                </div>
-                <br>
-                <button type="submit" class="btn btn-outline-danger" name="iscriviti">Iscriviti</button>
-            </form>-->
-       
-       <!--<div class="modal-footer">-->
-
-       <!---</div>--->
-        <!---se campi vuoti: btn-lg disabled-->
- 
-
-
     <?php
     include('./main_partials/footer.php');
     ?>
