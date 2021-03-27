@@ -25,9 +25,10 @@ function invalidEmail($email){
     }else{
         $result = false;
     }
+/*
 
-    return $result;
-}
+
+
 
 function passwordmatch($password,$rptpassword){
     $result;
@@ -63,10 +64,11 @@ function emailExists($conn,$email){
     }
 
     mysqli_stmt_close($stmt);
-}
+}*/
+/*
 
 function  createUser($conn,$email,$password,$nome,$cognome,$data,$luogo,$telefono,$professione){
-    /*CAMBIARE IN MONGODB*/
+    /*CAMBIARE IN MONGODB
     $sql = "INSERT INTO Utilizzatori(Email,Password,Nome,Cognome,DataNascita,LuogoNascita,Tel,Professione)VALUES(?,?,?,?,?,?,?,?)";
     $stmt = mysqli_stmt_init($conn);
 
@@ -82,4 +84,4 @@ function  createUser($conn,$email,$password,$nome,$cognome,$data,$luogo,$telefon
     mysqli_stmt_close($stmt);
     header("location: ../registrazione.php?error=none");
     exit();
-}
+}*/

@@ -1,5 +1,5 @@
 <?php
-require_once ('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
+include('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
 //require_once ('/xampp/htdocs/Ebiblio/includes/registrazione.inc.php');
 
 $utente_con = new UtilizzatoreController();
@@ -102,6 +102,56 @@ background: url('./images/bibliofull.jpg') no-repeat  ;
                 <br>
                 <button type="submit" class="btn btn-outline-danger" name="iscriviti">Iscriviti</button>
             </form>
+            <?php
+
+
+if(isset($_POST["iscriviti"])){
+    $nome =$_POST['nome'];
+    $cognome =$_POST['cognome'];
+    $data =$_POST['datanascita'];
+    $luogo =$_POST['luogonascita'];
+    $telefono =$_POST['telefono'];
+    $email =$_POST['email'];
+    $password =$_POST['password'];
+    $rptpassword =$_POST['rptpassword'];
+    $professione =$_POST['professione'];
+
+    
+
+    $utilizzatore_con = new UtilizzatoreController();
+    $utili_res = $utilizzatore_con -> checkEsistenza($email, $password);
+    //controllo riempimento di tutti i campi:
+    if(emptyInputUser($nome,$cognome,$data,$luogo,$telefono,$email,$password,$rptpassword,$professione)!==false){
+        header("location: ../registrazione.php?error=emptyinput");
+        exit();
+    }
+   
+    //controllo validità formato email:
+    if(invalidEmail($email)!==false){
+        header("location: ../registrazione.php?error=invalidemail");
+        exit();
+    }
+
+
+    //controllo se il campo "Password" e il campo "Ripeti Password" coincidono:
+    if(passwordMatch($password,$rptpassword)!==false){
+        header("location: ../registrazione.php?error=passwordsdontmatch");
+        exit();
+    }
+
+    //controllo utilizzo email inserita: 
+    if($utili_res){
+        header("location: ../registrazione.php?error=usernametaken");
+        exit();
+    }
+
+    //creazione profilo:
+    /*createUser($conn,$nome,$cognome,$data,$luogo,$telefono,$email,$password,$professione);
+}else{
+    header("location: ../registrazione.php?error=passwordsdontmatch");
+    exit();*/
+}
+?>
         </div>
        <!--<div class="modal-footer">-->
 
