@@ -26,6 +26,9 @@ function emailInvalida($email){
         $result = false;
     }
 
+    return $result;
+}
+
 function controlloPassword($password,$rptpassword){
     $result;
     if($password!==$rptpassword){
@@ -37,3 +40,7 @@ function controlloPassword($password,$rptpassword){
 
     return $result;
 }
+
+
+//MANCA CREAZIONE UTENTE(DA FARE CON MONGODB)
+
