@@ -54,14 +54,35 @@ if (isset($_POST['iscriviti'])){
 include('./main_partials/menu.php')
 ?>
 
-
+<section>
 <div class="container-fluid " style="background: url('./images/bibliofull.jpg') no-repeat  ;">
 
 <div class="row justify-content-center">
     <div class="card" style="width: 60%;">
         <div class="card-body p-5 align-self-center">
-            <h1 class="font-weight-light">Registrazione</h1>
-            
+
+        <!--messaggi d'errore-->
+<div  class ="text-center">
+<?php
+                    if(isset($_GET["error"])){
+                        if($_GET["error"]== "emptyinput"){
+                            echo "<p class='bg-warning text-white h5'>ERRORE: <em>Riempire tutti i campi</em></p>";
+                        }else if($_GET["error"]== "invalidemail"){
+                            echo "<p class='bg-warning text-white h5'>ERRORE: <em>Email inserita non valida</p>";
+                        }else if($_GET["error"]== "passwordsdontmatch"){
+                            echo "<p class='bg-warning text-white h5'>ERRORE: <em>Le password inserite non coincidono</p>";
+                        }else if($_GET["error"]== "stmtfailed"){
+                            echo "<p class='bg-warning text-white h5'>ERRORE: <em>Qualcosa è andato storto, prova ancora</p>";
+                        }else if($_GET["error"]== "emailtaken"){
+                            echo "<p class='bg-warning text-white h5'>ERRORE: <em>Email inserità già in utilizzo.</p>";
+                        }else if($_GET["error"]== "null"){
+                            echo "<p class= 'bg-success text-white h5'><em>Iscrizione eseguita con successo!</p>";
+                        }
+                    } 
+                    ?>
+</div>
+         <h1 class="font-weight-light">Registrazione</h1>
+          
            <form  action="includes/registrazione.inc.php"method ="POST" class ="text-center"> 
 
                 <div class="form-row">
@@ -125,13 +146,18 @@ include('./main_partials/menu.php')
 
                 <br>
                     <button type="submit" class="btn btn-outline-danger" name="iscriviti">Iscriviti</button>
+                <br></br>
             </form>
         </div>
        
     </div>
 </div>
+</section>
+
+<!--messaggi d'errore:-->
+
+
     <?php
     include('./main_partials/footer.php');
     ?>
-
 </body>
