@@ -19,8 +19,8 @@ if (isset($_POST['accedi'])) {
     $utente_check = $utente_con->checkEsistenza($email, $password); //creo utente_check che contiene il risultato di checkesistenza tramite utente_con
     if (count($utente_check) == 1) {
         infoBoxLogin("ACCESSO ESEGUITO");
-        /*  $_SESSION['login']= "<div class ='success'>Login succesful.</div>";
-       header('location:'.SITEURL.'C:\xampp\htdocs\EBIBLIO\biblioteche.php');*/
+         $_SESSION['login']= "<div class ='success'>Login succesful.</div>";
+       //header('location:'.SITEURL.'C:\xampp\htdocs\EBIBLIO\biblioteche.php');
     } else {
         infoBoxLogin("ACCESSO NEGATO: email o password errata");
     }

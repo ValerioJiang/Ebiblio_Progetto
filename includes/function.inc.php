@@ -4,7 +4,9 @@
 *funzioni di registrazione.inc.php
 */
 
-
+/*
+*FUNZIONI REGISTRAZIONE
+*/
 //controllo riempimento di tutti i campi:
 function inserimentoVuoto($nome,$cognome,$data,$luogo,$telefono,$email,$password,$rptpassword,$professione){
     $result;
@@ -40,6 +42,4 @@ function controlloPassword($password,$rptpassword){
     return $result;
 }
 
-
-//MANCA CREAZIONE UTENTE(DA FARE CON MONGODB)
 

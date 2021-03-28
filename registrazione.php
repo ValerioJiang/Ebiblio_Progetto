@@ -32,23 +32,23 @@ include('./main_partials/menu.php')
 
         <!--messaggi d'errore-->
 <div  class ="text-center">
-<?php
-                    if(isset($_GET["error"])){
-                        if($_GET["error"]== "emptyinput"){
-                            echo "<p class='bg-warning text-white h5'>ERRORE: <em>Riempire tutti i campi</em></p>";
-                        }else if($_GET["error"]== "invalidemail"){
-                            echo "<p class='bg-warning text-white h5'>ERRORE: <em>Email inserita non valida</p>";
-                        }else if($_GET["error"]== "passwordsdontmatch"){
-                            echo "<p class='bg-warning text-white h5'>ERRORE: <em>Le password inserite non coincidono</p>";
-                        }else if($_GET["error"]== "stmtfailed"){
-                            echo "<p class='bg-warning text-white h5'>ERRORE: <em>Qualcosa è andato storto, prova ancora</p>";
-                        }else if($_GET["error"]== "emailtaken"){
-                            echo "<p class='bg-warning text-white h5'>ERRORE: <em>Email inserità già in utilizzo.</p>";
-                        }else if($_GET["error"]== "null"){
-                            echo "<p class= 'bg-success text-white h5'><em>Iscrizione eseguita con successo!</p>";
-                        }
-                    } 
-                    ?>
+    <?php
+        if(isset($_GET["error"])){
+            if($_GET["error"]== "emptyinput"){
+                echo "<p class='bg-warning text-white h5'>ERRORE: <em>Riempire tutti i campi</em></p>";
+            }else if($_GET["error"]== "invalidemail"){
+                echo "<p class='bg-warning text-white h5'>ERRORE: <em>Email inserita non valida</p>";
+            }else if($_GET["error"]== "passwordsdontmatch"){
+                echo "<p class='bg-warning text-white h5'>ERRORE: <em>Le password inserite non coincidono</p>";
+            }else if($_GET["error"]== "stmtfailed"){
+                echo "<p class='bg-warning text-white h5'>ERRORE: <em>Qualcosa è andato storto, prova ancora</p>";
+            }else if($_GET["error"]== "emailtaken"){
+                echo "<p class='bg-warning text-white h5'>ERRORE: <em>Email inserità già in utilizzo.</p>";
+            }else if($_GET["error"]== "null"){
+                echo "<p class= 'bg-success text-white h5'><em>Iscrizione eseguita con successo!</p>";
+            }
+        } 
+        ?>
 </div>
          <h1 class="font-weight-light">Registrazione</h1>
           
