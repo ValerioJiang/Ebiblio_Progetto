@@ -6,37 +6,6 @@ $utente_con = new UtilizzatoreController();
 $utente_res = $utente_con->list();      
 ?>
 
-<?php
-//REGISTRAZIONE
-/*if (isset($_POST['iscriviti'])){
-    //ottengo i dati inseriti dall'utilizzatore:
-    $email =$_POST['email'];
-    $utente_checkIscrizione = $utente_con -> checkIscrizione($email); 
-    if(count($utente_checkIscrizione) == 0){
-        infoBoxRegistrazione("Iscrizione eseguita con successo");
-    }else{
-        infoBoxRegistrazione("ERRORE: email inserita già in uso. Inserire un nuovo indirizzo email");    }
-}*/
-
-/*
-if (isset($_POST['iscriviti'])){
-    //ottengo i dati inseriti dall'utilizzatore:
-    $email =$_POST['email'];
-    $utente_check = $utente_con -> checkIscrizione($email); //creo utente_check che contiene il risultato di checkesistenza tramite utente_con
-    if(count($utente_check) == 0){
-        echo '<script language="javascript">';
-        echo 'alert("Iscrizione eseguita con successo")';
-        echo '</script>';
-    }else{
-        echo '<script language="javascript">';
-        echo 'alert("ERRORE: email inserita già in uso. Inserire una nuova email")';
-        echo '</script>';
-    }
-}*/
-?>
-
-
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
