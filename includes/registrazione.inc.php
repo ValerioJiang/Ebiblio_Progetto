@@ -46,10 +46,11 @@ if(isset($_POST["iscriviti"])){
     $utilizzatore_con = new UtilizzatoreController();
     $utente_checkIscrizione= $utilizzatore_con->checkIscrizione($email);
 
-    if(count($utente_checkIscrizione) == 0){
-      echo"Iscrizione eseguita con successo";
+    if(count($utente_checkIscrizione) == 1){
+        header("location: ../registrazione.php?error=emailtaken") ;
     }else{
-        header("location: ../registrazione.php?error=passwordsdontmatch") ;
+        header("location: ../registrazione.php?error=null");
+
     }
 
 
