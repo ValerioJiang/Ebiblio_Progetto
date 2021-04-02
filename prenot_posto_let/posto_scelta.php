@@ -2,7 +2,7 @@
 include('/xampp/htdocs/ebiblio/main_partials/menu.php');
 $posto_con = new PostoLetturaController();
 $nomeBiblio = $_GET['NomeBiblio'];
-$posto_res = $posto_con->getPostoLettura($nomeBiblio);
+
 ?>
 
 <div class="container-fluid">
@@ -15,6 +15,7 @@ $posto_res = $posto_con->getPostoLettura($nomeBiblio);
                                                                   echo date("Y-m-d"); ?> max=<?php echo date("Y-m-d", strtotime($currdate . ' + 14 days')); ?> width="100%" />
         </br>
         </br>
+        
         <div class="form-check-inline">
           <label class="form-check-label">
             <input type="radio" class="form-check-input" name="optradio" value="9:00:00">9:00-13:00
@@ -30,16 +31,17 @@ $posto_res = $posto_con->getPostoLettura($nomeBiblio);
             <input type="radio" class="form-check-input" name="optradio" value="16:00:00">16:00-19:00
           </label>
         </div>
+       
         </br>
         </br>
         <div class="form-check-inline">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optradioPrc" value="true">Presa corrente
+            <input type="radio" class="form-check-input" name="optradioPrc" value=true>Presa corrente
           </label>
         </div>
         <div class="form-check-inline disabled">
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optradioPre" value="true">Presa Ethernet
+            <input type="radio" class="form-check-input" name="optradioPre" value=true>Presa Ethernet
           </label>
         </div>
         </br>
@@ -48,23 +50,139 @@ $posto_res = $posto_con->getPostoLettura($nomeBiblio);
         </br>
         </br>
       </form>
-      <?php
-      echo $nomeBiblio;
-      if(isset($_GET['datePicker'])){
-        echo $_GET['datePicker'];
-      }
-      
-      if(isset($_GET['optradio'])){
-        echo $_GET['optradio'];
-      }
-      
-      if(isset($_GET['optradioPrc'])){
-        echo $_GET['optradioPrc'];
-      }
-      if(isset($_GET['optradioPre'])){
-        echo $_GET['optradioPre'];
-      }
-      ?>
+
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Numero</th>
+            <th>Presa Ethernet</th>
+            <th>Presa Corrente</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+          if (isset($_GET['NomeBiblio'])) {
+            if (isset($_GET['datepick_submit'])) {
+              if (isset($_GET['datePicker'])) {
+                if (isset($_GET['optradio'])) {
+                  $posto_res = $posto_con->getPostoLettura( $nomeBiblio,  $_GET['datePicker'], "", "", $_GET['optradio']);
+                  if (isset($_GET['optradioPre']) && isset($_GET['optradioPrc'])) {
+                    $posto_res = $posto_con->getPostoLettura($nomeBiblio, $_GET['datePicker'], true, true, $_GET['optradio']);
+                    for ($i = 0; $i < count($posto_res); $i++) {
+                      echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/prenot_posto_let/posto_scelta.php?Prenotazione=' . $posto_res[$i]['Numero'] .
+                        '&ReteEthernet= true' .
+                        '\');"' . '>';
+                      echo '<td>' . $posto_res[$i]['Numero'] . '</td>';
+
+                      if ($posto_res[$i]['ReteEthernet'] == "1") {
+                        echo '<td>'  . 'Presente' . '</td>';
+                      } else if ($posto_res[$i]['ReteEthernet'] == "0") {
+                        echo '<td>'  . 'Non Presente' . '</td>';
+                      } else {
+                        echo '<td>'  . 'Dato non disponibile' . '</td>';
+                      }
+
+
+                      if ($posto_res[$i]['PresaCorrente'] == "1") {
+                        echo '<td>'  . 'Presente' . '</td>';
+                      } else if ($posto_res[$i]['PresaCorrente'] == "0") {
+                        echo '<td>'  . 'Non Presente' . '</td>';
+                      } else {
+                        echo '<td>'  . 'Dato non disponibile' . '</td>';
+                      }
+                    }
+                  }
+                  else if (isset($_GET['optradioPrc'])) {
+                    $posto_res = $posto_con->getPostoLettura($nomeBiblio, $_GET['datePicker'], true, "", $_GET['optradio']);
+                    for ($i = 0; $i < count($posto_res); $i++) {
+                      echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/prenot_posto_let/posto_scelta.php?NomeBiblio=' . $nomeBiblio . '&Prenotazione=' . $posto_res[$i]['Numero'] .
+                        '&PresaCorrente= true' .
+                        '\');"' . '>';
+                      echo '<td>' . $posto_res[$i]['Numero'] . '</td>';
+
+                      if ($posto_res[$i]['ReteEthernet'] == "1") {
+                        echo '<td>'  . 'Presente' . '</td>';
+                      } else if ($posto_res[$i]['ReteEthernet'] == "0") {
+                        echo '<td>'  . 'Non Presente' . '</td>';
+                      } else {
+                        echo '<td>'  . 'Dato non disponibile' . '</td>';
+                      }
+
+
+                      if ($posto_res[$i]['PresaCorrente'] == "1") {
+                        echo '<td>'  . 'Presente' . '</td>';
+                      } else if ($posto_res[$i]['PresaCorrente'] == "0") {
+                        echo '<td>'  . 'Non Presente' . '</td>';
+                      } else {
+                        echo '<td>'  . 'Dato non disponibile' . '</td>';
+                      }
+                    }
+                  } else if (isset($_GET['optradioPre'])) {
+                    $posto_res = $posto_con->getPostoLettura($nomeBiblio, $_GET['datePicker'], "", true, $_GET['optradio']);
+                    for ($i = 0; $i < count($posto_res); $i++) {
+                      echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/prenot_posto_let/posto_scelta.php?NomeBiblio=' . $nomeBiblio . '&Prenotazione=' . $posto_res[$i]['Numero'] .
+                        '&ReteEthernet= true' .
+                        '\');"' . '>';
+                      echo '<td>' . $posto_res[$i]['Numero'] . '</td>';
+
+                      if ($posto_res[$i]['ReteEthernet'] == "1") {
+                        echo '<td>'  . 'Presente' . '</td>';
+                      } else if ($posto_res[$i]['ReteEthernet'] == "0") {
+                        echo '<td>'  . 'Non Presente' . '</td>';
+                      } else {
+                        echo '<td>'  . 'Dato non disponibile' . '</td>';
+                      }
+
+
+                      if ($posto_res[$i]['PresaCorrente'] == "1") {
+                        echo '<td>'  . 'Presente' . '</td>';
+                      } else if ($posto_res[$i]['PresaCorrente'] == "0") {
+                        echo '<td>'  . 'Non Presente' . '</td>';
+                      } else {
+                        echo '<td>'  . 'Dato non disponibile' . '</td>';
+                      }
+                    }
+                  } 
+                  else {
+
+                    for ($i = 0; $i < count($posto_res); $i++) {
+                      echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/prenot_posto_let/posto_scelta.php?Prenotazione=' . $posto_res[$i]['Numero'] . '\');"' . '>';
+                      echo '<td>' . $posto_res[$i]['Numero'] . '</td>';
+
+                      if ($posto_res[$i]['ReteEthernet'] == "1") {
+                        echo '<td>'  . 'Presente' . '</td>';
+                      } else if ($posto_res[$i]['ReteEthernet'] == "0") {
+                        echo '<td>'  . 'Non Presente' . '</td>';
+                      } else {
+                        echo '<td>'  . 'Dato non disponibile' . '</td>';
+                      }
+
+
+                      if ($posto_res[$i]['PresaCorrente'] == "1") {
+                        echo '<td>'  . 'Presente' . '</td>';
+                      } else if ($posto_res[$i]['PresaCorrente'] == "0") {
+                        echo '<td>'  . 'Non Presente' . '</td>';
+                      } else {
+                        echo '<td>'  . 'Dato non disponibile' . '</td>';
+                      }
+                    }
+                  }
+                } else {
+                  echo "Scegliere fascia oraria";
+                }
+              } else {
+                echo "Scegliere data";
+              }
+            }
+          }
+
+
+
+
+          ?>
+
+        </tbody>
+      </table>
 
     </div>
 

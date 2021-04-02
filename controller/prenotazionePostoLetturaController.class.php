@@ -26,7 +26,12 @@
          * CREATE
          */
         public function createPrenotazione($nomeBiblio){
-
+            $query = "INSERT INTO Prenotazione_Posto_Lettura VALUES( Biblioteca = '$nomeBiblio')";
+            $stmt = Dbh:: getInstance()
+            -> getDb()
+            -> prepare($query);
+            $stmt = $stmt -> execute();
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
         
 
