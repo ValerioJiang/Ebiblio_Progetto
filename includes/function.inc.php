@@ -60,17 +60,6 @@ function inserimentoVuotoAccesso($email,$password){
     return $result; 
 }
 
-//controllo inserimento password corretta:
-/*function controlloPasswordAccesso($password){
-    $result;
-    if($password!==$rptpassword){
-        $result = true;
-    }else{
-        $result = false;
-    }
-    return $result;
-}
-*/
 
 
 
