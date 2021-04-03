@@ -1,8 +1,11 @@
 <?php
-//session_start();
+session_start();
 
 require_once('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
 //include('C:\xampp\htdocs\EBIBLIO\config\constants.php');
+
+$utente_con = new UtilizzatoreController();
+$utente_res = $utente_con->list();
 
 ?>
 
@@ -28,11 +31,6 @@ require_once('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
-
-
-    
- 
-
     <style>
         /* Make the image fully responsive */
         .carousel-inner img {
@@ -45,8 +43,6 @@ require_once('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
 </head>
 
 <body>
-
-
 
     <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
         <a href="/ebiblio" class="navbar-brand">
@@ -75,8 +71,17 @@ require_once('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
             </div>
 
             <div class="navbar-nav ml-auto">
-                <a href="accesso.php" class="nav-item nav-link">Accedi</a>
-                <a href="registrazione.php" class="nav-item nav-link">Registrati</a>
+            <?php
+            if(isset($_SESSION["email"])){
+               echo"<li><a href='profile.php'>Profile page</a></li>";
+               echo"<li><a href='logout.php'>Log out</a></li>";
+            }else{
+               echo"<a href='accesso.php' class='nav-item nav-link'>Accedi</a>";  
+               echo"<a href='registrazione.php' class='nav-item nav-link'>Registrati</a>";
+            }
+
+            ?>
+               
                <!-- <a href="#" class="nav-item nav-link">Profilo</a>-->
                 <a href="#" class="nav-item nav-link">Logout</a>
 
