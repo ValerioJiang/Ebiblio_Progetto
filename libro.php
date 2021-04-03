@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('/xampp/htdocs/ebiblio/main_partials/menu.php');
 
 $cartaCon = new CartaceoController();

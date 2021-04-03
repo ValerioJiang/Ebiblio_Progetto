@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include('/xampp/htdocs/ebiblio/main_partials/menu.php');
 
 $biblioCon = new BibliotecaController();
@@ -8,6 +10,7 @@ $carta_res = $cartaCon -> list();
 
 
 ?>
+
 
 <div class="container-fluid " style="  
 background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;

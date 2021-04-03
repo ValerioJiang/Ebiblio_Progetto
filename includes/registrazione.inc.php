@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once("../includes/autoloader.inc.php");
 //$conn; //???
 //per operazioni che richiedono accesso al database:
@@ -15,7 +16,6 @@ if(isset($_POST["iscriviti"])){
     $rptpassword =$_POST['rptpassword'];
     $professione =$_POST['professione'];
     $utili_res = $utilizzatore_con->checkIscrizione($email);
-
 
     require_once("../controller/dbh.class.php");
     require_once("function.inc.php");
