@@ -32,17 +32,16 @@
                 $oraFine = '12:00:00';
             }
             else if($oraInizio === '12:00:00'){
-                $oraFine = '14:00:00';
+                $oraFine = '15:00:00';
             }
             else{
                 $oraFine = '18:00:00';
             }
-            $query = "INSERT INTO Prenotazione_Posto_Lettura VALUES($posto,'$nomeBiblio', '$Utilizzatore', '$DataPrenotazione' ,'$oraInizio')"; 
+            $query = "INSERT INTO Prenotazione_Posto_Lettura VALUES($posto,'$nomeBiblio', '$Utilizzatore', '$DataPrenotazione' ,'$oraInizio','$oraFine')"; 
             $stmt = Dbh:: getInstance()
             -> getDb()
             -> prepare($query);
             $stmt -> execute();
-            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
         
 
