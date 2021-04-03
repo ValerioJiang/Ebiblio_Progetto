@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 
 include('/xampp/htdocs/ebiblio/main_partials/menu.php');
 

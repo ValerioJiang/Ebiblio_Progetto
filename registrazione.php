@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 include('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
 //require_once ('/xampp/htdocs/Ebiblio/includes/registrazione.inc.php');
 

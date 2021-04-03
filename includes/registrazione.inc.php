@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 include_once("../includes/autoloader.inc.php");
 //$conn; //???
 //per operazioni che richiedono accesso al database:
