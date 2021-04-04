@@ -47,8 +47,8 @@ $carta_res = $cartaCon->list();
                             echo "Nessun risultato corrispondente";
                         }
                         for ($i = 0; $i < count($carta_like); $i++) {
-                            echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/cartainfo?Titolo=' . $carta_like[$i]['Titolo'] .
-                                '&Codice=' . $carta_like[$i]['Titolo'] . '\');"' . '>';
+                            echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/libro_prenot/libroinfo.php?Titolo=' . $carta_like[$i]['Titolo'] .
+                                '&codLibro=' . $carta_like[$i]['Codice'] . '\');"' . '>';
                             echo '<td>' . $carta_like[$i]['Titolo'] . '</td>';
                             echo '<td>' . $carta_like[$i]['AnnoPubblicazione'] . '</td>';
                             echo '<td>'  . $carta_like[$i]['Edizione'] . '</td>';
@@ -57,8 +57,8 @@ $carta_res = $cartaCon->list();
                     }
                 } else {
                     for ($i = 0; $i < count($carta_res); $i++) {
-                        echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/cartainfo?Titolo=' . $carta_res[$i]['Titolo'] .
-                            '&Codice=' . $carta_res[$i]['Titolo'] . '\');"' . '>';
+                        echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/libro_prenot/libroinfo.php?Titolo=' . $carta_res[$i]['Titolo'] .
+                            '&codLibro=' . $carta_res[$i]['Codice'] . '\');"' . '>';
                         echo '<td>' . $carta_res[$i]['Titolo'] . '</td>';
                         echo '<td>' . $carta_res[$i]['AnnoPubblicazione'] . '</td>';
                         echo '<td>'  . $carta_res[$i]['Edizione'] . '</td>';

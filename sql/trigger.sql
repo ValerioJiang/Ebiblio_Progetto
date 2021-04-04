@@ -78,7 +78,7 @@ begin
         SIGNAL SQLSTATE '45000' 
             SET MESSAGE_TEXT = errMsg;
     ELSE
-		UPDATE Raccolta SET StatoDisponibilita = "Prenotato" WHERE Biblioteca = NEW.Biblioteca AND Libro = NEW.Libro 
+		UPDATE Raccolta SET StatoDisponibilita = "Prenotato" WHERE Biblioteca = NEW.Biblioteca AND Libro = NEW.Libro AND Scaffale = NEW.Scaffale
 		AND StatoDisponibilita = "Disponibile";
 	END IF;
     

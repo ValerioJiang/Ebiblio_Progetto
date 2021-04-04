@@ -215,6 +215,7 @@ create table PRESTITO(
     foreign key (Utilizzatore) references UTILIZZATORE(Email) on delete cascade on update cascade,
     Libro int,
     Biblioteca varchar(255),
+    Scaffale varchar(255),
     foreign key (Libro) references CARTACEO(Codice) on delete cascade on update cascade,
     foreign key (Biblioteca) references Biblioteca(Nome) on delete cascade on update cascade,
     DataInizio date not null,

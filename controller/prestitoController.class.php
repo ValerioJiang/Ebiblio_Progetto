@@ -12,10 +12,10 @@
         /**
          * LIST
          */
-        public function createPrestito(){
-            $dataFine = date("H:i:s", strtotime("{$DataInizio}+15 days"));
+        public function createPrestito($Utilizzatore,$codLibro, $nomeBiblio,$dataInizio,$dataFine){
+            $dataFine = date("Y-m-d", strtotime("{$dataInizio}+15 days"));
             $query = "INSERT INTO Prestito(Utilizzatore, Libro, Biblioteca, DataInizio, DataFine) VALUES ('$Utilizzatore',$codLibro, '$nomeBiblio','$dataInizio','$dataFine')";
-            
+
         }
     }
 ?>

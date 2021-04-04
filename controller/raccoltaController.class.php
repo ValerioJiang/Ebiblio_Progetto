@@ -10,12 +10,13 @@
     class RaccoltaController{
         public function getRaccolta($codLibro){
             $query = "SELECT * FROM Raccolta WHERE Libro = $codLibro";
+
             $stmt = Dbh:: getInstance()
             -> getDb()
             -> prepare($query);
             $stmt -> execute();
-            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
             
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
     }
 

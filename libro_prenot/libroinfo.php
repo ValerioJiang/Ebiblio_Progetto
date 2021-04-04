@@ -2,8 +2,7 @@
 session_start();
 include('/xampp/htdocs/ebiblio/main_partials/menu.php');
 $rac_con = new RaccoltaController();
-
-
+$car_con = new CartaceoController();
 
 ?>
 
@@ -17,26 +16,33 @@ $rac_con = new RaccoltaController();
             <th>Biblioteca</th>
             <th>Stato Conservazione</th>
             <th>Disponilità</th>
+            <th>Durata Prestito</th>
+            <th>Modalità</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
 
           <?php
-          $rac_res = $rac_con -> getRaccolta($_GET['codLibro']);
-
+          $codLibro = $_GET['codLibro'];
+          $rac_res = $rac_con -> getRaccolta($codLibro);
+          
           for ($i = 0; $i < count($rac_res); $i++) {
-            echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/libro_prenot/libroinfo.php?prenLibro=true&Titolo=' . $_GET['Titolo'] .
-              '&codLibro=' . $rac_res[$i]['Biblioteca'] . '\');"' . '>';
+            echo '<tr>';
             echo '<td>' . $rac_res[$i]['Biblioteca'] . '</td>';
             echo '<td>' . $rac_res[$i]['StatoConservazione'] . '</td>';
             echo '<td>' . $rac_res[$i]['StatoDisponibilita'] . '</td>';
+            echo '<td>' . '15 Giorni' . '</td>';
+            echo '<td><button type="button" class="btn btn-primary" onclick="window.location.assign(\'http://localhost/ebiblio/libro_prenot/libroinfo.php?ritiroLibro=true&CodLibro='.$codLibro.'\');">Ritiro in biblioteca</button></td>';
+            echo '<td><button type="button" class="btn btn-primary"  onclick="window.location.assign(\'http://localhost/ebiblio/libro_prenot/libroinfo.php?consegnaLibro=true&CodLibro='.$codLibro.'\');">Consegna</button></td>';
             echo '</tr>';
           }
 
 
           if(isset($_GET['prenLibro'])){
-            
+
           }
+
           ?>
 
         </tbody>
