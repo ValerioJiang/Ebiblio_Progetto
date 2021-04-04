@@ -1,7 +1,7 @@
 <?php
 //session_start();
 include_once("../includes/autoloader.inc.php");
-//$conn; //???
+
 //per operazioni che richiedono accesso al database:
 $utilizzatore_con = new UtilizzatoreController();
 
@@ -23,7 +23,7 @@ if(isset($_POST["iscriviti"])){
     /*$utilizzatore_con = new UtilizzatoreController();
     $utili_res = $utilizzatore_con -> checkEsistenza();*/
     //controllo riempimento di tutti i campi:
-    if(inserimentoVuoto($nome,$cognome,$data,$luogo,$telefono,$email,$password,$rptpassword,$professione)!==false){
+    if(inserimentoVuotoRegistrazione($nome,$cognome,$data,$luogo,$telefono,$email,$password,$rptpassword,$professione)!==false){
         header("location: ../registrazione.php?error=emptyinput");
         exit();
     }
@@ -37,7 +37,7 @@ if(isset($_POST["iscriviti"])){
 
 
     //controllo se il campo "Password" e il campo "Ripeti Password" coincidono:
-    if(controlloPassword($password,$rptpassword)!==false){
+    if(controlloPasswordRegistrazione($password,$rptpassword)!==false){
         header("location: ../registrazione.php?error=passwordsdontmatch");
         exit();
     }
@@ -57,6 +57,6 @@ if(isset($_POST["iscriviti"])){
 
     //MANCA CREAZIONE UTENTE(DA FARE CON MONGODB)
 }else{
-    header("location: ../registrazione.php?error=passwordsdontmatch");
+    header("location: ../registrazione.php?error=stmtfailed");
     exit();
 }
