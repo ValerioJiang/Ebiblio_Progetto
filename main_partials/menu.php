@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 
 require_once('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
 //include('C:\xampp\htdocs\EBIBLIO\config\constants.php');

@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 include('/xampp/htdocs/ebiblio/main_partials/menu.php');
 $rac_con = new RaccoltaController();
 $car_con = new CartaceoController();
@@ -14,6 +14,7 @@ $car_con = new CartaceoController();
         <thead>
           <tr>
             <th>Biblioteca</th>
+            <th>Scaffale</th>
             <th>Stato Conservazione</th>
             <th>Disponilità</th>
             <th>Durata Prestito</th>
@@ -25,21 +26,28 @@ $car_con = new CartaceoController();
 
           <?php
           $codLibro = $_GET['codLibro'];
-          $rac_res = $rac_con -> getRaccolta($codLibro);
-          
+          $rac_res = $rac_con->getRaccolta($codLibro);
+
           for ($i = 0; $i < count($rac_res); $i++) {
             echo '<tr>';
             echo '<td>' . $rac_res[$i]['Biblioteca'] . '</td>';
+            echo '<td>' . $rac_res[$i]['Scaffale'] . '</td>';
             echo '<td>' . $rac_res[$i]['StatoConservazione'] . '</td>';
             echo '<td>' . $rac_res[$i]['StatoDisponibilita'] . '</td>';
             echo '<td>' . '15 Giorni' . '</td>';
-            echo '<td><button type="button" class="btn btn-primary" onclick="window.location.assign(\'http://localhost/ebiblio/libro_prenot/libroinfo.php?ritiroLibro=true&CodLibro='.$codLibro.'\');">Ritiro in biblioteca</button></td>';
-            echo '<td><button type="button" class="btn btn-primary"  onclick="window.location.assign(\'http://localhost/ebiblio/libro_prenot/libroinfo.php?consegnaLibro=true&CodLibro='.$codLibro.'\');">Consegna</button></td>';
+            echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/libro_prenot/ritiroLibro.php?codLibro='.$_GET['codLibro'].'&ritiroLibro=true&Titolo='.$_GET['Titolo'].'&nomeBiblio='.$rac_res[$i]['Biblioteca'].'&scaffale='.$rac_res[$i]['Scaffale'].'\"'.'>Ritiro in biblioteca</a></td>';
+            echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/libro_prenot/consegnaLibro.php?codLibro='.$_GET['codLibro'].'&consegnaLibro=true&Titolo='.$_GET['Titolo'].'&nomeBiblio='.$rac_res[$i]['Biblioteca'].'&scaffale='.$rac_res[$i]['Scaffale'].'\"'.'">Consegna</a></td>';
             echo '</tr>';
           }
 
 
-          if(isset($_GET['prenLibro'])){
+          if (isset($_GET['ritiroLibro'])) {
+            
+          } 
+          else if (isset($_GET['consegnaLibro'])) {
+            
+          }
+          else{
 
           }
 
@@ -48,10 +56,15 @@ $car_con = new CartaceoController();
         </tbody>
       </table>
 
+      
+
+    
 
     </div>
 
   </div>
+
+</div>
 </div>
 
 <?php
