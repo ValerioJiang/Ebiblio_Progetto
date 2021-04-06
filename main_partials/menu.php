@@ -72,14 +72,17 @@ $utente_res = $utente_con->list();
 
             <div class="navbar-nav ml-auto">
             <?php
+            /*
             if(isset($_SESSION["email"])){
+                
                echo"<li><a href='index.php'>Profile page</a></li>";
                echo"<li><a href='logout.php'>Log out</a></li>";
+               
             }else{
                echo"<a href='accesso.php' class='nav-item nav-link'>Accedi</a>";  
                echo"<a href='registrazione.php' class='nav-item nav-link'>Registrati</a>";
             }
-
+            */
             ?>
                
                <!-- <a href="#" class="nav-item nav-link">Profilo</a>-->

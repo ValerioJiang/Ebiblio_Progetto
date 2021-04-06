@@ -75,7 +75,7 @@ if (isset($_POST['accedi'])) {
             <h2 class="modal-title" id="login">Accesso</h2>
             <em>Accedi al tuo profilo Ebiblio:</em><br><br>
 
-            <form method="POST" action ="includes/accesso.inc.php" class="text-center">
+            <form method="POST" action ="includes/accesso.inc.php"  class="text-center">
                 E-mail:
                 <br>
                 <input type="text" name="email" size="20" maxlength="50" placeholder="Email..." />

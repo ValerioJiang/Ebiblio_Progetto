@@ -59,7 +59,3 @@ function inserimentoVuotoAccesso($email,$password){
 
     return $result; 
 }
-
-
-
-
