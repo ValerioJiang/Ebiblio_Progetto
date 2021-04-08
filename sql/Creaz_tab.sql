@@ -92,7 +92,7 @@ create table RACCOLTA(
     Libro int,
     StatoConservazione varchar(9) not null,
     StatoDisponibilita varchar(11) not null,
-    Scaffale varchar(255),
+    Scaffale varchar(255) not null,
     constraint valid_stato_conservazione check(StatoConservazione in ("Ottimo","Buono","Non Buono", "Scadente")),
     constraint valid_stato_disponibilita check(StatoDisponibilita in ("Disponibile","Prenotato","Consegnato")),
     foreign key (Libro) references CARTACEO(Codice) on delete cascade on update cascade,
@@ -218,8 +218,9 @@ create table PRESTITO(
     Scaffale varchar(255),
     foreign key (Libro) references CARTACEO(Codice) on delete cascade on update cascade,
     foreign key (Biblioteca) references Biblioteca(Nome) on delete cascade on update cascade,
+    foreign key (Scaffale) references Raccolta(Scaffale) on delete cascade on update cascade,
     DataInizio date not null,
-    DataFine date,
+    DataFine date not null,
     primary key(Codice)
 );
 

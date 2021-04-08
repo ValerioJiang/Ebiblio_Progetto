@@ -38,5 +38,18 @@
           
         }
 
+        public function list($NomeBiblio){
+            $query="SELECT * FROM Posto_Lettura WHERE Biblioteca='$NomeBiblio'";
+            
+            
+            $stmt = Dbh::getInstance()
+            -> getDb()
+            -> prepare($query);
+        
+            $stmt -> execute();
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+          
+        }
+
     }
 ?>

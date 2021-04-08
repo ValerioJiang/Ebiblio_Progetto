@@ -8,7 +8,7 @@ $tel_con = new TelefonoController();
 $tel_res = $tel_con->getTelefono($_GET['Nome']);
 
 $posLet_con = new PostoLetturaController();
-$posLet_res = $posLet_con->getPostoLettura($_GET['Nome']);
+$posLet_res = $posLet_con->list($_GET['Nome']);
 
 ?>
 

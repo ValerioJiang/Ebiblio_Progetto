@@ -35,8 +35,8 @@ $car_con = new CartaceoController();
             echo '<td>' . $rac_res[$i]['StatoConservazione'] . '</td>';
             echo '<td>' . $rac_res[$i]['StatoDisponibilita'] . '</td>';
             echo '<td>' . '15 Giorni' . '</td>';
-            echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/libro_prenot/ritiroLibro.php?codLibro='.$_GET['codLibro'].'&ritiroLibro=true&Titolo='.$_GET['Titolo'].'&nomeBiblio='.$rac_res[$i]['Biblioteca'].'&scaffale='.$rac_res[$i]['Scaffale'].'\"'.'>Ritiro in biblioteca</a></td>';
-            echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/libro_prenot/consegnaLibro.php?codLibro='.$_GET['codLibro'].'&consegnaLibro=true&Titolo='.$_GET['Titolo'].'&nomeBiblio='.$rac_res[$i]['Biblioteca'].'&scaffale='.$rac_res[$i]['Scaffale'].'\"'.'">Consegna</a></td>';
+            echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/libro_prenot/ritiroLibro.php?codLibro='.$_GET['codLibro'].'&ritiroLibro=true&Titolo='.$_GET['Titolo'].'&nomeBiblio='.$rac_res[$i]['Biblioteca'].'&scaffale='.$rac_res[$i]['Scaffale'].'"'.'>Ritiro in biblioteca</a></td>';
+            echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/libro_prenot/consegnaLibro.php?codLibro='.$_GET['codLibro'].'&consegnaLibro=true&Titolo='.$_GET['Titolo'].'&nomeBiblio='.$rac_res[$i]['Biblioteca'].'&scaffale='.$rac_res[$i]['Scaffale'].'"'.'">Consegna</a></td>';
             echo '</tr>';
           }
 

@@ -16,7 +16,7 @@ $prenot_con = new PrenotazionePostoLetturaController();
       <form method="GET">
         <?php echo "<input type='hidden' name='NomeBiblio' value ='$nomeBiblio'>"; ?>
         <input id="datepicker" type="date" name="datePicker" min=<?php $currdate = date("Y-m-d");
-                                                                  echo date("Y-m-d"); ?> max=<?php echo date("Y-m-d", strtotime($currdate . ' + 14 days')); ?> width="100%" />
+        echo date("Y-m-d"); ?> max=<?php echo date("Y-m-d", strtotime($currdate . ' + 14 days')); ?> width="100%" />
         </br>
         </br>
         
