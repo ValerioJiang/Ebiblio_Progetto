@@ -66,9 +66,10 @@ if (isset($_POST['accedi'])) {
                             echo "<p class='bg-warning text-white h5'>ERRORE: <em>Email o Password errata.</p>";                        
                         }else if($_GET["error"]== "stmtfailed"){
                             echo "<p class='bg-warning text-white h5'>ERRORE: <em>Qualcosa è andato storto, prova ancora</p>";
-                        }/*else if($_GET["error"]== "null"){
-                            echo "<p class= 'bg-success text-white h5'><em>Iscrizione eseguita con successo!</p>";
-                        }*/
+                        }else if($_GET["error"]== "null"){
+                            echo "<p class= 'bg-success text-white h5'><em>Accesso eseguito</p>";
+ 
+                        }
                     } 
                 ?>
                 </div>
