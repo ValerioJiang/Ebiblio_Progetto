@@ -24,7 +24,7 @@ create table BIBLIOTECA(
     Indirizzo varchar(255),
     Latitudine decimal(16,12),
     Longitudine decimal(16,12),
-    Note varchar(200)
+    Note text
 ); 
 
  
@@ -177,7 +177,7 @@ create table SEGNALAZIONE(
     Utilizzatore varchar(255),
     foreign key (Utilizzatore) references UTILIZZATORE(Email) on delete cascade on update cascade,
     DataSegnalazione datetime not null,
-    Note varchar(200),
+    Note text,
     primary key(Amministratore,Utilizzatore,DataSegnalazione)
 );
  
@@ -188,7 +188,7 @@ create table MESSAGGIO(
     foreign key(Utilizzatore)references UTILIZZATORE(Email) on delete cascade on update cascade,
     DataInvio datetime not null, 
     Titolo varchar(255),
-    Testo varchar(280),
+    Testo text,
     primary key(Amministratore,Utilizzatore,DataInvio)
 );
 
@@ -216,9 +216,7 @@ create table PRESTITO(
     Libro int,
     Biblioteca varchar(255),
     Scaffale varchar(255),
-    foreign key (Libro) references CARTACEO(Codice) on delete cascade on update cascade,
-    foreign key (Biblioteca) references Biblioteca(Nome) on delete cascade on update cascade,
-    foreign key (Scaffale) references Raccolta(Scaffale) on delete cascade on update cascade,
+    foreign key (Biblioteca, Libro, Scaffale) references Raccolta(Biblioteca, Libro, Scaffale) on delete cascade on update cascade,
     DataInizio date not null,
     DataFine date not null,
     primary key(Codice)

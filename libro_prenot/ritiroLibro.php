@@ -22,15 +22,24 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
                     <br>
                     <label>Periodo Prestito: <?php echo date('d-m-Y', strtotime("+ 1 days")); ?> <?php echo date('d-m-Y', strtotime(' + 16 days')); ?></label>
                 </div>
-                <a class="btn btn-primary" role="button" href=<?php echo '"http://localhost/ebiblio/libro_prenot/ritiroLibro.php?codLibro=1&ritiroLibro=true&confBtn=true&Titolo='.$_GET['Titolo'].'&nomeBiblio='.$_GET['nomeBiblio'].'&scaffale='.$_GET['scaffale'].'"'?>>Conferma</input>
+                <form method="post">
+                    <input type="submit" name="confBtn" id="test" class="btn btn-primary" value="Conferma" /><br/>
+                </form>
                 <a class="btn btn-secondary" role="button" href="http://localhost/ebiblio">Annulla</a>
             
             </br>
             </br>
             <?php
-                if(isset($_GET['confBtn'])){
+                if(isset($_POST['confBtn'])){
                     $pres_con = new PrestitoController();
-                    $pres_res = $pres_con -> createPrestito("ciao@gmail.com",$_GET['codLibro'],$_GET['nomeBiblio'], $_GET['scaffale'],date('Y-m-d',strtotime('+1 days'))); 
+                    $pres_res = $pres_con -> createPrestito("jiangvalerio1998@gmail.com",$_GET['codLibro'],$_GET['nomeBiblio'], $_GET['scaffale'],date('Y-m-d',strtotime('+1 days'))); 
+                    if($pres_res){
+                        $message = "Ritiro con libro prenotato con successo";
+                        echo "<script type='text/javascript'>alert('$message');
+                        document.location.href = 'http://localhost/ebiblio';
+                        </script>";
+                        
+                    }
                 }
             ?>
            

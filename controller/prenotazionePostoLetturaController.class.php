@@ -27,7 +27,7 @@
          * CREATE
          */
         public function createPrenotazione($posto, $nomeBiblio, $DataPrenotazione,$oraInizio){
-            $Utilizzatore ="ciao@gmaiul.com"; //da cambiare con le sessioni
+            $Utilizzatore ="ciao@gmail.com"; //da cambiare con le sessioni
             if($oraInizio === '9:00:00'){
                 $oraFine = '12:00:00';
             }
@@ -41,7 +41,7 @@
             $stmt = Dbh:: getInstance()
             -> getDb()
             -> prepare($query);
-            $stmt -> execute();
+            return $stmt -> execute();
         }
         
 

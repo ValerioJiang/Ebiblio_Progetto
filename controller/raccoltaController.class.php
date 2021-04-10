@@ -9,7 +9,7 @@
 
     class RaccoltaController{
         public function getRaccolta($codLibro){
-            $query = "SELECT * FROM Raccolta WHERE Libro = $codLibro";
+            $query = "SELECT * FROM Raccolta WHERE Libro = $codLibro AND StatoDisponibilita <> 'Prenotato' AND StatoConservazione <> 'Scadente'";
 
             $stmt = Dbh:: getInstance()
             -> getDb()

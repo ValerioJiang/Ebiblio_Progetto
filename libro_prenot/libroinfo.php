@@ -29,6 +29,7 @@ $car_con = new CartaceoController();
           $rac_res = $rac_con->getRaccolta($codLibro);
 
           for ($i = 0; $i < count($rac_res); $i++) {
+            
             echo '<tr>';
             echo '<td>' . $rac_res[$i]['Biblioteca'] . '</td>';
             echo '<td>' . $rac_res[$i]['Scaffale'] . '</td>';

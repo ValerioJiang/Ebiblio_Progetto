@@ -19,10 +19,7 @@
             $stmt = Dbh::getInstance()
                 ->getDb()
                 ->prepare($query);
-            $stmt-> execute();
-            echo $query;
-            return $bool = $stmt -> fetchAll(PDO::FETCH_ASSOC);
-            
+            return $stmt-> execute();
         }
     }
 ?>

@@ -183,7 +183,12 @@ $prenot_con = new PrenotazionePostoLetturaController();
 
           if(isset($_GET['Prenotazione'])){
             $prenot_res = $prenot_con -> createPrenotazione($_GET['Prenotazione'],$_GET['NomeBiblio'], $_GET['data'] ,$_GET['oraInizio']);
-            
+            if($prenot_res){
+              $message = "Posto lettura prenotato con successo";
+                        echo "<script type='text/javascript'>alert('$message');
+                        document.location.href = 'http://localhost/ebiblio';
+                        </script>";
+            }
           }
 
 
