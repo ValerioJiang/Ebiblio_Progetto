@@ -78,8 +78,6 @@ $utente_res = $utente_con->list();
                echo"<li><a href='logout.php'>Logout</a></li>";
                
             }else{
-               echo"<a href='accesso.php' class='nav-item nav-link'>Accedi</a>";  
-               echo"<a href='registrazione.php' class='nav-item nav-link'>Registrati</a>";
                echo"<a href='#' class='nav-item nav-link'>Logout</a>";
 
             }

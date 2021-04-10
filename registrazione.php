@@ -1,5 +1,4 @@
 <?php
-//session_start();
 include('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
 //require_once ('/xampp/htdocs/Ebiblio/includes/registrazione.inc.php');
 
@@ -46,6 +45,7 @@ include('./main_partials/menu.php')
                                 echo "<p class='bg-warning text-white h5'>ERRORE: <em>Email inserità già in utilizzo.</p>";
                             }else if($_GET["error"]== "null"){
                                 echo "<p class= 'bg-success text-white h5'><em>Iscrizione eseguita con successo!</p>";
+                                echo"<p><a href='accesso.php'>Esegui accesso</a></p>";
                             }
                         } 
                     ?>

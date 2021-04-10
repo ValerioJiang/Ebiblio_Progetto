@@ -24,7 +24,8 @@ if(isset($_POST["accedi"])){
     if(count($utente_checkEsistenza) == 0){
         header("location: ../accesso.php?error=emailorpasswordwrong") ;
     }else{
-        header("location: ../accesso.php?error=null");
+    
+        header("LOCATION: http://localhost/ebiblio/utilizzatore/index.php?user=".$_POST['email']);
 
     }
 }else{
