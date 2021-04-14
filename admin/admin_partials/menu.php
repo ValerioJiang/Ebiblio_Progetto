@@ -1,6 +1,6 @@
 <?php
-require_once ('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
-//include('C:\xampp\htdocs\EBIBLIO\config\constants.php');
+require_once('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
+
 
 $utente_con = new UtilizzatoreController();
 $utente_res = $utente_con->list();

@@ -41,17 +41,6 @@ $car_con = new CartaceoController();
             echo '</tr>';
           }
 
-
-          if (isset($_GET['ritiroLibro'])) {
-            
-          } 
-          else if (isset($_GET['consegnaLibro'])) {
-            
-          }
-          else{
-
-          }
-
           ?>
 
         </tbody>

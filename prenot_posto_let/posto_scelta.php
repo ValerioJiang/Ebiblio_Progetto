@@ -191,7 +191,6 @@ $prenot_con = new PrenotazionePostoLetturaController();
             }
           }
 
-
           ?>
 
         </tbody>
