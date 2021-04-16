@@ -1,5 +1,7 @@
 <?php
-//session_start();
+$email = $_GET['email'];
+$_SESSION['email'] = $email;
+
 
 include('/xampp/htdocs/ebiblio/main_partials/menu.php');
 $utente_con = new UtilizzatoreController();
