@@ -1,7 +1,5 @@
 <?php
-$email = $_GET['email'];
-$_SESSION['email'] = $email;
-
+//session_start();
 
 include('/xampp/htdocs/ebiblio/main_partials/menu.php');
 $utente_con = new UtilizzatoreController();
@@ -38,7 +36,7 @@ function infoBoxLogin($msg)
             <h2 class="modal-title" id="login">Accesso</h2>
             <em>Accedi al tuo profilo Ebiblio:</em><br><br>
 
-            <form method="POST" action ="includes/accesso.inc.php"  class="text-center">
+            <form method="POST" action =""  class="text-center">
                 E-mail:
                 <br>
                 <input type="text" name="email" size="20" maxlength="50" placeholder="Email..." />
@@ -50,6 +48,33 @@ function infoBoxLogin($msg)
                 <button type="submit" class="btn btn-outline-danger" name="accedi">Accedi</button>
             </form>
 
+            <?php
+                $utilizzatore_con = new UtilizzatoreController();
+                if(isset($_POST["accedi"])){
+                    $email =$_POST['email'];
+                    $password =$_POST['password'];
+                    $utili_res = $utilizzatore_con->checkEsistenza($email,$password);
+                  
+                    //controllo riempimento di tutti i campi:
+                    if((empty($email) || empty($password))!==false){
+                        echo "Email o Password vuoti";
+                    }
+                
+                    //controllo iscrizione al database o meno:
+                    $utilizzatore_con = new UtilizzatoreController();
+                    $utente_checkEsistenza= $utilizzatore_con->checkEsistenza($email,$password);
+                
+                    if(count($utente_checkEsistenza) == 0){
+                        echo "utente non esiste";
+                    }else{
+                    
+                        header("LOCATION: http://localhost/ebiblio/utilizzatore/index.php?user=".$_POST['email']);
+
+                
+                    }
+                }
+            
+            ?>
             <div class="modal-footer m-3">
                 <em>Utente non registrato? </em> <a href="registrazione.php">Registrati</a>
             </div>
