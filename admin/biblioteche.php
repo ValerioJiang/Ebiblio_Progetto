@@ -25,6 +25,7 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
               <input type="text" class="form-control" name="Nome" id="nomeId" aria-describedby="emailHelp" placeholder="Inserire nome biblioteca">
             </div>
             <input type="submit" name="biblioform_submitted" class="btn btn-primary" value="Ricerca"></input>
+            
           </form>
           </br>
           </br>
