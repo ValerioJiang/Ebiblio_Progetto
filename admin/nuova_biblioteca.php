@@ -111,7 +111,7 @@ include('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
     </div>
 </section>
 
-    <!--messaggi d'errore:-->
+
     <?php
 include('/xampp/htdocs/ebiblio/admin/admin_partials/footer.php');
 ?>

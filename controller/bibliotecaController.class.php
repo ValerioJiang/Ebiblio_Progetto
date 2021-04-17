@@ -62,7 +62,12 @@
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
         
-        public function createBiblioteca($NomeBiblio){
+        public function createBiblioteca($NomeBiblio,$Email,$SitoWeb,$Indirizzo,$Latitudine,$Longitudine,$Note){
+        $query = "INSERT INTO Biblioteca VALUES($NomeBiblio,$Email,$SitoWeb,$Indirizzo,$Latitudine,$Longitudine,$Note)";
+        $stmt = Dbh::getInstance()
+            ->getDb()
+            ->prepare($query);
+        $stmt-> execute();
             
         }
         

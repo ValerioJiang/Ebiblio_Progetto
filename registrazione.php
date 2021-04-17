@@ -123,7 +123,6 @@ include('./main_partials/menu.php')
     </div>
 </section>
 
-    <!--messaggi d'errore:-->
     <?php
         include('./main_partials/footer.php');
     ?>
