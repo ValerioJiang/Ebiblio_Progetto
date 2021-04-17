@@ -24,19 +24,20 @@
 
         public function checkEsistenza($email, $password){
             //TRUE se utente esiste altrimenti FALSE
-            $query ="SELECT Email,Password FROM Utilizzatore WHERE email ='$email' AND password ='$password'";
+            $query ="SELECT * FROM Utilizzatore WHERE email ='$email' AND password ='$password'";
             
             $stmt = Dbh::getInstance()//entro in classe dbh.php che è statico (due puntini)
             ->getDb() //creazione oggetto dbh
             ->prepare($query);
             $stmt-> execute();//esecuzione
+            echo $query;
             return $stmt -> fetchAll(PDO::FETCH_ASSOC); //organizzazione righe in array associativo
             
         }
 
         public function checkIscrizione($email){
             //TRUE se utente non esiste altrimenti FALSE
-            $query = "SELECT Email FROM Utilizzatore WHERE email ='$email'";
+            $query = "SELECT * FROM Utilizzatore WHERE email ='$email'";
 
             $stmt = Dbh::getInstance()
             ->getDb()

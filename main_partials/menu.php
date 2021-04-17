@@ -78,17 +78,13 @@ $utente_res = $utente_con->list();
                echo"<li><a href='logout.php'>Logout</a></li>";
                
             }else{
-               echo"<a href='accesso.php' class='nav-item nav-link'>Accedi</a>";  
-               echo"<a href='registrazione.php' class='nav-item nav-link'>Registrati</a>";
+               echo"<a href='/ebiblio/accesso.php' class='nav-item nav-link'>Accedi</a>";  
+               echo"<a href='/ebiblio/registrazione.php' class='nav-item nav-link'>Registrati</a>";
                echo"<a href='#' class='nav-item nav-link'>Logout</a>";
 
             }
             
             ?>
-               
-               <!-- <a href="#" class="nav-item nav-link">Profilo</a>
-                <a href="#" class="nav-item nav-link">Logout</a>-->
-
             </div>
         </div>
     </nav>

@@ -67,9 +67,9 @@ function infoBoxLogin($msg)
                     if(count($utente_checkEsistenza) == 0){
                         echo "utente non esiste";
                     }else{
-                    
-                        header("LOCATION: http://localhost/ebiblio/utilizzatore/index.php?user=".$_POST['email']);
-
+                        session_start();
+                        $_SESSION['Utente'] = $_POST['email'];
+                        echo var_dump($_SESSION);
                 
                     }
                 }
