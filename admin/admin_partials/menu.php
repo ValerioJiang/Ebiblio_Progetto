@@ -72,7 +72,7 @@ if (isset($_POST['accedi'])){
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
                 <a href="/ebiblio/admin/" class="nav-item nav-link">Home</a>
-                <a href="/ebiblio/admin/biblioteche.php" class="nav-item nav-link">Biblioteche</a>
+                <a href="/ebiblio/admin/biblioteche_admin.php" class="nav-item nav-link">Biblioteche</a>
                 <a href="/ebiblio/admin/Libro.php" class="nav-item nav-link">Libro</a>
                 <a href="/ebiblio/admin/Ebook.php" class="nav-item nav-link">Ebook</a>
                 <a href="#" class="nav-item nav-link">Statistiche</a>
