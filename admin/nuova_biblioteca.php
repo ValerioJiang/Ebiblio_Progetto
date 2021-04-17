@@ -32,28 +32,28 @@ include('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
                 <!--messaggi d'errore-->
                 <div  class ="text-center">
                     <?php
-                    /*
-                        if(isset($_GET["error"])){
-                            if($_GET["error"]== "emptyinput"){
-                                echo "<p class='bg-warning text-white h5'>ERRORE: <em>Riempire tutti i campi</em></p>";
-                            }else if($_GET["error"]== "invalidemail"){
-                                echo "<p class='bg-warning text-white h5'>ERRORE: <em>Email inserita non valida</p>";
-                            }else if($_GET["error"]== "passwordsdontmatch"){
-                                echo "<p class='bg-warning text-white h5'>ERRORE: <em>Le password inserite non coincidono</p>";
-                            }else if($_GET["error"]== "stmtfailed"){
-                                echo "<p class='bg-warning text-white h5'>ERRORE: <em>Qualcosa è andato storto, prova ancora</p>";
-                            }else if($_GET["error"]== "emailtaken"){
-                                echo "<p class='bg-warning text-white h5'>ERRORE: <em>Email inserità già in utilizzo.</p>";
-                            }else if($_GET["error"]== "null"){
-                                echo "<p class= 'bg-success text-white h5'><em>Iscrizione eseguita con successo!</p>";
-                                echo"<p><a href='accesso.php'>Esegui accesso</a></p>";
-                            }
-                        }*/ 
+                    if (isset($_POST['nuovabiblio'])) {
+                        $nometrim = trim($_POST['nome']);
+                        $emailtrim = trim($_POST['email']);
+                        $sitotrim = trim($_POST['sito']);
+                        $indirizzotrim = trim($_POST['indirizzo']);
+                        $latitudinetrim = trim($_POST['latitudine']);
+                        $longitudinetrim = trim($_POST['longitudine']);
+
+                        if ((ctype_space($nometrim)||$nometrim=='')||(ctype_space($emailtrim)||$emailtrim=='')||(ctype_space($sitotrim)||$sitotrim=='')|| (ctype_space($indirizzotrim)||$indirizzotrim=='')(ctype_space($latitudinetrim)||$latitudinetrim=='')(ctype_space($longitudinetrim)||$longitudinetrim=='')){
+                          echo "Per favore riempire tutti i campi";
+                        } else {
+                          $res = $biblioCon->getLikeBiblioteca($_POST['nome']);
+                          if (count($res) >=1) {
+                            echo "Biblioteca già esistente";
+                          }
+                        }
+                    }
                     ?>
                 </div>
                 <h1 class="font-weight-light">Registrazione nuova biblioteca</h1>
             
-                <form  action="includes/registrazione.inc.php" method ="POST" class ="text-center"> 
+                <form  action=# method ="POST" class ="text-center"> 
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
@@ -105,6 +105,10 @@ include('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
                         <button type="submit" class="btn btn-outline-danger" name="nuovabiblio">Salva nuova biblioteca</button>
                     <br></br>
                 </form>
+
+                <?php
+                    
+                ?>
             </div>
                         
         </div>

@@ -19,6 +19,7 @@
         public $Indirizzo;
         public $Latitudine;
         public $Longitudine;
+        public $Note;
     }
     
 
@@ -68,6 +69,7 @@
             ->getDb()
             ->prepare($query);
         $stmt-> execute();
+        return $stmt;
             
         }
         
