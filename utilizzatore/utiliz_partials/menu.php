@@ -1,5 +1,9 @@
 <?php
+<<<<<<< Updated upstream
 //session_start();
+=======
+session_start();
+>>>>>>> Stashed changes
 //$_SESSION['email'] = $_GET['email'];
 
 require_once('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
