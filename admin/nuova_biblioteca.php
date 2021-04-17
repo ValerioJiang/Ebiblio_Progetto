@@ -21,6 +21,7 @@ $biblio_res = $biblio_con->list();
 
 <?php
 include('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
+$biblioCon = new BibliotecaController();
 ?>
 
 <section>
@@ -40,7 +41,7 @@ include('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
                         $latitudinetrim = trim($_POST['latitudine']);
                         $longitudinetrim = trim($_POST['longitudine']);
 
-                        if ((ctype_space($nometrim)||$nometrim=='')||(ctype_space($emailtrim)||$emailtrim=='')||(ctype_space($sitotrim)||$sitotrim=='')|| (ctype_space($indirizzotrim)||$indirizzotrim=='')(ctype_space($latitudinetrim)||$latitudinetrim=='')(ctype_space($longitudinetrim)||$longitudinetrim=='')){
+                        if ((ctype_space($nometrim)||$nometrim=='')||(ctype_space($emailtrim)||$emailtrim=='')||(ctype_space($sitotrim)||$sitotrim=='')|| (ctype_space($indirizzotrim)||$indirizzotrim=='')||(ctype_space($latitudinetrim)||$latitudinetrim=='')||(ctype_space($longitudinetrim)||$longitudinetrim=='')){
                           echo "Per favore riempire tutti i campi";
                         } else {
                           $res = $biblioCon->getLikeBiblioteca($_POST['nome']);
