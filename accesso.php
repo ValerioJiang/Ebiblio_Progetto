@@ -1,8 +1,11 @@
 <?php
-//session_start();
+
 
 include('/xampp/htdocs/ebiblio/main_partials/menu.php');
-$utente_con = new UtilizzatoreController();
+$utiliz_con = new UtilizzatoreController();
+$volon_con = new VolontarioController();
+$ammini_con = new AmministratoreController();
+
 $utente_res = $utente_con->list();
 function infoBoxLogin($msg)
 {
@@ -49,28 +52,41 @@ function infoBoxLogin($msg)
             </form>
 
             <?php
-                $utilizzatore_con = new UtilizzatoreController();
+                
                 if(isset($_POST["accedi"])){
                     $email =$_POST['email'];
                     $password =$_POST['password'];
-                    $utili_res = $utilizzatore_con->checkEsistenza($email,$password);
+                    $utili_res = $utiliz_con->checkEsistenza($email,$password);
                   
                     //controllo riempimento di tutti i campi:
                     if((empty($email) || empty($password))!==false){
                         echo "Email o Password vuoti";
                     }
                 
-                    //controllo iscrizione al database o meno:
-                    $utilizzatore_con = new UtilizzatoreController();
-                    $utente_checkEsistenza= $utilizzatore_con->checkEsistenza($email,$password);
-                
-                    if(count($utente_checkEsistenza) == 0){
-                        echo "utente non esiste";
-                    }else{
-                        session_start();
-                        $_SESSION['Utente'] = $_POST['email'];
-                        echo var_dump($_SESSION);
-                
+                    $utiliz_checkEsistenza = $utiliz_con->checkEsistenza($email,$password);
+                    $ammini_checkEsistenza = $ammini_con->checkEsistenza($email,$password);
+                    $volon_checkEsistenza = $utiliz_con->checkEsistenza($email,$password);
+
+                    if(count($utiliz_checkEsistenza) == 1){
+                        echo "<script> 
+                            var url= 'http://localhost/ebiblio/utilizzatore/index.php?email=$email'; 
+                            window.location = url; 
+                        </script>";
+                    }
+                    else if(count($ammini_checkEsistenza) == 1){
+                        echo "<script> 
+                            var url= 'http://localhost/ebiblio/admin/index.php?email=$email'; 
+                            window.location = url; 
+                        </script>";
+                    }
+                    else if(count($volon_checkEsistenza) == 1){
+                        echo "<script> 
+                            var url= 'http://localhost/ebiblio/utilizzatore/index.php?email=$email'; 
+                            window.location = url; 
+                        </script>";
+                    }
+                    else{
+                        echo "Utente non esiste"; 
                     }
                 }
             

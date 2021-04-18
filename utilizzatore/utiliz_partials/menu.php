@@ -1,17 +1,5 @@
 <?php
-<<<<<<< Updated upstream
-//session_start();
-=======
-session_start();
->>>>>>> Stashed changes
-//$_SESSION['email'] = $_GET['email'];
-
 require_once('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
-
-
-$utente_con = new UtilizzatoreController();
-$utente_res = $utente_con->list();
-
 ?>
 
 
@@ -30,7 +18,7 @@ $utente_res = $utente_con->list();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>  
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <!-- Lib for leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
@@ -62,6 +50,7 @@ $utente_res = $utente_con->list();
             <div class="navbar-nav">
                 <a href="/ebiblio" class="nav-item nav-link">Home</a>
                 <a href="/ebiblio/biblioteche.php" class="nav-item nav-link">Biblioteche</a>
+
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle nav-item nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Servizi
@@ -70,28 +59,15 @@ $utente_res = $utente_con->list();
                         <a class="dropdown-item" href="/ebiblio/prenot_posto_let/biblio_scelta.php">Prenotazione Posto Lettura</a>
                         <a class="dropdown-item" href="/ebiblio/Libro.php">Prenotazione Libri</a>
                         <a class="dropdown-item" href="/ebiblio/Ebook.php">Accesso Ebook</a>
+
                     </div>
                 </div>
                 <a href="#" class="nav-item nav-link">Statistiche</a>
+
             </div>
 
             <div class="navbar-nav ml-auto">
-            <?php
-            
-            if(isset($_SESSION["email"])){
-                
-               echo"<li><a href='logout.php'>Logout</a></li>";
-               
-            }else{
-               echo"<a href='#' class='nav-item nav-link'>Logout</a>";
-
-            }
-            
-            ?>
-               
-               <!-- <a href="#" class="nav-item nav-link">Profilo</a>
-                <a href="#" class="nav-item nav-link">Logout</a>-->
-
+                <a href='logout.php' class="nav-item nav-link">Logout</a>
             </div>
         </div>
     </nav>
