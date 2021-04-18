@@ -63,14 +63,27 @@
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
         
+        public function getLikeEmail($Email){
+            $query = "SELECT * FROM Biblioteca WHERE LOWER(Email) LIKE CONCAT"."('%',LOWER('$Email'),'%')";
+            $stmt = Dbh::getInstance()
+                ->getDb()
+                ->prepare($query);
+            $stmt-> execute();
+    
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        }
+
         public function createBiblioteca($NomeBiblio,$Email,$SitoWeb,$Indirizzo,$Latitudine,$Longitudine,$Note){
-        $query = "INSERT INTO Biblioteca VALUES($NomeBiblio,$Email,$SitoWeb,$Indirizzo,$Latitudine,$Longitudine,$Note)";
-        $stmt = Dbh::getInstance()
-            ->getDb()
-            ->prepare($query);
-        $stmt-> execute();
-        return $stmt;
+            $query = "INSERT INTO Biblioteca VALUES('$NomeBiblio','$Email','$SitoWeb','$Indirizzo',$Latitudine,$Longitudine,'$Note')";
+            $stmt = Dbh::getInstance()
+                ->getDb()
+                ->prepare($query);
+            $stmt-> execute();
+            
+
+            
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
             
         }
         
-}
+    }
