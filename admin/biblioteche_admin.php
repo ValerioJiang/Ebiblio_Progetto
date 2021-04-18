@@ -25,8 +25,8 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
               <input type="text" class="form-control" name="Nome" id="nomeId" aria-describedby="emailHelp" placeholder="Inserire nome biblioteca">
             </div>
             <input type="submit" name="biblioform_submitted" class="btn btn-primary" value="Ricerca"></input>
-            <input type="submit" name="addform_submitted" class="btn btn-primary" value="Aggiungi biblioteca"></input>
             <input name="newThread" type="button" class="btn btn-primary" value="Aggiungi biblioteca" onclick="window.open('/Ebiblio/admin/nuova_biblioteca.php')"/>
+            <input type="submit" name="deleteform_submitted" class="btn btn-primary" value="Elimina biblioteca"></input>
 
           </form>
           </br>
