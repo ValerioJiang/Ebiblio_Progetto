@@ -78,7 +78,7 @@ $utente_res = $utente_con->list();
                echo"<li><a href='/ebiblio/accesso/acc_volo.php'>Logout</a></li>";
                
             }else{
-               echo"    <div class='dropdown'>
+               echo "<div class='dropdown'>
                <button class='btn btn-secondary dropdown-toggle nav-item nav-link' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
                    Accesso
                </button>

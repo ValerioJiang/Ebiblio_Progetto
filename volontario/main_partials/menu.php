@@ -84,10 +84,8 @@ $utente_res = $utente_con->list();
                     <a class='dropdown-item' href='/ebiblio/accesso/acc_utiliz.php'>Volontario</a>
                 </div>
             </div>";
-              
-                echo"<a href='/ebiblio/registrazione.php' class='nav-item nav-link'>Registrati</a>";
                 
-               echo"<li><a href='/ebiblio/logout.php?email=".$_SESSION['email']."'>Logout</a></li>";
+               echo"<a class='nav-item nav-link' href='/ebiblio/logout.php?email=".$_SESSION['email']."'>Logout</a>";
                
             }else{
                echo"    <div class='dropdown'>

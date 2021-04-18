@@ -30,7 +30,7 @@ $amm_con = new AmministratoreController();
                 ?>
                 </div>
             <h2 class="modal-title" id="login">Accesso</h2>
-            <em>Utilizzatore:</em><br><br>
+            <em>Amministratore:</em><br><br>
 
             <form method="POST" action ="/ebiblio/admin/index.php"  class="text-center">
                 E-mail:
