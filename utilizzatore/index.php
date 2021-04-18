@@ -6,6 +6,9 @@ require_once('/xampp/htdocs/ebiblio/utilizzatore/utiliz_partials/menu.php');
 
 <?php
   if(isset($_GET['email'])){
+    $utiliz_con = new UtilizzatoreController();
+    
+
     session_start();
     $_SESSION['Utilizzatore']=$_GET['email'];
 
