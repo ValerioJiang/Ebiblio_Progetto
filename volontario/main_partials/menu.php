@@ -74,8 +74,20 @@ $utente_res = $utente_con->list();
             <?php
             
             if(isset($_SESSION["email"])){
+                echo"    <div class='dropdown'>
+                <button class='btn btn-secondary dropdown-toggle nav-item nav-link' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                    Accesso
+                </button>
+                <div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
+                    <a class='dropdown-item' href='/ebiblio/accesso/acc_volo.php'>Utilizzatore</a>
+                    <a class='dropdown-item' href='/ebiblio/accesso/acc_amm.php'>Amministratore</a>
+                    <a class='dropdown-item' href='/ebiblio/accesso/acc_utiliz.php'>Volontario</a>
+                </div>
+            </div>";
+              
+                echo"<a href='/ebiblio/registrazione.php' class='nav-item nav-link'>Registrati</a>";
                 
-               echo"<li><a href='logout.php'>Logout</a></li>";
+               echo"<li><a href='/ebiblio/logout.php?email=".$_SESSION['email']."'>Logout</a></li>";
                
             }else{
                echo"    <div class='dropdown'>
