@@ -63,8 +63,32 @@
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
         
+        //funzione per controllare l'esistenza dell'email
         public function getLikeEmail($Email){
             $query = "SELECT * FROM Biblioteca WHERE LOWER(Email) LIKE CONCAT"."('%',LOWER('$Email'),'%')";
+            $stmt = Dbh::getInstance()
+                ->getDb()
+                ->prepare($query);
+            $stmt-> execute();
+    
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        }
+
+
+        //funzione per controllare l'esistenza del sito
+        public function getLikeSito($Sito){
+            $query = "SELECT * FROM Biblioteca WHERE LOWER(SitoWeb) LIKE CONCAT"."('%',LOWER('$Sito'),'%')";
+            $stmt = Dbh::getInstance()
+                ->getDb()
+                ->prepare($query);
+            $stmt-> execute();
+    
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        //funzione per controllare l'esistenza delle coordinate geografiche
+        public function getLikeCoordinate($Latitudine,$Longitudine){
+            $query = "SELECT * FROM Biblioteca WHERE (Latitudine, Longitudine) LIKE CONCAT"."(($Latitudine,$Longitudine))";
             $stmt = Dbh::getInstance()
                 ->getDb()
                 ->prepare($query);

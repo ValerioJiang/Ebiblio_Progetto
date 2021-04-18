@@ -30,26 +30,24 @@ $biblio_res = $biblio_con->list();
                                     $longitudinetrim = trim($_POST['longitudine']);
                                     $notetrim = trim($_POST['note']);
 
-                                    //controllo email inserita già usata:
-                                    $res = $biblioCon->getLikeEmail($_POST['email']);
-                                    if (count($res)>=1){
-                                        echo "email inserita già in uso";
+                                    //imposto variabili per controllare che le info inserite siano già state utilizzate
+                                    //controllo email:
+                                    $res_email = $biblioCon->getLikeEmail($_POST['email']);
+                                    //controllo sitto:
+                                    $res_sito = $biblioCon->getLikeSito($_POST['sito']);
+                                    //controllo coordinate:
+                                    $res_coordinate = $biblioCon->getLikeCoordinate($_POST['latitudine,longitudine']);
+                                    //controllo esistenza biblioteca:
+                                    $res = $biblioCon->getLikeBiblioteca($_POST['nome']);
+
+                                    if (count($res_email)>=1){
+                                        echo "Email inserita già in uso";
+                                    }else if(count($res_sito)>=1){
+                                        echo "Sito inserito già in uso";
                                     }else if ((ctype_space($nometrim)||$nometrim=='')||(ctype_space($emailtrim)||$emailtrim=='')||(ctype_space($sitotrim)||$sitotrim=='')|| (ctype_space($indirizzotrim)||$indirizzotrim=='')||(ctype_space($latitudinetrim)||$latitudinetrim=='')||(ctype_space($longitudinetrim)||$longitudinetrim=='')){
                                     echo "Per favore riempire tutti i campi";
                                     } else {
                                         
-                                
-                                        /*
-                                        //controllo sito inserito già usato:
-                                        $res = $biblioCon->getLikeBiblioteca($_POST['sito']);
-                                        if (count($res)>=1){
-                                            echo "sito inserito già in uso";
-                                        }
-
-                                        //controllo stessa email/stessa long e lat
-                                        */
-                                    
-                                        $res = $biblioCon->getLikeBiblioteca($_POST['nome']);
                                         if (count($res) >=1) {
                                         echo "Biblioteca già esistente";
                                         }else{
