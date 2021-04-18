@@ -16,7 +16,7 @@ use  EBIBLIO;
 
  
 
-#RICORDARE DI ELIMINARE I DEFAULT
+
 create table BIBLIOTECA(
     Nome varchar(255) primary key,
     Email varchar(255),
@@ -79,9 +79,9 @@ create table EBOOK(
     Edizione varchar(20),
     Genere varchar(20),
     AnnoPubblicazione int,
-    Dimensione int,
-    PDF varchar(20),
-    NumAccessi int default 0
+    Dimensione decimal(8,2),
+    /*PDF, Praticamente facciamo aggiungere solo da admin e quando verrà aggiunto verra poi salvato su sql*/
+    NumAccessi int
 );
 
  
@@ -115,12 +115,18 @@ create table AUTORE(
 create table AUTORE_LIBRO(
     Libro int,
     foreign key (Libro) references CARTACEO(Codice),
-    foreign key (Libro) references EBOOK(Codice),
     Autore int,
     foreign key(Autore) references AUTORE(Codice),
     primary key(Libro,Autore)
 );
- 
+
+create table AUTORE_EBOOK(
+    Ebook int,
+    foreign key (Ebook) references EBOOK(Codice),
+    Autore int,
+    foreign key(Autore) references AUTORE(Codice),
+    primary key(Ebook,Autore)
+); 
 
  
 
@@ -232,7 +238,7 @@ create table CONSEGNA(
     foreign key(CodicePrestito)references PRESTITO(Codice),
     foreign key(Volontario)references VOLONTARIO(Email) on delete cascade on update cascade,
     DataConsegna date not null,
-    TipoConsegna varchar(12) default "Affidamento",
+    TipoConsegna varchar(12),
     Note varchar(200),
     constraint valid_tipo_consegna check(TipoConsegna in ("Restituzione","Affidamento")),
     primary key(Codice,Volontario,CodicePrestito)

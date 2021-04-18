@@ -239,4 +239,7 @@ insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) valu
 insert into Cartaceo(Titolo, Edizione, Genere, AnnoPubblicazione) values("Il nome della rosa","Illustrata","Romanzo Storico",2014),
 ("Io non ho paura","Prima","Romanzo",2001),("Il capitale nel XXI secolo","Prima","Saggio politico",2013),("1984","Prima","Fantascienza",1950),("La fattoria degli animali","Prima","Romanzo",1947);
 
-insert into Utilizzatore values("ciao@gmail.com","123","Ual","Erio",'1998-12-12',"Prato","123456",now(),"Bolisia","Attivo");
+insert into Utilizzatore values("ciao@gmail.com","123","Ual","Erio",'1998-12-12',"Prato","123456",now(),"Poliziotto","Attivo");
+insert into Amministratore values("amministratore@gmail.com","123","amministratore","de amministris", '1998-12-12', "Prato", "37048511793","AFM","Biblioteca Universitaria di Bologna");
+insert into volontario values("volontario@gmail.com","123","volontario","de volontaris", '1998-12-12', "Prato", "37048511793","Bici");
+

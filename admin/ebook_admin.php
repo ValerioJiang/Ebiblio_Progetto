@@ -1,10 +1,6 @@
 <?php
-/*
-if(!isset($_SESSION['email'])){
-    header("Location: http://localhost/ebiblio?error=AccederePrima");
-  }
-*/
-require_once('/xampp/htdocs/ebiblio/main_partials/menu.php');
+
+require_once('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
 
 
 $ebookCon = new EbookController();
@@ -24,10 +20,10 @@ $ebook_res = $ebookCon->list();
                     </div>
                 </div>
             </div>
-
             <input type="submit" name="ebookform_submitted" class="btn btn-primary" value="Ricerca"></input>
-            
         </form>
+
+            
         </br>
         </br>
         <table class="table table-hover">
@@ -36,7 +32,6 @@ $ebook_res = $ebookCon->list();
                     <th>Titolo</th>
                     <th>Anno Pubblicazione</th>
                     <th>Edizione</th>
-                    <th>Dimensione</th>
                 </tr>
             </thead>
             <tbody>
@@ -73,6 +68,11 @@ $ebook_res = $ebookCon->list();
                         echo '</tr>';
                     }
                 }
+
+
+                if(isset($_POST['ebookadd_submitted'])){
+                    
+                }
                 ?>
 
             </tbody>
@@ -81,5 +81,5 @@ $ebook_res = $ebookCon->list();
 </div>
 
 <?php
-  require_once('/xampp/htdocs/ebiblio/main_partials/footer.php');
+  require_once('/xampp/htdocs/ebiblio/admin/admin_partials/footer.php');
   ?>
