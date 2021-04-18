@@ -36,7 +36,7 @@ $biblio_res = $biblio_con->list();
                                     //controllo sitto:
                                     $res_sito = $biblioCon->getLikeSito($_POST['sito']);
                                     //controllo coordinate:
-                                    $res_coordinate = $biblioCon->getLikeCoordinate($_POST['latitudine,longitudine']);
+                                    //$res_coordinate = $biblioCon->getLikeCoordinate($_POST['latitudine'][$submitted_array[0]]);
                                     //controllo esistenza biblioteca:
                                     $res = $biblioCon->getLikeBiblioteca($_POST['nome']);
 

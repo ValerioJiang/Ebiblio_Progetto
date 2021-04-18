@@ -88,7 +88,7 @@
 
         //funzione per controllare l'esistenza delle coordinate geografiche
         public function getLikeCoordinate($Latitudine,$Longitudine){
-            $query = "SELECT * FROM Biblioteca WHERE (Latitudine, Longitudine) LIKE CONCAT"."(($Latitudine,$Longitudine))";
+            $query = "SELECT * FROM Biblioteca WHERE (Latitudine, Longitudine) ==(($Latitudine,$Longitudine))";
             $stmt = Dbh::getInstance()
                 ->getDb()
                 ->prepare($query);
