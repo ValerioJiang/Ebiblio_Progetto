@@ -1,6 +1,6 @@
 <?php
-//session_start();
-include('/xampp/htdocs/ebiblio/main_partials/menu.php');
+
+require_once('/xampp/htdocs/ebiblio/main_partials/menu.php');
 
 ?>
 
@@ -67,5 +67,5 @@ background: url('./images/bibliofull.jpg') no-repeat  ;
 
 
 <?php
-  include('/xampp/htdocs/ebiblio/main_partials/footer.php');
+  require_once('/xampp/htdocs/ebiblio/main_partials/footer.php');
   ?>

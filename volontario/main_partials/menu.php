@@ -83,9 +83,9 @@ $utente_res = $utente_con->list();
                    Accesso
                </button>
                <div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
-                   <a class='dropdown-item' href='/ebiblio/accesso/acc_volo.php'>Volontario</a>
+                   <a class='dropdown-item' href='/ebiblio/accesso/acc_volo.php'>Utilizzatore</a>
                    <a class='dropdown-item' href='/ebiblio/accesso/acc_amm.php'>Amministratore</a>
-                   <a class='dropdown-item' href='/ebiblio/accesso/acc_utiliz.php'>Utilizzatore</a>
+                   <a class='dropdown-item' href='/ebiblio/accesso/acc_utiliz.php'>Volontario</a>
                </div>
            </div>";
              
