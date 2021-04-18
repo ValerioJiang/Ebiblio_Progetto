@@ -10,6 +10,7 @@ $tel_res = $tel_con->getTelefono($_GET['Nome']);
 $posLet_con = new PostoLetturaController();
 $posLet_res = $posLet_con->list($_GET['Nome']);
 
+$nomeBi = $_GET['Nome'];
 ?>
 
 <div class="container-fluid" style="width: 80%;">
@@ -41,7 +42,7 @@ $posLet_res = $posLet_con->list($_GET['Nome']);
     <div class="col mb-2">
       <h3>Servizi: </h3><br>
       Posti lettura totali: <?php echo count($posLet_res) ?><br>
-      <input type="submit" value="Prenota Posto Lettura" name="prenot_pos_let"></input>
+      <a class="btn btn-secondary" role="button"  href=<?php echo "\"http://localhost/ebiblio/prenot_posto_let/posto_scelta.php?NomeBiblio=".$nomeBi."\"";?>>Prenota posto lettura</a>
     </div>
   </div>
   <div class="row justify-content-center">

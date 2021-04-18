@@ -1,6 +1,10 @@
 <?php
-//session_start();
-include('/xampp/htdocs/ebiblio/main_partials/menu.php');
+
+if(!isset($_SESSION['email'])){
+  header("Location: http://localhost/ebiblio?error=AccederePrima");
+}
+
+require_once('/xampp/htdocs/ebiblio/main_partials/menu.php');
 $posto_con = new PostoLetturaController();
 $nomeBiblio = $_GET['NomeBiblio'];
 
@@ -202,5 +206,5 @@ $prenot_con = new PrenotazionePostoLetturaController();
 </div>
 
 <?php
-include('/xampp/htdocs/ebiblio/main_partials/footer.php');
+require_once('/xampp/htdocs/ebiblio/main_partials/footer.php');
 ?>

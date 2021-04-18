@@ -30,7 +30,7 @@ $volon_con = new VolontarioController();
                 ?>
                 </div>
             <h2 class="modal-title" id="login">Accesso</h2>
-            <em>Accesso volontari:</em><br><br>
+            <em>volontari:</em><br><br>
 
             <form method="POST" action ="/ebiblio/volontario/index.php"  class="text-center">
                 E-mail:
