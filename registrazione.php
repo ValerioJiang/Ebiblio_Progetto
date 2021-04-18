@@ -1,7 +1,5 @@
 <?php
-include('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
-//require_once ('/xampp/htdocs/Ebiblio/includes/registrazione.inc.php');
-
+require_once('/xampp/htdocs/ebiblio/main_partials/menu.php');
 $utente_con = new UtilizzatoreController();
 $utente_res = $utente_con->list();      
 ?>
@@ -18,10 +16,6 @@ $utente_res = $utente_con->list();
     <title>Ebiblio-Registrazione</title>
 </head>
 <body>
-
-<?php
-include('./main_partials/menu.php')
-?>
 
 <section>
 <div class="container-fluid " style="background: url('/ebiblio/images/scaffa.jpg') no-repeat;">
@@ -124,6 +118,6 @@ include('./main_partials/menu.php')
 </section>
 
     <?php
-        include('./main_partials/footer.php');
+        require_once('/xampp/htdocs/ebiblio/main_partials/footer.php');
     ?>
 </body>
