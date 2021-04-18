@@ -6,7 +6,7 @@
         // destroy the session
         session_destroy();
         
-        header("Location: http://localhost/ebiblio?error=LogoutSuccessful&email=$_SESSION['email']");
+        header("Location: http://localhost/ebiblio?error=LogoutSuccessful&email=".$_SESSION['email']);
         exit(); 
     }
     else{
