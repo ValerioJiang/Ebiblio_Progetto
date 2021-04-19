@@ -7,6 +7,7 @@ $utente_res = $utente_con->list();
 function infoBoxLogin($msg) {
     echo '<script type="text/javascript">alert("' . $msg . '")</script>';
 }
+
 ?>
 
 <?php
@@ -80,9 +81,8 @@ if (isset($_POST['accedi'])){
                         Ebook
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="/ebiblio/admin/biblio_scelta.php">Aggiungi</a>
-                        <a class="dropdown-item" href="/ebiblio/Libro.php">Cancella</a>
-                        <a class="dropdown-item" href="/ebiblio/Ebook.php">Ricerca</a>
+                        <a class="dropdown-item" href="/ebiblio/admin/ebook/nuovo_ebook.php">Aggiungi</a>
+                        <a class="dropdown-item" href="/ebiblio/admin/ebook/ebook_admin.php">Ricerca</a>
                     </div>
                 </div>
                 

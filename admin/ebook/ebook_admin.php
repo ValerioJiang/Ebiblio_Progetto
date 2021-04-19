@@ -58,7 +58,8 @@ $ebook_res = $ebookCon->list();
                             echo '</tr>';
                         }
                     }
-                } else {
+                } 
+                else {
                     for ($i = 0; $i < count($ebook_res); $i++) {
                         echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/libro_prenot/libroinfo.php?Titolo=' . $ebook_res[$i]['Titolo'] .
                             '&codLibro=' . $ebook_res[$i]['Codice'] . '\');"' . '>';
@@ -69,10 +70,6 @@ $ebook_res = $ebookCon->list();
                     }
                 }
 
-
-                if(isset($_POST['ebookadd_submitted'])){
-                    
-                }
                 ?>
 
             </tbody>
