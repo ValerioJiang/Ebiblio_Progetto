@@ -36,7 +36,7 @@ $biblio_res = $biblio_con->list();
                                     //controllo sitto:
                                     $res_sito = $biblioCon->getLikeSito($_POST['sito']);
                                     //controllo coordinate:
-                                    //$res_coordinate = $biblioCon->getLikeCoordinate($_POST['latitudine'][$submitted_array[0]]);
+                                   // $res_coordinate = $biblioCon->getLikeCoordinate($_POST['latitudine'], $_POST['longitudine']);
                                     //controllo esistenza biblioteca:
                                     $res = $biblioCon->getLikeBiblioteca($_POST['nome']);
 
@@ -46,7 +46,10 @@ $biblio_res = $biblio_con->list();
                                         echo "Sito inserito già in uso";
                                     }else if ((ctype_space($nometrim)||$nometrim=='')||(ctype_space($emailtrim)||$emailtrim=='')||(ctype_space($sitotrim)||$sitotrim=='')|| (ctype_space($indirizzotrim)||$indirizzotrim=='')||(ctype_space($latitudinetrim)||$latitudinetrim=='')||(ctype_space($longitudinetrim)||$longitudinetrim=='')){
                                     echo "Per favore riempire tutti i campi";
-                                    } else {
+                                    }else if (!filter_var($emailtrim, FILTER_VALIDATE_EMAIL)) {//controllo validità email
+                                       echo "Email inserita non valida";
+
+                                    }else{
                                         
                                         if (count($res) >=1) {
                                         echo "Biblioteca già esistente";
@@ -115,8 +118,12 @@ $biblio_res = $biblio_con->list();
                         <br>
                             <button type="submit" class="btn btn-outline-danger" name="nuovabiblio">Salva nuova biblioteca</button>
                             <br></br>
-                    </form>
+                            <a href = "/ebiblio/admin/biblioteche_admin.php">Indietro</a>
 
+
+                    </form>
+                    
+                   
                   
                 </div>
                         

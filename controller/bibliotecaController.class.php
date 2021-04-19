@@ -86,16 +86,16 @@
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
 
-        //funzione per controllare l'esistenza delle coordinate geografiche
+        /*funzione per controllare l'esistenza delle coordinate geografiche
         public function getLikeCoordinate($Latitudine,$Longitudine){
-            $query = "SELECT * FROM Biblioteca WHERE (Latitudine, Longitudine) ==(($Latitudine,$Longitudine))";
+            $query = "SELECT * FROM Biblioteca WHERE (Latitudine == $Latitudine) and (Longitudine == $Longitudine)";
             $stmt = Dbh::getInstance()
                 ->getDb()
                 ->prepare($query);
             $stmt-> execute();
     
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
-        }
+        }*/
 
         public function createBiblioteca($NomeBiblio,$Email,$SitoWeb,$Indirizzo,$Latitudine,$Longitudine,$Note){
             $query = "INSERT INTO Biblioteca VALUES('$NomeBiblio','$Email','$SitoWeb','$Indirizzo',$Latitudine,$Longitudine,'$Note')";
