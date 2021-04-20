@@ -22,14 +22,13 @@ $biblio_res = $biblio_con->list();
                         <div  class ="text-center">
                             <?php
                                 if (isset($_POST['nuovabiblio'])) {
-                                    $nometrim = trim($_POST['nome']);
-                                    $emailtrim = trim($_POST['email']);
-                                    $sitotrim = trim($_POST['sito']);
-                                    $indirizzotrim = trim($_POST['indirizzo']);
-                                    $latitudinetrim = trim($_POST['latitudine']);
-                                    $longitudinetrim = trim($_POST['longitudine']);
-                                    $notetrim = trim($_POST['note']);
-
+                                    $titolotrim = trim($_POST['titolo']);
+                                    $autotetrim = trim($_POST['autore']);
+                                    $edizionetrim = trim($_POST['edizione']);
+                                    $generetrim = trim($_POST['genere']);
+                                    $annotrim = trim($_POST['anno']);
+                                    
+                                    /*
                                     //imposto variabili per controllare che le info inserite siano già state utilizzate
                                     //controllo email:
                                     $res_email = $biblioCon->getLikeEmail($_POST['email']);
@@ -59,64 +58,53 @@ $biblio_res = $biblio_con->list();
                                         echo"<br>";
                                         echo'<a href = "/ebiblio/admin/biblioteche_admin.php">Torna indietro</a>';
                                     }
-                                    }
+                                    }*/
                                 }
                             ?>
                     </div>
             
-                    <h1 class="font-weight-light">Registrazione nuova biblioteca</h1>
+                    <h1 class="font-weight-light">Inserimento nuovo libro</h1>
             
                     <form  action=# method ="POST" class ="text-center"> 
 
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                Nome biblioteca:
+                               Titolo:
                                 <br>
-                                <input type="text" name="nome" size="30" maxlength="50"placeholder="Nome..."/><br>
+                                <input type="text" name="titolo" size="30" maxlength="50"placeholder="Titolo..."/><br>
                             </div>
                             <div class="form-group col-md-6">
-                                Email biblioteca:
+                                Autore:
                                 <br>
-                                <input type="text" name="email" size="30" maxlength="50"placeholder ="Email..."/><br>
+                                <input type="text" name="autore" size="30" maxlength="50"placeholder ="Autore..."/><br>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group col">
+                                Edizione:
+                                <br>
+                                <input type="text" name="edizione" size="70" maxlength="50"placeholder ="Edizione..."/><br>
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            Sito web biblioteca:
-                            <br>
-                            <input type="text" name="sito" size="70" maxlength="50" placeholder="Sito web..."/><br>
-                        </div>            
-
                         <div class="form-row">
                             <div class="form-group col-md">
-                                Indirizzo
+                                Genere:
                                 <br>
-                                <input type="text" name="indirizzo" size="20" maxlength="50" placeholder="indirizzo..."/><br>
+                                <input type="text" name="genere" size="30" maxlength="50" placeholder="Genere..."/><br>
                             </div>
                             
                             <div class="form-group col-md">
-                            Latitudine
+                            Anno di pubblicazione
                                 <br>
-                                <input type="text" name="latitudine" size="15" maxlength="50"placeholder ="Latitudine..."/><br>
+                                <input type="text" name="anno" size="30" maxlength="50"placeholder ="Anno di pubblicazione..."/><br>
                             </div>
-                            
-                            <div class="form-group col-md">
-                            Longitudine
-                                <br>
-                                <input type="text" name="longitudine" size="15" maxlength="50"placeholder ="Longitudine..."/><br>
-                            </div>
+                        
                         </div>
 
                 
-                        <div class="form-row">
-                            <div class="form-group col-md">
-                                Note:
-                                <br>
-                                <input type="text" name="note" size="70" maxlength="200" placeholder="Note..."/><br>
-                            </div>
-                        </div>            
-                        <br>
-                            <button type="submit" class="btn btn-outline-danger" name="nuovabiblio">Salva nuova biblioteca</button>
+                            <button type="submit" class="btn btn-outline-danger" name="nuovolibro">Salva nuovo libro</button>
                             <br></br>
                             <a href = "/ebiblio/admin/biblioteche_admin.php">Indietro</a>
 

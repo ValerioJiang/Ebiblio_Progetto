@@ -74,7 +74,7 @@ if (isset($_POST['accedi'])){
             <div class="navbar-nav">
                 <a href="/ebiblio/admin/" class="nav-item nav-link">Home</a>
                 <a href="/ebiblio/admin/biblioteche_admin.php" class="nav-item nav-link">Biblioteche</a>
-                <a href="/ebiblio/admin/Libro.php" class="nav-item nav-link">Libro</a>
+                <a href="/ebiblio/admin/Libro_admin.php" class="nav-item nav-link">Libro</a>
 
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle nav-item nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
