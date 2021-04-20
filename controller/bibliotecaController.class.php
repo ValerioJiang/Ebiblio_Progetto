@@ -99,7 +99,7 @@
         }*/
 
 
-        //inserimento nuovo autore se non è presente nel database
+        //inserimento nuovo autore se autore inserito non è presente nel database
         public function createBiblioteca($NomeBiblio,$Email,$SitoWeb,$Indirizzo,$Latitudine,$Longitudine,$Note){
             $query = "INSERT INTO Biblioteca VALUES('$NomeBiblio','$Email','$SitoWeb','$Indirizzo',$Latitudine,$Longitudine,'$Note')";
             $stmt = Dbh::getInstance()
@@ -110,7 +110,19 @@
 
             
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        //controllo esistenza libro
+        public function getLikeCartaceo($Titolo,$Nome,$Cognome){
+            #$query = "INSERT INTO Biblioteca VALUES('$NomeBiblio','$Email','$SitoWeb','$Indirizzo',$Latitudine,$Longitudine,'$Note')";
+            $stmt = Dbh::getInstance()
+                ->getDb()
+                ->prepare($query);
+            $stmt-> execute();
             
+
+            
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
         
     }

@@ -35,6 +35,7 @@ $cartaceo_res = $cartaceo_Con->list();
                                     ///controllo email:
                                     $res_Autore= $cartaceo_Con->getLikeAutoreCartaceo($_POST['nome'],$_POST['cognome']);
                                    
+                    
                                     /*
                                     //controllo coordinate:
                                    // $res_coordinate = $biblioCon->getLikeCoordinate($_POST['latitudine'], $_POST['longitudine']);
@@ -49,12 +50,15 @@ $cartaceo_res = $cartaceo_Con->list();
                                         
                                         if (count($res_Autore) ==0){
             
-                                        $cartaceo = $cartaceo_Con->createAutore($nometrim,$cognometrim);                                    
-                                        
-                                        echo'<a href = "/ebiblio/admin/libro_admin.php">Torna indietro</a>';
-                                        }
-                                        
-                                    }  
+                                        $cartaceo = $cartaceo_Con->createAutore($nometrim,$cognometrim);   
+                                        $cartaceo = $cartaceo_Con->createCartaceo($titolotrim,$edizionetrim,$generetrim,$annotrim); 
+                                
+                                    }  else{
+                                        $cartaceo = $cartaceo_Con->createCartaceo($titolotrim,$edizionetrim,$generetrim,$annotrim); 
+                                        $cartaceo = $cartaceo_Con->createAutore_libro($titolotrim,$nometrim,$cognometrim); 
+
+                                    }
+                                    }
                                     
                                     
                                     /*else if(count($res_sito)>=1){
