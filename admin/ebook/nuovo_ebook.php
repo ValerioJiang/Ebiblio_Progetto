@@ -90,23 +90,30 @@ $biblioCon = new BibliotecaController();
                                 <input type="text" name="aut1" size="20" maxlength="50" placeholder="Autore 1..." /><br>
                             </div>
 
-                            <script language="javascript">
+                            <script language="text/javascript">
+                                var num = 0;
                                 function add(type) {
                                     //Create an input type dynamically.   
                                     var element = document.createElement("input");
+                                    
                                     //Assign different attributes to the element. 
                                     element.setAttribute("type", type);
-                                    element.setAttribute("value", type);
-                                    element.setAttribute("name", type);
-                                    element.setAttribute("onclick", alert("blabla"));
-
+                                    element.setAttribute("value", 'Autore'+num);
+                                    element.setAttribute("name", 'Autore'+num);
+                                    
                                     var foo = document.getElementById("fooBar");
+                                    
                                     //Append the element in page (in span).  
                                     foo.appendChild(element);
-
                                 }
+
+                                document.getElementById("btnAuth").onclick = function() {
+                                    add("text");
+                                };
                             </script>
                         </div>
+                        <br>
+                        <button class="btn btn-outline-danger" id="btnAuth" name="btnAuth">+Aggiungi autore</button>
                         <br>
                         <button type="submit" class="btn btn-outline-danger" name="nuovabiblio">Salva nuova biblioteca</button>
                         <br></br>

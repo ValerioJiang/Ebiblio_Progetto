@@ -1,6 +1,6 @@
 <?php
 
-require_once('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
+    require_once('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
 
 
 $ebookCon = new EbookController();
@@ -78,5 +78,5 @@ $ebook_res = $ebookCon->list();
 </div>
 
 <?php
-  require_once('/xampp/htdocs/ebiblio/admin/admin_partials/footer.php');
-  ?>
+    require_once('/xampp/htdocs/ebiblio/admin/admin_partials/footer.php');
+?>
