@@ -99,7 +99,7 @@
         }*/
 
 
-
+        //inserimento nuovo autore se non è presente nel database
         public function createBiblioteca($NomeBiblio,$Email,$SitoWeb,$Indirizzo,$Latitudine,$Longitudine,$Note){
             $query = "INSERT INTO Biblioteca VALUES('$NomeBiblio','$Email','$SitoWeb','$Indirizzo',$Latitudine,$Longitudine,'$Note')";
             $stmt = Dbh::getInstance()

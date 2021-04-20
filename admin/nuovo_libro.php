@@ -2,14 +2,14 @@
 require_once('/xampp/htdocs/Ebiblio/admin/admin_partials/menu.php');
 //require_once ('/xampp/htdocs/Ebiblio/includes/registrazione.inc.php');
 
-$biblio_con = new bibliotecaController();
-$biblio_res = $biblio_con->list();      
+$cartaceo_Con = new CartaceoController();
+$cartaceo_res = $cartaceo_Con->list();      
 ?>
 
 
     <?php
     require_once('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
-    $biblioCon = new BibliotecaController();
+    $cartaceoCon = new cartaceoController();
     ?>
 
     <section>
@@ -23,27 +23,41 @@ $biblio_res = $biblio_con->list();
                             <?php
                                 if (isset($_POST['modificalibro'])) {
                                     $titolotrim = trim($_POST['titolo']);
-                                    $autotetrim = trim($_POST['nome']);
-                                    $autotetrim = trim($_POST['cognome']);
+                                    $nometrim = trim($_POST['nome']);
+                                    $cognometrim = trim($_POST['cognome']);
 
                                     $edizionetrim = trim($_POST['edizione']);
                                     $generetrim = trim($_POST['genere']);
                                     $annotrim = trim($_POST['anno']);
                                     
-                                    /*
+                                    
                                     //imposto variabili per controllare che le info inserite siano già state utilizzate
-                                    //controllo email:
-                                    $res_email = $biblioCon->getLikeEmail($_POST['email']);
-                                    //controllo sitto:
-                                    $res_sito = $biblioCon->getLikeSito($_POST['sito']);
+                                    ///controllo email:
+                                    $res_Autore= $cartaceo_Con->getLikeAutoreCartaceo($_POST['nome'],$_POST['cognome']);
+                                   
+                                    /*
                                     //controllo coordinate:
                                    // $res_coordinate = $biblioCon->getLikeCoordinate($_POST['latitudine'], $_POST['longitudine']);
                                     //controllo esistenza biblioteca:
                                     $res = $biblioCon->getLikeBiblioteca($_POST['nome']);
+                                    */
 
-                                    if (count($res_email)>=1){
-                                        echo "Email inserita già in uso";
-                                    }else if(count($res_sito)>=1){
+
+                                    if ((ctype_space($titolotrim)||$titolotrim=='')||(ctype_space($nometrim)||$nometrim=='')||(ctype_space($cognometrim)||$cognometrim=='')|| (ctype_space($edizionetrim)||$edizionetrim=='')||(ctype_space($generetrim)||$generetrim=='')||(ctype_space($annotrim)||$annotrim=='')){
+                                        echo "Per favore riempire tutti i campi";
+                                    }else{
+                                        
+                                        if (count($res_Autore) ==0){
+            
+                                        $cartaceo = $cartaceo_Con->createAutore($nometrim,$cognometrim);                                    
+                                        
+                                        echo'<a href = "/ebiblio/admin/libro_admin.php">Torna indietro</a>';
+                                        }
+                                        
+                                    }  
+                                    
+                                    
+                                    /*else if(count($res_sito)>=1){
                                         echo "Sito inserito già in uso";
                                     }else if ((ctype_space($nometrim)||$nometrim=='')||(ctype_space($emailtrim)||$emailtrim=='')||(ctype_space($sitotrim)||$sitotrim=='')|| (ctype_space($indirizzotrim)||$indirizzotrim=='')||(ctype_space($latitudinetrim)||$latitudinetrim=='')||(ctype_space($longitudinetrim)||$longitudinetrim=='')){
                                     echo "Per favore riempire tutti i campi";
@@ -61,7 +75,7 @@ $biblio_res = $biblio_con->list();
                                         echo'<a href = "/ebiblio/admin/biblioteche_admin.php">Torna indietro</a>';
                                     }
                                     }*/
-                                }
+                               }
                             ?>
                     </div>
             
