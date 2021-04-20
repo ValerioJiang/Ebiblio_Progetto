@@ -122,7 +122,7 @@ $biblio_res = $biblio_con->list();
                             </div>
                         </div>            
                         <br>
-                            <button type="submit" class="btn btn-outline-danger" name="nuovabiblio">Salva modifiche</button>
+                            <button type="submit" class="btn btn-outline-danger" name="modificalibro">Salva modifiche</button>
                             <br></br>
                             <a href = "/ebiblio/admin/biblioteche_admin.php">Indietro</a>
 

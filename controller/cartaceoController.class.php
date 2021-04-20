@@ -2,6 +2,7 @@
     class Cartcaeo{
         public $Codice;
         public $Titolo; 
+        public $Autore;
         public $Edizione; 
         public $Genere;
         public $AnnoPubblicazione; 
@@ -33,7 +34,6 @@
             $stmt -> execute();
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
-
-
+    
     }
 ?>

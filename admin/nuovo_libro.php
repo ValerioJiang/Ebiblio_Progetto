@@ -21,9 +21,11 @@ $biblio_res = $biblio_con->list();
                         <!--messaggi d'errore-->
                         <div  class ="text-center">
                             <?php
-                                if (isset($_POST['nuovabiblio'])) {
+                                if (isset($_POST['modificalibro'])) {
                                     $titolotrim = trim($_POST['titolo']);
-                                    $autotetrim = trim($_POST['autore']);
+                                    $autotetrim = trim($_POST['nome']);
+                                    $autotetrim = trim($_POST['cognome']);
+
                                     $edizionetrim = trim($_POST['edizione']);
                                     $generetrim = trim($_POST['genere']);
                                     $annotrim = trim($_POST['anno']);
@@ -71,14 +73,23 @@ $biblio_res = $biblio_con->list();
                             <div class="form-group col-md-6">
                                Titolo:
                                 <br>
-                                <input type="text" name="titolo" size="30" maxlength="50"placeholder="Titolo..."/><br>
-                            </div>
-                            <div class="form-group col-md-6">
-                                Autore:
-                                <br>
-                                <input type="text" name="autore" size="30" maxlength="50"placeholder ="Autore..."/><br>
+                                <input type="text" name="titolo" size="70" maxlength="50"placeholder="Titolo..."/><br>
                             </div>
                         </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                Nome:
+                                <br>
+                                <input type="text" name="nome" size="30" maxlength="50"placeholder="Nome..."/><br>
+                            </div>
+                            <div class="form-group col-md-6">
+                                Cognome:
+                                <br>
+                                <input type="text" name="cognome" size="30" maxlength="50"placeholder ="Cognome..."/><br>
+                            </div>
+                        </div>
+
                         
                         <div class="form-row">
                             <div class="form-group col">
@@ -104,9 +115,9 @@ $biblio_res = $biblio_con->list();
                         </div>
 
                 
-                            <button type="submit" class="btn btn-outline-danger" name="nuovolibro">Salva nuovo libro</button>
+                            <button type="submit" class="btn btn-outline-danger" name="modificalibro">Salva nuovo libro</button>
                             <br></br>
-                            <a href = "/ebiblio/admin/biblioteche_admin.php">Indietro</a>
+                            <a href = "/ebiblio/admin/libro_admin.php">Indietro</a>
 
 
                     </form>

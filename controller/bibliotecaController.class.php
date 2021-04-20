@@ -63,6 +63,7 @@
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
         
+        /*
         //funzione per controllare l'esistenza dell'email
         public function getLikeEmail($Email){
             $query = "SELECT * FROM Biblioteca WHERE LOWER(Email) LIKE CONCAT"."('%',LOWER('$Email'),'%')";
