@@ -8,7 +8,6 @@ $carta_res = $cartaCon -> list();
 
 
 ?>
-
 <div class="container-fluid " style="  
 background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
 ">
@@ -25,9 +24,7 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
               <input type="text" class="form-control" name="Nome" id="nomeId" aria-describedby="emailHelp" placeholder="Inserire nome biblioteca">
             </div>
             <input type="submit" name="biblioform_submitted" class="btn btn-primary" value="Ricerca"></input>
-            <input name="newThread" type="button" class="btn btn-primary" value="Aggiungi biblioteca" onclick="window.open('/Ebiblio/admin/nuova_biblioteca.php')"/>
-            <input type="submit" name="deleteform_submitted" class="btn btn-primary" value="Elimina biblioteca"></input>
-
+            <input name="newThread" type="button" class="btn btn-primary" value="Aggiungi" onclick="window.open('/Ebiblio/admin/nuova_biblioteca.php')"/>
           </form>
           </br>
           </br>
@@ -52,9 +49,9 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
                     echo "Nessun risultato corrispondente";
                   }
                   for ($i = 0; $i < count($res); $i++) {
-                    echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/admin/biblioinfo?Nome=' . $res[$i]['Nome'] .
+                    echo'<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/admin/biblioinfo?Nome=' . $res[$i]['Nome'] .
                       '&Latitudine=' . $res[$i]['Latitudine'] . '&Longitudine=' . $res[$i]['Longitudine'] . '&Indirizzo=' . $res[$i]['Indirizzo'] .
-                      '\');"' . '>';
+                      '\');"' ;
                     echo '<td>' . $res[$i]['Nome'] . '</td>';
                     echo '<td>'  . $res[$i]['Indirizzo'] . '</td>';
                     echo '</tr>';
@@ -66,12 +63,13 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
                 $param_biblio_info = '?Nome=';
 
                 for ($i = 0; $i < count($res); $i++) {
-                  echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/admin/biblioinfo?Nome=' . $res[$i]['Nome'] .
-                    '&Latitudine=' . $res[$i]['Latitudine'] . '&Longitudine=' . $res[$i]['Longitudine'] . '&Indirizzo=' . $res[$i]['Indirizzo'] .
-                    '\');"' . '>';
+                   echo '<tr ' .$res[$i]['Nome'].'</tr>';
                   echo '<td>' . $res[$i]['Nome'] . '</td>';
                   echo '<td>'  . $res[$i]['Indirizzo'] . '</td>';
+                  echo '<td>'.'<input type="submit" name="updateform_submitted" class="btn btn-primary" value="Modifica"</input>'.'</td>';
+                  echo '<td>'.'<input type="submit" name="deleteform_submitted" class="btn btn-primary" value="Elimina"</input>'.'</td>';
                   echo '</tr>';
+                
                 }
               }
               ?>
