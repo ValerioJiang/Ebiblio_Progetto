@@ -1,8 +1,5 @@
 <?php
-//session_start();
-
 require_once('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
-
 
 $utente_con = new UtilizzatoreController();
 $utente_res = $utente_con->list();
@@ -55,53 +52,26 @@ $utente_res = $utente_con->list();
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
-                <a href="/ebiblio" class="nav-item nav-link">Home</a>
-                <a href="/ebiblio/biblioteche.php" class="nav-item nav-link">Biblioteche</a>
+                <a href="/ebiblio/volontario/" class="nav-item nav-link">Home</a>
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle nav-item nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Servizi
+                        Consegna
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="/ebiblio/prenot_posto_let/biblio_scelta.php">Prenotazione Posto Lettura</a>
-                        <a class="dropdown-item" href="/ebiblio/Libro.php">Prenotazione Libri</a>
-                        <a class="dropdown-item" href="/ebiblio/Ebook.php">Accesso Ebook</a>
+                        <a class="dropdown-item" href="/ebiblio/volontario/#">Tutte le consegne</a> 
+                        <a class="dropdown-item" href="/ebiblio/volontario/#">Consegne prese in carico</a>
+                        <a class="dropdown-item" href="/ebiblio/volontario/#">Consegne effettuate</a>
                     </div>
                 </div>
-                <a href="#" class="nav-item nav-link">Statistiche</a>
+                
             </div>
 
             <div class="navbar-nav ml-auto">
             <?php
             
             if(isset($_SESSION["email"])){
-                echo"    <div class='dropdown'>
-                <button class='btn btn-secondary dropdown-toggle nav-item nav-link' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-                    Accesso
-                </button>
-                <div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
-                    <a class='dropdown-item' href='/ebiblio/accesso/acc_volo.php'>Utilizzatore</a>
-                    <a class='dropdown-item' href='/ebiblio/accesso/acc_amm.php'>Amministratore</a>
-                    <a class='dropdown-item' href='/ebiblio/accesso/acc_utiliz.php'>Volontario</a>
-                </div>
-            </div>";
-                
                echo"<a class='nav-item nav-link' href='/ebiblio/logout.php?email=".$_SESSION['email']."'>Logout</a>";
                
-            }else{
-               echo"    <div class='dropdown'>
-               <button class='btn btn-secondary dropdown-toggle nav-item nav-link' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-                   Accesso
-               </button>
-               <div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
-                   <a class='dropdown-item' href='/ebiblio/accesso/acc_volo.php'>Utilizzatore</a>
-                   <a class='dropdown-item' href='/ebiblio/accesso/acc_amm.php'>Amministratore</a>
-                   <a class='dropdown-item' href='/ebiblio/accesso/acc_utiliz.php'>Volontario</a>
-               </div>
-           </div>";
-             
-               echo"<a href='/ebiblio/registrazione.php' class='nav-item nav-link'>Registrati</a>";
-               
-
             }
             
             ?>
