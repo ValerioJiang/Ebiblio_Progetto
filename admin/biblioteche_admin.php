@@ -24,7 +24,7 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
               <input type="text" class="form-control" name="Nome" id="nomeId" aria-describedby="emailHelp" placeholder="Inserire nome biblioteca">
             </div>
             <input type="submit" name="biblioform_submitted" class="btn btn-primary" value="Ricerca"></input>
-            <input name="newThread" type="button" class="btn btn-primary" value="Aggiungi" onclick="window.open('/Ebiblio/admin/nuova_biblioteca.php')"/>
+            <!--<input  type="button" name="nuovabiblio" class="btn btn-primary" value="Aggiungi" onclick="window.open('/Ebiblio/admin/nuova_biblioteca.php')"/>-->
           </form>
           </br>
           </br>
@@ -63,11 +63,14 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
                 $param_biblio_info = '?Nome=';
 
                 for ($i = 0; $i < count($res); $i++) {
-                   echo '<tr ' .$res[$i]['Nome'].'</tr>';
+                  //echo '<tr ' .$res[$i]['Nome'].'</tr>';
+                  echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/biblioinfo?Nome=' . $res[$i]['Nome'] .
+                  '&Latitudine=' . $res[$i]['Latitudine'] . '&Longitudine=' . $res[$i]['Longitudine'] . '&Indirizzo=' . $res[$i]['Indirizzo'] .
+                  '\');"' . '>';
                   echo '<td>' . $res[$i]['Nome'] . '</td>';
                   echo '<td>'  . $res[$i]['Indirizzo'] . '</td>';
-                  echo '<td>'.'<input type="submit" name="updateform_submitted" class="btn btn-primary" value="Modifica"</input>'.'</td>';
-                  echo '<td>'.'<input type="submit" name="deleteform_submitted" class="btn btn-primary" value="Elimina"</input>'.'</td>';
+                  //echo '<td>'.'<input type="button" name="updateform_submitted" class="btn btn-primary" value="Modifica" onclick="window.location.assign(\'/Ebiblio/admin/modifica_biblioteca.php\')" </input>'.'</td>';
+                  //echo '<td>'.'<input type="submit" name="deleteform_submitted" class="btn btn-primary" value="Elimina"</input>'.'</td>';
                   echo '</tr>';
                 
                 }
