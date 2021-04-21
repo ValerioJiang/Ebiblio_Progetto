@@ -2,7 +2,7 @@
 
 
 require_once('/xampp/htdocs/ebiblio/main_partials/menu.php');
-$volon_con = new VolontarioController();
+
 
 ?>
 
@@ -44,7 +44,29 @@ $volon_con = new VolontarioController();
                 <button type="submit" class="btn btn-outline-danger" name="accedi">Accedi</button>
             </form>
 
-            
+            <?php
+                
+
+                $volon_con = new VolontarioController();
+                
+                if (isset($_POST["email"]) && isset($_POST["password"])) {
+                    $email = $_POST['email'];
+                    $password = $_POST['password'];
+                    $utili_res = $volon_con->checkEsistenza($email, $password);
+                    //controllo riempimento di tutti i campi:
+                    $volon_checkEsistenza = $volon_con->checkEsistenza($email, $password);
+                
+                    if (count($volon_checkEsistenza) == 1) {
+                        session_start();
+                        $_SESSION['email'] = $_POST['email'];
+                        $_SESSION['esistenza'] = true;
+                    }
+                    else{
+                        header("Location: http://localhost/ebiblio?error=PiuVoloGetLike");
+                    }
+                }
+
+            ?>
             
             <div class="modal-footer m-3">
                 <em>Utente non registrato? </em> <a href="registrazione.php">Registrati</a>

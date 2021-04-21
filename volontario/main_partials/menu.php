@@ -1,6 +1,8 @@
 <?php
 require_once('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
 
+session_start();
+
 $utente_con = new UtilizzatoreController();
 $utente_res = $utente_con->list();
 
