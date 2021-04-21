@@ -29,19 +29,12 @@ $cartaceo_res = $cartaceo_Con->list();
                                     $edizionetrim = trim($_POST['edizione']);
                                     $generetrim = trim($_POST['genere']);
                                     $annotrim = trim($_POST['anno']);
-                                    
+            
                                     
                                     //imposto variabili per controllare che le info inserite siano già state utilizzate
                                     $res_Autore= $cartaceo_Con->getLikeAutoreCartaceo($_POST['nome'],$_POST['cognome']);
                      
-                                    /*
-                                    //controllo coordinate:
-                                   // $res_coordinate = $biblioCon->getLikeCoordinate($_POST['latitudine'], $_POST['longitudine']);
-                                    //controllo esistenza biblioteca:
-                                    $res = $biblioCon->getLikeBiblioteca($_POST['nome']);
-                                    */
-
-
+                            
                                     if ((ctype_space($titolotrim)||$titolotrim=='')||(ctype_space($nometrim)||$nometrim=='')||(ctype_space($cognometrim)||$cognometrim=='')|| (ctype_space($edizionetrim)||$edizionetrim=='')||(ctype_space($generetrim)||$generetrim=='')||(ctype_space($annotrim)||$annotrim=='')){
                                         echo "Per favore riempire tutti i campi";
                                     }else{
@@ -50,15 +43,16 @@ $cartaceo_res = $cartaceo_Con->list();
             
                                         $cartaceo = $cartaceo_Con->createAutore($nometrim,$cognometrim);   
                                         $cartaceo = $cartaceo_Con->createCartaceo($titolotrim,$edizionetrim,$generetrim,$annotrim); 
-
+                                        $codAutore = $cartaceo_Con->getCodiceAutore($nometrim,$cognometrim); 
+                                        $codLibro = $cartaceo_Con->getCodiceLibro($titolotrim,$edizionetrim);
+                                        $autoreLibro = $cartaceo_Con->createAutore_libro($codLibro[0]['Codice'],$codAutore[0]['Codice']); 
                                     }  else{
                                         $codAutore = $cartaceo_Con->getCodiceAutore($nometrim,$cognometrim); 
-                                        $codLibro = $cartaceo_Con->getCodiceLibro($titolotrim); 
-                                        $cartaceo = $cartaceo_Con->createAutore_libro($codLibro,$codAutore);
-                                        $cartaceo = $cartaceo_Con->createCartaceo($titolotrim,$edizionetrim,$generetrim,$annotrim); 
-                                        }
+                                        $codLibro = $cartaceo_Con->getCodiceLibro($titolotrim,$edizionetrim);
+                                        $autoreLibro = $cartaceo_Con->createAutore_libro($codLibro[0]['Codice'],$codAutore[0]['Codice']); 
+
                                     }
-                                    
+                                }
                                     
                                     /*else if(count($res_sito)>=1){
                                         echo "Sito inserito già in uso";

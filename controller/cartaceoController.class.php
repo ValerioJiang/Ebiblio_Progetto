@@ -78,21 +78,22 @@
     }
     
     //inserimento dati in autore_libro
-    public function getCodiceLibro($Titolo){
-        $query = "SELECT cartaceo.codice FROM cartaceo WHERE LOWER(titolo) like CONCAT"." ('%',LOWER('$Titolo'),'%')";
-        
+    public function getCodiceLibro($Titolo,$Edizione){
+        $query = " SELECT * FROM CARTACEO where LOWER(Titolo) LIKE CONCAT"."('%',LOWER('$Titolo'),'%') and
+        LOWER(Edizione) LIKE CONCAT"."('%',LOWER('$Edizione'),'%')" ;        
         $stmt = Dbh::getInstance()
         ->getDb()
         ->prepare($query);
         $stmt-> execute();
 
-        return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        return $stmt -> fetchAll(PDO::FETCH_ASSOC) ;
    
     }
 
-    public function getCodiceAutore($Nome,$Cognome){
-        $query = "SELECT autore.codice FROM AUTORE where LOWER(Cognome) LIKE CONCAT"."('%',LOWER('$Cognome'),'%')"."and LOWER(Nome) LIKE CONCAT"."('%',LOWER('$Nome'),'%')";
-        
+    
+    public function getCodiceAutore($Nome,$Cognome){       
+       $query = "SELECT * FROM AUTORE where LOWER(Cognome) LIKE CONCAT"."('%',LOWER('$Cognome'),'%') and
+        LOWER(nome) LIKE CONCAT"."('%',LOWER('$Nome'),'%')" ;
         $stmt = Dbh::getInstance()
         ->getDb()
         ->prepare($query);
