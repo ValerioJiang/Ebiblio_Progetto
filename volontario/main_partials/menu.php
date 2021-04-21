@@ -22,7 +22,7 @@ $utente_res = $utente_con->list();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>  
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <!-- Lib for leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
@@ -42,7 +42,7 @@ $utente_res = $utente_con->list();
 <body>
 
     <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
-        <a href="/ebiblio" class="navbar-brand">
+        <a href="#" class="navbar-brand">
             <img src="http:\ebiblio\images\book-half.svg" height="28">
             EBIBLIOXUNIBO
         </a>
@@ -52,31 +52,27 @@ $utente_res = $utente_con->list();
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
-                <a href="/ebiblio/volontario/" class="nav-item nav-link">Home</a>
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle nav-item nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Consegna
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="/ebiblio/volontario/#">Tutte le consegne</a> 
+                        <a class="dropdown-item" href="/ebiblio/volontario/consegne/consegne.php">Tutte le consegne</a>
                         <a class="dropdown-item" href="/ebiblio/volontario/#">Consegne prese in carico</a>
                         <a class="dropdown-item" href="/ebiblio/volontario/#">Consegne effettuate</a>
                     </div>
                 </div>
-                
+
             </div>
 
             <div class="navbar-nav ml-auto">
-            <?php
-            
-            if(isset($_SESSION["email"])){
-               echo"<a class='nav-item nav-link' href='/ebiblio/logout.php?email=".$_SESSION['email']."'>Logout</a>";
-               
-            }
-            
-            ?>
+                <?php
+
+                if (isset($_SESSION["email"])) {
+                    echo "<a class='nav-item nav-link' href='/ebiblio/logout.php?email=" . $_SESSION['email'] . "'>Logout</a>";
+                }
+
+                ?>
             </div>
         </div>
     </nav>
-
-

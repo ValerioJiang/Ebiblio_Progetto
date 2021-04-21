@@ -32,7 +32,7 @@ $volon_con = new VolontarioController();
             <h2 class="modal-title" id="login">Accesso</h2>
             <em>volontari:</em><br><br>
 
-            <form method="POST" action ="/ebiblio/volontario/index.php"  class="text-center">
+            <form method="POST" action ="/ebiblio/volontario/index.php?firstAccess=true"  class="text-center">
                 E-mail:
                 <br>
                 <input type="text" name="email" size="20" maxlength="50" placeholder="Email..." />
@@ -43,26 +43,8 @@ $volon_con = new VolontarioController();
                 <br>
                 <button type="submit" class="btn btn-outline-danger" name="accedi">Accedi</button>
             </form>
+
             
-            <?php
-                require_once('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
-                $volon_con = new VolontarioController();
-                
-                    if(isset($_POST["email"])&&isset($_POST["password"])){
-                        $email =$_POST['email'];
-                        $password =$_POST['password'];
-                        $utili_res = $volon_con->checkEsistenza($email,$password);
-                        //controllo riempimento di tutti i campi:
-                        $volon_checkEsistenza = $volon_con->checkEsistenza($email,$password);
-                
-                        if(count($volon_checkEsistenza) == 1){
-                            session_start();
-                            $_SESSION['email'] = $_POST['email'];
-                            $_SESSION['esistenza'] = true;
-                            
-                        }
-                    }
-            ?>
             
             <div class="modal-footer m-3">
                 <em>Utente non registrato? </em> <a href="registrazione.php">Registrati</a>
