@@ -38,7 +38,20 @@ $carta_res = $cartaCon->list();
             <tbody>
 
                 <?php
+ /*
+                if(isset($_POST['elimina'])) {
+                    $cod = trim($_POST['Codice']);
+                    $tit = trim($_POST['Titolo']);
+                    $gen = trim($_POST['Genere']);
+                    $ed = trim($_POST['Edizione']);
+                    $ap = trim($_POST['AnnoPubblicazione']);
+                    $cartaceo = $cartaceo_Con->deleteCartaceo($cod,$tit,$gen,$ed,$ap); 
+    
+                }*/
 
+               
+
+               
 
                 if (isset($_POST['cartaform_submitted'])) {
                     $tit = trim($_POST['Titolo']);
@@ -73,35 +86,32 @@ $carta_res = $cartaCon->list();
                         echo '<td>'  . $carta_res[$i]['Edizione'] . '</td>';
                         echo '<td>'.'<input type="button" name="updateform_submitted" class="btn btn-primary" value="Modifica" onclick="window.location.assign(\'/Ebiblio/admin/modifica_libro.php\')" </input>'.'</td>';
                         //echo '<td>'.'<input type="submit" name="deleteform_submitted" class="btn btn-primary contact-delete" value="Elimina" </input>' .'</td>';
-                       echo'<td>'.'<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> Elimina</button>'.'</td>';
+                       echo'<td>'.'<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"> Elimina</button>'.'</td>';
 
                         echo '</tr>';
                     }
                 }
                 ?>
 
-
-                <<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Attenzione!</h5>
-        <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>-->
-      </div>
-      <div class="modal-body">
-      Sicuro di voler eliminare questo libro?
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary contact-delete" data-dismiss="modal">Elimina</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal" >Indietro</button>
-      </div>
-    </div>
-  </div>
-</div>
+                <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Attenzione!</h5>
+                        
+                        </div>
+                        <div class="modal-body">
+                        Sicuro di voler eliminare questo libro?
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id ="elimina" class="btn btn-danger" data-dismiss="modal">Elimina</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" >Indietro</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
 
             </tbody>
         </table>

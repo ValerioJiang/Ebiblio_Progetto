@@ -77,40 +77,47 @@
 
     }
     
-    /*
-    //aggiunta nuovi elementi in autore_libro
-    public function createAutore_libro($Titolo,$Nome,$Cognome){
-        $libroCod = "SELECT  cartaceo.codice from cartaceo where LOWER(Titolo) LIKE CONCAT"."('%',LOWER('$Titolo'),'%')";
-        $stmt1 = Dbh::getInstance()
+    //inserimento dati in autore_libro
+    public function getCodiceLibro($Titolo){
+        $query = "SELECT cartaceo.codice FROM cartaceo WHERE LOWER(titolo) like CONCAT"." ('%',LOWER('$Titolo'),'%')";
+        
+        $stmt = Dbh::getInstance()
         ->getDb()
-        ->prepare($libroCod);
-    $stmt1-> execute();
-    return $stmt1 -> fetchAll(PDO::FETCH_ASSOC);
-    
-    $autoreCod = "SELECT autore.codice FROM AUTORE where LOWER(Cognome) LIKE CONCAT"."('%',LOWER('$Cognome'),'%')"."and LOWER(Nome) LIKE CONCAT"."('%',LOWER('$Nome'),'%')";
-    $stmt2 = Dbh::getInstance()
+        ->prepare($query);
+        $stmt-> execute();
+
+        return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+   
+    }
+
+    public function getCodiceAutore($Nome,$Cognome){
+        $query = "SELECT autore.codice FROM AUTORE where LOWER(Cognome) LIKE CONCAT"."('%',LOWER('$Cognome'),'%')"."and LOWER(Nome) LIKE CONCAT"."('%',LOWER('$Nome'),'%')";
+        
+        $stmt = Dbh::getInstance()
         ->getDb()
-        ->prepare($autoreCod);
-        $stmt2-> execute();
-        return $stmt2 -> fetchAll(PDO::FETCH_ASSOC);
+        ->prepare($query);
+        $stmt-> execute();
 
-        $query = "INSERT INTO autore_libro VALUES($libroCod,$autoreCod)";
-        $stmt3 = Dbh::getInstance()
-            ->getDb()
-            ->prepare($query);
-        $stmt3-> execute();
-        return $stmt3 -> fetchAll(PDO::FETCH_ASSOC);
+        return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+   
+    }
 
+    public function createAutore_libro($codLibro,$codAutore){
+        $query = "INSERT INTO autore_libro values($codLibro,$codAutore)";
+        
+        $stmt = Dbh::getInstance()
+        ->getDb()
+        ->prepare($query);
+        $stmt-> execute();
+
+        return $stmt -> fetchAll(PDO::FETCH_ASSOC);
 
     }
 
-    
-    */
 
     //eliminazione 
-    public function deleteCartaceo($Codice,$Titolo,$Genere,$Edizione,$AnnoPubblicazione){
-       $query =" DELETE from cartaceo where $Codice in (
-            select cartaceo.codice from cartaceo where (titolo like('$Titolo)) and(edizione like('$Edizione')) and(genere like ('$Genere)) and (AnnoPubblicazione = $AnnoPubblicazione))";
+    public function deleteCartaceo($Codice){
+       $query =" DELETE from cartaceo where cartaceo.codice =  $Codice";
     
             $stmt = Dbh::getInstance()
             ->getDb()

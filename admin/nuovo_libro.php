@@ -32,10 +32,8 @@ $cartaceo_res = $cartaceo_Con->list();
                                     
                                     
                                     //imposto variabili per controllare che le info inserite siano già state utilizzate
-                                    ///controllo email:
                                     $res_Autore= $cartaceo_Con->getLikeAutoreCartaceo($_POST['nome'],$_POST['cognome']);
-                                   
-                    
+                     
                                     /*
                                     //controllo coordinate:
                                    // $res_coordinate = $biblioCon->getLikeCoordinate($_POST['latitudine'], $_POST['longitudine']);
@@ -54,9 +52,11 @@ $cartaceo_res = $cartaceo_Con->list();
                                         $cartaceo = $cartaceo_Con->createCartaceo($titolotrim,$edizionetrim,$generetrim,$annotrim); 
 
                                     }  else{
+                                        $codAutore = $cartaceo_Con->getCodiceAutore($nometrim,$cognometrim); 
+                                        $codLibro = $cartaceo_Con->getCodiceLibro($titolotrim); 
+                                        $cartaceo = $cartaceo_Con->createAutore_libro($codLibro,$codAutore);
                                         $cartaceo = $cartaceo_Con->createCartaceo($titolotrim,$edizionetrim,$generetrim,$annotrim); 
-
-                                    }
+                                        }
                                     }
                                     
                                     
