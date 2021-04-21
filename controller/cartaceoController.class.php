@@ -6,6 +6,9 @@
         public $Edizione; 
         public $Genere;
         public $AnnoPubblicazione; 
+
+        /*public $libroCod;
+        public $autoreCod;*/
     }
 
     class CartaceoController{
@@ -57,6 +60,8 @@
         $stmt-> execute();
         
         return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+
+        
     }
 
     //creare nuovo libro cartaceo
@@ -69,8 +74,10 @@
         $stmt-> execute();
         
         return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+
     }
     
+    /*
     //aggiunta nuovi elementi in autore_libro
     public function createAutore_libro($Titolo,$Nome,$Cognome){
         $libroCod = "SELECT  cartaceo.codice from cartaceo where LOWER(Titolo) LIKE CONCAT"."('%',LOWER('$Titolo'),'%')";
@@ -98,5 +105,20 @@
     }
 
     
+    */
+
+    //eliminazione 
+    public function deleteCartaceo($Codice,$Titolo,$Genere,$Edizione,$AnnoPubblicazione){
+       $query =" DELETE from cartaceo where $Codice in (
+            select cartaceo.codice from cartaceo where (titolo like('$Titolo)) and(edizione like('$Edizione')) and(genere like ('$Genere)) and (AnnoPubblicazione = $AnnoPubblicazione))";
+    
+            $stmt = Dbh::getInstance()
+            ->getDb()
+            ->prepare($query);
+            $stmt-> execute();
+
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+       }
     }
+
 ?>

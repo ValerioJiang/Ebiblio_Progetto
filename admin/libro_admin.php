@@ -27,9 +27,12 @@ $carta_res = $cartaCon->list();
         <table class="table table-hover">
             <thead>
                 <tr>
+                    <th>Codice libro</th>
                     <th>Titolo</th>
-                    <th>Anno Pubblicazione</th>
+                    <th>Genere</th>
+                    <th>Anno di pubblicazione</th>
                     <th>Edizione</th>
+
                 </tr>
             </thead>
             <tbody>
@@ -50,7 +53,9 @@ $carta_res = $cartaCon->list();
                         for ($i = 0; $i < count($carta_like); $i++) {
                             echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/admin/libroinfo/index.php?Titolo=' . $carta_like[$i]['Titolo'] .
                                 '&Codice=' . $carta_like[$i]['Titolo'] . '\');"' . '>';
+                            echo '<td>' . $carta_like[$i]['Codice'] . '</td>';
                             echo '<td>' . $carta_like[$i]['Titolo'] . '</td>';
+                            echo '<td>' . $carta_like[$i]['Genere'] . '</td>';
                             echo '<td>' . $carta_like[$i]['AnnoPubblicazione'] . '</td>';
                             echo '<td>'  . $carta_like[$i]['Edizione'] . '</td>';
                             echo '</tr>';
@@ -58,15 +63,45 @@ $carta_res = $cartaCon->list();
                     }
                 } else {
                     for ($i = 0; $i < count($carta_res); $i++) {
-                        echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/admin/libroinfo/index.php?Titolo=' . $carta_res[$i]['Titolo'] .
+                        echo '<tr ' . $carta_res[$i]['Titolo'] .
                             '&Codice=' . $carta_res[$i]['Titolo'] . '\');"' . '>';
+                            
+                        echo '<td>' . $carta_res[$i]['Codice'] . '</td>';
                         echo '<td>' . $carta_res[$i]['Titolo'] . '</td>';
+                        echo '<td>' . $carta_res[$i]['Genere'] . '</td>';
                         echo '<td>' . $carta_res[$i]['AnnoPubblicazione'] . '</td>';
                         echo '<td>'  . $carta_res[$i]['Edizione'] . '</td>';
+                        echo '<td>'.'<input type="button" name="updateform_submitted" class="btn btn-primary" value="Modifica" onclick="window.location.assign(\'/Ebiblio/admin/modifica_libro.php\')" </input>'.'</td>';
+                        //echo '<td>'.'<input type="submit" name="deleteform_submitted" class="btn btn-primary contact-delete" value="Elimina" </input>' .'</td>';
+                       echo'<td>'.'<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> Elimina</button>'.'</td>';
+
                         echo '</tr>';
                     }
                 }
                 ?>
+
+
+                <<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Attenzione!</h5>
+        <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>-->
+      </div>
+      <div class="modal-body">
+      Sicuro di voler eliminare questo libro?
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary contact-delete" data-dismiss="modal">Elimina</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" >Indietro</button>
+      </div>
+    </div>
+  </div>
+</div>
 
             </tbody>
         </table>

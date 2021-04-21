@@ -52,10 +52,9 @@ $cartaceo_res = $cartaceo_Con->list();
             
                                         $cartaceo = $cartaceo_Con->createAutore($nometrim,$cognometrim);   
                                         $cartaceo = $cartaceo_Con->createCartaceo($titolotrim,$edizionetrim,$generetrim,$annotrim); 
-                                
+
                                     }  else{
                                         $cartaceo = $cartaceo_Con->createCartaceo($titolotrim,$edizionetrim,$generetrim,$annotrim); 
-                                        $cartaceo = $cartaceo_Con->createAutore_libro($titolotrim,$nometrim,$cognometrim); 
 
                                     }
                                     }
@@ -97,12 +96,12 @@ $cartaceo_res = $cartaceo_Con->list();
 
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                Nome:
+                                Nome autore:
                                 <br>
                                 <input type="text" name="nome" size="30" maxlength="50"placeholder="Nome..."/><br>
                             </div>
                             <div class="form-group col-md-6">
-                                Cognome:
+                                Cognome autore:
                                 <br>
                                 <input type="text" name="cognome" size="30" maxlength="50"placeholder ="Cognome..."/><br>
                             </div>

@@ -70,73 +70,70 @@ $biblio_res = $biblio_con->list();
                             ?>
                     </div>
             
-                    <h1 class="font-weight-light"> Modifica biblioteca esistente</h1>
+                    <h1 class="font-weight-light">Modifica libro esistente</h1>
             
-                    <form  action=# method ="POST" class ="text-center"> 
+            <form  action=# method ="POST" class ="text-center"> 
 
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                Nome biblioteca:
-                                <br>
-                                <input type="text" name="nome" size="30" maxlength="50"placeholder="Nome..."/><br>
-                            </div>
-                            <div class="form-group col-md-6">
-                                Email biblioteca:
-                                <br>
-                                <input type="text" name="email" size="30" maxlength="50"placeholder ="Email..."/><br>
-                            </div>
-                        </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                       Titolo:
+                        <br>
+                        <input type="text" name="titolo" size="70" maxlength="50"placeholder="Titolo..."/><br>
+                    </div>
+                </div>
 
-                        <div class="form-group">
-                            Sito web biblioteca:
-                            <br>
-                            <input type="text" name="sito" size="70" maxlength="50" placeholder="Sito web..."/><br>
-                        </div>            
-
-                        <div class="form-row">
-                            <div class="form-group col-md">
-                                Indirizzo
-                                <br>
-                                <input type="text" name="indirizzo" size="20" maxlength="50" placeholder="indirizzo..."/><br>
-                            </div>
-                            
-                            <div class="form-group col-md">
-                            Latitudine
-                                <br>
-                                <input type="text" name="latitudine" size="15" maxlength="50"placeholder ="Latitudine..."/><br>
-                            </div>
-                            
-                            <div class="form-group col-md">
-                            Longitudine
-                                <br>
-                                <input type="text" name="longitudine" size="15" maxlength="50"placeholder ="Longitudine..."/><br>
-                            </div>
-                        </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        Nome autore:
+                        <br>
+                        <input type="text" name="nome" size="30" maxlength="50"placeholder="Nome..."/><br>
+                    </div>
+                    <div class="form-group col-md-6">
+                        Cognome autore:
+                        <br>
+                        <input type="text" name="cognome" size="30" maxlength="50"placeholder ="Cognome..."/><br>
+                    </div>
+                </div>
 
                 
-                        <div class="form-row">
-                            <div class="form-group col-md">
-                                Note:
-                                <br>
-                                <input type="text" name="note" size="70" maxlength="200" placeholder="Note..."/><br>
-                            </div>
-                        </div>            
+                <div class="form-row">
+                    <div class="form-group col">
+                        Edizione:
                         <br>
-                            <button type="submit" class="btn btn-outline-danger" name="modificalibro">Salva modifiche</button>
-                            <br></br>
-                            <a href = "/ebiblio/admin/biblioteche_admin.php">Indietro</a>
-
-
-                    </form>
-                    
-                   
-                  
+                        <input type="text" name="edizione" size="70" maxlength="50"placeholder ="Edizione..."/><br>
+                    </div>
                 </div>
-                        
-            </div>
-        </div>
-    </section>
 
+                <div class="form-row">
+                    <div class="form-group col-md">
+                        Genere:
+                        <br>
+                        <input type="text" name="genere" size="30" maxlength="50" placeholder="Genere..."/><br>
+                    </div>
+                    
+                    <div class="form-group col-md">
+                    Anno di pubblicazione
+                        <br>
+                        <input type="text" name="anno" size="30" maxlength="50"placeholder ="Anno di pubblicazione..."/><br>
+                    </div>
+                
+                </div>
+
+        
+                    <button type="submit" class="btn btn-outline-danger" name="modificalibro">Salva modifica </button>
+                    <br></br>
+                    <a href = "/ebiblio/admin/libro_admin.php">Indietro</a>
+
+
+            </form>
+            
+           
+          
+        </div>
+                
+    </div>
+</div>
+</section>
 
     <?php
         include('/xampp/htdocs/ebiblio/admin/admin_partials/footer.php');
