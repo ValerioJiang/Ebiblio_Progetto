@@ -38,6 +38,7 @@
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
 
+        
         //controllo esistenza autore(cartaceo)
         public function getLikeAutoreCartaceo($Nome,$Cognome){
         $query = "SELECT * FROM AUTORE where LOWER(Cognome) LIKE CONCAT"."('%',LOWER('$Cognome'),'%')"."and LOWER(Nome) LIKE CONCAT"."('%',LOWER('$Nome'),'%')";
@@ -49,6 +50,17 @@
         return $stmt -> fetchAll(PDO::FETCH_ASSOC);
     }
 
+    //controllo esistenza libro
+    public function controlloLibro($Titolo,$Nome,$Cognome,$AnnoPubblicazione,$Edizione,$Genere){
+    $query =  "SELECT * from cartaceo join autore_libro on cartaceo.codice = libro  WHERE LOWER(titolo) LIKE CONCAT('%',LOWER('$Titolo'),'%') and LOWER(edizione) LIKE CONCAT('%',LOWER('$Edizione'),'%') and  LOWER(genere) LIKE CONCAT('%',LOWER('$Genere'),'%') and annopubblicazione = $AnnoPubblicazione and autore in( select codice from autore where LOWER(nome) LIKE CONCAT('%',LOWER('$Nome'),'%') and  LOWER(cognome) LIKE CONCAT('%',LOWER('$Cognome'),'%'))";
+   
+    $stmt = Dbh::getInstance()
+    -> getDb()
+    -> prepare($query);
+    $stmt -> execute();
+    return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+    }
+    
        
 
     //creare nuovo autore libro
@@ -88,6 +100,20 @@
 
         return $stmt -> fetchAll(PDO::FETCH_ASSOC) ;
    
+    }
+
+    //controllo esistenza libro
+    public function getCartaceo($Titolo,$Edizione,$Genere,$AnnoPubblicazione){
+    $query = "SELECT * FROM CARTACEO where LOWER(TITOLO) LIKE CONCAT"."('%',LOWER('$Titolo'),'%') and
+        LOWER(Edizione) LIKE CONCAT"."('%',LOWER('$Edizione'),'%')and LOWER(Genere) LIKE CONCAT"."('%',LOWER('$Genere'),'%') 
+        AND LOWER(AnnoPubblicazione) LIKE CONCAT"."('%',LOWER('$AnnoPubblicazione'),'%')";
+
+        $stmt = Dbh::getInstance()
+        ->getDb()
+        ->prepare($query);
+        $stmt-> execute();
+
+        return $stmt -> fetchAll(PDO::FETCH_ASSOC);
     }
 
     

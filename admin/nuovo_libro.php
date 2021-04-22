@@ -33,46 +33,30 @@ $cartaceo_res = $cartaceo_Con->list();
                                     
                                     //imposto variabili per controllare che le info inserite siano già state utilizzate
                                     $res_Autore= $cartaceo_Con->getLikeAutoreCartaceo($_POST['nome'],$_POST['cognome']);
-                     
-                            
+                                    $res_Libro= $cartaceo_Con->controlloLibro($_POST['titolo'],$_POST['nome'],$_POST['cognome'],$_POST['anno'],$_POST['edizione'],$_POST['genere']);
+                                                           
                                     if ((ctype_space($titolotrim)||$titolotrim=='')||(ctype_space($nometrim)||$nometrim=='')||(ctype_space($cognometrim)||$cognometrim=='')|| (ctype_space($edizionetrim)||$edizionetrim=='')||(ctype_space($generetrim)||$generetrim=='')||(ctype_space($annotrim)||$annotrim=='')){
                                         echo "Per favore riempire tutti i campi";
                                     }else{
-                                        
-                                        if (count($res_Autore) ==0){
-            
-                                        $cartaceo = $cartaceo_Con->createAutore($nometrim,$cognometrim);   
-                                        $cartaceo = $cartaceo_Con->createCartaceo($titolotrim,$edizionetrim,$generetrim,$annotrim); 
-                                        $codAutore = $cartaceo_Con->getCodiceAutore($nometrim,$cognometrim); 
-                                        $codLibro = $cartaceo_Con->getCodiceLibro($titolotrim,$edizionetrim);
-                                        $autoreLibro = $cartaceo_Con->createAutore_libro($codLibro[0]['Codice'],$codAutore[0]['Codice']); 
-                                    }  else{
-                                        $codAutore = $cartaceo_Con->getCodiceAutore($nometrim,$cognometrim); 
-                                        $codLibro = $cartaceo_Con->getCodiceLibro($titolotrim,$edizionetrim);
-                                        $autoreLibro = $cartaceo_Con->createAutore_libro($codLibro[0]['Codice'],$codAutore[0]['Codice']); 
 
+                                     if(count($res_Libro)==0){
+                                        $cartaceo=$cartaceo_Con->createCartaceo($titolotrim,$edizionetrim,$generetrim,$annotrim);
+                                        echo "Libro inserito con successo!";
+                                    }/*else if(count($res_Autore)==0){
+                                        $cartace=$cartaceo_Con->createAutore($nometrim,$cognometrim); 
+                                    }else{
+                                       // $cartaceo=$cartaceo_Con->createCartaceo($titolotrim,$edizionetrim,$generetrim,$annotrim);
+                                        $codAutore = $cartaceo_Con->getCodiceAutore($nometrim,$cognometrim); 
+                                        $codLibro = $cartaceo_Con->getCodiceLibro($titolotrim,$edizionetrim);
+                                        $autoreLibro = $cartaceo_Con->createAutore_libro($codLibro[0]['Codice'],$codAutore[0]['Codice']); 
+                                        echo"Libro inserito con successo";
+                                        echo"<br><a href ='Ebiblio/admin/libro_admin.php'</a>";
+                                    }*/ 
+                                
                                     }
                                 }
-                                    
-                                    /*else if(count($res_sito)>=1){
-                                        echo "Sito inserito già in uso";
-                                    }else if ((ctype_space($nometrim)||$nometrim=='')||(ctype_space($emailtrim)||$emailtrim=='')||(ctype_space($sitotrim)||$sitotrim=='')|| (ctype_space($indirizzotrim)||$indirizzotrim=='')||(ctype_space($latitudinetrim)||$latitudinetrim=='')||(ctype_space($longitudinetrim)||$longitudinetrim=='')){
-                                    echo "Per favore riempire tutti i campi";
-                                    }else if (!filter_var($emailtrim, FILTER_VALIDATE_EMAIL)) {//controllo validità email
-                                       echo "Email inserita non valida";
-
-                                    }else{
-                                        
-                                        if (count($res) >=1) {
-                                        echo "Biblioteca già esistente";
-                                        }else{
-                                        $biblio = $biblioCon->createBiblioteca($nometrim,$emailtrim,$sitotrim,$indirizzotrim,$latitudinetrim,$longitudinetrim,$notetrim);                                    
-                                        echo "Biblioteca inserita con successo!";
-                                        echo"<br>";
-                                        echo'<a href = "/ebiblio/admin/biblioteche_admin.php">Torna indietro</a>';
-                                    }
-                                    }*/
-                               }
+                                     
+                               
                             ?>
                     </div>
             
