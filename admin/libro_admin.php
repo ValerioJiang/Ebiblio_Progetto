@@ -57,10 +57,6 @@ $carta_res = $cartaCon->list();
     
                 }*/
 
-               
-
-               
-
                 if (isset($_POST['cartaform_submitted'])) {
                     $tit = trim($_POST['Titolo']);
                     
