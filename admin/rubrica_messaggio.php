@@ -76,10 +76,6 @@ $utilizz_res = $utilizzCon->list();
                         echo '<td>' . $utilizz_res[$i]['Nome'] . '</td>';
                         echo '<td>' . $utilizz_res[$i]['Cognome'] . '</td>';
                         echo '<td>' . $utilizz_res[$i]['Stato'] . '</td>';
-                        //echo '<td>'  . $carta_res[$i]['Edizione'] . '</td>';
-                        //echo '<td>'.'<input type="button" name="updateform_submitted" class="btn btn-primary" value="Modifica" onclick="window.location.assign(\'/Ebiblio/admin/modifica_libro.php\')" </input>'.'</td>';
-                        //echo'<td>'.'<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"> Elimina</button>'.'</td>';
-
                         echo '</tr>';
 
                      }
