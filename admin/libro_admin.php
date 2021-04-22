@@ -1,4 +1,12 @@
 <?php
+
+ /*On page1
+$_SESSION['varname'] = $var_value;
+
+//On page 2
+$var_value = $_SESSION['varname'];*/
+
+
 include('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
 
 $cartaCon = new CartaceoController();
@@ -72,6 +80,15 @@ $carta_res = $cartaCon->list();
                             echo '<td>' . $carta_like[$i]['AnnoPubblicazione'] . '</td>';
                             echo '<td>'  . $carta_like[$i]['Edizione'] . '</td>';
                             echo '</tr>';
+
+                        
+                            
+                            $_SESSION['Codice']=$_POST([$i]['Codice']);
+                            $_SESSION['Titolo']=$_POST([$i]['Titolo']);
+                            $_SESSION['Genere']=$_POST([$i]['Genere']);
+                            $_SESSION['Anno']=$_POST([$i]['AnnoPubblicazione']);
+                            $_SESSION['Edizione']=$_POST([$i]['Edizione']);
+
                         }
                     }
                 } else {
@@ -85,16 +102,17 @@ $carta_res = $cartaCon->list();
                         echo '<td>' . $carta_res[$i]['AnnoPubblicazione'] . '</td>';
                         echo '<td>'  . $carta_res[$i]['Edizione'] . '</td>';
                         echo '<td>'.'<input type="button" name="updateform_submitted" class="btn btn-primary" value="Modifica" onclick="window.location.assign(\'/Ebiblio/admin/modifica_libro.php\')" </input>'.'</td>';
-                        //echo '<td>'.'<input type="submit" name="deleteform_submitted" class="btn btn-primary contact-delete" value="Elimina" </input>' .'</td>';
-                       echo'<td>'.'<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"> Elimina</button>'.'</td>';
+                        echo'<td>'.'<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"> Elimina</button>'.'</td>';
 
                         echo '</tr>';
+
+
                     }
                 }
                 ?>
 
                 <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                         <div class="modal-header">
@@ -106,13 +124,25 @@ $carta_res = $cartaCon->list();
                             
                         </div>
                         <div class="modal-footer">
-                            <button type="button" id ="elimina" class="btn btn-danger" data-dismiss="modal">Elimina</button>
+                            <button type="submit" id ="eliminare" class="btn btn-danger">Elimina</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal" >Indietro</button>
+                            <?php
+                            if(isset($_POST['eliminare'])){
+                                $query = " DELETE FROM cartaceo WHERE codice = $Codice and LOWER(Titolo) LIKE CONCAT"."('%',LOWER('$Titolo'),'%') and LOWER(Edizione) LIKE CONCAT"."('%',LOWER('$Edizione'),'%') and LOWER(Genere) LIKE CONCAT"."('%',LOWER('$Genere'),'%') and annopubblicazione = $AnnoPubblicazione";    
+                                $stmt = Dbh::getInstance()
+                                ->getDb()
+                                ->prepare($query);
+                                $stmt-> execute();
+                                return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+                            }
+                    
+                ?>
                         </div>
                         </div>
                     </div>
                 </div>
 
+                   
             </tbody>
         </table>
     </div>

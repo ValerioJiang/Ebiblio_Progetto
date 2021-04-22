@@ -143,14 +143,12 @@
 
 
     //eliminazione 
-    public function deleteCartaceo($Codice){
-       $query =" DELETE from cartaceo where cartaceo.codice =  $Codice";
-    
+    public function deleteCartaceo($Codice,$Titolo,$Genere,$Edizione,$AnnoPubblicazione){
+       $query = " DELETE FROM cartaceo WHERE codice = $Codice and LOWER(Titolo) LIKE CONCAT"."('%',LOWER('$Titolo'),'%') and LOWER(Edizione) LIKE CONCAT"."('%',LOWER('$Edizione'),'%') and LOWER(Genere) LIKE CONCAT"."('%',LOWER('$Genere'),'%') and annopubblicazione = $AnnoPubblicazione";    
             $stmt = Dbh::getInstance()
             ->getDb()
             ->prepare($query);
             $stmt-> execute();
-
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
        }
     }

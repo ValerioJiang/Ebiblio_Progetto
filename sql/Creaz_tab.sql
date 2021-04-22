@@ -114,7 +114,7 @@ create table AUTORE(
 
 create table AUTORE_LIBRO(
     Libro int,
-    foreign key (Libro) references CARTACEO(Codice),
+    foreign key (Libro) references CARTACEO(Codice) on update cascade on delete cascade,
     Autore int,
     foreign key(Autore) references AUTORE(Codice),
     primary key(Libro,Autore)

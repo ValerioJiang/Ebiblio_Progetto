@@ -92,11 +92,24 @@ if (isset($_POST['accedi'])){
                 <a href="#" class="nav-item nav-link">Statistiche</a>
 
             </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle nav-item nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Gestione Utenti
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Visualizza prenotazione</a>
+                    <a class="dropdown-item" href="#">Bacheca messaggi</a>
+                    <a class="dropdown-item" href="#">Controllo comportamento utenti</a>
+                </div>        
+            </div>               
+
 
             <div class="navbar-nav ml-auto">
-                <a href="#" class="nav-item nav-link">Gestione Utenti</a>
                 <a href="#" class="nav-item nav-link">Profilo</a>
                 <a href="#" class="nav-item nav-link">Logout</a>
+            </div>
+
+                
 
             </div>
         </div>

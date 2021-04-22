@@ -3,7 +3,9 @@ require_once('/xampp/htdocs/Ebiblio/admin/admin_partials/menu.php');
 //require_once ('/xampp/htdocs/Ebiblio/includes/registrazione.inc.php');
 
 $biblio_con = new bibliotecaController();
-$biblio_res = $biblio_con->list();      
+$biblio_res = $biblio_con->list();    
+
+session_start();
 ?>
 
 
@@ -22,51 +24,12 @@ $biblio_res = $biblio_con->list();
                         <div  class ="text-center">
                         
                             <?php
+                            /*On page 1
+                            $_SESSION['varname'] = $var_value;
 
-                            
-                            /*
-                                if (isset($_POST['nuovabiblio'])) {
-                                    $nometrim = trim($_POST['nome']);
-                                    $emailtrim = trim($_POST['email']);
-                                    $sitotrim = trim($_POST['sito']);
-                                    $indirizzotrim = trim($_POST['indirizzo']);
-                                    $latitudinetrim = trim($_POST['latitudine']);
-                                    $longitudinetrim = trim($_POST['longitudine']);
-                                    $notetrim = trim($_POST['note']);*/
-
-                                    /*
-                                    //imposto variabili per controllare che le info inserite siano già state utilizzate
-                                    //controllo email:
-                                    $res_email = $biblioCon->getLikeEmail($_POST['email']);
-                                    //controllo sitto:
-                                    $res_sito = $biblioCon->getLikeSito($_POST['sito']);
-                                    //controllo coordinate:
-                                   // $res_coordinate = $biblioCon->getLikeCoordinate($_POST['latitudine'], $_POST['longitudine']);
-                                    //controllo esistenza biblioteca:
-                                    $res = $biblioCon->getLikeBiblioteca($_POST['nome']);*/
-                                    /*
-                                    if (count($res_email)>=1){
-                                        echo "Email inserita già in uso";
-                                    }else if(count($res_sito)>=1){
-                                        echo "Sito inserito già in uso";
-                                    }else if ((ctype_space($nometrim)||$nometrim=='')||(ctype_space($emailtrim)||$emailtrim=='')||(ctype_space($sitotrim)||$sitotrim=='')|| (ctype_space($indirizzotrim)||$indirizzotrim=='')||(ctype_space($latitudinetrim)||$latitudinetrim=='')||(ctype_space($longitudinetrim)||$longitudinetrim=='')){
-                                    echo "Per favore riempire tutti i campi";
-                                    }else if (!filter_var($emailtrim, FILTER_VALIDATE_EMAIL)) {//controllo validità email
-                                       echo "Email inserita non valida";
-
-                                    }else{
-                                        
-                                        if (count($res) >=1) {
-                                        echo "Biblioteca già esistente";
-                                        }else{
-                                        $biblio = $biblioCon->createBiblioteca($nometrim,$emailtrim,$sitotrim,$indirizzotrim,$latitudinetrim,$longitudinetrim,$notetrim);                                    
-                                        echo "Biblioteca inserita con successo!";
-                                        echo"<br>";
-                                        echo'<a href = "/ebiblio/admin/biblioteche_admin.php">Torna indietro</a>';
-                                    }
-                                    }*/
-                                //}
-                
+                            //On page 2
+                            $var_value = $_SESSION['varname'];*/
+                                    
                             ?>
                     </div>
             
@@ -78,7 +41,7 @@ $biblio_res = $biblio_con->list();
                     <div class="form-group col-md-6">
                        Titolo:
                         <br>
-                        <input type="text" name="titolo" size="70" maxlength="50"placeholder="Titolo..."/><br>
+                        <input type="text" name="titolo" size="70" maxlength="50"placeholder="Titolo..."  /><br>
                     </div>
                 </div>
 
