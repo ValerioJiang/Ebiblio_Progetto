@@ -35,6 +35,18 @@
             
         }
 
+        //controllo esistenza dell'utente(per amministratore)
+        public function checkEsistenza_Admin($utilizzatore){
+        $query= "SELECT * from utilizzatore WHERE LOWER(Email) LIKE CONCAT"."('%',LOWER('$utilizzatore'),'%') or  LOWER(nome) LIKE CONCAT"."('%',LOWER('$utilizzatore'),'%') or LOWER(cognome) LIKE CONCAT"."('%',LOWER('$utilizzatore'),'%')";
+
+        $stmt = Dbh::getInstance()
+        ->getDb() 
+        ->prepare($query);
+        $stmt-> execute();
+        return $stmt -> fetchAll(PDO::FETCH_ASSOC);   
+
+        }
+
         public function checkIscrizione($email){
             //TRUE se utente non esiste altrimenti FALSE
             $query = "SELECT * FROM Utilizzatore WHERE email ='$email'";
