@@ -42,7 +42,12 @@ $cartaceo_res = $cartaceo_Con->list();
                                      if(count($res_Libro)==0){
                                         $cartaceo=$cartaceo_Con->createCartaceo($titolotrim,$edizionetrim,$generetrim,$annotrim);
                                         echo "Libro inserito con successo!";
-                                    }/*else if(count($res_Autore)==0){
+                                    }
+                                    if(count($res_Autore)==0){
+                                        $cartace=$cartaceo_Con->createAutore($nometrim,$cognometrim); 
+                                    }
+                                    
+                                    /*else if(count($res_Autore)==0){
                                         $cartace=$cartaceo_Con->createAutore($nometrim,$cognometrim); 
                                     }else{
                                        // $cartaceo=$cartaceo_Con->createCartaceo($titolotrim,$edizionetrim,$generetrim,$annotrim);
