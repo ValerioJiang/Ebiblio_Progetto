@@ -41,11 +41,19 @@ $cartaceo_res = $cartaceo_Con->list();
 
                                      if(count($res_Libro)==0){
                                         $cartaceo=$cartaceo_Con->createCartaceo($titolotrim,$edizionetrim,$generetrim,$annotrim);
-                                        echo "Libro inserito con successo!";
+                                        //echo "Libro inserito con successo!";
+                                    }else{
+                                        echo"Libro inserito già esistente!";
                                     }
+                                    
                                     if(count($res_Autore)==0){
                                         $cartace=$cartaceo_Con->createAutore($nometrim,$cognometrim); 
                                     }
+                                    $codAutore = $cartaceo_Con->getCodiceAutore($nometrim,$cognometrim); 
+                                    $codLibro = $cartaceo_Con->getCodiceLibro($titolotrim,$edizionetrim);
+                                    $autoreLibro = $cartaceo_Con->createAutore_libro($codLibro[0]['Codice'],$codAutore[0]['Codice']); 
+                                    echo"Libro inserito con successo";
+                                    echo"<br><a href ='Ebiblio/admin/libro_admin.php'</a>";
                                     
                                     /*else if(count($res_Autore)==0){
                                         $cartace=$cartaceo_Con->createAutore($nometrim,$cognometrim); 
