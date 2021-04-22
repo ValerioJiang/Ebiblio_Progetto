@@ -2,6 +2,8 @@
 
 require_once('/xampp/htdocs/ebiblio/volontario/main_partials/menu.php');
 
+session_start();
+
 ?>
 
 
@@ -12,13 +14,11 @@ require_once('/xampp/htdocs/ebiblio/volontario/main_partials/menu.php');
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>Biblioteca</th>
-                        <th>Scaffale</th>
-                        <th>Stato Conservazione</th>
-                        <th>Disponilità</th>
-                        <th>Durata Prestito</th>
-                        <th>Modalità</th>
-                        <th></th>
+                        <th>Codice</th>
+                        <th>Prestito</th>
+                        <th>Tipo Consegna</th>
+                        <th>Note</th>
+                        
                     </tr>
                 </thead>
                 <tbody>

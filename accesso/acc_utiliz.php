@@ -32,7 +32,7 @@ $utiliz_con = new UtilizzatoreController();
             <h2 class="modal-title" id="login">Accesso</h2>
             <em>Utilizzatore:</em><br><br>
 
-            <form method="POST" action ="/ebiblio/utilizzatore/index.php"  class="text-center">
+            <form method="POST" action ="/ebiblio/index.php"  class="text-center">
                 E-mail:
                 <br>
                 <input type="text" name="email" size="20" maxlength="50" placeholder="Email..." />

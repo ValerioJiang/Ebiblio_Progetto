@@ -1,6 +1,7 @@
 <?php
 
 include('/xampp/htdocs/ebiblio/main_partials/menu.php');
+
 $rac_con = new RaccoltaController();
 $car_con = new CartaceoController();
 
