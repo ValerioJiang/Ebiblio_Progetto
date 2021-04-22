@@ -1,9 +1,10 @@
 <?php
 
-
-
+session_start();
+var_dump($_SESSION);
 
 require_once('/xampp/htdocs/ebiblio/main_partials/menu.php');
+
 
 
 $biblio_con = new BibliotecaController();

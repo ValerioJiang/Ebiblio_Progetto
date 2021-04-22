@@ -19,9 +19,6 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
         header("Location: http://localhost/ebiblio?error=PiuVoloGetLike");
     }
 }
-else if(isset($_SESSION['email'])){
-    session_start();
-}
 
 
 $utente_con = new UtilizzatoreController();
@@ -95,7 +92,7 @@ $utente_res = $utente_con->list();
             
             if(isset($_SESSION["email"])){
                 
-               echo"<li><a href='/ebiblio/accesso/acc_volo.php'>Logout</a></li>";
+               echo"<li><a href='/ebiblio/accesso/'>Logout</a></li>";
                
             }else{
                echo "<div class='dropdown'>

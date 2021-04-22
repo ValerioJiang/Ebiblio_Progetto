@@ -235,11 +235,11 @@ create table CONSEGNA(
     Codice int auto_increment,
     Volontario varchar(255),
     CodicePrestito int,
-    foreign key(CodicePrestito)references PRESTITO(Codice),
+    foreign key(CodicePrestito)references PRESTITO(Codice) on delete cascade on update cascade,
     foreign key(Volontario)references VOLONTARIO(Email) on delete cascade on update cascade,
-    DataConsegna date not null,
+    DataConsegna date,
     TipoConsegna varchar(12),
-    Note varchar(200),
+    Note varchar(255),
     constraint valid_tipo_consegna check(TipoConsegna in ("Restituzione","Affidamento")),
     primary key(Codice,Volontario,CodicePrestito)
 );
@@ -252,5 +252,4 @@ create table ACCESSO_EBOOK(
     DataAccesso date not null,
     primary key(Ebook,DataAccesso)
     );
- 
  
