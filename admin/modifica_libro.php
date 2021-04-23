@@ -33,7 +33,7 @@ $mod_res = $mod_con->list();
                                 $generetrim = trim($_POST['genere']);
                                 $annotrim = trim($_POST['anno']);
 
-                                $mod_titolo=$mod_con->updateTitolo($Codice,$titolotrim);
+                        -       $mod_titolo=$mod_con->updateTitolo($Codice,$titolotrim);
                                 $mod_autore=$mod_con->updateNome($Codice,$nometrim);
                                 $mod_autore=$mod_con->updateCognome($Codice,$cognometrim);
                                 $mod_autore=$mod_con->updateEdizione($Codice,$edizionetrim);
