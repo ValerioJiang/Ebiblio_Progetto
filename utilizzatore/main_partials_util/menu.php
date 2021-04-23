@@ -16,7 +16,7 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
         $_SESSION['email'] = $_POST['email'];
         $_SESSION['esistenza'] = true;
     } else {
-        header("Location: http://localhost/ebiblio?error=PiuVoloGetLike");
+        header("Location: http://localhost/ebiblio?error=PiuUtilGetLike");
     }
 }
 
