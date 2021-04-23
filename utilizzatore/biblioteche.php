@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 require_once('/xampp/htdocs/ebiblio/utilizzatore/main_partials/menu.php');
 
@@ -52,7 +51,7 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
                     echo "Nessun risultato corrispondente";
                   }
                   for ($i = 0; $i < count($res); $i++) {
-                    echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/biblioinfo?Nome=' . $res[$i]['Nome'] .
+                    echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/utilizzatore/biblioinfo?Nome=' . $res[$i]['Nome'] .
                       '&Latitudine=' . $res[$i]['Latitudine'] . '&Longitudine=' . $res[$i]['Longitudine'] . '&Indirizzo=' . $res[$i]['Indirizzo'] .
                       '\');"' . '>';
                     echo '<td>' . $res[$i]['Nome'] . '</td>';
@@ -66,7 +65,7 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
                 $param_biblio_info = '?Nome=';
 
                 for ($i = 0; $i < count($res); $i++) {
-                  echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/biblioinfo?Nome=' . $res[$i]['Nome'] .
+                  echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/utilizzatore/biblioinfo?Nome=' . $res[$i]['Nome'] .
                     '&Latitudine=' . $res[$i]['Latitudine'] . '&Longitudine=' . $res[$i]['Longitudine'] . '&Indirizzo=' . $res[$i]['Indirizzo'] .
                     '\');"' . '>';
                   echo '<td>' . $res[$i]['Nome'] . '</td>';

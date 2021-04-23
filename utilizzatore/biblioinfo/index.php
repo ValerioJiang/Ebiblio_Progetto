@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require_once('/xampp/htdocs/ebiblio/utilizzatore/main_partials/menu.php');
 
 $biblio_con = new BibliotecaController();
@@ -43,7 +43,7 @@ $nomeBi = $_GET['Nome'];
     <div class="col mb-2">
       <h3>Servizi: </h3><br>
       Posti lettura totali: <?php echo count($posLet_res) ?><br>
-      <a class="btn btn-secondary" role="button"  href=<?php echo "\"http://localhost/ebiblio/prenot_posto_let/posto_scelta.php?NomeBiblio=".$nomeBi."\"";?>>Prenota posto lettura</a>
+      <a class="btn btn-secondary" role="button"  href=<?php echo "\"http://localhost/ebiblio/prenot_posto_let/utilizzatore/posto_scelta.php?NomeBiblio=".$nomeBi."\"";?>>Prenota posto lettura</a>
     </div>
   </div>
   <div class="row justify-content-center">
@@ -140,5 +140,5 @@ $nomeBi = $_GET['Nome'];
 
 
 <?php
-include('../main_partials/footer.php');
+require_once('/xampp/htdocs/ebiblio/main_partials/footer.php');
 ?>

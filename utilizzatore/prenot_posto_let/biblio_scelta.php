@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+
 
 require_once('/xampp/htdocs/ebiblio/utilizzatore/main_partials/menu.php');
 
@@ -52,7 +52,7 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
                     echo "Nessun risultato corrispondente";
                   }
                   for ($i = 0; $i < count($res); $i++) {
-                    echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/prenot_posto_let/posto_scelta.php?NomeBiblio=' . $res[$i]['Nome'] . '\');"' . '>';
+                    echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/utilizzatore/prenot_posto_let/posto_scelta.php?NomeBiblio=' . $res[$i]['Nome'] . '\');"' . '>';
                     echo '<td>' . $res[$i]['Nome'] . '</td>';
                     echo '<td>'  . $res[$i]['Indirizzo'] . '</td>';
                     echo '</tr>';
@@ -64,7 +64,7 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
                 $param_biblio_info = '?Nome=';
 
                 for ($i = 0; $i < count($res); $i++) {
-                  echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/prenot_posto_let/posto_scelta.php?NomeBiblio=' . $res[$i]['Nome'] .'\');"' . '>';
+                  echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/utilizzatore/prenot_posto_let/posto_scelta.php?NomeBiblio=' . $res[$i]['Nome'] .'\');"' . '>';
                   echo '<td>' . $res[$i]['Nome'] . '</td>';
                   echo '<td>'  . $res[$i]['Indirizzo'] . '</td>';
                   echo '</tr>';

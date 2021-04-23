@@ -1,11 +1,6 @@
 <?php
 
-session_start();
-
-if(!isset($_SESSION['email'])){
-    header("Location: http://localhost/ebiblio?error=AccederePrima");
-}
-
+ 
 require_once('/xampp/htdocs/ebiblio/utilizzatore/main_partials/menu.php');
 $biblio_con = new BibliotecaController();
 
@@ -39,14 +34,14 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
             <?php
                 if(isset($_POST['confBtn'])){
                     $pres_con = new PrestitoController();
-                    $pres_res = $pres_con -> createPrestito("jiangvalerio1998@gmail.com",$_GET['codLibro'],$_GET['nomeBiblio'], $_GET['scaffale'],date('Y-m-d',strtotime('+1 days'))); 
+                    $pres_res = $pres_con -> createPrestito($_SESSION['email'], $_GET['codLibro'],$_GET['nomeBiblio'], $_GET['scaffale'],date('Y-m-d',strtotime('+1 days'))); 
+                    
                     if($pres_res){
                         $message = "Ritiro con libro prenotato con successo";
                         echo "<script type='text/javascript'>alert('$message');
-                        document.location.href = 'http://localhost/ebiblio';
                         </script>";
-                        
                     }
+
                 }
             ?>
            

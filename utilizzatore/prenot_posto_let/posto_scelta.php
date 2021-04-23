@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 require_once('/xampp/htdocs/ebiblio/utilizzatore/main_partials/menu.php');
 $posto_con = new PostoLetturaController();
 $nomeBiblio = $_GET['NomeBiblio'];
@@ -76,7 +74,7 @@ $prenot_con = new PrenotazionePostoLetturaController();
                   if (isset($_GET['optradioPre']) && isset($_GET['optradioPrc'])) {
                     $posto_res = $posto_con->getPostoLettura($nomeBiblio, $_GET['datePicker'], true, true, $_GET['optradio']);
                     for ($i = 0; $i < count($posto_res); $i++) {
-                      echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/prenot_posto_let/posto_scelta.php?Prenotazione=' . $posto_res[$i]['Numero'] .
+                      echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/utilizzatore/prenot_posto_let/posto_scelta.php?Prenotazione=' . $posto_res[$i]['Numero'] .
                         '&NomeBiblio=' .$nomeBiblio . '&oraInizio='.$_GET['optradio'].'&data='. $_GET['datePicker'] .
                         '\');"' . '>';
                       echo '<td>' . $posto_res[$i]['Numero'] . '</td>';
@@ -102,7 +100,7 @@ $prenot_con = new PrenotazionePostoLetturaController();
                   else if (isset($_GET['optradioPrc'])) {
                     $posto_res = $posto_con->getPostoLettura($nomeBiblio, $_GET['datePicker'], true, "", $_GET['optradio']);
                     for ($i = 0; $i < count($posto_res); $i++) {
-                      echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/prenot_posto_let/posto_scelta.php?NomeBiblio=' . $nomeBiblio . '&Prenotazione=' . $posto_res[$i]['Numero'] .
+                      echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/utilizzatore/prenot_posto_let/posto_scelta.php?NomeBiblio=' . $nomeBiblio . '&Prenotazione=' . $posto_res[$i]['Numero'] .
                         '&NomeBiblio=' . $nomeBiblio .'&oraInizio='.$_GET['optradio']. '&data='. $_GET['datePicker'] .
                         '\');"' . '>';
                       echo '<td>' . $posto_res[$i]['Numero'] . '</td>';
@@ -127,7 +125,7 @@ $prenot_con = new PrenotazionePostoLetturaController();
                   } else if (isset($_GET['optradioPre'])) {
                     $posto_res = $posto_con->getPostoLettura($nomeBiblio, $_GET['datePicker'], "", true, $_GET['optradio']);
                     for ($i = 0; $i < count($posto_res); $i++) {
-                      echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/prenot_posto_let/posto_scelta.php?NomeBiblio=' . $nomeBiblio . '&Prenotazione=' . $posto_res[$i]['Numero'] .
+                      echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/utilizzatore/prenot_posto_let/posto_scelta.php?NomeBiblio=' . $nomeBiblio . '&Prenotazione=' . $posto_res[$i]['Numero'] .
                         '&NomeBiblio=' . $nomeBiblio . '&oraInizio='.$_GET['optradio'] . '&data='. $_GET['datePicker'] .
                         '\');"' . '>';
                       echo '<td>' . $posto_res[$i]['Numero'] . '</td>';
@@ -153,7 +151,7 @@ $prenot_con = new PrenotazionePostoLetturaController();
                   else {
 
                     for ($i = 0; $i < count($posto_res); $i++) {
-                      echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/prenot_posto_let/posto_scelta.php?Prenotazione=' . $posto_res[$i]['Numero'] .
+                      echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/utilizzatore/prenot_posto_let/posto_scelta.php?Prenotazione=' . $posto_res[$i]['Numero'] .
                       "&NomeBiblio=" .$nomeBiblio. '&oraInizio='.$_GET['optradio']. '&data='. $_GET['datePicker'] .'\');"' . '>';
                       echo '<td>' . $posto_res[$i]['Numero'] . '</td>';
 

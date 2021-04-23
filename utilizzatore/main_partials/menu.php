@@ -19,6 +19,9 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
         header("Location: http://localhost/ebiblio?error=PiuUtilGetLike");
     }
 }
+else{
+    session_start();
+}
 
 
 $utente_con = new UtilizzatoreController();
@@ -72,8 +75,8 @@ $utente_res = $utente_con->list();
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
-                <a href="/ebiblio" class="nav-item nav-link">Home</a>
-                <a href="/ebiblio/biblioteche.php" class="nav-item nav-link">Biblioteche</a>
+                <a href="/ebiblio/utilizzatore" class="nav-item nav-link">Home</a>
+                <a href="/ebiblio/utilizzatore/biblioteche.php" class="nav-item nav-link">Biblioteche</a>
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle nav-item nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Servizi
@@ -92,7 +95,7 @@ $utente_res = $utente_con->list();
             var_dump($_SESSION);
             if(isset($_SESSION["email"])){
                 
-               echo"<a href='/ebiblio/logout.php' class='nav-item nav-link'>Logout</a></li>";
+               echo"<a href='/ebiblio/utilizzatore/logout.php' class='nav-item nav-link'>Logout</a></li>";
                
             }else{
                echo "<div class='dropdown'>

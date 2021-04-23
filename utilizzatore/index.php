@@ -3,9 +3,7 @@
 
 require_once('/xampp/htdocs/ebiblio/utilizzatore/main_partials/menu.php');
 
-if(isset($_SESSION)){
-  session_start();
-}
+
 ?>
 
 <div class="container-fluid " style="  

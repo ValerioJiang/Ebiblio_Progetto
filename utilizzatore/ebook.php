@@ -1,6 +1,6 @@
 <?php
-session_start();
-require_once('/xampp/htdocs/ebiblio/main_partials/menu.php');
+
+require_once('/xampp/htdocs/ebiblio/utilizzatore/main_partials/menu.php');
 
 
 $ebookCon = new EbookController();
