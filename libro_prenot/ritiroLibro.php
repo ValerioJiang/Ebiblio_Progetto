@@ -1,7 +1,9 @@
 <?php
 
 if(!isset($_SESSION['email'])){
-    header("Location: http://localhost/ebiblio?error=AccederePrima");
+    echo "<script type='text/javascript'>alert('Accedere prima');
+                    window.location = 'http://localhost/ebiblio'; 
+                    </script>";
 }
 
 require_once('/xampp/htdocs/ebiblio/main_partials/menu.php');

@@ -3,7 +3,11 @@
 
 require_once('/xampp/htdocs/ebiblio/main_partials/menu.php');
 
-
+if(!isset($_SESSION['email'])){
+    echo "<script type='text/javascript'>alert('Accedere prima');
+                    window.location = 'http://localhost/ebiblio'; 
+                    </script>";
+}
 
 $biblio_con = new BibliotecaController();
 

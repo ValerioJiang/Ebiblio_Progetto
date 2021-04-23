@@ -2,24 +2,6 @@
 
 require_once('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
 
-$util_con = new UtilizzatoreController();
-
-if (isset($_POST["email"]) && isset($_POST["password"])) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $utili_res = $util_con->checkEsistenza($email, $password);
-    //controllo riempimento di tutti i campi:
-    $util_checkEsistenza = $util_con->checkEsistenza($email, $password);
-
-    if (count($util_checkEsistenza) == 1) {
-        session_start();
-        $_SESSION['email'] = $_POST['email'];
-        $_SESSION['esistenza'] = true;
-    } else {
-        header("Location: http://localhost/ebiblio?error=PiuVoloGetLike");
-    }
-}
-
 
 $utente_con = new UtilizzatoreController();
 $utente_res = $utente_con->list();
@@ -89,7 +71,6 @@ $utente_res = $utente_con->list();
 
             <div class="navbar-nav ml-auto">
             <?php
-            var_dump($_SESSION);
             if(isset($_SESSION["email"])){
                 
                echo"<a href='/ebiblio/logout.php' class='nav-item nav-link'>Logout</a></li>";
