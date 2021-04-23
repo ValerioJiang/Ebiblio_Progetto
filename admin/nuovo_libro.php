@@ -22,7 +22,7 @@ $cartaceo_res = $cartaceo_Con->list();
                         <div  class ="text-center">
                             <?php
                                    
-                                if (isset($_POST['modificalibro'])) {
+                                if (isset($_POST['nuovolibro'])) {
                                     $titolotrim = trim($_POST['titolo']);
                                     $nometrim = trim($_POST['nome']);
                                     $cognometrim = trim($_POST['cognome']);
@@ -113,7 +113,7 @@ $cartaceo_res = $cartaceo_Con->list();
                         </div>
 
                 
-                            <button type="submit" class="btn btn-outline-danger" name="modificalibro">Salva nuovo libro</button>
+                            <button type="submit" class="btn btn-outline-danger" name="nuovolibro">Salva nuovo libro</button>
                             <br></br>
                             <a href = "/ebiblio/admin/libro_admin.php">Indietro</a>
 

@@ -145,12 +145,71 @@
     //eliminazione 
     public function deleteCartaceo($Codice,$Titolo,$Genere,$Edizione,$AnnoPubblicazione){
        $query = " DELETE FROM cartaceo WHERE codice = $Codice and LOWER(Titolo) LIKE CONCAT"."('%',LOWER('$Titolo'),'%') and LOWER(Edizione) LIKE CONCAT"."('%',LOWER('$Edizione'),'%') and LOWER(Genere) LIKE CONCAT"."('%',LOWER('$Genere'),'%') and annopubblicazione = $AnnoPubblicazione";    
-            $stmt = Dbh::getInstance()
-            ->getDb()
-            ->prepare($query);
-            $stmt-> execute();
-            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
-       }
+        $stmt = Dbh::getInstance()
+        ->getDb()
+        ->prepare($query);
+        $stmt-> execute();
+        return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+    }
+    
+
+    //MODIFICA LIBRO
+    public function updateTitolo($Codice,$TitoloNuovo){
+        $query = "UPDATE cartaceo set titolo = '$TitoloNuovo' where codice = $Codice";
+        $stmt = Dbh::getInstance()
+        ->getDb()
+        ->prepare($query);
+        $stmt-> execute();
+        return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function updateNome($Codice,$NomeNuovo){
+        $query = "UPDATE cartaceo set nome = '$NomeNuovo' where codice = $Codice";
+        $stmt = Dbh::getInstance()
+        ->getDb()
+        ->prepare($query);
+        $stmt-> execute();
+        return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function updateCognome($Codice,$CognomeNuovo){
+        $query = "UPDATE cartaceo set cognome = '$CognomeNuovo' where codice = $Codice";
+        $stmt = Dbh::getInstance()
+        ->getDb()
+        ->prepare($query);
+        $stmt-> execute();
+        return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function updateEdizione($Codice,$EdizioneNuovo){
+        $query = "UPDATE cartaceo set edizione = '$EdizioneNuovo' where codice = $Codice";
+        $stmt = Dbh::getInstance()
+        ->getDb()
+        ->prepare($query);
+        $stmt-> execute();
+        return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function updateGenere($Codice,$GenereNuovo){
+        $query = "UPDATE cartaceo set genere = '$GenereNuovo' where codice = $Codice";
+        $stmt = Dbh::getInstance()
+        ->getDb()
+        ->prepare($query);
+        $stmt-> execute();
+        return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function updateAnno($Codice,$AnnoNuovo){
+        $query = "UPDATE cartaceo set annopubblicazione = $AnnoNuovo where codice = $Codice";
+        $stmt = Dbh::getInstance()
+        ->getDb()
+        ->prepare($query);
+        $stmt-> execute();
+        return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+    }
+    
+    
+    
     }
 
 ?>
