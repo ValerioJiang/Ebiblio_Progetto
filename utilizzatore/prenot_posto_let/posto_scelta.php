@@ -1,8 +1,8 @@
 <?php
 
+session_start();
 
-
-require_once('/xampp/htdocs/ebiblio/main_partials/menu.php');
+require_once('/xampp/htdocs/ebiblio/utilizzatore/main_partials/menu.php');
 $posto_con = new PostoLetturaController();
 $nomeBiblio = $_GET['NomeBiblio'];
 

@@ -1,10 +1,12 @@
 <?php
 
+session_start();
+
 if(!isset($_SESSION['email'])){
     header("Location: http://localhost/ebiblio?error=AccederePrima");
 }
 
-require_once('/xampp/htdocs/ebiblio/main_partials/menu.php');
+require_once('/xampp/htdocs/ebiblio/utilizzatore/main_partials/menu.php');
 $biblio_con = new BibliotecaController();
 
 ?>

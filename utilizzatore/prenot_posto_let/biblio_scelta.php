@@ -1,5 +1,8 @@
 <?php
-include('/xampp/htdocs/ebiblio/main_partials/menu.php');
+
+session_start();
+
+require_once('/xampp/htdocs/ebiblio/utilizzatore/main_partials/menu.php');
 
 $biblioCon = new BibliotecaController();
 
