@@ -26,8 +26,7 @@
         /**
          * CREATE
          */
-        public function createPrenotazione($posto, $nomeBiblio, $DataPrenotazione,$oraInizio){
-            $Utilizzatore ="ciao@gmail.com"; //da cambiare con le sessioni
+        public function createPrenotazione($Utilizzatore, $posto, $nomeBiblio, $DataPrenotazione,$oraInizio){
             if($oraInizio === '9:00:00'){
                 $oraFine = '12:00:00';
             }

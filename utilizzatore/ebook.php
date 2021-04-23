@@ -1,7 +1,9 @@
 <?php
-/**
- * TODO
- */
+/*
+if(!isset($_SESSION['email'])){
+    header("Location: http://localhost/ebiblio?error=AccederePrima");
+  }
+*/
 require_once('/xampp/htdocs/ebiblio/main_partials/menu.php');
 
 

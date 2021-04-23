@@ -1,9 +1,6 @@
 <?php
-session_start();
 
-if(!isset($_SESSION['email'])){
-  header("Location: http://localhost/ebiblio?error=AccederePrima");
-}
+
 
 require_once('/xampp/htdocs/ebiblio/main_partials/menu.php');
 $posto_con = new PostoLetturaController();
@@ -187,11 +184,10 @@ $prenot_con = new PrenotazionePostoLetturaController();
           }
 
           if(isset($_GET['Prenotazione'])){
-            $prenot_res = $prenot_con -> createPrenotazione($_GET['Prenotazione'],$_GET['NomeBiblio'], $_GET['data'] ,$_GET['oraInizio']);
+            $prenot_res = $prenot_con -> createPrenotazione($_SESSION['email'],$_GET['Prenotazione'],$_GET['NomeBiblio'], $_GET['data'] ,$_GET['oraInizio']);
             if($prenot_res){
               $message = "Posto lettura prenotato con successo";
                         echo "<script type='text/javascript'>alert('$message');
-                        document.location.href = 'http://localhost/ebiblio';
                         </script>";
             }
           }

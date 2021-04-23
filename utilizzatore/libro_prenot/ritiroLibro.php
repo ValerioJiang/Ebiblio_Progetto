@@ -1,10 +1,10 @@
 <?php
 
+if(!isset($_SESSION['email'])){
+    header("Location: http://localhost/ebiblio?error=AccederePrima");
+}
 
 require_once('/xampp/htdocs/ebiblio/main_partials/menu.php');
-
-
-
 $biblio_con = new BibliotecaController();
 
 ?>
@@ -16,7 +16,7 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
     <div class="container" style="background-color: white;">
         <br>
         <div class="container">
-            <h2>Riepilogo Consegna</h2>
+            <h2>Riepilogo ritiro</h2>
             </br>
             
                 <div class="form-group">
@@ -25,7 +25,7 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
                     <label>Indirizzo: <?php $biblio_res = $biblio_con->getBiblioteca($_GET['nomeBiblio']);
                                         echo $biblio_res[0]['Indirizzo']; ?></label>
                     <br>
-                    <label>Periodo Prestito: verrà inviata una notifica quando il verrà il consegnato il libro da uno dei nostri volontari</label>
+                    <label>Periodo Prestito: <?php echo date('d-m-Y', strtotime("+ 1 days")); ?> <?php echo date('d-m-Y', strtotime(' + 16 days')); ?></label>
                 </div>
                 <form method="post">
                     <input type="submit" name="confBtn" id="test" class="btn btn-primary" value="Conferma" /><br/>
@@ -37,17 +37,9 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
             <?php
                 if(isset($_POST['confBtn'])){
                     $pres_con = new PrestitoController();
-                    $pres_res = $pres_con -> createPrestito($_SESSION['email'], $_GET['codLibro'], $_GET['nomeBiblio'], $_GET['scaffale'], date('Y-m-d',strtotime('+1 days'))); 
-                    
-                    $pres_resGetLikeCodice = $pres_con -> getLikePrestito($_SESSION['email'], $_GET['codLibro'], $_GET['nomeBiblio']);
-
-
-                    $cons_con = new ConsegnaController();
-                    $cons_res = $cons_con -> createConsegna($pres_resGetLikeCodice[0]['Codice'],'Affidamento');
-
-
+                    $pres_res = $pres_con -> createPrestito("jiangvalerio1998@gmail.com",$_GET['codLibro'],$_GET['nomeBiblio'], $_GET['scaffale'],date('Y-m-d',strtotime('+1 days'))); 
                     if($pres_res){
-                        $message = "Consegna libro prenotato con successo";
+                        $message = "Ritiro con libro prenotato con successo";
                         echo "<script type='text/javascript'>alert('$message');
                         document.location.href = 'http://localhost/ebiblio';
                         </script>";

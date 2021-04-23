@@ -1,4 +1,5 @@
 <?php
+    
     if(!isset($_SESSION['email'])){
         $email = $_SESSION['email'];
         // remove all session variables
