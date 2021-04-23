@@ -92,7 +92,7 @@ $utente_res = $utente_con->list();
             
             if(isset($_SESSION["email"])){
                 
-               echo"<li><a href='/ebiblio/accesso/'>Logout</a></li>";
+               echo"<a href='/ebiblio/logout.php' class='nav-item nav-link'>Logout</a></li>";
                
             }else{
                echo "<div class='dropdown'>

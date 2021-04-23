@@ -24,12 +24,13 @@ class ConsegnaController
      */
     public function createConsegna($CodicePrestito, $TipoConsegna)
     {
-        $query = "INSERT INTO CONSEGNA(CodicePrestito, TipoConsegna) VALUES('$CodicePrestito','$TipoConsegna')";
+        $query = "INSERT INTO CONSEGNA(CodicePrestito, TipoConsegna) VALUES($CodicePrestito,'$TipoConsegna')";
         $stmt = Dbh::getInstance()
             ->getDb()
             ->prepare($query);
 
         $stmt->execute();
+        echo $query;
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
