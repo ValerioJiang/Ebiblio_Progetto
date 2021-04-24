@@ -6,17 +6,23 @@
         public $Edizione; 
         public $Genere;
         public $AnnoPubblicazione; 
+        public $NumeroPagine; 
+        public $StatoConservazione; 
+        public $StatoDisponibilita;
+        public $Scaffale; 
+        public $Biblioteca;
 
         /*public $libroCod;
         public $autoreCod;*/
     }
 
     class CartaceoController{
+        
         /**
          * LIST
          */
-        public function list(){
-            $query="SELECT * FROM Cartaceo";
+        public function list($nomeBiblio){
+            $query="SELECT * FROM Cartaceo where Biblioteca = $nomeBiblio";
             $stmt = Dbh::getInstance()
             -> getDb()
             -> prepare($query);
@@ -28,8 +34,8 @@
         /**
          * RETRIEVE
          */
-        public function getLikeLibro($tit){
-            $query="SELECT * FROM Cartaceo WHERE LOWER(Titolo) LIKE CONCAT"."('%',LOWER('$tit'),'%')";
+        public function getLikeLibro($tit,$nomeBiblio){
+            $query="SELECT * FROM Cartaceo WHERE Biblioteca = '$nomeBiblio' AND LOWER(Titolo) LIKE CONCAT"."('%',LOWER('$tit'),'%')";
             $stmt = Dbh::getInstance()
             -> getDb()
             -> prepare($query);
