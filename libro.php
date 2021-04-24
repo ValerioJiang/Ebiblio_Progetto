@@ -28,6 +28,9 @@ $carta_res = $cartaCon->list();
                     <th>Titolo</th>
                     <th>Anno Pubblicazione</th>
                     <th>Edizione</th>
+                    <th>Biblioteca</th>
+                    <th>Disponibilita</th>
+                    <th>Condizioni</th>
                 </tr>
             </thead>
             <tbody>

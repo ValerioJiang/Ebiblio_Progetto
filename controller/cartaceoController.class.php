@@ -21,8 +21,8 @@
         /**
          * LIST
          */
-        public function list($nomeBiblio){
-            $query="SELECT * FROM Cartaceo where Biblioteca = $nomeBiblio";
+        public function list(){
+            $query="SELECT * FROM Cartaceo";
             $stmt = Dbh::getInstance()
             -> getDb()
             -> prepare($query);
@@ -34,8 +34,18 @@
         /**
          * RETRIEVE
          */
-        public function getLikeLibro($tit,$nomeBiblio){
-            $query="SELECT * FROM Cartaceo WHERE Biblioteca = '$nomeBiblio' AND LOWER(Titolo) LIKE CONCAT"."('%',LOWER('$tit'),'%')";
+        public function getBiblioLibri($nomeBiblio){
+            $query="SELECT * FROM Cartaceo where Biblioteca = '$nomeBiblio'";
+            $stmt = Dbh::getInstance()
+            -> getDb()
+            -> prepare($query);
+
+            $stmt -> execute();
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        public function getLikeLibro($tit){
+            $query="SELECT * FROM Cartaceo WHERE LOWER(Titolo) LIKE CONCAT"."('%',LOWER('$tit'),'%')";
             $stmt = Dbh::getInstance()
             -> getDb()
             -> prepare($query);

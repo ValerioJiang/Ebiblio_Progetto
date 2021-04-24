@@ -5,9 +5,6 @@ include('/xampp/htdocs/ebiblio/main_partials/menu.php');
 
 $biblioCon = new BibliotecaController();
 
-$cartaCon = new CartaceoController();
-$carta_res = $cartaCon -> list();
-
 
 ?>
 
