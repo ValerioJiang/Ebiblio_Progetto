@@ -79,14 +79,6 @@ $raccolta_res = $raccoltaCon ->list('amministratore@email.it');//da inserire val
                             echo '<td>'  . $raccolta_like[$i]['Edizione'] . '</td>';
                             echo '</tr>';
 
-                        
-                            /*
-                            $_SESSION['Codice']=$_POST([$i]['Codice']);
-                            $_SESSION['Titolo']=$_POST([$i]['Titolo']);
-                            $_SESSION['Genere']=$_POST([$i]['Genere']);
-                            $_SESSION['Anno']=$_POST([$i]['AnnoPubblicazione']);
-                            $_SESSION['Edizione']=$_POST([$i]['Edizione']);*/
-
                         }
                     }
                 } else {

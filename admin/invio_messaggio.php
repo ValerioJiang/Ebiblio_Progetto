@@ -2,7 +2,7 @@
 require_once('/xampp/htdocs/Ebiblio/admin/admin_partials/menu.php');
 //require_once ('/xampp/htdocs/Ebiblio/includes/registrazione.inc.php');
 
-$messaggio_con = new AmministratoreController();
+$messaggio_con = new MessaggioController();
 $messaggio_res = $messaggio_con->list();      
 ?>
 
@@ -33,20 +33,20 @@ $messaggio_res = $messaggio_con->list();
                                     echo "Per favore riempire tutti i campi";
                                 }else{
 
-                                    $nuovo_messaggio = $messaggio_con->invioMessaggio($titolotrim,$messaggiotrim,'amministratore@email.it',$Destinatario); 
+                                    $nuovo_messaggio = $messaggio_con->createMessaggio("amministratore@email.it",$Destinatario,$titolotrim,$messaggiotrim); 
                                     echo"Messaggio inviato";
                                 }                     
                             }
                         ?>
                     </div>
             
-                    <h1 class="font-weight-light">Inserimento nuovo libro</h1>
+                    <h1 class="font-weight-light">Invia un messaggio</h1>
             
                     <form  action=# method ="POST" class ="text-center"> 
 
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                               Titolo:
+                                <label for="comment">Titolo/Oggetto messaggio:</label>
                                 <br>
                                 <input type="text" name="titolo" size="70" maxlength="50"placeholder="Titolo..."/><br>
                             </div>
@@ -54,13 +54,13 @@ $messaggio_res = $messaggio_con->list();
 
                         <form  action=# method ="POST" class ="text-center"> 
                                 <div class="form-group">
-                                <label for="comment">Invia un messaggio a: #indirizzo email</label>
+                                <label for="comment">Testo messaggio:</label>
                                 <textarea class="form-control" rows="5" name="messaggio" placeholder="Messaggio..."></textarea>
                             </div>
                                   
                             <button type="submit" class="btn btn-outline-danger" name="invio">Invio</button>
                             <br></br>
-                            <a href = "#">Indietro</a>                        
+                            <a href = "/ebiblio/admin/rubrica_messaggio.php">Indietro</a>                   
 
                         </form>
 
