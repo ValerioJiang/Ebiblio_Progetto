@@ -63,7 +63,7 @@ $carta_res = $cartaCon->list();
                     if (ctype_space($tit)||$tit=='') {
                         echo "Titolo libro nullo";
                     } else {
-                        $carta_like = $cartaCon->getLikeLibro($tit);
+                        $carta_like = $cartaCon->getLikeLibroAmministratore('amministratore@email.it',$tit);
                         if (count($carta_like) <= 0) {
                             echo "Nessun risultato corrispondente";
                         }
