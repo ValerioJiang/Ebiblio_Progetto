@@ -11,6 +11,8 @@ include('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
 
 $cartaCon = new CartaceoController();
 $carta_res = $cartaCon->list();
+$raccoltaCon = new RaccoltaController();
+$raccolta_res = $raccoltaCon ->list('amministratore@email.it');//da inserire valore passato con  sessione
 
 ?>
 
@@ -63,40 +65,40 @@ $carta_res = $cartaCon->list();
                     if (ctype_space($tit)||$tit=='') {
                         echo "Titolo libro nullo";
                     } else {
-                        $carta_like = $cartaCon->getLikeLibroAmministratore('amministratore@email.it',$tit);
-                        if (count($carta_like) <= 0) {
+                        $raccolta_like = $raccoltaCon->getLikeLibroAmministratore('amministratore@email.it',$tit);//per ora vslore inserito manualmente(da fare con valore passato da session)
+                        if (count($raccolta_like) <= 0) {
                             echo "Nessun risultato corrispondente";
                         }
-                        for ($i = 0; $i < count($carta_like); $i++) {
-                            echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/admin/libroinfo/index.php?Titolo=' . $carta_like[$i]['Titolo'] .
-                                '&Codice=' . $carta_like[$i]['Titolo'] . '\');"' . '>';
-                            echo '<td>' . $carta_like[$i]['Codice'] . '</td>';
-                            echo '<td>' . $carta_like[$i]['Titolo'] . '</td>';
-                            echo '<td>' . $carta_like[$i]['Genere'] . '</td>';
-                            echo '<td>' . $carta_like[$i]['AnnoPubblicazione'] . '</td>';
-                            echo '<td>'  . $carta_like[$i]['Edizione'] . '</td>';
+                        for ($i = 0; $i < count($raccolta_like); $i++) {
+                            echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/admin/libroinfo/index.php?Titolo=' . $raccolta_like[$i]['Titolo'] .
+                                '&Codice=' . $raccolta_like[$i]['Titolo'] . '\');"' . '>';
+                            echo '<td>' . $raccolta_like[$i]['Codice'] . '</td>';
+                            echo '<td>' . $raccolta_like[$i]['Titolo'] . '</td>';
+                            echo '<td>' . $raccolta_like[$i]['Genere'] . '</td>';
+                            echo '<td>' . $raccolta_like[$i]['AnnoPubblicazione'] . '</td>';
+                            echo '<td>'  . $raccolta_like[$i]['Edizione'] . '</td>';
                             echo '</tr>';
 
                         
-                            
+                            /*
                             $_SESSION['Codice']=$_POST([$i]['Codice']);
                             $_SESSION['Titolo']=$_POST([$i]['Titolo']);
                             $_SESSION['Genere']=$_POST([$i]['Genere']);
                             $_SESSION['Anno']=$_POST([$i]['AnnoPubblicazione']);
-                            $_SESSION['Edizione']=$_POST([$i]['Edizione']);
+                            $_SESSION['Edizione']=$_POST([$i]['Edizione']);*/
 
                         }
                     }
                 } else {
-                    for ($i = 0; $i < count($carta_res); $i++) {
-                        echo '<tr ' . $carta_res[$i]['Titolo'] .
-                            '&Codice=' . $carta_res[$i]['Titolo'] . '\');"' . '>';
+                    for ($i = 0; $i < count($raccolta_res); $i++) {
+                        echo '<tr ' . $raccolta_res[$i]['Titolo'] .
+                            '&Codice=' . $raccolta_res[$i]['Titolo'] . '\');"' . '>';
                             
-                        echo '<td>' . $carta_res[$i]['Codice'] . '</td>';
-                        echo '<td>' . $carta_res[$i]['Titolo'] . '</td>';
-                        echo '<td>' . $carta_res[$i]['Genere'] . '</td>';
-                        echo '<td>' . $carta_res[$i]['AnnoPubblicazione'] . '</td>';
-                        echo '<td>'  . $carta_res[$i]['Edizione'] . '</td>';
+                        echo '<td>' . $raccolta_res[$i]['Codice'] . '</td>';
+                        echo '<td>' . $raccolta_res[$i]['Titolo'] . '</td>';
+                        echo '<td>' . $raccolta_res[$i]['Genere'] . '</td>';
+                        echo '<td>' . $raccolta_res[$i]['AnnoPubblicazione'] . '</td>';
+                        echo '<td>'  . $raccolta_res[$i]['Edizione'] . '</td>';
                         echo '<td>'.'<input type="button" name="updateform_submitted" class="btn btn-primary" value="Modifica" onclick="window.location.assign(\'/Ebiblio/admin/modifica_libro.php\')" </input>'.'</td>';
                         echo'<td>'.'<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"> Elimina</button>'.'</td>';
 
