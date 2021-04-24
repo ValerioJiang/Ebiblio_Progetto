@@ -66,7 +66,7 @@
 
         //INVIO MESSAGGI
         //invio messaggio
-        public function invioMessaggio($Titolo,$Messaggio,$Destinatario,$Mittente){
+        public function invioMessaggio($Titolo,$Messaggio,$Destinatario,$Mittente,){
             $query = "INSERT into  messaggio value('$Mittente','$Destinatario',now(),'$Titolo','$Messaggio')";
 
             $stmt = Dbh::getInstance()

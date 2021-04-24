@@ -21,6 +21,9 @@ $messaggio_res = $messaggio_con->list();
                         <!--messaggi d'errore-->
                     <div  class ="text-center">
                         <?php
+
+                            $Destinatario = $_GET['Destinatario'];
+
                             if (isset($_POST['invio'])) {
                                     
                                 $titolotrim = trim($_POST['titolo']);
@@ -30,7 +33,7 @@ $messaggio_res = $messaggio_con->list();
                                     echo "Per favore riempire tutti i campi";
                                 }else{
 
-                                    $nuovo_messaggio = $messaggio_con->invioMessaggio($titolotrim,$messaggiotrim,'amministratore@email.it','utente@email.it'); 
+                                    $nuovo_messaggio = $messaggio_con->invioMessaggio($titolotrim,$messaggiotrim,'amministratore@email.it',$Destinatario); 
                                     echo"Messaggio inviato";
                                 }                     
                             }

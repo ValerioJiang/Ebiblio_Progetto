@@ -71,47 +71,19 @@ $utilizz_res = $utilizzCon->list();
                     for ($i = 0; $i < count($utilizz_res); $i++) {
                         echo '<tr ' . $utilizz_res[$i]['Email'] .
                             '&Codice=' . $utilizz_res[$i]['Email'] . '\');"' . '>';
-                            
+                                             
                         echo '<td>' . $utilizz_res[$i]['Email'] . '</td>';
                         echo '<td>' . $utilizz_res[$i]['Nome'] . '</td>';
                         echo '<td>' . $utilizz_res[$i]['Cognome'] . '</td>';
                         echo '<td>' . $utilizz_res[$i]['Stato'] . '</td>';
+                        echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/admin/invio_messaggio.php?Destinatario='.$utilizz_res[$i]['Email'].'"'.'>Invia un nuovo messaggio</a></td>';
+                        
                         echo '</tr>';
 
                      }
                  }
                 ?>
 
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Attenzione!</h5>
-                        
-                        </div>
-                        <div class="modal-body">
-                        Sicuro di voler eliminare questo libro?
-                            
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" id ="eliminare" class="btn btn-danger">Elimina</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal" >Indietro</button>
-                            <?php
-                            if(isset($_POST['eliminare'])){
-                                $query = " DELETE FROM cartaceo WHERE codice = $Codice and LOWER(Titolo) LIKE CONCAT"."('%',LOWER('$Titolo'),'%') and LOWER(Edizione) LIKE CONCAT"."('%',LOWER('$Edizione'),'%') and LOWER(Genere) LIKE CONCAT"."('%',LOWER('$Genere'),'%') and annopubblicazione = $AnnoPubblicazione";    
-                                $stmt = Dbh::getInstance()
-                                ->getDb()
-                                ->prepare($query);
-                                $stmt-> execute();
-                                return $stmt -> fetchAll(PDO::FETCH_ASSOC);
-                            }
-                    
-                ?>
-                        </div>
-                        </div>
-                    </div>
-                </div>
 
                    
             </tbody>
