@@ -60,26 +60,25 @@ begin
     DECLARE not_valid_titolo varchar(20);
     DECLARE errMsg varchar(255);
     
-    SELECT COUNT(*) INTO rowNrDisp FROM Raccolta WHERE Biblioteca = NEW.Biblioteca AND Libro = NEW.Libro 
+    SELECT COUNT(*) INTO rowNrDisp FROM Cartaceo WHERE Biblioteca = NEW.Biblioteca AND Codice = NEW.Codice 
     AND StatoDisponibilita = "Disponibile";
     
-    SELECT COUNT(*) INTO rowNrScad FROM Raccolta WHERE Biblioteca = NEW.Biblioteca AND Libro = NEW.Libro 
+    SELECT COUNT(*) INTO rowNrScad FROM Cartaceo WHERE Biblioteca = NEW.Biblioteca AND Codice = NEW.Codice 
     AND StatoConservazione <> "Scadente";
     
-    select Titolo into not_valid_titolo from Cartaceo where Codice = new.Libro;
+    select Titolo into not_valid_titolo from Cartaceo where Codice = new.Codice;
     
     
     IF(rowNrDisp <= 0) THEN
-		SET errMsg = concat("Libro :",not_valid_titolo,"\nRisulta non disponibile in Biblioteca :",NEW.Biblioteca);
-		SIGNAL SQLSTATE '45000' 
+		  SET errMsg = concat("Libro :",not_valid_titolo,"\nRisulta non disponibile in Biblioteca :",NEW.Biblioteca);
+		  SIGNAL SQLSTATE '45000' 
             SET MESSAGE_TEXT = errMsg;
-	ELSEIF(rowNrScad <= 0) THEN
-		SET errMsg = concat("Libro :",not_valid_titolo,"\nRisulta in stato conservazione : Scadente");
-        SIGNAL SQLSTATE '45000' 
+	  ELSEIF(rowNrScad <= 0) THEN
+		  SET errMsg = concat("Libro :",not_valid_titolo,"\nRisulta in stato conservazione : Scadente");
+      SIGNAL SQLSTATE '45000' 
             SET MESSAGE_TEXT = errMsg;
     ELSE
-		UPDATE Raccolta SET StatoDisponibilita = "Prenotato" WHERE Biblioteca = NEW.Biblioteca AND Libro = NEW.Libro AND Scaffale = NEW.Scaffale
-		AND StatoDisponibilita = "Disponibile";
+		    UPDATE Cartaceo SET StatoDisponibilita = "Prenotato" WHERE Biblioteca = NEW.Biblioteca AND Libro = NEW.Libro AND StatoDisponibilita = "Disponibile";
 	END IF;
     
 END//

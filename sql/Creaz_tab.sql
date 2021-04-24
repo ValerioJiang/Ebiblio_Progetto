@@ -67,7 +67,15 @@ create table CARTACEO(
     Titolo varchar(255),
     Edizione varchar(255),
     Genere varchar(255),
-    AnnoPubblicazione int
+    AnnoPubblicazione int,
+    NumeroPagine int,
+    StatoConservazione varchar(9) not null,
+    StatoDisponibilita varchar(11) not null,
+    Scaffale varchar(255) not null,
+    Biblioteca varchar(255) not null,
+    constraint valid_stato_conservazione check(StatoConservazione in ("Ottimo","Buono","Non Buono", "Scadente")),
+    constraint valid_stato_disponibilita check(StatoDisponibilita in ("Disponibile","Prenotato","Consegnato")),
+    foreign key (Biblioteca) references BIBLIOTECA(Nome) on delete cascade on update cascade
 );
 
  
@@ -80,28 +88,9 @@ create table EBOOK(
     Genere varchar(20),
     AnnoPubblicazione int,
     Dimensione decimal(8,2),
-    /*PDF, Praticamente facciamo aggiungere solo da admin e quando verrà aggiunto verra poi salvato su sql*/
+    /*PDF*/
     NumAccessi int
 );
-
- 
-
- 
-create table RACCOLTA(
-    Biblioteca varchar(255),
-    Libro int,
-    StatoConservazione varchar(9) not null,
-    StatoDisponibilita varchar(11) not null,
-    Scaffale varchar(255) not null,
-    constraint valid_stato_conservazione check(StatoConservazione in ("Ottimo","Buono","Non Buono", "Scadente")),
-    constraint valid_stato_disponibilita check(StatoDisponibilita in ("Disponibile","Prenotato","Consegnato")),
-    foreign key (Libro) references CARTACEO(Codice) on delete cascade on update cascade,
-    foreign key (Biblioteca) references BIBLIOTECA(Nome) on delete cascade on update cascade,
-    primary key(Biblioteca, Libro, Scaffale)
-);
-
- 
-
  
 create table AUTORE(
     Codice int primary key auto_increment not null,
@@ -222,7 +211,7 @@ create table PRESTITO(
     Libro int,
     Biblioteca varchar(255),
     Scaffale varchar(255),
-    foreign key (Biblioteca, Libro, Scaffale) references Raccolta(Biblioteca, Libro, Scaffale) on delete cascade on update cascade,
+    foreign key (Biblioteca, Libro, Scaffale) references Cartaceo(Biblioteca, Libro, Scaffale) on delete cascade on update cascade,
     DataInizio date not null,
     DataFine date not null,
     primary key(Codice)
