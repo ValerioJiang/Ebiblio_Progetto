@@ -239,4 +239,3 @@ create table ACCESSO_EBOOK(
     DataAccesso date not null,
     primary key(Ebook,DataAccesso)
     );
- 

@@ -40,8 +40,8 @@ $carta_res = $cartaCon->list();
 
                 if (isset($_POST['cartaform_submitted'])) {
                     $tit = trim($_POST['Titolo']);
-                    
-                    if (ctype_space($tit)||$tit=='') {
+
+                    if (ctype_space($tit) || $tit == '') {
                         echo "Titolo libro nullo";
                     } else {
                         $carta_like = $cartaCon->getLikeLibro($tit);
@@ -54,16 +54,24 @@ $carta_res = $cartaCon->list();
                             echo '<td>' . $carta_like[$i]['Titolo'] . '</td>';
                             echo '<td>' . $carta_like[$i]['AnnoPubblicazione'] . '</td>';
                             echo '<td>'  . $carta_like[$i]['Edizione'] . '</td>';
+                            echo '<td>'  . $carta_like[$i]['Biblioteca'] . '</td>';
+                            echo '<td>'  . $carta_like[$i]['StatoDisponibilita'] . '</td>';
+                            echo '<td>'  . $carta_like[$i]['StatoConservazione'] . '</td>';
                             echo '</tr>';
                         }
                     }
                 } else {
+                    
                     for ($i = 0; $i < count($carta_res); $i++) {
                         echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/libro_prenot/libroinfo.php?Titolo=' . $carta_res[$i]['Titolo'] .
                             '&codLibro=' . $carta_res[$i]['Codice'] . '\');"' . '>';
                         echo '<td>' . $carta_res[$i]['Titolo'] . '</td>';
                         echo '<td>' . $carta_res[$i]['AnnoPubblicazione'] . '</td>';
                         echo '<td>'  . $carta_res[$i]['Edizione'] . '</td>';
+                        echo '<td>'  . $carta_res[$i]['Biblioteca'] . '</td>';
+                        echo '<td>'  . $carta_res[$i]['StatoDisponibilita'] . '</td>';
+                        echo '<td>'  . $carta_res[$i]['StatoConservazione'] . '</td>';
+
                         echo '</tr>';
                     }
                 }
@@ -75,5 +83,5 @@ $carta_res = $cartaCon->list();
 </div>
 
 <?php
-  require_once('/xampp/htdocs/ebiblio/main_partials/footer.php');
-  ?>
+require_once('/xampp/htdocs/ebiblio/main_partials/footer.php');
+?>

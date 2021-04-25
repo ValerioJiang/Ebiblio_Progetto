@@ -1,14 +1,15 @@
 
+insert into Biblioteca values
+("Biblioteca Universitaria di Bologna", "bub.info@unibo.it","http://www.bub.unibo.it/","Via Zamboni, 33-35 Bologna 40126 BO",44.496888812159334, 11.35242160179635,"Sospensione visite guidate A seguito del DPCM del 14 gennaio 2021, le visite guidate alle sale monumentali della biblioteca sono sospese a tempo indeterminato. Scopri i luoghi e i tesori della Biblioteca Universitaria direttamente a casa tua. Norme sui servizi della BUB a seguito Ord. Reg. n. 25 del 3 marzo 2021 Fino al 21 marzo i servizi bibliotecari sono attivi solo per utenti Unibo e solo su prenotazione. Riduzione orario di apertura al pubblico della BUB Per contrastare ulteriormente la riduzione del contagio da Covid19, da venerdì 13 marzo e per tutta la durata della fascia rossa BUB sarà chiusa al pubblico nei pomeriggi di lunedì, mercoledì e venerdì. Consulta la pagina degli orari per maggiori informazioni. "),
+("Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali","info.bigiavi@unibo.it","http://bigiavi.sba.unibo.it/","Via delle Belle Arti 33 ; Piazza Scaravilli 1 Bologna 40126 BO", 44.497863979106405, 11.351878097972945,"Dal 1983 nuova denominazione dei BO129 - Istituto di Ragioneria e BO132 - Istituto di Tecnica Economica. Dal 2002 assorbe BO127 Biblioteca della Sezione di merceologia-Area tecnologia e valorizzazione risorse del Dipartimento di discipline economico-aziendali.");
 
-insert into Biblioteca values("Biblioteca Universitaria di Bologna", "bub.info@unibo.it","http://www.bub.unibo.it/","Via Zamboni, 33-35 Bologna 40126 BO",44.496888812159334, 11.35242160179635,"Sospensione visite guidate A seguito del DPCM del 14 gennaio 2021, le visite guidate alle sale monumentali della biblioteca sono sospese a tempo indeterminato. Scopri i luoghi e i tesori della Biblioteca Universitaria direttamente a casa tua. Norme sui servizi della BUB a seguito Ord. Reg. n. 25 del 3 marzo 2021 Fino al 21 marzo i servizi bibliotecari sono attivi solo per utenti Unibo e solo su prenotazione. Riduzione orario di apertura al pubblico della BUB Per contrastare ulteriormente la riduzione del contagio da Covid19, da venerdì 13 marzo e per tutta la durata della fascia rossa BUB sarà chiusa al pubblico nei pomeriggi di lunedì, mercoledì e venerdì. Consulta la pagina degli orari per maggiori informazioni. ");
 insert into Telefono values("Biblioteca Universitaria di Bologna", "051/2088300"),
-("Biblioteca Universitaria di Bologna", "051/2088385");
+("Biblioteca Universitaria di Bologna", "051/2088385"),
+("Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali", "051/2098092")
+;
 
-insert into Biblioteca values("Biblioteca Universitaria di Bologna. Sezione Archivio storico",
-"chiara.cocchi@unibo.it","https://archiviostorico.unibo.it/it/biblioteca/biblioteca","Via Zamboni, 33-35 Bologna 40126 BO",44.4970536922416, 11.352913153256157,"ospensione visite guidate A seguito del DPCM del 14 gennaio 2021, le visite guidate alle sale monumentali della biblioteca sono sospese a tempo indeterminato. Scopri i luoghi e i tesori della Biblioteca Universitaria direttamente a casa tua. Norme sui servizi della BUB a seguito Ord. Reg. n. 25 del 3 marzo 2021 Fino al 21 marzo i servizi bibliotecari sono attivi solo per utenti Unibo e solo su prenotazione. Riduzione orario di apertura al pubblico della BUB Per contrastare ulteriormente la riduzione del contagio da Covid19, da venerdì 13 marzo e per tutta la durata della fascia rossa BUB sarà chiusa al pubblico nei pomeriggi di lunedì, mercoledì e venerdì. Consulta la pagina degli orari per maggiori informazioni.");
 
-insert into Telefono values("Biblioteca Universitaria di Bologna. Sezione Archivio storico","051/2088391"),
-("Biblioteca Universitaria di Bologna. Sezione Archivio storico","051/2098615");
+
 insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (1, 'Biblioteca Universitaria di Bologna', true, false);
 insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (2, 'Biblioteca Universitaria di Bologna', false, true);
 insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (3, 'Biblioteca Universitaria di Bologna', false, false);
@@ -235,14 +236,53 @@ insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) valu
 insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (224, 'Biblioteca Universitaria di Bologna', true, false);
 
 
+insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (1, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', false, false);
+insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (2, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', true, true);
+insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (3, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', true, true);
+insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (4, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', true, true);
+insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (5, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', true, true);
+insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (6, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', false, false);
+insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (7, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', true, true);
+insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (8, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', false, true);
+insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (9, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', true, false);
+insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (10, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', true, true);
+insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (11, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', true, false);
+insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (12, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', true, false);
+insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (13, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', false, true);
+insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (14, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', true, true);
+insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (15, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', true, false);
+insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (16, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', false, true);
+insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (17, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', false, true);
+insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (18, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', true, false);
+insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (19, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', true, false);
+insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (20, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', false, true);
+insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (21, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', false, true);
+insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (22, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', false, false);
+insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (23, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', false, false);
+insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (24, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', false, true);
+insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (25, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', false, false);
+insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (26, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', true, false);
+insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (27, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', false, false);
+
 insert into Cartaceo(Titolo, Edizione, Genere, AnnoPubblicazione, NumeroPagine, StatoConservazione, StatoDisponibilita, Scaffale, Biblioteca) values
 ("Il nome della rosa","Illustrata","Romanzo Storico",2014,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
 ("Io non ho paura","Prima","Romanzo",2001,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
 ("Il capitale nel XXI secolo","Prima","Saggio politico",2013,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
 ("1984","Prima","Fantascienza",1950,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
-("La fattoria degli animali","Prima","Romanzo",1947,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna");
+("La fattoria degli animali","Prima","Romanzo",1947,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
+
+("Il nome della rosa","Illustrata","Romanzo Storico",2014,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
+("Io non ho paura","Prima","Romanzo",2001,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
+("Il capitale nel XXI secolo","Prima","Saggio politico",2013,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
+("1984","Prima","Fantascienza",1950,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
+("La fattoria degli animali","Prima","Romanzo",1947,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
+("Manifesto Comunista","Prima","Saggio politico",1918, 576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali")
+
+
+
+;
 
 insert into Utilizzatore values("ciao@gmail.com","123","Ual","Erio",'1998-12-12',"Prato","123456",now(),"Poliziotto","Attivo");
 insert into Amministratore values("amministratore@gmail.com","123","amministratore","de amministris", '1998-12-12', "Prato", "37048511793","AFM","Biblioteca Universitaria di Bologna");
+insert into Amministratore values("amministratoreeco@gmail.com","123","amministratore","de amministris", '1998-12-12', "Prato", "37048511793","AFM","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali");
 insert into volontario values("volontario@gmail.com","123","volontario","de volontaris", '1998-12-12', "Prato", "37048511793","Bici");
-

@@ -1,4 +1,3 @@
-
 drop trigger if exists fine_prestito;
 delimiter //
 create trigger fine_prestito
