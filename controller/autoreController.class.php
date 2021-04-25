@@ -14,9 +14,9 @@ class AutoreController{
     {
     }
 
-    public function getLikeAutore($Codice,$Titolo){
+    public function getLikeAutore($Codice){
         $query = "SELECT Nome,Cognome from autore where codice in(
-            select autore from autore_libro where libro = $codice)";
+            select autore from autore_libro where libro = $Codice";
 
         $stmt = Dbh::getInstance()
         -> getDb()
