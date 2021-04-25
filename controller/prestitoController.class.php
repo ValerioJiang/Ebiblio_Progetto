@@ -23,14 +23,14 @@ class PrestitoController
             ->getDb()
             ->prepare($query);
         
-        echo $query;
+        
         return $stmt->execute();
     }
 
-    public function createPrestitoConsegna($Utilizzatore, $codLibro, $nomeBiblio, $Scaffale)
+    public function createPrestitoConsegna($Utilizzatore, $codLibro, $nomeBiblio)
     {
 
-        $query = "INSERT INTO Prestito(Utilizzatore, Libro, Biblioteca, Scaffale) VALUES ('$Utilizzatore',$codLibro, '$nomeBiblio','$Scaffale')";
+        $query = "INSERT INTO Prestito(Utilizzatore, Libro, Biblioteca) VALUES ('$Utilizzatore',$codLibro, '$nomeBiblio')";
 
         $stmt = Dbh::getInstance()
             ->getDb()
