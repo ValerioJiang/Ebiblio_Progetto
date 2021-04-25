@@ -65,6 +65,7 @@ create table POSTO_LETTURA(
 create table CARTACEO(
     Codice int auto_increment primary key,
     Titolo varchar(255),
+    Autore varchar(255),
     Edizione varchar(255),
     Genere varchar(255),
     AnnoPubblicazione int,
@@ -84,6 +85,7 @@ create table CARTACEO(
 create table EBOOK(
     Codice int primary key auto_increment not null,
     Titolo varchar(20),
+    Autore varchar(200),
     Edizione varchar(20),
     Genere varchar(20),
     AnnoPubblicazione int,
@@ -92,14 +94,6 @@ create table EBOOK(
     NumAccessi int
 );
  
-create table AUTORE(
-    Codice int primary key auto_increment not null,
-    Nome varchar(255),
-    Cognome varchar(255)
-);
-
- 
-
 
 create table AUTORE_LIBRO(
     Libro int,
