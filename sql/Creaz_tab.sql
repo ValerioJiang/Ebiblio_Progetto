@@ -178,7 +178,7 @@ create table SEGNALAZIONE(
  
 create table MESSAGGIO(
     Amministratore varchar(255) references AMMINISTRATORE(Email),
-    foreign key (Amministratore)references AMMINISTRATORE(Email),on delete cascade on update cascade,
+    foreign key (Amministratore)references AMMINISTRATORE(Email) on delete cascade on update cascade,
     Utilizzatore varchar(255) references UTILIZZATORE(Email),
     foreign key(Utilizzatore)references UTILIZZATORE(Email) on delete cascade on update cascade,
     DataInvio datetime not null, 
