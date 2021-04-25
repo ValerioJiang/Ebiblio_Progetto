@@ -24,37 +24,21 @@ $cartaceo_res = $cartaceo_Con->list();
                                    
                                 if (isset($_POST['nuovolibro'])) {
                                     $titolotrim = trim($_POST['titolo']);
-                                    $nometrim = trim($_POST['nome']);
-                                    $cognometrim = trim($_POST['cognome']);
-
+                                    $autoretrim = trim($_POST['autore']);
                                     $edizionetrim = trim($_POST['edizione']);
                                     $generetrim = trim($_POST['genere']);
                                     $annotrim = trim($_POST['anno']);
-            
+                                    $paginetrim = trim($_POST['pagine']);  
+                                    $conservazionetrim = trim($_POST['stato']);
+                                    $scaffaletrim = trim($_POST['scaffale']);
                                     
-                                    //imposto variabili per controllare che le info inserite siano già state utilizzate
-                                    $res_Autore= $cartaceo_Con->getLikeAutoreCartaceo($_POST['nome'],$_POST['cognome']);
-                                    $res_Libro= $cartaceo_Con->controlloLibro($_POST['titolo'],$_POST['nome'],$_POST['cognome'],$_POST['anno'],$_POST['edizione'],$_POST['genere']);
-                                                           
-                                    if ((ctype_space($titolotrim)||$titolotrim=='')||(ctype_space($nometrim)||$nometrim=='')||(ctype_space($cognometrim)||$cognometrim=='')|| (ctype_space($edizionetrim)||$edizionetrim=='')||(ctype_space($generetrim)||$generetrim=='')||(ctype_space($annotrim)||$annotrim=='')){
+                                    $bibliotecaadmin = $cartaceo_Con->getLikeBiblioteca("amministratore@gmail.com");//valore passato con sesisone
+
+                                    if ((ctype_space($titolotrim)||$titolotrim=='')||(ctype_space($autoretrim)||$autoretrim=='')|| (ctype_space($edizionetrim)||$edizionetrim=='')||(ctype_space($generetrim)||$generetrim=='')||(ctype_space($annotrim)||$annotrim=='')||(ctype_space($paginetrim)||$paginetrim=='')||(ctype_space($conservazionetrim)||$conservazionetrim=='')||(ctype_space($scaffaletrim)||$scaffaletrim=='')){
                                         echo "Per favore riempire tutti i campi";
                                     }else{
-
-                                     if(count($res_Libro)==0){
-                                        $cartaceo=$cartaceo_Con->createCartaceo($titolotrim,$edizionetrim,$generetrim,$annotrim);
-                                        //echo "Libro inserito con successo!";
-                                    }else{
-                                        echo"Libro inserito già esistente!";
-                                    }
-                                    
-                                    if(count($res_Autore)==0){
-                                        $cartace=$cartaceo_Con->createAutore($nometrim,$cognometrim); 
-                                    }
-                                    $codAutore = $cartaceo_Con->getCodiceAutore($nometrim,$cognometrim); 
-                                    $codLibro = $cartaceo_Con->getCodiceLibro($titolotrim,$edizionetrim);
-                                    $autoreLibro = $cartaceo_Con->createAutore_libro($codLibro[0]['Codice'],$codAutore[0]['Codice']); 
-                                    echo"Libro inserito con successo";
-
+                                        $creazionecartaceo = $cartaceo_Con->createCartaceo($titolotrim,$autoretrim,$edizionetrim,$generetrim,$annotrim,$paginetrim,$conservazionetrim,$scaffaletrim,$bibliotecaadmin);
+                  
                                     
                                     }
                                 }
@@ -77,40 +61,61 @@ $cartaceo_res = $cartaceo_Con->list();
 
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                Nome autore:
+                            Autore:
+:
                                 <br>
-                                <input type="text" name="nome" size="30" maxlength="50"placeholder="Nome..."/><br>
+                                <input type="text" name="autore" size="70" maxlength="50"placeholder="Autore..."/><br>
                             </div>
+                        </div>
+
+                        <div class="form-row">
                             <div class="form-group col-md-6">
-                                Cognome autore:
+                            Edizione:
+:
                                 <br>
-                                <input type="text" name="cognome" size="30" maxlength="50"placeholder ="Cognome..."/><br>
-                            </div>
-                        </div>
-
-                        
-                        <div class="form-row">
-                            <div class="form-group col">
-                                Edizione:
-                                <br>
-                                <input type="text" name="edizione" size="70" maxlength="50"placeholder ="Edizione..."/><br>
+                                <input type="text" name="edizione" size="70" maxlength="50"placeholder="Edizione..."/><br>
                             </div>
                         </div>
 
                         <div class="form-row">
-                            <div class="form-group col-md">
+                        <div class="form-group col-md-6">
                                 Genere:
                                 <br>
-                                <input type="text" name="genere" size="30" maxlength="50" placeholder="Genere..."/><br>
+                                <input type="text" name="genere" size="30" maxlength="50"placeholder ="Genere..."/><br>
+                            </div>
+                            <div class="form-group col-md-6">
+                                Anno pubblicazione:
+                                <br>
+                                <input type="text" name="anno" size="30" maxlength="50"placeholder="Anno pubblicazione..."/><br>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                Numero pagine:
+                                <br>
+                                <input type="text" name="pagine" size="30" maxlength="50"placeholder ="Numero pagine..."/><br>
+                            </div>
+                            <div class="form-group col-md-6">
+                                Scaffale:
+                                <br>
+                                <input type="text" name="scaffale" size="30" maxlength="50"placeholder ="Scaffale..."/><br>
+                            </div>
+                        </div>
+
+                            <div>
+                                <label for='stato'>Stato libro</label>
+                                    <select multiple class='form-control' name = 'stato' id='statolibro'>
+                                    <option>Ottimo</option>
+                                    <option>Buono</option>
+                                    <option>Non buono</option>
+                                    <option>Scadente</option>
+                                    </select>
+                                    <br>
                             </div>
                             
-                            <div class="form-group col-md">
-                            Anno di pubblicazione
-                                <br>
-                                <input type="text" name="anno" size="30" maxlength="50"placeholder ="Anno di pubblicazione..."/><br>
-                            </div>
                         
-                        </div>
+                        
 
                 
                             <button type="submit" class="btn btn-outline-danger" name="nuovolibro">Salva nuovo libro</button>

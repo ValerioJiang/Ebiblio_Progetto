@@ -105,9 +105,9 @@
         
 
         //creare nuovo libro cartaceo
-        public function createCartaceo($Titolo,$Autore,$Edizione,$Genere,$AnnoPubblicazione,$NumPagine,$StatoConservazione,$Scaffale){
+        public function createCartaceo($Titolo,$Autore,$Edizione,$Genere,$AnnoPubblicazione,$NumPagine,$StatoConservazione,$Scaffale,$Biblioteca){
             
-            $query = "INSERT INTO cartaceo(Titolo,Autore,Edizione,Genere,AnnoPubblicazione,NumeroPagine,StaotConservazione,Scaffale) VALUES ('$Titolo','$Autore','$Edizione','$Genere',$AnnoPubblicazione,$NumPagine,'$StatoConservazione','$Scaffale')";
+            $query = "INSERT INTO cartaceo(Titolo,Autore,Edizione,Genere,AnnoPubblicazione,NumeroPagine,StatoConservazione,StatoPrestito,Scaffale,Biblioteca) VALUES ('$Titolo','$Autore','$Edizione','$Genere',$AnnoPubblicazione,$NumPagine,'$StatoConservazione','Disponibile','$Scaffale','$Biblioteca')";
             $stmt = Dbh::getInstance()
                 ->getDb()
                 ->prepare($query);
@@ -265,6 +265,19 @@
             $stmt-> execute();
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
+
+        public function getLikeBiblioteca($Amministratore){
+            $query = "SELECT bibliotecagestita from amministratore where email like '$Amministratore'";
+
+            $stmt = Dbh::getInstance()
+            ->getDb()
+            ->prepare($query);
+            $stmt-> execute();
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        }
+
+
+      
         
         
     }
