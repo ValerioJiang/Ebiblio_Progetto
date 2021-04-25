@@ -1,4 +1,4 @@
-drop trigger if exists fine_prestito;
+    drop trigger if exists fine_prestito;
 delimiter //
 create trigger fine_prestito
 AFTER INSERT
@@ -59,11 +59,8 @@ begin
     DECLARE not_valid_titolo varchar(20);
     DECLARE errMsg varchar(255);
     
-    SELECT COUNT(*) INTO rowNrDisp FROM Cartaceo WHERE Codice = NEW.Codice 
-    AND StatoPrestito = "Disponibile";
-    
-    SELECT COUNT(*) INTO rowNrScad FROM Cartaceo WHERE Codice = NEW.Codice 
-    AND StatoConservazione <> "Scadente";
+    SELECT COUNT(*) INTO rowNrDisp FROM Cartaceo WHERE Codice = NEW.Libro
+    AND StatoPrestito = "Disponibile" AND StatoConservazione <> "Scadente";
     
     select Titolo into not_valid_titolo from Cartaceo where Codice = new.Codice;
     
@@ -71,17 +68,14 @@ begin
     IF(rowNrDisp <= 0) THEN
 		  SET errMsg = concat("Libro :",not_valid_titolo,"\nRisulta non disponibile in Biblioteca selezionata");
 		  SIGNAL SQLSTATE '45000' 
-            SET MESSAGE_TEXT = errMsg;
-	  ELSEIF(rowNrScad <= 0) THEN
-		  SET errMsg = concat("Libro :",not_valid_titolo,"\nRisulta in stato conservazione : Scadente");
-      SIGNAL SQLSTATE '45000' 
-            SET MESSAGE_TEXT = errMsg;
+            SET MESSAGE_TEXT = "Libro non risulta prenotabile a causa dello stato prestito o conservazione";
     ELSE
-		    UPDATE Cartaceo SET StatoPrestito = "Prenotato" WHERE Libro = NEW.Libro AND StatoPrestito = "Disponibile" AND StatoConservazione <> "Scadente";
+		    UPDATE Cartaceo SET StatoPrestito = "Prenotato" WHERE Codice = NEW.Libro AND StatoPrestito = "Disponibile" AND StatoConservazione <> "Scadente";
 	END IF;
     
 END//
 delimiter ;
+
 
 
 drop trigger if exists trigger_sospensione_utilizzatore;
@@ -105,3 +99,5 @@ begin
     
 END//
 delimiter ;
+
+

@@ -14,15 +14,16 @@ class PrestitoController
     /**
      * CREATE
      */
-    public function createPrestito($Utilizzatore, $codLibro, $nomeBiblio, $Scaffale, $dataInizio)
+    public function createPrestito($Utilizzatore, $codLibro, $dataInizio)
     {
         $dataFine = date("Y-m-d", strtotime("{$dataInizio}+15 days"));
-        $query = "INSERT INTO Prestito(Utilizzatore, Libro, Biblioteca, Scaffale, DataInizio, DataFine) VALUES ('$Utilizzatore',$codLibro, '$nomeBiblio','$Scaffale','$dataInizio','$dataFine')";
+        $query = "INSERT INTO Prestito(Utilizzatore, Libro, DataInizio, DataFine) VALUES ('$Utilizzatore',$codLibro, '$dataInizio','$dataFine')";
 
         $stmt = Dbh::getInstance()
             ->getDb()
             ->prepare($query);
-            
+        
+        echo $query;
         return $stmt->execute();
     }
 

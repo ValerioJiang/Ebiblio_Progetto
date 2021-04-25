@@ -34,7 +34,7 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
             <?php
                 if(isset($_POST['confBtn'])){
                     $pres_con = new PrestitoController();
-                    $pres_res = $pres_con -> createPrestito($_SESSION['email'], $_GET['codLibro'],$_GET['nomeBiblio'], $_GET['scaffale'],date('Y-m-d',strtotime('+1 days'))); 
+                    $pres_res = $pres_con -> createPrestito($_SESSION['email'], $_GET['codLibro'],date('Y-m-d',strtotime('+1 days'))); 
                     
                     if($pres_res){
                         $message = "Ritiro con libro prenotato con successo";
