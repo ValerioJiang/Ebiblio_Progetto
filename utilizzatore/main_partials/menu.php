@@ -94,7 +94,7 @@ $utente_res = $utente_con->list();
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="/ebiblio/utilizzatore/prenotazioni/posti_prenotati.php">Posti Lettura prenotati</a>
-                        <a class="dropdown-item" href="/ebiblio/utilizzatore/Libro.php">Libri prenotati</a>
+                        <a class="dropdown-item" href="/ebiblio/utilizzatore/prenotazioni/libri_prenotati.php">Libri prenotati</a>
                         
                     </div>
                 </div>
