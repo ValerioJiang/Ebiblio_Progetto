@@ -27,23 +27,22 @@ class PrestitoController
         return $stmt->execute();
     }
 
-    public function createPrestitoConsegna($Utilizzatore, $codLibro, $nomeBiblio)
+    public function createPrestitoConsegna($Utilizzatore, $codLibro)
     {
-
-        $query = "INSERT INTO Prestito(Utilizzatore, Libro, Biblioteca) VALUES ('$Utilizzatore',$codLibro, '$nomeBiblio')";
-
+        $query = "INSERT INTO Prestito(Utilizzatore, Libro) VALUES ('$Utilizzatore',$codLibro)";
         $stmt = Dbh::getInstance()
             ->getDb()
             ->prepare($query);
+        echo $query;
         return $stmt->execute();
     }
 
     /**
      * RETRIEVE
      */
-    public function getLikePrestito($Utilizzatore, $Libro, $Biblioteca)
+    public function getLikePrestito($Utilizzatore, $Libro)
     {
-        $query = "SELECT * FROM Prestito where LOWER(Utilizzatore) LIKE CONCAT" . "('%',LOWER('$Utilizzatore'),'%')" ." AND LOWER(Biblioteca) LIKE CONCAT" . "('%',LOWER('$Biblioteca'),'%')" . "and Libro = $Libro ";
+        $query = "SELECT * FROM Prestito where LOWER(Utilizzatore) LIKE CONCAT" . "('%',LOWER('$Utilizzatore'),'%')" . "and Libro = $Libro ";
         $stmt = Dbh::getInstance()
             ->getDb()
             ->prepare($query);

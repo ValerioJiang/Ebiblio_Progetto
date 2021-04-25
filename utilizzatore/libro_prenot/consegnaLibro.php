@@ -38,12 +38,11 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
             <?php
                 if(isset($_POST['confBtn'])){
                     $pres_con = new PrestitoController();
-                    $pres_res = $pres_con -> createPrestitoConsegna($_SESSION['email'], $_GET['codLibro'], $_GET['nomeBiblio'], date('Y-m-d',strtotime('+1 days'))); 
-                    
-                    $pres_resGetLikeCodice = $pres_con -> getLikePrestito($_SESSION['email'], $_GET['codLibro'], $_GET['nomeBiblio']);
+                    $pres_res = $pres_con -> createPrestitoConsegna($_SESSION['email'], $_GET['codLibro']); 
+            
 
                     $cons_con = new ConsegnaController();
-                    $cons_res = $cons_con -> createConsegna($pres_resGetLikeCodice[0]['Codice'],'Affidamento');
+                    $cons_res = $cons_con -> createConsegna($_GET['codLibro'],'Affidamento');
 
 
                     if($pres_res){
