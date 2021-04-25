@@ -39,24 +39,10 @@ $mod_con = new cartaceoController();
                             echo "<div class='form-row'><div class='form-group col-md'>Genere:<br><input type='text' name='genere' size='30' maxlength='50' placeholder='Genere...' value ='$genere'/><br></div>";
                             echo "<div class='form-group col-md'>Anno di pubblicazione<br><input type='text' name='anno' size='30' maxlength='50'placeholder ='Anno di pubblicazione...'value = '$anno'/><br></div></div>";
                             echo "<div class='form-row'><div class='form-group col-md'>Numero di pagine:<br><input type='text' name='pagine' size='30' maxlength='50' placeholder='Numero di pagine...' value ='$pagine'/><br></div>";
-                            echo "<div class='form-group col-md'>Scaffale<br><input type='text' name='scaffale' size='30' maxlength='50'placeholder ='Scaffale...'value = '$scaffale'/><br></div></div>";
-                           
-                            echo"<div class='dropdown'>
-                            <button class='btn btn-primary dropdown-toggle' type='button' id='stato' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-                              Stato di conservazione:
-                            </button>
-                            <div class='dropdown-menu' aria-labelledby='dropdownMenu2'>
-                              <button class='dropdown-item' type='button'>Ottimo</button>
-                              <button class='dropdown-item' type='button'>Buono</button>
-                              <button class='dropdown-item' type='button'>Non buono</button>
-                              <button class='dropdown-item' type='button'>Scadente</button>
-                            </div>
-                            <br><br>
-                          </div>";
-                                
-
-                            
-                           // echo"<br><div class='form-group col-md'> <button type='submit' class='btn btn-outline-danger' name='modificalibro'>Salva modifica </button><br></br><a href = '/ebiblio/admin/libro_admin.php'>Indietro</a>";
+                            echo "<div class='form-group col-md'>Scaffale<br><input type='text' name='anno' size='30' maxlength='50'placeholder ='Scaffale...'value = '$scaffale'/><br></div></div>";
+                            echo"  <div class='form-group col-md'> <button type='submit' class='btn btn-outline-danger' name='modificalibro'>Salva modifica </button>
+                            <br></br>
+                            <a href = '/ebiblio/admin/libro_admin.php'>Indietro</a>";
 
                                 
 
@@ -68,16 +54,13 @@ $mod_con = new cartaceoController();
                                 $edizionetrim = trim($_POST['edizione']);
                                 $generetrim = trim($_POST['genere']);
                                 $annotrim = trim($_POST['anno']);
-                                $scaffaletrim = trim($_POST['scaffale']);
-                                $paginetrim = trim($_POST['pagine']);
 
-
-                                $mod_titolo=$mod_con->updateTitolo($codice,$titolotrim);
-                                $mod_autore=$mod_con->updateNome($codice,$nometrim);
-                                $mod_autore=$mod_con->updateCognome($codice,$cognometrim);
-                                $mod_autore=$mod_con->updateEdizione($codice,$edizionetrim);
-                                $mod_autore=$mod_con->updateGenere($odice,$generetrim);
-                                $mod_autore=$mod_con->updateAnno($codice,$annotrim);
+                        -       $mod_titolo=$mod_con->updateTitolo($Codice,$titolotrim);
+                                $mod_autore=$mod_con->updateNome($Codice,$nometrim);
+                                $mod_autore=$mod_con->updateCognome($Codice,$cognometrim);
+                                $mod_autore=$mod_con->updateEdizione($Codice,$edizionetrim);
+                                $mod_autore=$mod_con->updateGenere($Codice,$generetrim);
+                                $mod_autore=$mod_con->updateAnno($Codice,$annotrim);
 
                                    
                                        //imposto variabili per controllare che le info inserite siano già state utilizzate
