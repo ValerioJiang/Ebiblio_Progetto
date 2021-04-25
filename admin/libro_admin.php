@@ -35,6 +35,7 @@ $carta_res = $cartaCon->list_admin('amministratore@gmail.com');//da inserire val
                 <tr>
                     <th>Codice libro</th>
                     <th>Titolo</th>
+                    <th>Autore</th>
                     <th>Genere</th>
                     <th>Anno di pubblicazione</th>
                     <th>Edizione</th>
@@ -68,7 +69,7 @@ $carta_res = $cartaCon->list_admin('amministratore@gmail.com');//da inserire val
                             
                             echo '<td>' .  $carta_like[$i]['Codice'] . '</td>';
                             echo '<td>' .  $carta_like[$i]['Titolo'] . '</td>';
-                            //autore
+                            echo '<td>' .  $carta_like[$i]['Autore'] . '</td>';
                             echo '<td>' .  $carta_like[$i]['Genere'] . '</td>';
                             echo '<td>' .  $carta_like[$i]['AnnoPubblicazione'] . '</td>';
                             echo '<td>'  .  $carta_like[$i]['Edizione'] . '</td>';
@@ -76,7 +77,7 @@ $carta_res = $cartaCon->list_admin('amministratore@gmail.com');//da inserire val
                             echo '<td>'  .  $carta_like[$i]['StatoConservazione'] . '</td>';
                             echo '<td>'  .  $carta_like[$i]['Scaffale'] . '</td>';
 
-                            echo '<td>'.'<input type="button" name="updateform_submitted" class="btn btn-primary" value="Modifica" onclick="window.location.assign(\'/Ebiblio/admin/modifica_libro.php\')" </input>'.'</td>';
+                            echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/admin/modifica_libro.php?Titolo=' . $carta_res[$i]['Titolo'] .'&Autore=' . $carta_res[$i]['Autore'] .  '&Cod='. $carta_res[$i]['Codice'] . '&Genere=' . $carta_res[$i]['Genere'] .'&AnnoPubblicazione=' . $carta_res[$i]['AnnoPubblicazione'] . '&Edizione=' . $carta_res[$i]['Edizione'] .'&Pagine=' . $carta_res[$i]['NumeroPagine'] . '&Scaffale=' . $carta_res[$i]['Scaffale'].'"'.'>Modifica</a></td>';
                             echo'<td>'.'<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"> Elimina</button>'.'</td>';
     
                         }
@@ -88,6 +89,7 @@ $carta_res = $cartaCon->list_admin('amministratore@gmail.com');//da inserire val
                             
                         echo '<td>' . $carta_res[$i]['Codice'] . '</td>';
                         echo '<td>' . $carta_res[$i]['Titolo'] . '</td>';
+                        echo '<td>' . $carta_res[$i]['Autore'] . '</td>';
                         echo '<td>' . $carta_res[$i]['Genere'] . '</td>';
                         echo '<td>' . $carta_res[$i]['AnnoPubblicazione'] . '</td>';
                         echo '<td>'  . $carta_res[$i]['Edizione'] . '</td>';
@@ -96,8 +98,7 @@ $carta_res = $cartaCon->list_admin('amministratore@gmail.com');//da inserire val
                         echo '<td>'  . $carta_res[$i]['Scaffale'] . '</td>';
                         
                 
-                        echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/admin/modifica_libro.php?Titolo=' . $carta_res[$i]['Titolo'] . '&Cod='. $carta_res[$i]['Codice'] . '&Genere=' . $carta_res[$i]['Genere'] .'&AnnoPubblicazione=' . $carta_res[$i]['AnnoPubblicazione'] . '&Edizione=' . $carta_res[$i]['Edizione'] .'&Pagine=' . $carta_res[$i]['NumeroPagine'] . '&Scaffale=' . $carta_res[$i]['Scaffale'].'"'.'>Modifica</a></td>';
-
+                        echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/admin/modifica_libro.php?Titolo=' . $carta_res[$i]['Titolo'] .'&Autore=' . $carta_res[$i]['Autore'] .  '&Cod='. $carta_res[$i]['Codice'] . '&Genere=' . $carta_res[$i]['Genere'] .'&AnnoPubblicazione=' . $carta_res[$i]['AnnoPubblicazione'] . '&Edizione=' . $carta_res[$i]['Edizione'] .'&Pagine=' . $carta_res[$i]['NumeroPagine'] . '&Scaffale=' . $carta_res[$i]['Scaffale'].'"'.'>Modifica</a></td>';
                         echo'<td>'.'<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"> Elimina</button>'.'</td>';
 
                         echo '</tr>';

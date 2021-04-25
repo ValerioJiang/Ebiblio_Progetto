@@ -12,8 +12,6 @@
         public $Scaffale; 
         public $Biblioteca;
 
-        /*public $libroCod;
-        public $autoreCod;*/
     }
 
     class CartaceoController{
@@ -105,25 +103,11 @@
         return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
         
-        
-
-        //creare nuovo autore libro
-        public function createAutore($Nome,$Cognome){
-            $query = "INSERT INTO Autore(Nome,Cognome) VALUES('$Nome','$Cognome')";
-            $stmt = Dbh::getInstance()
-                ->getDb()
-                ->prepare($query);
-            $stmt-> execute();
-            
-            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
-
-            
-        }
 
         //creare nuovo libro cartaceo
-        public function createCartaceo($Titolo,$Edizione,$Genere,$AnnoPubblicazione){
+        public function createCartaceo($Titolo,$Autore,$Edizione,$Genere,$AnnoPubblicazione,$NumPagine,$StatoConservazione,$Scaffale){
             
-            $query = "INSERT INTO cartaceo(Titolo,Edizione,Genere,AnnoPubblicazione) VALUES ('$Titolo','$Edizione','$Genere',$AnnoPubblicazione)";
+            $query = "INSERT INTO cartaceo(Titolo,Autore,Edizione,Genere,AnnoPubblicazione,NumeroPagine,StaotConservazione,Scaffale) VALUES ('$Titolo','$Autore','$Edizione','$Genere',$AnnoPubblicazione,$NumPagine,'$StatoConservazione','$Scaffale')";
             $stmt = Dbh::getInstance()
                 ->getDb()
                 ->prepare($query);
@@ -219,8 +203,8 @@
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
 
-        public function updateNome($Codice,$NomeNuovo){
-            $query = "UPDATE cartaceo set nome = '$NomeNuovo' where codice = $Codice";
+        public function updateAutore($Codice,$AutoreNuovo){
+            $query = "UPDATE cartaceo set Autore = '$AutoreNuovo' where codice = $Codice";
             $stmt = Dbh::getInstance()
             ->getDb()
             ->prepare($query);
@@ -228,8 +212,17 @@
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
 
-        public function updateCognome($Codice,$CognomeNuovo){
-            $query = "UPDATE cartaceo set cognome = '$CognomeNuovo' where codice = $Codice";
+        public function updatePagine($Codice,$PagineNuovo){
+            $query = "UPDATE cartaceo set NumeroPagine = '$PagineNuovo' where codice = $Codice";
+            $stmt = Dbh::getInstance()
+            ->getDb()
+            ->prepare($query);
+            $stmt-> execute();
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        public function updateScaffale($Codice,$ScaffaleNuovo){
+            $query = "UPDATE cartaceo set Scaffale = '$ScaffaleNuovo' where codice = $Codice";
             $stmt = Dbh::getInstance()
             ->getDb()
             ->prepare($query);
@@ -264,6 +257,14 @@
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
         
+        public function updateStato($Codice,$StatoNuovo){
+            $query = "UPDATE cartaceo set StatoConservazione = $StatoNuovo where codice = $Codice";
+            $stmt = Dbh::getInstance()
+            ->getDb()
+            ->prepare($query);
+            $stmt-> execute();
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        }
         
         
     }
