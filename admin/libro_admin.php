@@ -91,10 +91,10 @@ $carta_res = $cartaCon->list('amministratore@gmail.com')//da inserire valore pas
                         echo '<td>' . $carta_res[$i]['AnnoPubblicazione'] . '</td>';
                         echo '<td>'  . $carta_res[$i]['Edizione'] . '</td>';
                         echo '<td>'  . $carta_res[$i]['NumeroPagine'] . '</td>';
-                        echo '<td>'  . $carta_res[$i]['StatoConservazione'] . '</td>';
+                        echo '<td>'  . $carta_res[$i]['StatoConservazione'] . '</td>';#
                         echo '<td>'  . $carta_res[$i]['Scaffale'] . '</td>';
 
-                        echo '<td>'.'<input type="button" name="updateform_submitted" class="btn btn-primary" value="Modifica" onclick="window.location.assign(\'/Ebiblio/admin/modifica_libro.php\')" </input>'.'</td>';
+                        echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/admin/modifica_libro.php?codLibro?=' . $carta_res[$i]['Codice'].'&Titolo =' .$carta_res[$i]['Titolo'].'&Genere='.$carta_res[$i]['Genere'].'&AnnoPubblicazione='.$carta_res[$i]['AnnoPubblicazione']. '&Edizione='.$carta_res[$i]['Edizione'].'&NPag='.$carta_res[$i]['NumeroPagine'].'&Scaffale='.$carta_res[$i]['Scaffale'].'"'.'>Modifica</a></td>';
                         echo'<td>'.'<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"> Elimina</button>'.'</td>';
 
                         echo '</tr>';
