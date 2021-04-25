@@ -32,6 +32,16 @@
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
 
+        public function listUtil(){
+            $query=" SELECT * from Cartaceo";
+            $stmt = Dbh::getInstance()
+            -> getDb()
+            -> prepare($query);
+
+            $stmt -> execute();
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        }
+
 
         /*
         /**
@@ -49,7 +59,15 @@
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
 
+        public function getLikeLibroUtil($Titolo){
+            $query="SELECT * FROM Cartaceo WHERE LOWER(Titolo) LIKE CONCAT"."('%',LOWER('$Titolo'),'%')";
+            $stmt = Dbh::getInstance()
+            -> getDb()
+            -> prepare($query);
 
+            $stmt -> execute();
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        }
         
         //controllo esistenza autore(cartaceo)
         public function getLikeAutoreCartaceo($Nome,$Cognome){
