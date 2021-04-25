@@ -95,22 +95,6 @@ create table EBOOK(
 );
  
 
-create table AUTORE_LIBRO(
-    Libro int,
-    foreign key (Libro) references CARTACEO(Codice) on delete cascade on update cascade,
-    Autore int,
-    foreign key(Autore) references AUTORE(Codice),
-    primary key(Libro,Autore)
-);
-
-create table AUTORE_EBOOK(
-    Ebook int,
-    foreign key (Ebook) references EBOOK(Codice),
-    Autore int,
-    foreign key(Autore) references AUTORE(Codice),
-    primary key(Ebook,Autore)
-); 
-
  
 
 create table AMMINISTRATORE(
