@@ -21,8 +21,9 @@
         /**
          * LIST
          */
-        public function list(){
-            $query="SELECT * FROM Cartaceo";
+        public function list($Amministratore){
+            $query=" SELECT * from cartaceo where Biblioteca in
+            (select Bibliotecagestita from amministratore where email like '$Amministratore')";
             $stmt = Dbh::getInstance()
             -> getDb()
             -> prepare($query);
@@ -31,21 +32,15 @@
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
 
+
+        /*
         /**
          * RETRIEVE
          */
-        public function getBiblioLibri($nomeBiblio){
-            $query="SELECT * FROM Cartaceo where Biblioteca = '$nomeBiblio'";
-            $stmt = Dbh::getInstance()
-            -> getDb()
-            -> prepare($query);
 
-            $stmt -> execute();
-            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
-        }
-
-        public function getLikeLibro($tit){
-            $query="SELECT * FROM Cartaceo WHERE LOWER(Titolo) LIKE CONCAT"."('%',LOWER('$tit'),'%')";
+        public function getLikeLibro($Titolo,$Amministratore){
+            $query="SELECT * FROM Cartaceo WHERE LOWER(Titolo) LIKE CONCAT"."('%',LOWER('$Titolo'),'%')"." and Biblioteca in
+            (select BibliotecaGestita from amministratore where email like '$Amministratore')";
             $stmt = Dbh::getInstance()
             -> getDb()
             -> prepare($query);
