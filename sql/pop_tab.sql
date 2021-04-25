@@ -264,7 +264,7 @@ insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) valu
 insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (26, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', true, false);
 insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (27, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', false, false);
 
-insert into Cartaceo(Titolo, Edizione, Genere, AnnoPubblicazione, NumeroPagine, StatoConservazione, StatoDisponibilita, Scaffale, Biblioteca) values
+insert into Cartaceo(Titolo, Edizione, Genere, AnnoPubblicazione, NumeroPagine, StatoConservazione, StatoPrestito, Scaffale, Biblioteca) values
 ("Il nome della rosa","Illustrata","Romanzo Storico",2014,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
 ("Io non ho paura","Prima","Romanzo",2001,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
 ("Il capitale nel XXI secolo","Prima","Saggio politico",2013,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),

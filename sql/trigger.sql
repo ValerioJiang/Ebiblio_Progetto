@@ -46,10 +46,10 @@ delimiter ;
 
 
 
-drop trigger if exists trigger_disponibilita_not_scadente_libro;
+drop trigger if exists trigger_prestito_not_scadente_libro;
 delimiter //
 
-create trigger trigger_disponibilita_not_scadente_libro
+create trigger trigger_prestito_not_scadente_libro
 before insert
 on PRESTITO for each row
 begin
@@ -60,7 +60,7 @@ begin
     DECLARE errMsg varchar(255);
     
     SELECT COUNT(*) INTO rowNrDisp FROM Cartaceo WHERE Codice = NEW.Codice 
-    AND StatoDisponibilita = "Disponibile";
+    AND StatoPrestito = "Disponibile";
     
     SELECT COUNT(*) INTO rowNrScad FROM Cartaceo WHERE Codice = NEW.Codice 
     AND StatoConservazione <> "Scadente";
@@ -77,7 +77,7 @@ begin
       SIGNAL SQLSTATE '45000' 
             SET MESSAGE_TEXT = errMsg;
     ELSE
-		    UPDATE Cartaceo SET StatoDisponibilita = "Prenotato" WHERE Libro = NEW.Libro AND StatoDisponibilita = "Disponibile" AND StatoConservazione <> "Scadente";
+		    UPDATE Cartaceo SET StatoPrestito = "Prenotato" WHERE Libro = NEW.Libro AND StatoPrestito = "Disponibile" AND StatoConservazione <> "Scadente";
 	END IF;
     
 END//

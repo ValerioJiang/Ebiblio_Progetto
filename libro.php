@@ -56,10 +56,17 @@ $carta_res = $cartaCon->listUtil();
                             echo '<td>' . $carta_like[$i]['AnnoPubblicazione'] . '</td>';
                             echo '<td>'  . $carta_like[$i]['Edizione'] . '</td>';
                             echo '<td>'  . $carta_like[$i]['Biblioteca'] . '</td>';
-                            echo '<td>'  . $carta_like[$i]['StatoDisponibilita'] . '</td>';
+                            echo '<td>'  . $carta_like[$i]['StatoPrestito'] . '</td>';
                             echo '<td>'  . $carta_like[$i]['StatoConservazione'] . '</td>';
-                            echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/libro_prenot/ritiroLibro.php?codLibro='.$carta_like[$i]['Codice'].'&ritiroLibro=true&Titolo='.$carta_like[$i]['Titolo'].'&nomeBiblio='.$carta_like[$i]['Biblioteca'].'"'.'>Ritiro in biblioteca</a></td>';
-                            echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/libro_prenot/consegnaLibro.php?codLibro='.$carta_like[$i]['Codice'].'&consegnaLibro=true&Titolo='.$carta_like[$i]['Titolo'].'&nomeBiblio='.$carta_like[$i]['Biblioteca'].'">Consegna</a></td>';
+                            if($carta_like[$i]['StatoPrestito'] !== "Disponibile" || $carta_like[$i]['StatoPrestito'] !== "Disponibile"){
+                                echo '<td>Non è il possibile il ritiro</td>';
+                                echo '<td>Non è possibiòe la consegna</td>';
+                            }
+                            else{
+                                echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/libro_prenot/ritiroLibro.php?codLibro='.$carta_like[$i]['Codice'].'&ritiroLibro=true&Titolo='.$carta_like[$i]['Titolo'].'&nomeBiblio='.$carta_like[$i]['Biblioteca'].'"'.'>Ritiro in biblioteca</a></td>';
+                                echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/libro_prenot/consegnaLibro.php?codLibro='.$carta_like[$i]['Codice'].'&consegnaLibro=true&Titolo='.$carta_like[$i]['Titolo'].'&nomeBiblio='.$carta_like[$i]['Biblioteca'].'">Consegna</a></td>';
+                            
+                            }
                             echo '</tr>';
                         }
                     }
@@ -71,10 +78,17 @@ $carta_res = $cartaCon->listUtil();
                         echo '<td>' . $carta_res[$i]['AnnoPubblicazione'] . '</td>';
                         echo '<td>'  . $carta_res[$i]['Edizione'] . '</td>';
                         echo '<td>'  . $carta_res[$i]['Biblioteca'] . '</td>';
-                        echo '<td>'  . $carta_res[$i]['StatoDisponibilita'] . '</td>';
+                        echo '<td>'  . $carta_res[$i]['StatoPrestito'] . '</td>';
                         echo '<td>'  . $carta_res[$i]['StatoConservazione'] . '</td>';
-                        echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/libro_prenot/ritiroLibro.php?codLibro='.$carta_res[$i]['Codice'].'&ritiroLibro=true&Titolo='.$carta_res[$i]['Titolo'].'&nomeBiblio='.$carta_res[$i]['Biblioteca'].'"'.'>Ritiro in biblioteca</a></td>';
-                        echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/libro_prenot/consegnaLibro.php?codLibro='.$carta_res[$i]['Codice'].'&consegnaLibro=true&Titolo='.$carta_res[$i]['Titolo'].'&nomeBiblio='.$carta_res[$i]['Biblioteca'].'"'.'">Consegna</a></td>';
+
+                        if($carta_res[$i]['StatoPrestito'] !== "Disponibile"){
+                            echo '<td>Non è il possibile il ritiro</td>';
+                            echo '<td>Non è possibiòe la consegna</td>';
+                        }
+                        else{
+                            echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/libro_prenot/ritiroLibro.php?codLibro='.$carta_res[$i]['Codice'].'&ritiroLibro=true&Titolo='.$carta_res[$i]['Titolo'].'&nomeBiblio='.$carta_res[$i]['Biblioteca'].'"'.'>Ritiro in biblioteca</a></td>';
+                            echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/libro_prenot/consegnaLibro.php?codLibro='.$carta_res[$i]['Codice'].'&consegnaLibro=true&Titolo='.$carta_res[$i]['Titolo'].'&nomeBiblio='.$carta_res[$i]['Biblioteca'].'"'.'">Consegna</a></td>';            
+                        }
                         echo '</tr>';
                     }
                 }
