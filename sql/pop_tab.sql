@@ -235,8 +235,12 @@ insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) valu
 insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (224, 'Biblioteca Universitaria di Bologna', true, false);
 
 
-insert into Cartaceo(Titolo, Edizione, Genere, AnnoPubblicazione) values("Il nome della rosa","Illustrata","Romanzo Storico",2014),
-("Io non ho paura","Prima","Romanzo",2001),("Il capitale nel XXI secolo","Prima","Saggio politico",2013),("1984","Prima","Fantascienza",1950),("La fattoria degli animali","Prima","Romanzo",1947);
+insert into Cartaceo(Titolo, Edizione, Genere, AnnoPubblicazione, NumeroPagine, StatoConservazione, StatoDisponibilita, Scaffale, Biblioteca) values
+("Il nome della rosa","Illustrata","Romanzo Storico",2014,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
+("Io non ho paura","Prima","Romanzo",2001,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
+("Il capitale nel XXI secolo","Prima","Saggio politico",2013,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
+("1984","Prima","Fantascienza",1950,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
+("La fattoria degli animali","Prima","Romanzo",1947,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna");
 
 insert into Utilizzatore values("ciao@gmail.com","123","Ual","Erio",'1998-12-12',"Prato","123456",now(),"Poliziotto","Attivo");
 insert into Amministratore values("amministratore@gmail.com","123","amministratore","de amministris", '1998-12-12', "Prato", "37048511793","AFM","Biblioteca Universitaria di Bologna");
