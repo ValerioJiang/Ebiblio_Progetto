@@ -21,7 +21,17 @@
         /**
          * LIST
          */
-        public function list($Amministratore){
+        public function list(){
+            $query=" SELECT * from cartaceo ";
+            $stmt = Dbh::getInstance()
+            -> getDb()
+            -> prepare($query);
+
+            $stmt -> execute();
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        public function list_admin($Amministratore){
             $query=" SELECT * from cartaceo where Biblioteca in
             (select Bibliotecagestita from amministratore where email like '$Amministratore')";
             $stmt = Dbh::getInstance()
@@ -32,12 +42,11 @@
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
 
-
         /*
         /**
          * RETRIEVE
          */
-
+       
         public function getLikeLibro($Titolo,$Amministratore){
             $query="SELECT * FROM Cartaceo WHERE LOWER(Titolo) LIKE CONCAT"."('%',LOWER('$Titolo'),'%')"." and Biblioteca in
             (select BibliotecaGestita from amministratore where email like '$Amministratore')";
@@ -169,7 +178,19 @@
         }
         
 
-        //MODIFICA LIBRO
+        /*
+        **MODIFICA LIBRO
+        */
+        public function getLikeTitolo($Codice){
+            $query = "SELECT Titolo from cartaceo where cartaceo.codice like $Codice";
+            $stmt = Dbh::getInstance()
+            ->getDb()
+            ->prepare($query);
+            $stmt-> execute();
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+
+        }
+
         public function updateTitolo($Codice,$TitoloNuovo){
             $query = "UPDATE cartaceo set titolo = '$TitoloNuovo' where codice = $Codice";
             $stmt = Dbh::getInstance()

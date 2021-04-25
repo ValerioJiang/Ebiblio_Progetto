@@ -22,21 +22,31 @@ $mod_con = new cartaceoController();
                         <!--messaggi d'errore-->
                         <div  class ="text-center">
                         <?php
-                                $Codice = $_GET['Codice'];
-                                $Titolo = $_GET['Titolo'];
-                                $Genere = $_GET['Genere'];
-                                $AnnoPublicazione = $_GET['AnnoPublicazione'];
-                                $Edizione = $_GET['Edizione'];
-                                $NumeroPagine = $_GET['NumeroPagine'];
-                                $StatoConservazione = $_GET['StatoConservazione'];
-                                $Scaffale = $_GET['Scaffale'];
+                               //$Codice = $_GET['Codice'];
+                            $titolo = $_GET['Titolo'];//
+                            $codice = $_GET['Cod'];
+                            $genere = $_GET['Genere'];//
+                            $anno = $_GET['AnnoPubblicazione'];//
+                            $edizione = $_GET['Edizione'];//
+                            $pagine = $_GET['Pagine'];
+                            $scaffale = $_GET['Scaffale'];
 
+                            echo  "<h1 class='font-weight-light'>Modifica libro esistente</h1>";
+                            echo"<form  action=# method ='POST' class ='text-center'>"; 
+                            echo"<div class='form-row'><div class='form-group col-md-6'>Titolo:<br><input type=text name=titolo size=70 maxlength=50 placeholder=Titolo... value= '$titolo'  /><br></div></div>";
+                            echo "<div class='form-row'><div class='form-group col-md-6'>Nome autore: <br><input type='text' name='nome' size='30' maxlength='50' placeholder='Nome...'/><br></div><div class=form-group col-md-6'>Cognome autore:<br> <input type='text' name='cognome' size='30' maxlength='50'placeholder ='Cognome...'/><br></div> </div>";
+                            echo"<div class='form-row'><div class='form-group col'>Edizione:<br><input type='text' name='edizione' size='70' maxlength='50'placeholder ='Edizione...' value ='$edizione'/><br></div></div>";
+                            echo "<div class='form-row'><div class='form-group col-md'>Genere:<br><input type='text' name='genere' size='30' maxlength='50' placeholder='Genere...' value ='$genere'/><br></div>";
+                            echo "<div class='form-group col-md'>Anno di pubblicazione<br><input type='text' name='anno' size='30' maxlength='50'placeholder ='Anno di pubblicazione...'value = '$anno'/><br></div></div>";
+                            echo "<div class='form-row'><div class='form-group col-md'>Numero di pagine:<br><input type='text' name='pagine' size='30' maxlength='50' placeholder='Numero di pagine...' value ='$pagine'/><br></div>";
+                            echo "<div class='form-group col-md'>Scaffale<br><input type='text' name='anno' size='30' maxlength='50'placeholder ='Scaffale...'value = '$scaffale'/><br></div></div>";
+                            echo"  <div class='form-group col-md'> <button type='submit' class='btn btn-outline-danger' name='modificalibro'>Salva modifica </button>
+                            <br></br>
+                            <a href = '/ebiblio/admin/libro_admin.php'>Indietro</a>";
 
-
-
+                                
 
                             if (isset($_POST['modificalibro'])) {
-                                $Codice;
                                 $titolotrim = trim($_POST['titolo']);
                                 $nometrim = trim($_POST['nome']);
                                 $cognometrim = trim($_POST['cognome']);
@@ -83,15 +93,15 @@ $mod_con = new cartaceoController();
                       
                      </div>
             
-                    <h1 class="font-weight-light">Modifica libro esistente</h1>
+                   <!-- <h1 class="font-weight-light">Modifica libro esistente</h1>-->
             
                     <form  action=# method ="POST" class ="text-center"> 
 
-                        <div class="form-row">
+                      <!--  <div class="form-row">
                             <div class="form-group col-md-6">
                             Titolo:
                                 <br>
-                                <input type="text" name="titolo" size="70" maxlength="50"placeholder="Titolo..." value="dd"  /><br>
+                                <input type="text" name="titolo" size="70" maxlength="50"placeholder="Titolo..." value= '$titololabel'  /><br>
                             </div>
                         </div>
 
@@ -115,13 +125,13 @@ $mod_con = new cartaceoController();
                                 <br>
                                 <input type="text" name="edizione" size="70" maxlength="50"placeholder ="Edizione..."/><br>
                             </div>
-                        </div>
+                        </div
 
                         <div class="form-row">
                             <div class="form-group col-md">
                                 Genere:
                                 <br>
-                                <input type="text" name="genere" size="30" maxlength="50" placeholder="Genere..."/><br>
+                                <input type="text" name="genere" size="30" maxlength="50" placeholder="Genere..." value ='$genere'/><br>
                             </div>
                     
                             <div class="form-group col-md">
@@ -130,12 +140,10 @@ $mod_con = new cartaceoController();
                                 <input type="text" name="anno" size="30" maxlength="50"placeholder ="Anno di pubblicazione..."/><br>
                             </div>
                         
-                        </div>
+                        </div>-->
 
         
-                        <button type="submit" class="btn btn-outline-danger" name="modificalibro">Salva modifica </button>
-                        <br></br>
-                        <a href = "/ebiblio/admin/libro_admin.php">Indietro</a>
+                       
 
 
                     </form>

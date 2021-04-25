@@ -8,8 +8,7 @@ $raccoltaCon = new RaccoltaController();
 $raccolta_res = $raccoltaCon ->list('amministratore@email.it');//da inserire valore passato con  sessione
 */
 $cartaCon = new CartaceoController();
-$carta_res = $cartaCon->list('amministratore@gmail.com');//da inserire valore passato con  sessione
-$autoreCon = new AutoreController();
+$carta_res = $cartaCon->list_admin('amministratore@gmail.com');//da inserire valore passato con  sessione
 
 ?>
 
@@ -54,7 +53,6 @@ $autoreCon = new AutoreController();
                 
                 if (isset($_POST['cartaform_submitted'])) {
                     $titolotrim = trim($_POST['Titolo']);
-                    $autore_like=$autoreCon->getLikeAutore($titolotrim);
 
                     if (ctype_space($titolotrim)||$titolotrim=='') {
                         echo "Titolo libro nullo";
@@ -96,6 +94,9 @@ $autoreCon = new AutoreController();
                         echo '<td>'  . $carta_res[$i]['NumeroPagine'] . '</td>';
                         echo '<td>'  . $carta_res[$i]['StatoConservazione'] . '</td>';
                         echo '<td>'  . $carta_res[$i]['Scaffale'] . '</td>';
+                        
+                
+                        echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/admin/modifica_libro.php?Titolo=' . $carta_res[$i]['Titolo'] . '&Cod='. $carta_res[$i]['Codice'] . '&Genere=' . $carta_res[$i]['Genere'] .'&AnnoPubblicazione=' . $carta_res[$i]['AnnoPubblicazione'] . '&Edizione=' . $carta_res[$i]['Edizione'] .'&Pagine=' . $carta_res[$i]['NumeroPagine'] . '&Scaffale=' . $carta_res[$i]['Scaffale'].'"'.'>Modifica</a></td>';
 
                         echo'<td>'.'<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"> Elimina</button>'.'</td>';
 
