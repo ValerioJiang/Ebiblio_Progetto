@@ -70,11 +70,11 @@ create table CARTACEO(
     AnnoPubblicazione int,
     NumeroPagine int,
     StatoConservazione varchar(9) not null,
-    StatoDisponibilita varchar(11) not null,
+    StatoPrestito varchar(11) not null,
     Scaffale varchar(255) not null,
     Biblioteca varchar(255) not null,
     constraint valid_stato_conservazione check(StatoConservazione in ("Ottimo","Buono","Non Buono", "Scadente")),
-    constraint valid_stato_disponibilita check(StatoDisponibilita in ("Disponibile","Prenotato","Consegnato")),
+    constraint valid_stato_prestito check(StatoPrestito in ("Disponibile","Prenotato","Consegnato")),
     foreign key (Biblioteca) references BIBLIOTECA(Nome) on delete cascade on update cascade
 );
 
