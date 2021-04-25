@@ -87,6 +87,18 @@ $utente_res = $utente_con->list();
                         <a class="dropdown-item" href="/ebiblio/utilizzatore/Ebook.php">Accesso Ebook</a>
                     </div>
                 </div>
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle nav-item nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Prenotazioni
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="/ebiblio/utilizzatore/prenotazioni/posti_prenotati.php">Posti Lettura prenotati</a>
+                        <a class="dropdown-item" href="/ebiblio/utilizzatore/Libro.php">Libri prenotati</a>
+                        
+                    </div>
+                </div>
+
                 <a href="#" class="nav-item nav-link">Statistiche</a>
             </div>
 
