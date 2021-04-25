@@ -10,7 +10,7 @@ $mod_con = new cartaceoController();
 
     <?php
     require_once('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
-    $biblioCon = new BibliotecaController();
+    $cartaceo_Con = new CartaceoController();
     ?>
 
     <section>
@@ -22,9 +22,21 @@ $mod_con = new cartaceoController();
                         <!--messaggi d'errore-->
                         <div  class ="text-center">
                         <?php
+                                $Codice = $_GET['Codice'];
+                                $Titolo = $_GET['Titolo'];
+                                $Genere = $_GET['Genere'];
+                                $AnnoPublicazione = $_GET['AnnoPublicazione'];
+                                $Edizione = $_GET['Edizione'];
+                                $NumeroPagine = $_GET['NumeroPagine'];
+                                $StatoConservazione = $_GET['StatoConservazione'];
+                                $Scaffale = $_GET['Scaffale'];
+
+
+
+
 
                             if (isset($_POST['modificalibro'])) {
-                                $Codcie;
+                                $Codice;
                                 $titolotrim = trim($_POST['titolo']);
                                 $nometrim = trim($_POST['nome']);
                                 $cognometrim = trim($_POST['cognome']);
