@@ -1,18 +1,14 @@
 <?php
 
- /*On page1
-$_SESSION['varname'] = $var_value;
-
-//On page 2
-$var_value = $_SESSION['varname'];*/
-
-
 include('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
-
+/*
 $cartaCon = new CartaceoController();
 $carta_res = $cartaCon->list();
 $raccoltaCon = new RaccoltaController();
 $raccolta_res = $raccoltaCon ->list('amministratore@email.it');//da inserire valore passato con  sessione
+*/
+$cartaCon = new CartaceoController();
+$carta_res = $cartaCon->list('amministratore@gmail.com')//da inserire valore passato con  sessione
 
 ?>
 
@@ -42,55 +38,62 @@ $raccolta_res = $raccoltaCon ->list('amministratore@email.it');//da inserire val
                     <th>Genere</th>
                     <th>Anno di pubblicazione</th>
                     <th>Edizione</th>
+                    <th>Num.Pagine</th>
+                    <th>Stato Conservazione</th>
+                    <th>Scaffale</th>
+
+
+
 
                 </tr>
             </thead>
             <tbody>
 
                 <?php
- /*
-                if(isset($_POST['elimina'])) {
-                    $cod = trim($_POST['Codice']);
-                    $tit = trim($_POST['Titolo']);
-                    $gen = trim($_POST['Genere']);
-                    $ed = trim($_POST['Edizione']);
-                    $ap = trim($_POST['AnnoPubblicazione']);
-                    $cartaceo = $cartaceo_Con->deleteCartaceo($cod,$tit,$gen,$ed,$ap); 
-    
-                }*/
-
+                
                 if (isset($_POST['cartaform_submitted'])) {
-                    $tit = trim($_POST['Titolo']);
+                    $titolotrim = trim($_POST['Titolo']);
                     
-                    if (ctype_space($tit)||$tit=='') {
+                    if (ctype_space($titolotrim)||$titolotrim=='') {
                         echo "Titolo libro nullo";
                     } else {
-                        $raccolta_like = $raccoltaCon->getLikeLibroAmministratore('amministratore@email.it',$tit);//per ora vslore inserito manualmente(da fare con valore passato da session)
-                        if (count($raccolta_like) <= 0) {
+                        $carta_like = $cartaCon->getLikeLibro($titolotrim,"amministratore@gmail.com");//per ora vslore inserito manualmente(da fare con valore passato da session)
+                        if (count($carta_like) <= 0) {
                             echo "Nessun risultato corrispondente";
                         }
-                        for ($i = 0; $i < count($raccolta_like); $i++) {
-                            echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/admin/libroinfo/index.php?Titolo=' . $raccolta_like[$i]['Titolo'] .
-                                '&Codice=' . $raccolta_like[$i]['Titolo'] . '\');"' . '>';
-                            echo '<td>' . $raccolta_like[$i]['Codice'] . '</td>';
-                            echo '<td>' . $raccolta_like[$i]['Titolo'] . '</td>';
-                            echo '<td>' . $raccolta_like[$i]['Genere'] . '</td>';
-                            echo '<td>' . $raccolta_like[$i]['AnnoPubblicazione'] . '</td>';
-                            echo '<td>'  . $raccolta_like[$i]['Edizione'] . '</td>';
-                            echo '</tr>';
 
+                        for ($i = 0; $i < count($carta_like); $i++) {
+                            echo '<tr ' . $carta_like[$i]['Titolo'] .
+                            '&Codice=' .  $carta_like[$i]['Titolo'] . '\');"' . '>';
+                            
+                            echo '<td>' .  $carta_like[$i]['Codice'] . '</td>';
+                            echo '<td>' .  $carta_like[$i]['Titolo'] . '</td>';
+                            echo '<td>' .  $carta_like[$i]['Genere'] . '</td>';
+                            echo '<td>' .  $carta_like[$i]['AnnoPubblicazione'] . '</td>';
+                            echo '<td>'  .  $carta_like[$i]['Edizione'] . '</td>';
+                            echo '<td>'  . $carta_like[$i]['NumeroPagine'] . '</td>';
+                            echo '<td>'  .  $carta_like[$i]['StatoConservazione'] . '</td>';
+                            echo '<td>'  .  $carta_like[$i]['Scaffale'] . '</td>';
+
+                            echo '<td>'.'<input type="button" name="updateform_submitted" class="btn btn-primary" value="Modifica" onclick="window.location.assign(\'/Ebiblio/admin/modifica_libro.php\')" </input>'.'</td>';
+                            echo'<td>'.'<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"> Elimina</button>'.'</td>';
+    
                         }
                     }
                 } else {
-                    for ($i = 0; $i < count($raccolta_res); $i++) {
-                        echo '<tr ' . $raccolta_res[$i]['Titolo'] .
-                            '&Codice=' . $raccolta_res[$i]['Titolo'] . '\');"' . '>';
+                    for ($i = 0; $i < count($carta_res); $i++) {
+                        echo '<tr ' . $carta_res[$i]['Titolo'] .
+                            '&Codice=' . $carta_res[$i]['Titolo'] . '\');"' . '>';
                             
-                        echo '<td>' . $raccolta_res[$i]['Codice'] . '</td>';
-                        echo '<td>' . $raccolta_res[$i]['Titolo'] . '</td>';
-                        echo '<td>' . $raccolta_res[$i]['Genere'] . '</td>';
-                        echo '<td>' . $raccolta_res[$i]['AnnoPubblicazione'] . '</td>';
-                        echo '<td>'  . $raccolta_res[$i]['Edizione'] . '</td>';
+                        echo '<td>' . $carta_res[$i]['Codice'] . '</td>';
+                        echo '<td>' . $carta_res[$i]['Titolo'] . '</td>';
+                        echo '<td>' . $carta_res[$i]['Genere'] . '</td>';
+                        echo '<td>' . $carta_res[$i]['AnnoPubblicazione'] . '</td>';
+                        echo '<td>'  . $carta_res[$i]['Edizione'] . '</td>';
+                        echo '<td>'  . $carta_res[$i]['NumeroPagine'] . '</td>';
+                        echo '<td>'  . $carta_res[$i]['StatoConservazione'] . '</td>';
+                        echo '<td>'  . $carta_res[$i]['Scaffale'] . '</td>';
+
                         echo '<td>'.'<input type="button" name="updateform_submitted" class="btn btn-primary" value="Modifica" onclick="window.location.assign(\'/Ebiblio/admin/modifica_libro.php\')" </input>'.'</td>';
                         echo'<td>'.'<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"> Elimina</button>'.'</td>';
 

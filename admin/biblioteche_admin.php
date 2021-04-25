@@ -4,7 +4,7 @@ include('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
 $biblioCon = new BibliotecaController();
 
 $cartaCon = new CartaceoController();
-$carta_res = $cartaCon -> list();
+$carta_res = $cartaCon -> list("amministratore@email.it");
 
 
 ?>
