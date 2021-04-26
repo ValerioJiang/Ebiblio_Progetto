@@ -258,7 +258,7 @@
         }
         
         public function updateStato($Codice,$StatoNuovo){
-            $query = "UPDATE cartaceo set StatoConservazione = $StatoNuovo where codice = $Codice";
+            $query = "UPDATE cartaceo set StatoConservazione = '$StatoNuovo' where codice = $Codice";
             $stmt = Dbh::getInstance()
             ->getDb()
             ->prepare($query);
