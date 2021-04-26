@@ -25,7 +25,7 @@ $carta_res = $cartaCon->list_admin('amministratore@gmail.com');//da inserire val
                 </div>
             </div>
             <input type="submit" name="cartaform_submitted" class="btn btn-primary" value="Ricerca"></input>
-            <input  type="button" name="nuovabiblio" class="btn btn-primary" value="Aggiungi" onclick="window.open('/Ebiblio/admin/nuovo_libro.php')"/>
+            <input  type="button" name="nuovabiblio" class="btn btn-primary" value="Aggiungi" onclick="window.open('/Ebiblio/admin/nuovo_libro.php?Biblioteca=Biblioteca Universitaria di Bologna')"/> <!--biblio passato da sessione-->
 
         </form>
         </br>

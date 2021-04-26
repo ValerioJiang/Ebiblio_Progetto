@@ -18,9 +18,14 @@ $cartaceo_res = $cartaceo_Con->list();
                 <div class="card" style="width: 60%;">
                     <div class="card-body p-5 align-self-center">
 
+                
                         <!--messaggi d'errore-->
                         <div  class ="text-center">
+
+                        
                             <?php
+
+                            $bibliotecaadmin= $_GET['Biblioteca'];
                                    
                                 if (isset($_POST['nuovolibro'])) {
                                     $titolotrim = trim($_POST['titolo']);
@@ -32,13 +37,11 @@ $cartaceo_res = $cartaceo_Con->list();
                                     $conservazionetrim = trim($_POST['stato']);
                                     $scaffaletrim = trim($_POST['scaffale']);
                                     
-                                    $bibliotecaadmin = $cartaceo_Con->getLikeBiblioteca("amministratore@gmail.com");//valore passato con sesisone
-
                                     if ((ctype_space($titolotrim)||$titolotrim=='')||(ctype_space($autoretrim)||$autoretrim=='')|| (ctype_space($edizionetrim)||$edizionetrim=='')||(ctype_space($generetrim)||$generetrim=='')||(ctype_space($annotrim)||$annotrim=='')||(ctype_space($paginetrim)||$paginetrim=='')||(ctype_space($conservazionetrim)||$conservazionetrim=='')||(ctype_space($scaffaletrim)||$scaffaletrim=='')){
                                         echo "Per favore riempire tutti i campi";
                                     }else{
-                                        $creazionecartaceo = $cartaceo_Con->createCartaceo($titolotrim,$autoretrim,$edizionetrim,$generetrim,$annotrim,$paginetrim,$conservazionetrim,$scaffaletrim,$bibliotecaadmin);
-                  
+                                       $creazionecartaceo = $cartaceo_Con->createCartaceo($titolotrim,$autoretrim,$edizionetrim,$generetrim,$annotrim,$paginetrim,$conservazionetrim,$scaffaletrim,$bibliotecaadmin);
+                                        echo "Libro inserito con successo";
                                     
                                     }
                                 }
