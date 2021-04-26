@@ -33,4 +33,18 @@ class ConsegnaController
         echo $query;
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    /**
+     * RETRIEVE
+     */
+    public function getByPrestito($codPrestito)
+    {
+        $query = "SELECT * FROM Consegna where Codice = $codPrestito";
+        $stmt = Dbh::getInstance()
+            ->getDb()
+            ->prepare($query);
+
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

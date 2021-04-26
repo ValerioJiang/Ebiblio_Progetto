@@ -114,6 +114,16 @@
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
 
         }
+
+        public function getById($codLibro){
+            $query = " SELECT * FROM CARTACEO where Codice = $codLibro";        
+            $stmt = Dbh::getInstance()
+            ->getDb()
+            ->prepare($query);
+            $stmt-> execute();
+
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC) ;
+        }
     
         //inserimento dati in autore_libro
         public function getCodiceLibro($Titolo,$Edizione){
