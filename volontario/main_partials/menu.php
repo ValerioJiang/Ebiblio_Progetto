@@ -74,9 +74,9 @@ else{
                         Consegna
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="/ebiblio/volontario/consegne/consegne.php">Tutte le consegne</a>
-                        <a class="dropdown-item" href="/ebiblio/volontario/#">Consegne prese in carico</a>
-                        <a class="dropdown-item" href="/ebiblio/volontario/#">Consegne effettuate</a>
+                        <a class="dropdown-item" href="/ebiblio/volontario/consegne/tutte_consegne.php">Tutte le consegne</a>
+                        <a class="dropdown-item" href="/ebiblio/volontario/consegne/consegne_in_carico.php">Consegne prese in carico</a>
+                        <a class="dropdown-item" href="/ebiblio/volontario/consegne/cons_effetuate.php">Consegne effettuate</a>
                     </div>
                 </div>
 

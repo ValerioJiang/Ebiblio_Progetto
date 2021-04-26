@@ -17,6 +17,36 @@ class ConsegnaController
      */
     public function list()
     {
+        $query = "SELECT * FROM Consegna";
+        $stmt = Dbh::getInstance()
+            ->getDb()
+            ->prepare($query);
+
+        $stmt->execute();
+        
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function listNonConsegnate(){
+        $query = "SELECT * FROM Consegna where volontario is null";
+        $stmt = Dbh::getInstance()
+            ->getDb()
+            ->prepare($query);
+
+        $stmt->execute();
+    
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function listConsInCaricoVolo($volon){
+        $query = "SELECT * FROM Consegna where volontario = '$volon' and DataConsegna is null";
+        $stmt = Dbh::getInstance()
+            ->getDb()
+            ->prepare($query);
+
+        $stmt->execute();
+    
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     /**
@@ -47,4 +77,30 @@ class ConsegnaController
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    /**
+     * UPDATE
+     */
+    public function updateVolontario($volon, $codConsegna){
+        $query = "UPDATE CONSEGNA SET Volontario = '$volon' WHERE Volontario is null and Codice = $codConsegna";
+        $stmt = Dbh::getInstance()
+            ->getDb()
+            ->prepare($query);
+
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    }
+
+    public function updateDisdire($volon, $codConsegna){
+        $query = "UPDATE CONSEGNA SET Volontario = null WHERE Volontario = '$volon' and Codice = $codConsegna";
+        $stmt = Dbh::getInstance()
+            ->getDb()
+            ->prepare($query);
+
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    }
+
 }
