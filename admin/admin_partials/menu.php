@@ -75,18 +75,6 @@ if (isset($_POST['accedi'])){
                 <a href="/ebiblio/admin/" class="nav-item nav-link">Home</a>
                 <a href="/ebiblio/admin/biblioteche_admin.php" class="nav-item nav-link">Biblioteche</a>
                 <a href="/ebiblio/admin/Libro_admin.php" class="nav-item nav-link">Libro</a>
-
-                <!--
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle nav-item nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Ebook
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="/ebiblio/admin/ebook/nuovo_ebook.php">Aggiungi</a>
-                        <a class="dropdown-item" href="/ebiblio/admin/ebook/ebook_admin.php">Ricerca</a>
-                    </div>
-                </div>
-                -->
                 
                 
                 <a href="#" class="nav-item nav-link">Statistiche</a>
@@ -97,7 +85,8 @@ if (isset($_POST['accedi'])){
                 Gestione Utenti
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Visualizza prenotazione</a>
+                    <a class="dropdown-item" href="/Ebiblio/admin/prenotazioni_postolettura.php">Visualizza prenotazioni posti lettura</a>
+                    <a class="dropdown-item" href="#">Visualizza prestiti libri</a>
                     <a class="dropdown-item" href="/Ebiblio/admin/rubrica_messaggio.php">Visualizza rubrica</a>
                     <a class="dropdown-item" href="/Ebiblio/admin/bacheca_messaggio.php">Visualizza messaggi</a>
 

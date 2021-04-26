@@ -39,6 +39,19 @@
 
         }
 
+       /* public function getLikeAmministratoreBiblio($emailAmminis){
+            $query = "SELECT BibliotecaGestita from Amministratore where email like '$emailAmminis'";
+
+            $stmt = Dbh::getInstance()
+                ->getDb()
+                ->prepare($query);
+            $stmt-> execute();
+    
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+
+        }*/
+        
+
         public function checkEsistenza($email, $password){
             //TRUE se utente esiste altrimenti FALSE
             $query ="SELECT * FROM Amministratore WHERE email ='$email' AND password ='$password'";

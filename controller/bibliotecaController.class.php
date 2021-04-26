@@ -111,18 +111,5 @@
             
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
-
-        //controllo esistenza libro
-        public function getLikeCartaceo($Titolo,$Nome,$Cognome){
-            #$query = "INSERT INTO Biblioteca VALUES('$NomeBiblio','$Email','$SitoWeb','$Indirizzo',$Latitudine,$Longitudine,'$Note')";
-            $stmt = Dbh::getInstance()
-                ->getDb()
-                ->prepare($query);
-            $stmt-> execute();
-            
-
-            
-            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
-        }
         
     }
