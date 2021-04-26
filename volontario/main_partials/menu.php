@@ -1,22 +1,24 @@
 <?php
+
 require_once('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
 
-$volon_con = new VolontarioController();
+$volo_con = new VolontarioController();
 
 if (isset($_POST["email"]) && isset($_POST["password"])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $utili_res = $volon_con->checkEsistenza($email, $password);
-    //controllo riempimento di tutti i campi:
-    $volon_checkEsistenza = $volon_con->checkEsistenza($email, $password);
+    $volo_res = $volo_con->checkEsistenza($email, $password);
 
-    if (count($volon_checkEsistenza) == 1) {
+    if (count($volo_res) == 1) {
         session_start();
         $_SESSION['email'] = $_POST['email'];
         $_SESSION['esistenza'] = true;
     } else {
         header("Location: http://localhost/ebiblio?error=PiuVoloGetLike");
     }
+}
+else{
+    session_start();
 }
 
 ?>

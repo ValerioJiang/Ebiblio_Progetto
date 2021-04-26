@@ -34,6 +34,6 @@ background: url('/ebiblio/images/bibliofull.jpg') no-repeat  ;
 
 <?php
 
-require_once('/xampp/htdocs/ebiblio/volontario/main_partials/footer.php');
+require_once('/xampp/htdocs/ebiblio/main_partials/footer.php');
 
 ?>

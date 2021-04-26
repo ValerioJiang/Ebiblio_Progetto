@@ -19,8 +19,13 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
         header("Location: http://localhost/ebiblio?error=PiuUtilGetLike");
     }
 }
-else{
+else if(!isset($_SESSION['email'])){
     session_start();
+}
+else{
+    echo "<script type='text/javascript'>alert('Accedere prima');
+                    window.location = 'http://localhost/ebiblio'; 
+                    </script>";
 }
 
 
