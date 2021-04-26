@@ -77,8 +77,8 @@ $carta_res = $cartaCon->list_admin('amministratore@gmail.com');//da inserire val
                             echo '<td>'  .  $carta_like[$i]['StatoConservazione'] . '</td>';
                             echo '<td>'  .  $carta_like[$i]['Scaffale'] . '</td>';
 
-                            echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/admin/modifica_libro.php?Titolo=' . $carta_res[$i]['Titolo'] .'&Autore=' . $carta_res[$i]['Autore'] .  '&Cod='. $carta_res[$i]['Codice'] . '&Genere=' . $carta_res[$i]['Genere'] .'&AnnoPubblicazione=' . $carta_res[$i]['AnnoPubblicazione'] . '&Edizione=' . $carta_res[$i]['Edizione'] .'&Pagine=' . $carta_res[$i]['NumeroPagine'] . '&Scaffale=' . $carta_res[$i]['Scaffale'].'"'.'>Modifica</a></td>';
-                            echo'<td>'.'<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"> Elimina</button>'.'</td>';
+                            echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/admin/modifica_libro.php?Titolo=' . $carta_like[$i]['Titolo'] .'&Autore=' . $carta_like[$i]['Autore'] .  '&Cod='. $carta_like[$i]['Codice'] . '&Genere=' . $carta_like[$i]['Genere'] .'&AnnoPubblicazione=' . $carta_like[$i]['AnnoPubblicazione'] . '&Edizione=' . $carta_like[$i]['Edizione'] .'&Pagine=' . $carta_like[$i]['NumeroPagine'] . '&Scaffale=' . $carta_like[$i]['Scaffale'].'"'.'>Modifica</a></td>';
+                            echo '<td><a class="btn btn btn-danger" role="button" href="http://localhost/ebiblio/admin/elimina_libro.php?Titolo=' . $carta_like[$i]['Titolo'] .'&Autore=' . $carta_like[$i]['Autore'] .  '&Cod='. $carta_like[$i]['Codice'] . '&Genere=' . $carta_like[$i]['Genere'] .'&AnnoPubblicazione=' . $carta_like[$i]['AnnoPubblicazione'] . '&Edizione=' . $carta_like[$i]['Edizione'] .'&Pagine=' . $carta_like[$i]['NumeroPagine'] . '&Scaffale=' . $carta_like[$i]['Scaffale'].'"'.'>Elimina</a></td>';
     
                         }
                     }
@@ -99,45 +99,11 @@ $carta_res = $cartaCon->list_admin('amministratore@gmail.com');//da inserire val
                         
                 
                         echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/admin/modifica_libro.php?Titolo=' . $carta_res[$i]['Titolo'] .'&Autore=' . $carta_res[$i]['Autore'] .  '&Cod='. $carta_res[$i]['Codice'] . '&Genere=' . $carta_res[$i]['Genere'] .'&AnnoPubblicazione=' . $carta_res[$i]['AnnoPubblicazione'] . '&Edizione=' . $carta_res[$i]['Edizione'] .'&Pagine=' . $carta_res[$i]['NumeroPagine'] . '&Scaffale=' . $carta_res[$i]['Scaffale'].'"'.'>Modifica</a></td>';
-                        echo'<td>'.'<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"> Elimina</button>'.'</td>';
-
-                        echo '</tr>';
-
+                        echo '<td><a class="btn btn-danger"role="button" href="http://localhost/ebiblio/admin/elimina_libro.php?Titolo=' . $carta_res[$i]['Titolo'] .'&Autore=' . $carta_res[$i]['Autore'] .  '&Cod='. $carta_res[$i]['Codice'] . '&Genere=' . $carta_res[$i]['Genere'] .'&AnnoPubblicazione=' . $carta_res[$i]['AnnoPubblicazione'] . '&Edizione=' . $carta_res[$i]['Edizione'] .'&Pagine=' . $carta_res[$i]['NumeroPagine'] . '&Scaffale=' . $carta_res[$i]['Scaffale'].' &StatoConservazione=' . $carta_res[$i]['StatoConservazione'] . '"'.'>Elimina</a></td>';
 
                     }
                 }
                 ?>
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Attenzione!</h5>
-                        
-                        </div>
-                        <div class="modal-body">
-                        Sicuro di voler eliminare questo libro?
-                            
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" id ="eliminare" class="btn btn-danger">Elimina</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal" >Indietro</button>
-                            <?php
-                            if(isset($_POST['eliminare'])){
-                                $query = " DELETE FROM cartaceo WHERE codice = $Codice and LOWER(Titolo) LIKE CONCAT"."('%',LOWER('$Titolo'),'%') and LOWER(Edizione) LIKE CONCAT"."('%',LOWER('$Edizione'),'%') and LOWER(Genere) LIKE CONCAT"."('%',LOWER('$Genere'),'%') and annopubblicazione = $AnnoPubblicazione";    
-                                $stmt = Dbh::getInstance()
-                                ->getDb()
-                                ->prepare($query);
-                                $stmt-> execute();
-                                return $stmt -> fetchAll(PDO::FETCH_ASSOC);
-                            }
-                    
-                ?>
-                        </div>
-                        </div>
-                    </div>
-                </div>
 
                    
             </tbody>

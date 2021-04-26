@@ -42,7 +42,6 @@ $cartaceo_res = $cartaceo_Con->list();
                                     }else{
                                        $creazionecartaceo = $cartaceo_Con->createCartaceo($titolotrim,$autoretrim,$edizionetrim,$generetrim,$annotrim,$paginetrim,$conservazionetrim,$scaffaletrim,$bibliotecaadmin);
                                         echo "Libro inserito con successo";
-                                    
                                     }
                                 }
                                      

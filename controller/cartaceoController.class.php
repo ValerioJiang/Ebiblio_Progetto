@@ -88,8 +88,6 @@
         return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
 
-     
-
 
 
         //controllo esistenza libro
@@ -131,10 +129,8 @@
         }
 
         //controllo esistenza libro
-        public function getCartaceo($Titolo,$Edizione,$Genere,$AnnoPubblicazione){
-        $query = "SELECT * FROM CARTACEO where LOWER(TITOLO) LIKE CONCAT"."('%',LOWER('$Titolo'),'%') and
-            LOWER(Edizione) LIKE CONCAT"."('%',LOWER('$Edizione'),'%')and LOWER(Genere) LIKE CONCAT"."('%',LOWER('$Genere'),'%') 
-            AND LOWER(AnnoPubblicazione) LIKE CONCAT"."('%',LOWER('$AnnoPubblicazione'),'%')";
+        public function getCartaceo($Codice){
+        $query = "SELECT * FROM CARTACEO where codice = $Codice";
 
             $stmt = Dbh::getInstance()
             ->getDb()
@@ -171,8 +167,8 @@
 
 
         //eliminazione 
-        public function deleteCartaceo($Codice,$Titolo,$Genere,$Edizione,$AnnoPubblicazione){
-        $query = " DELETE FROM cartaceo WHERE codice = $Codice and LOWER(Titolo) LIKE CONCAT"."('%',LOWER('$Titolo'),'%') and LOWER(Edizione) LIKE CONCAT"."('%',LOWER('$Edizione'),'%') and LOWER(Genere) LIKE CONCAT"."('%',LOWER('$Genere'),'%') and annopubblicazione = $AnnoPubblicazione";    
+        public function deleteCartaceo($Codice){
+        $query = " DELETE FROM cartaceo WHERE codice = $Codice";
             $stmt = Dbh::getInstance()
             ->getDb()
             ->prepare($query);
