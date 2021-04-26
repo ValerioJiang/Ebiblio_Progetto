@@ -1,4 +1,3 @@
-
 insert into Biblioteca values
 ("Biblioteca Universitaria di Bologna", "bub.info@unibo.it","http://www.bub.unibo.it/","Via Zamboni, 33-35 Bologna 40126 BO",44.496888812159334, 11.35242160179635,"Sospensione visite guidate A seguito del DPCM del 14 gennaio 2021, le visite guidate alle sale monumentali della biblioteca sono sospese a tempo indeterminato. Scopri i luoghi e i tesori della Biblioteca Universitaria direttamente a casa tua. Norme sui servizi della BUB a seguito Ord. Reg. n. 25 del 3 marzo 2021 Fino al 21 marzo i servizi bibliotecari sono attivi solo per utenti Unibo e solo su prenotazione. Riduzione orario di apertura al pubblico della BUB Per contrastare ulteriormente la riduzione del contagio da Covid19, da venerdì 13 marzo e per tutta la durata della fascia rossa BUB sarà chiusa al pubblico nei pomeriggi di lunedì, mercoledì e venerdì. Consulta la pagina degli orari per maggiori informazioni. "),
 ("Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali","info.bigiavi@unibo.it","http://bigiavi.sba.unibo.it/","Via delle Belle Arti 33 ; Piazza Scaravilli 1 Bologna 40126 BO", 44.497863979106405, 11.351878097972945,"Dal 1983 nuova denominazione dei BO129 - Istituto di Ragioneria e BO132 - Istituto di Tecnica Economica. Dal 2002 assorbe BO127 Biblioteca della Sezione di merceologia-Area tecnologia e valorizzazione risorse del Dipartimento di discipline economico-aziendali.");
@@ -264,22 +263,22 @@ insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) valu
 insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (26, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', true, false);
 insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (27, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', false, false);
 
-insert into Cartaceo(Titolo,Autore, Edizione, Genere, AnnoPubblicazione, NumeroPagine, StatoConservazione, StatoPrestito, Scaffale, Biblioteca) values
-("Il nome della rosa","Umberto Eco","Illustrata","Romanzo Storico",2014,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
-("Io non ho paura","Niccolò Ammaniti","Prima","Romanzo",2001,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
-("Il capitale nel XXI secolo","Thomas Piketty","Prima","Saggio politico",2013,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
-("1984","George Orwell", "Prima","Fantascienza",1950,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
-("La fattoria degli animali","George Orwell","Prima","Romanzo",1947,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
+insert into Cartaceo(Titolo, Edizione, Genere, AnnoPubblicazione, NumeroPagine, StatoConservazione, StatoPrestito, Scaffale, Biblioteca) values
+("Il nome della rosa","Illustrata","Romanzo Storico",2014,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
+("Io non ho paura","Prima","Romanzo",2001,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
+("Il capitale nel XXI secolo","Prima","Saggio politico",2013,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
+("1984","Prima","Fantascienza",1950,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
+("La fattoria degli animali","Prima","Romanzo",1947,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
+("L'amicizia","Prima","Romanzo",1947,576,"Scadente","Disponibile","1A","Biblioteca Universitaria di Bologna"),
+("Mario e l'orario di Bari","Prima","Romanzo",1947,576,"Ottimo","Consegnato","1A","Biblioteca Universitaria di Bologna"),
+("L'america","Prima","Romanzo",1947,576,"Scadente","Prenotato","1A","Biblioteca Universitaria di Bologna"),
 
-("Il nome della rosa","Umberto Eco","Illustrata","Romanzo Storico",2014,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
-("Io non ho paura","Niccolò Ammaniti","Prima","Romanzo",2001,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
-("Il capitale nel XXI secolo","Thomas Piketty","Prima","Saggio politico",2013,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
-("1984","Prima","George Orwell","Fantascienza",1950,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
-("La fattoria degli animali","George Orwell","Prima","Romanzo",1947,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
-("Manifesto Comunista","Karl Marx,Friedrich Engels","Prima","Saggio politico",1918, 576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali")
-
-
-
+("Il nome della rosa","Illustrata","Romanzo Storico",2014,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
+("Io non ho paura","Prima","Romanzo",2001,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
+("Il capitale nel XXI secolo","Prima","Saggio politico",2013,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
+("1984","Prima","Fantascienza",1950,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
+("La fattoria degli animali","Prima","Romanzo",1947,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
+("Manifesto Comunista","Prima","Saggio politico",1918, 576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali")
 ;
 
 insert into Utilizzatore values("ciao@gmail.com","123","Ual","Erio",'1998-12-12',"Prato","123456",now(),"Poliziotto","Attivo");

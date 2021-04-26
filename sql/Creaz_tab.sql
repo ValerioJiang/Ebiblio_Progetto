@@ -65,7 +65,6 @@ create table POSTO_LETTURA(
 create table CARTACEO(
     Codice int auto_increment primary key,
     Titolo varchar(255),
-    Autore varchar(255),
     Edizione varchar(255),
     Genere varchar(255),
     AnnoPubblicazione int,
@@ -85,7 +84,6 @@ create table CARTACEO(
 create table EBOOK(
     Codice int primary key auto_increment not null,
     Titolo varchar(20),
-    Autore varchar(200),
     Edizione varchar(20),
     Genere varchar(20),
     AnnoPubblicazione int,
@@ -94,6 +92,30 @@ create table EBOOK(
     NumAccessi int
 );
  
+create table AUTORE(
+    Codice int primary key auto_increment not null,
+    Nome varchar(255),
+    Cognome varchar(255)
+);
+
+ 
+
+
+create table AUTORE_LIBRO(
+    Libro int,
+    foreign key (Libro) references CARTACEO(Codice) on delete cascade on update cascade,
+    Autore int,
+    foreign key(Autore) references AUTORE(Codice),
+    primary key(Libro,Autore)
+);
+
+create table AUTORE_EBOOK(
+    Ebook int,
+    foreign key (Ebook) references EBOOK(Codice),
+    Autore int,
+    foreign key(Autore) references AUTORE(Codice),
+    primary key(Ebook,Autore)
+); 
 
  
 
@@ -188,8 +210,8 @@ create table PRESTITO(
     foreign key (Utilizzatore) references UTILIZZATORE(Email) on delete cascade on update cascade,
     Libro int,
     foreign key (Libro) references Cartaceo(Codice) on delete cascade on update cascade,
-    DataInizio date not null,
-    DataFine date not null,
+    DataInizio date,
+    DataFine date,
     primary key(Codice)
 );
 
@@ -206,7 +228,7 @@ create table CONSEGNA(
     TipoConsegna varchar(12),
     Note varchar(255),
     constraint valid_tipo_consegna check(TipoConsegna in ("Restituzione","Affidamento")),
-    primary key(Codice,Volontario,CodicePrestito)
+    primary key(Codice)
 );
  
 create table ACCESSO_EBOOK(

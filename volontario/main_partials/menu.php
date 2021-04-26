@@ -86,7 +86,7 @@ else{
                 <?php
 
                 if (isset($_SESSION["email"])) {
-                    echo "<a class='nav-item nav-link' href='/ebiblio/logout.php?email=" . $_SESSION['email'] . "'>Logout</a>";
+                    echo "<a class='nav-item nav-link' href='/ebiblio/volontario/logout.php?email=" . $_SESSION['email'] . "'>Logout</a>";
                 }
 
                 ?>

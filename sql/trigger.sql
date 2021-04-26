@@ -1,4 +1,4 @@
-    drop trigger if exists fine_prestito;
+   drop trigger if exists fine_prestito;
 delimiter //
 create trigger fine_prestito
 AFTER INSERT
@@ -99,5 +99,3 @@ begin
     
 END//
 delimiter ;
-
-
