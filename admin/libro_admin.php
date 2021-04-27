@@ -3,10 +3,7 @@
 include('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
 
 $cartaCon = new CartaceoController();
-$autoreCon = new AutoreController();
 $carta_res = $cartaCon->list_admin($_SESSION['email']);
-$amministratoreCon = new AmministratoreController();
-$biblio = $amministratoreCon->getLikeAmministratoreBiblio($_SESSION['email']);
 ?>
 
 <div class="container" style="background-color: white;">
@@ -23,7 +20,7 @@ $biblio = $amministratoreCon->getLikeAmministratoreBiblio($_SESSION['email']);
             </div>
 
             <input type="submit" name="cartaform_submitted" class="btn btn-primary" value="Ricerca"></input>
-            <a name="nuovabiblio" class="btn btn-primary" href="/Ebiblio/admin/nuovo_libro.php?Biblioteca=Biblioteca Universitaria di Bologna">Aggiungi</a> <!--biblio passato da sessione-->
+            <a name="nuovabiblio" class="btn btn-primary" href="/Ebiblio/admin/nuovo_libro.php">Aggiungi</a>
             
         </form>
         </br>

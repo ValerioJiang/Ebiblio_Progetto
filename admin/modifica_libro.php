@@ -1,9 +1,7 @@
 <?php
 require_once('/xampp/htdocs/Ebiblio/admin/admin_partials/menu.php');
-//require_once ('/xampp/htdocs/Ebiblio/includes/registrazione.inc.php');
 
 $mod_con = new cartaceoController();
-//$mod_res = $mod_con->list();    
 
 ?>
 
@@ -19,7 +17,6 @@ $mod_con = new cartaceoController();
                 <div class="card" style="width: 60%;">
                     <div class="card-body p-5 align-self-center">
 
-                        <!--messaggi d'errore-->
                         <div  class ="text-center">
                         <?php
                             $titolo = $_GET['Titolo'];
