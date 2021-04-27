@@ -1,6 +1,31 @@
 <?php
 require_once('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
 
+$admin_con = new AmministratoreController();
+
+if (isset($_POST["email"]) && isset($_POST["password"])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $admin_res = $admin_con->checkEsistenza($email, $password);
+    //controllo riempimento di tutti i campi:
+    $admin_checkEsistenza = $admin_con->checkEsistenza($email, $password);
+
+    if (count($admin_checkEsistenza) == 1) {
+        session_start();
+        $_SESSION['email'] = $_POST['email'];
+        $_SESSION['esistenza'] = true;
+    } else {
+        header("Location: http://localhost/ebiblio?error=PiuAdminGetLike");
+    }
+}
+else if(!isset($_SESSION['email'])){
+    session_start();
+}
+else{
+    echo "<script type='text/javascript'>alert('Accedere prima');
+                    window.location = 'http://localhost/ebiblio'; 
+                    </script>";
+}
 
 $utente_con = new UtilizzatoreController();
 $utente_res = $utente_con->list();
@@ -10,24 +35,7 @@ function infoBoxLogin($msg) {
 
 ?>
 
-<?php
-//LOGIN
-if (isset($_POST['accedi'])){
-    //ottengo i dati inseriti dall'utilizzatore:
-    $email =$_POST['email'];
-    $password=$_POST['password'];
-    $utente_check = $utente_con -> checkEsistenza($email,$password); //creo utente_check che contiene il risultato di checkesistenza tramite utente_con
-    if(count($utente_check) == 1){
-       infoBoxLogin("ACCESSO ESEGUITO");
-     /*  $_SESSION['login']= "<div class ='success'>Login succesful.</div>";
-       header('location:'.SITEURL.'C:\xampp\htdocs\EBIBLIO\biblioteche.php');*/
-    }else{
-       infoBoxLogin("ACCESSO NEGATO: email o password errata");
-     
-    }
 
-}
-?>
     
 <!DOCTYPE html>
 <html lang="en">

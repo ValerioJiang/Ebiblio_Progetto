@@ -1,11 +1,11 @@
    drop trigger if exists fine_prestito;
 delimiter //
 create trigger fine_prestito
-AFTER INSERT
+AFTER UPDATE
 ON CONSEGNA FOR EACH ROW
 BEGIN
 if NEW.DataConsegna is not null then
-UPDATE PRESTITO SET DataFine = ADDDATE(NEW.DataConsegna, INTERVAL 15 DAY)
+UPDATE PRESTITO SET DataFine = ADDDATE(NEW.DataConsegna, INTERVAL 15 DAY), DataInizio = NEW.DataConsegna
 WHERE PRESTITO.Codice = NEW.CodicePrestito;
 end if;
 END//

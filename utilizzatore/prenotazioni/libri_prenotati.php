@@ -46,7 +46,7 @@ $consCon = new ConsegnaController();
                                         $dataInizio= "Parte dal giorno dell'avvenuta consegna";
                                         $dataFine= "Non ancora definita";
                                     }
-                                    else{
+                                    else if(is_null($pres_codPres[0]['DataInizio'])&&is_null($pres_codPres[0]['DataFine'])){
                                         $status = "Consegna presa in carico da volontario: ".$cons_res[0]['Volontario'];
                                         $dataInizio= "Parte dal giorno dell'avvenuta consegna";
                                         $dataFine= "Non ancora definita";
@@ -61,7 +61,7 @@ $consCon = new ConsegnaController();
                                     $dataFine= $pres_res[$i]['DataInizio'];
                                 }
                             }
-                            else{
+                            else {
                                 $status="Ritiro in biblioteca";
                                 $dataInizio= $pres_res[$i]['DataInizio'];
                                 $dataFine= $pres_res[$i]['DataInizio'];

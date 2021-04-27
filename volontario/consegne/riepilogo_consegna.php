@@ -15,10 +15,10 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
             </br>
 
             <div class="form-group">
-                <label>Da effettuare la consegna entro: <?php echo date('d-m-Y', strtotime("+ 1 days")); ?></label>
+                <label>Consegna effettuata <?php echo date('d-m-Y'); ?></label>
             </div>
             <form method="post">
-                <input type="text" name="note" value="Inserire note tipo messo dentro buca lettere">
+                <input type="text" name="note" placeholder="Inserire note es. messo dentro buca lettere"><br />
                 <input type="submit" name="confBtn" id="test" class="btn btn-primary" value="Conferma" /><br />
             </form>
             <a class="btn btn-secondary" role="button" href="http://localhost/ebiblio">Annulla</a>
@@ -28,7 +28,7 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
             <?php
             if (isset($_POST['confBtn'])) {
                 $cons_con = new ConsegnaController();
-                $cons_res = $cons_con->updateDataConsegna($_SESSION['email'], $_GET['codConsegna'],date('Y-m-d', strtotime('+1 days')));
+                $cons_res = $cons_con->updateConsegnaEffettiva($_SESSION['email'], $_GET['codConsegna'],date('Y-m-d', strtotime('+1 days')),$_POST['note']);
 
                 $message = "Consegna ";
                 echo "<script type='text/javascript'>alert('$message');

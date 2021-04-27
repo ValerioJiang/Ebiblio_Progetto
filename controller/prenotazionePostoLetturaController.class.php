@@ -43,9 +43,20 @@
             $stmt = Dbh:: getInstance()
             -> getDb()
             -> prepare($query);
-            return $stmt -> execute();
+            $stmt -> execute();
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
-        
 
+        /**
+         * RETRIEVE
+         */
+        public function getPostoLetturaUtil($Util){
+            $query="SELECT * FROM PRENOTAZIONE_POSTO_LETTURA WHERE UTILIZZATORE = '$Util' ORDER BY DataPrenotazione desc";
+            $stmt = Dbh:: getInstance()
+                -> getDb()
+                -> prepare($query);
+            $stmt -> execute();
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        }
     }
 ?>
