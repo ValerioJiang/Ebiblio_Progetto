@@ -65,6 +65,7 @@ create table POSTO_LETTURA(
 create table CARTACEO(
     Codice int auto_increment primary key,
     Titolo varchar(255),
+    Autore varchar(255),
     Edizione varchar(255),
     Genere varchar(255),
     AnnoPubblicazione int,

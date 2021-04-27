@@ -86,7 +86,7 @@ if (isset($_POST['accedi'])){
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="/Ebiblio/admin/prenotazioni_postolettura.php">Visualizza prenotazioni posti lettura</a>
-                    <a class="dropdown-item" href="#">Visualizza prestiti libri</a>
+                    <a class="dropdown-item" href="/Ebiblio/admin/prestito_libro.php">Visualizza prestiti libri</a>
                     <a class="dropdown-item" href="/Ebiblio/admin/rubrica_messaggio.php">Visualizza rubrica</a>
                     <a class="dropdown-item" href="/Ebiblio/admin/bacheca_messaggio.php">Visualizza messaggi</a>
 

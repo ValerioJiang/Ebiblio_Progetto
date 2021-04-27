@@ -48,6 +48,9 @@ $cartaCon = new CartaceoController();
 
                 <?php
                 
+                
+
+
                     $codice = $_GET['Cod'];
                     $titolo = $_GET['Titolo'];
                     $autore = $_GET['Autore'];
@@ -71,16 +74,7 @@ $cartaCon = new CartaceoController();
             
                    echo" <td><input type='submit' name='elimina' class='btn btn-danger' value='Elimina'></input></td>";
 
-                   if(isset($_POST['elimina'])){
-
-                    $query = " DELETE FROM cartaceo WHERE codice = $codice";
-                    $stmt = Dbh::getInstance()
-                    ->getDb()
-                    ->prepare($query);
-                    $stmt-> execute();
-                    return $stmt -> fetchAll(PDO::FETCH_ASSOC);
                 
-                   }
                 
                 ?>
 
