@@ -2,8 +2,7 @@
 require_once('/xampp/htdocs/Ebiblio/admin/admin_partials/menu.php');
 //require_once ('/xampp/htdocs/Ebiblio/includes/registrazione.inc.php');
 
-$messaggio_con = new MessaggioController();
-$messaggio_res = $messaggio_con->list();      
+$segnalazioneCon = new SegnalazioneController();
 ?>
 
 
@@ -20,21 +19,17 @@ $messaggio_res = $messaggio_con->list();
 
                         <!--messaggi d'errore-->
                     <div  class ="text-center">
-                        <?php
+                        <?php  
 
-                            /*if (isset($_POST['invio'])) {
+                            $email = $_GET['Email'];
+                            if (isset($_POST['segnala'])) {
                                     
-                                $titolotrim = trim($_POST['titolo']);
-                                $messaggiotrim= trim($_POST['messaggio']);
+                                $notetrim = trim($_POST['note']);
+                                //amministratore da session
+                                $segnalazione=$segnalazioneCon->createSegnalazione($email,'amministratore@gmail.com',$notetrim);
+                                echo"Segnalazione inserita.";
                                                     
-                                if ((ctype_space($titolotrim)||$titolotrim=='')||(ctype_space($messaggiotrim)||$messaggiotrim=='')){
-                                    echo "Per favore riempire tutti i campi";
-                                }else{
-
-                                    $nuovo_messaggio = $messaggio_con->createMessaggio("amministratore@gmail.com",$Destinatario,$titolotrim,$messaggiotrim); 
-                                    echo"Messaggio inviato";
-                                }                     
-                            }*/
+                            }
                         ?>
                     </div>
             
@@ -48,13 +43,14 @@ $messaggio_res = $messaggio_con->list();
                     echo "<br>Segnala un comportamento errato di ". $email .':';
                     ?>
 
-                        <form  action=# method ="POST" class ="text-center"> 
+                        <form  action=# method ="POST"> 
                                 <div class="form-group">
-                                <label for="comment">Note:</label>
+                                <br>
+                                <label for="comment">Note (Facoltativo:):</label>
                                 <textarea class="form-control" rows="5" name="note" placeholder="Note..."></textarea>
                             </div>
                                   
-                            <button type="submit" class="btn btn-outline-danger" name="Segnala">Segnala</button>
+                            <button type="submit" class="btn btn-outline-danger" name="segnala">Segnala</button>
                             <br></br>
                             <a href = "/ebiblio/admin/rubrica_messaggio.php">Indietro</a>                   
 

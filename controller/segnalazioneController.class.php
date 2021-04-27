@@ -38,10 +38,19 @@
         }
 
 
-        public function createSegnalazione($Utilizzatore){
+        public function createSegnalazione($Utilizzatore,$Amministratore,$Note){
 
+            $query = "INSERT into  Segnalazione values('$Amministratore','$Utilizzatore',now(),'$Note')";
 
+            $stmt = Dbh::getInstance()
+                ->getDb()
+                ->prepare($query);
+            $stmt-> execute();
+    
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
+
+        
 
     
     }
