@@ -1,12 +1,12 @@
 <?php
+
 require_once('/xampp/htdocs/Ebiblio/admin/admin_partials/menu.php');
-//require_once ('/xampp/htdocs/Ebiblio/includes/registrazione.inc.php');
-
+$amministratoreCon = new AmministratoreController();
 $cartaceo_Con = new CartaceoController();
-$cartaceo_res = $cartaceo_Con->list();      
+$cartaceo_res = $cartaceo_Con->list();   
+$biblio_res = $amministratoreCon->getLikeAmministratoreBiblio($_SESSION['email']);
+
 ?>
-
-
     <?php
     require_once('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
     $cartaceoCon = new cartaceoController();
@@ -17,15 +17,11 @@ $cartaceo_res = $cartaceo_Con->list();
             <div class="row justify-content-center">
                 <div class="card" style="width: 60%;">
                     <div class="card-body p-5 align-self-center">
-
-                
-                        <!--messaggi d'errore-->
                         <div  class ="text-center">
 
-                        
                             <?php
 
-                            $bibliotecaadmin= $_GET['Biblioteca'];
+                                $biblioteca=$amministratoreCon->getLikeAmministratoreBiblio($_SESSION['email']);
                                    
                                 if (isset($_POST['nuovolibro'])) {
                                     $titolotrim = trim($_POST['titolo']);
@@ -40,7 +36,7 @@ $cartaceo_res = $cartaceo_Con->list();
                                     if ((ctype_space($titolotrim)||$titolotrim=='')||(ctype_space($autoretrim)||$autoretrim=='')|| (ctype_space($edizionetrim)||$edizionetrim=='')||(ctype_space($generetrim)||$generetrim=='')||(ctype_space($annotrim)||$annotrim=='')||(ctype_space($paginetrim)||$paginetrim=='')||(ctype_space($conservazionetrim)||$conservazionetrim=='')||(ctype_space($scaffaletrim)||$scaffaletrim=='')){
                                         echo "Per favore riempire tutti i campi";
                                     }else{
-                                       $creazionecartaceo = $cartaceo_Con->createCartaceo($titolotrim,$autoretrim,$edizionetrim,$generetrim,$annotrim,$paginetrim,$conservazionetrim,$scaffaletrim,$bibliotecaadmin);
+                                       $creazionecartaceo = $cartaceo_Con->createCartaceo($titolotrim,$autoretrim,$edizionetrim,$generetrim,$annotrim,$paginetrim,$conservazionetrim,$scaffaletrim,$biblio_res);
                                         echo "Libro inserito con successo";
                                     }
                                 }

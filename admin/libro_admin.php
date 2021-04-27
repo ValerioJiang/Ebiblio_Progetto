@@ -1,15 +1,12 @@
 <?php
 
 include('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
-/*
-$cartaCon = new CartaceoController();
-$carta_res = $cartaCon->list();
-$raccoltaCon = new RaccoltaController();
-$raccolta_res = $raccoltaCon ->list('amministratore@email.it');//da inserire valore passato con  sessione
-*/
+
 $cartaCon = new CartaceoController();
 $autoreCon = new AutoreController();
-$carta_res = $cartaCon->list_admin($_SESSION['email']);//da inserire valore passato con  sessione
+$carta_res = $cartaCon->list_admin($_SESSION['email']);
+$amministratoreCon = new AmministratoreController();
+$biblio = $amministratoreCon->getLikeAmministratoreBiblio($_SESSION['email']);
 ?>
 
 <div class="container" style="background-color: white;">
@@ -24,9 +21,10 @@ $carta_res = $cartaCon->list_admin($_SESSION['email']);//da inserire valore pass
                     </div>
                 </div>
             </div>
+
             <input type="submit" name="cartaform_submitted" class="btn btn-primary" value="Ricerca"></input>
             <input  type="button" name="nuovabiblio" class="btn btn-primary" value="Aggiungi" onclick="window.open('/Ebiblio/admin/nuovo_libro.php?Biblioteca=Biblioteca Universitaria di Bologna')"/> <!--biblio passato da sessione-->
-
+            
         </form>
         </br>
         </br>
@@ -51,14 +49,14 @@ $carta_res = $cartaCon->list_admin($_SESSION['email']);//da inserire valore pass
             <tbody>
 
                 <?php
-                
+
                 if (isset($_POST['cartaform_submitted'])) {
                     $titolotrim = trim($_POST['Titolo']);
 
                     if (ctype_space($titolotrim)||$titolotrim=='') {
                         echo "Titolo libro nullo";
                     } else {
-                        $carta_like = $cartaCon->getLikeLibro($titolotrim,"amministratore@gmail.com");//per ora vslore inserito manualmente(da fare con valore passato da session)
+                        $carta_like = $cartaCon->getLikeLibro($titolotrim,$_SESSION['email']);
                         if (count($carta_like) <= 0) {
                             echo "Nessun risultato corrispondente";
                         }
