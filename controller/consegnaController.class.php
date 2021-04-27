@@ -103,4 +103,15 @@ class ConsegnaController
 
     }
 
+    public function updateDataConsegna($volon, $codConsegna, $dataConsegna){
+        $query = "UPDATE CONSEGNA SET DataConsegna = '$dataConsegna' WHERE Volontario = '$volon' and Codice = $codConsegna";
+        $stmt = Dbh::getInstance()
+            ->getDb()
+            ->prepare($query);
+
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    }
+
 }
