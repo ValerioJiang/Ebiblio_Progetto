@@ -46,7 +46,7 @@ $segnalazioneCon = new SegnalazioneController();
                         <form  action=# method ="POST"> 
                                 <div class="form-group">
                                 <br>
-                                <label for="comment">Note (Facoltativo:):</label>
+                                <label for="comment">Note (Facoltativo):</label>
                                 <textarea class="form-control" rows="5" name="note" placeholder="Note..."></textarea>
                             </div>
                                   

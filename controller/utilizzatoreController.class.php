@@ -57,6 +57,21 @@
             $stmt->execute();
             return $stmt ->fetchAll(PDO::FETCH_ASSOC);            
         }
+
+            
+        public function setStatoAttivo($Utilizzatore){
+            $query = "UPDATE Utilizzatore SET Stato='Attivo' WHERE Email = '$Utilizzatore'";
+
+            $stmt = Dbh::getInstance()
+            ->getDb()
+            ->prepare($query);
+            $stmt->execute();
+            return $stmt ->fetchAll(PDO::FETCH_ASSOC);  
+
+
+        }
+
+        
      }
 
      //

@@ -50,6 +50,21 @@
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
 
+        public function deleteSegnalazione($Utilizzatore){
+            $query = "DELETE from segnalazione where utilizzatore = '$Utilizzatore'";
+
+            $stmt = Dbh::getInstance()
+            ->getDb()
+            ->prepare($query);
+            $stmt-> execute();
+
+        return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+
+           
+
+
+        }
+
         
 
     

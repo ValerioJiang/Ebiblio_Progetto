@@ -79,8 +79,12 @@ $utilizz_res = $utilizzCon->list();
                         echo '<td>' . $utilizz_res[$i]['Cognome'] . '</td>';
                         echo '<td>' . $utilizz_res[$i]['Stato'] . '</td>';
                         echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/admin/invio_messaggio.php?Destinatario='.$utilizz_res[$i]['Email'].'"'.'>Invia un messaggio</a></td>';
-                        echo '<td><a class="btn btn-danger" role="button" href="http://localhost/ebiblio/admin/segnala_utente.php?Email='.$utilizz_res[$i]['Email'].' &Nome=' . $utilizz_res[$i]['Nome'] .'&Cognome=' . $utilizz_res[$i]['Cognome'].'&Stato=' . $utilizz_res[$i]['Stato'] .'"'.'>Segnala</a></td>';
+                        if($utilizz_res[$i]['Stato'] == 'Attivo'){
+                            echo '<td><a class="btn btn-danger" role="button" href="http://localhost/ebiblio/admin/segnala_utente.php?Email='.$utilizz_res[$i]['Email'].' &Nome=' . $utilizz_res[$i]['Nome'] .'&Cognome=' .'"'.'>Segnala</a></td>';
+                        }else{
+                            echo '<td><a class="btn btn-danger" role="button" href="http://localhost/ebiblio/admin/riattiva_utente.php?Email='.$utilizz_res[$i]['Email'].' &Nome=' . $utilizz_res[$i]['Nome'] .'&Cognome=' . $utilizz_res[$i]['Cognome'].'&Stato=' . $utilizz_res[$i]['Stato'] .'"'.'>Riattiva Utente</a></td>';
 
+                        }
                         echo '</tr>';
 
                      }
