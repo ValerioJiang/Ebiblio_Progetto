@@ -36,7 +36,7 @@ $biblio_res = $amministratoreCon->getLikeAmministratoreBiblio($_SESSION['email']
                                     if ((ctype_space($titolotrim)||$titolotrim=='')||(ctype_space($autoretrim)||$autoretrim=='')|| (ctype_space($edizionetrim)||$edizionetrim=='')||(ctype_space($generetrim)||$generetrim=='')||(ctype_space($annotrim)||$annotrim=='')||(ctype_space($paginetrim)||$paginetrim=='')||(ctype_space($conservazionetrim)||$conservazionetrim=='')||(ctype_space($scaffaletrim)||$scaffaletrim=='')){
                                         echo "Per favore riempire tutti i campi";
                                     }else{
-                                       $creazionecartaceo = $cartaceo_Con->createCartaceo($titolotrim,$autoretrim,$edizionetrim,$generetrim,$annotrim,$paginetrim,$conservazionetrim,$scaffaletrim,$biblio_res);
+                                       $creazionecartaceo = $cartaceo_Con->createCartaceo($titolotrim,$autoretrim,$edizionetrim,$generetrim,$annotrim,$paginetrim,$conservazionetrim,$scaffaletrim,$biblio_res[0]['BibliotecaGestita']);
                                         echo "Libro inserito con successo";
                                     }
                                 }

@@ -40,7 +40,7 @@
         }
 
         public function getLikeAmministratoreBiblio($emailAmminis){
-            $query = "SELECT BibliotecaGestita from Amministratore where email = '$emailAmminis'";
+            $query = "SELECT * from Amministratore where email = '$emailAmminis'";
 
             $stmt = Dbh::getInstance()
                 ->getDb()
