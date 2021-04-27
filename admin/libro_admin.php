@@ -9,7 +9,7 @@ $raccolta_res = $raccoltaCon ->list('amministratore@email.it');//da inserire val
 */
 $cartaCon = new CartaceoController();
 $autoreCon = new AutoreController();
-$carta_res = $cartaCon->list_admin('amministratore@gmail.com');//da inserire valore passato con  sessione
+$carta_res = $cartaCon->list_admin($_SESSION['email']);//da inserire valore passato con  sessione
 ?>
 
 <div class="container" style="background-color: white;">

@@ -34,7 +34,7 @@ $email = $_GET['Email'];
                 <?php
                    $attivo=$utilizzatoreCon->setStatoAttivo($email);                    
                    $elimina =$segnalaCon->deleteSegnalazione($email);
-           
+
                 
                 ?>
 
