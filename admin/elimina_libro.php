@@ -1,14 +1,18 @@
 <?php
 
 include('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
-/*
+
+
 $cartaCon = new CartaceoController();
-$carta_res = $cartaCon->list();
-$raccoltaCon = new RaccoltaController();
-$raccolta_res = $raccoltaCon ->list('amministratore@email.it');//da inserire valore passato con  sessione
-*/
-$cartaCon = new CartaceoController();
-//da inserire valore passato con  sessione
+$codice = $_GET['Cod'];
+$titolo = $_GET['Titolo'];
+$autore = $_GET['Autore'];
+$genere = $_GET['Genere'];
+$anno = $_GET['AnnoPubblicazione'];
+$edizione = $_GET['Edizione'];
+$pagine = $_GET['Pagine'];
+$conservazione = $_GET['StatoConservazione'];
+$scaffale = $_GET['Scaffale'];
 
 ?>
 
@@ -28,6 +32,9 @@ $cartaCon = new CartaceoController();
         </br>
         <table class="table table-hover">
             <thead>
+
+            <h6>Il seguente libro è stato eliminato:<h6>
+        
                 <tr>
                     <th>Codice libro</th>
                     <th>Titolo</th>
@@ -47,19 +54,7 @@ $cartaCon = new CartaceoController();
             <tbody>
 
                 <?php
-                
-                
-
-
-                    $codice = $_GET['Cod'];
-                    $titolo = $_GET['Titolo'];
-                    $autore = $_GET['Autore'];
-                    $genere = $_GET['Genere'];
-                    $anno = $_GET['AnnoPubblicazione'];
-                    $edizione = $_GET['Edizione'];
-                    $pagine = $_GET['Pagine'];
-                    $conservazione = $_GET['StatoConservazione'];
-                    $scaffale = $_GET['Scaffale'];
+                   $cartaCon->deleteCartaceo($codice);                    
 
                     echo '<td>' . $codice . '</td>';
                     echo '<td>' . $titolo . '</td>';
@@ -70,11 +65,7 @@ $cartaCon = new CartaceoController();
                     echo '<td>'  . $pagine . '</td>';
                     echo '<td>'  . $conservazione. '</td>';
                     echo '<td>'  . $scaffale. '</td>';
-                    
             
-                   echo" <td><input type='submit' name='elimina' class='btn btn-danger' value='Elimina'></input></td>";
-
-                
                 
                 ?>
 

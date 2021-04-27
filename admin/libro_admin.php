@@ -8,8 +8,8 @@ $raccoltaCon = new RaccoltaController();
 $raccolta_res = $raccoltaCon ->list('amministratore@email.it');//da inserire valore passato con  sessione
 */
 $cartaCon = new CartaceoController();
+$autoreCon = new AutoreController();
 $carta_res = $cartaCon->list_admin('amministratore@gmail.com');//da inserire valore passato con  sessione
-
 ?>
 
 <div class="container" style="background-color: white;">
