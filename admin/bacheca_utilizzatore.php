@@ -1,16 +1,9 @@
 <?php
 
- /*On page1
-$_SESSION['varname'] = $var_value;
-
-//On page 2
-$var_value = $_SESSION['varname'];*/
-
-
 include('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
 
 $messaggioCon = new MessaggioController();
-$messaggio_res = $messaggioCon->list('amministratore@email.it'); //da cambiare con valore passato da sessione
+$messaggio_res = $messaggioCon->list($_SESSION['email']);
 
 
 ?>

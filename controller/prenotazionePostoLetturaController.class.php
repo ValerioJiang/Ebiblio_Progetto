@@ -58,5 +58,16 @@
             $stmt -> execute();
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
+
+        public function getPrenotazioneAdmin($admin){
+            $query="SELECT * from prenotazione_posto_lettura where biblioteca in
+            (select bibliotecagestita from amministratore where email like'$admin')";
+            $stmt = Dbh:: getInstance()
+            -> getDb()
+            -> prepare($query);
+            $stmt -> execute();
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+            }
+
     }
 ?>

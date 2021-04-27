@@ -1,12 +1,5 @@
 <?php
 
- /*On page1
-$_SESSION['varname'] = $var_value;
-
-//On page 2
-$var_value = $_SESSION['varname'];*/
-
-
 include('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
 
 $utilizzCon = new UtilizzatoreController();

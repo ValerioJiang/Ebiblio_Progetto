@@ -95,9 +95,9 @@ function infoBoxLogin($msg) {
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="/Ebiblio/admin/prenotazioni_postolettura.php">Visualizza prenotazioni posti lettura</a>
                     <a class="dropdown-item" href="/Ebiblio/admin/prestito_libro.php">Visualizza prestiti libri</a>
-                    <a class="dropdown-item" href="/Ebiblio/admin/rubrica_messaggio.php">Visualizza rubrica</a>
-                    <a class="dropdown-item" href="/Ebiblio/admin/bacheca_messaggio.php">Visualizza messaggi</a>
-                    <a class="dropdown-item" href="/Ebiblio/admin/controllo_utenti.php">Controllo comportamento utenti</a>
+                    <a class="dropdown-item" href="/Ebiblio/admin/rubrica_messaggio.php">Visualizza rubrica utilizzatori</a>
+                    <a class="dropdown-item" href="/Ebiblio/admin/bacheca_utilizzatore.php">Visualizza messaggi</a>
+              
                 </div>        
             </div>               
 

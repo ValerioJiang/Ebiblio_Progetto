@@ -1,6 +1,5 @@
 <?php
 require_once('/xampp/htdocs/Ebiblio/admin/admin_partials/menu.php');
-//require_once ('/xampp/htdocs/Ebiblio/includes/registrazione.inc.php');
 
 $messaggio_con = new MessaggioController();
 $messaggio_res = $messaggio_con->list();      
@@ -18,7 +17,6 @@ $messaggio_res = $messaggio_con->list();
                 <div class="card" style="width: 60%;">
                     <div class="card-body p-5 align-self-center">
 
-                        <!--messaggi d'errore-->
                     <div  class ="text-center">
                         <?php
 
@@ -33,7 +31,7 @@ $messaggio_res = $messaggio_con->list();
                                     echo "Per favore riempire tutti i campi";
                                 }else{
 
-                                    $nuovo_messaggio = $messaggio_con->createMessaggio("amministratore@gmail.com",$Destinatario,$titolotrim,$messaggiotrim); 
+                                    $nuovo_messaggio = $messaggio_con->createMessaggio($_SESSION['email'],$Destinatario,$titolotrim,$messaggiotrim); 
                                     echo"Messaggio inviato";
                                 }                     
                             }

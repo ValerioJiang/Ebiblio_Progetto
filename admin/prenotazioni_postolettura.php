@@ -3,8 +3,8 @@
 
 include('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
 
-$postoCon = new PostoLetturaController();
-$posto_res = $postoCon->getPrenotazioneAdmin('amministratore@gmail.com');
+$postoCon = new PrenotazionePostoLetturaController();
+$posto_res = $postoCon->getPrenotazioneAdmin($_SESSION['email']);
 
 ?>
 

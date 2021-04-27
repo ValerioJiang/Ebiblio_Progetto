@@ -1,15 +1,8 @@
 <?php
 require_once('/xampp/htdocs/Ebiblio/admin/admin_partials/menu.php');
-//require_once ('/xampp/htdocs/Ebiblio/includes/registrazione.inc.php');
 
 $segnalazioneCon = new SegnalazioneController();
 ?>
-
-
-    <?php
-    require_once('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
-    $cartaceoCon = new cartaceoController();
-    ?>
 
 <section>
         <div class="container-fluid " style="background: url('/ebiblio/images/scaffa.jpg') no-repeat;">
@@ -17,7 +10,6 @@ $segnalazioneCon = new SegnalazioneController();
                 <div class="card" style="width: 60%;">
                     <div class="card-body p-5 align-self-center">
 
-                        <!--messaggi d'errore-->
                     <div  class ="text-center">
                         <?php  
 
@@ -25,8 +17,7 @@ $segnalazioneCon = new SegnalazioneController();
                             if (isset($_POST['segnala'])) {
                                     
                                 $notetrim = trim($_POST['note']);
-                                //amministratore da session
-                                $segnalazione=$segnalazioneCon->createSegnalazione($email,'amministratore@gmail.com',$notetrim);
+                                $segnalazione=$segnalazioneCon->createSegnalazione($email,$_SESSION['email'],$notetrim);
                                 echo"Segnalazione inserita.";
                                                     
                             }

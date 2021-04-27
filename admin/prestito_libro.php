@@ -4,7 +4,7 @@
 include('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
 
 $prestitoCon = new PrestitoController();
-$prestito_res = $prestitoCon->getLikePrestitoBiblioAdmin('amministratore@gmail.com');//da cambiare con valore passato in sessione
+$prestito_res = $prestitoCon->getLikePrestitoBiblioAdmin($_SESSION['email']);
 
 ?>
 

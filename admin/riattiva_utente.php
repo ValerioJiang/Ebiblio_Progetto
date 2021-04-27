@@ -23,24 +23,16 @@ $email = $_GET['Email'];
         </br>
         </br>
         <table class="table table-hover">
-        
 
             <h6>Stato aggiornato ad attivo.<h6>
-        
-               
        
             <tbody>
 
                 <?php
                    $attivo=$utilizzatoreCon->setStatoAttivo($email);                    
                    $elimina =$segnalaCon->deleteSegnalazione($email);
-
-                
                 ?>
 
-                
-
-                   
             </tbody>
         </table>
         <div style='text-align:right'>
