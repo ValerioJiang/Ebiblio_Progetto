@@ -38,7 +38,6 @@ $utilizz_res = $utilizzCon->list();
                     <th>Nome</th>
                     <th>Cognome</th>
                     <th>Stato</th>
-                    <th></th>
 
                 </tr>
             </thead>
@@ -58,9 +57,12 @@ $utilizz_res = $utilizzCon->list();
                         for ($i = 0; $i < count($utilizz_like); $i++) {
                             echo '<tr ' .
                                 '&Codice=' . $utilizz_like[$i]['Email'] . '\');"' . '>';
+                            echo '<td>' . $utilizz_like[$i]['Email'] . '</td>';
                             echo '<td>' . $utilizz_like[$i]['Nome'] . '</td>';
                             echo '<td>' . $utilizz_like[$i]['Cognome'] . '</td>';
                             echo '<td>' . $utilizz_like[$i]['Stato'] . '</td>';
+                            echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/admin/invio_messaggio.php?Destinatario='.$utilizz_like[$i]['Email'].'"'.'>Invia un messaggio</a></td>';
+                            echo '<td><a class="btn btn-danger" role="button" href="http://localhost/ebiblio/admin/controllo_utente.php?Email='.$utilizz_like[$i]['Email'].' &Nome=' . $utilizz_like[$i]['Nome'] .'&Cognome=' . $utilizz_like[$i]['Cognome'].'&Stato=' . $utilizz_like[$i]['Stato'] .'"'.'>Segnala</a></td>';
                             echo '</tr>';
 
                           
@@ -76,8 +78,9 @@ $utilizz_res = $utilizzCon->list();
                         echo '<td>' . $utilizz_res[$i]['Nome'] . '</td>';
                         echo '<td>' . $utilizz_res[$i]['Cognome'] . '</td>';
                         echo '<td>' . $utilizz_res[$i]['Stato'] . '</td>';
-                        echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/admin/invio_messaggio.php?Destinatario='.$utilizz_res[$i]['Email'].'"'.'>Invia un nuovo messaggio</a></td>';
-                        
+                        echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/admin/invio_messaggio.php?Destinatario='.$utilizz_res[$i]['Email'].'"'.'>Invia un messaggio</a></td>';
+                        echo '<td><a class="btn btn-danger" role="button" href="http://localhost/ebiblio/admin/segnala_utente.php?Email='.$utilizz_res[$i]['Email'].' &Nome=' . $utilizz_res[$i]['Nome'] .'&Cognome=' . $utilizz_res[$i]['Cognome'].'&Stato=' . $utilizz_res[$i]['Stato'] .'"'.'>Segnala</a></td>';
+
                         echo '</tr>';
 
                      }

@@ -22,9 +22,7 @@ $messaggio_res = $messaggio_con->list();
                     <div  class ="text-center">
                         <?php
 
-                            $Destinatario = $_GET['Destinatario'];
-
-                            if (isset($_POST['invio'])) {
+                            /*if (isset($_POST['invio'])) {
                                     
                                 $titolotrim = trim($_POST['titolo']);
                                 $messaggiotrim= trim($_POST['messaggio']);
@@ -36,29 +34,27 @@ $messaggio_res = $messaggio_con->list();
                                     $nuovo_messaggio = $messaggio_con->createMessaggio("amministratore@gmail.com",$Destinatario,$titolotrim,$messaggiotrim); 
                                     echo"Messaggio inviato";
                                 }                     
-                            }
+                            }*/
                         ?>
                     </div>
             
-                    <h1 class="font-weight-light">Invia un messaggio</h1>
+                    <h1 class="font-weight-light">Segnala un comportamento errato</h1>
+                    
             
                     <form  action=# method ="POST" class ="text-center"> 
+                    <?php
 
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="comment">Titolo/Oggetto messaggio:</label>
-                                <br>
-                                <input type="text" name="titolo" size="70" maxlength="50"placeholder="Titolo..."/><br>
-                            </div>
-                        </div>
+                    $email = $_GET['Email'];
+                    echo "<br>Segnala un comportamento errato di ". $email .':';
+                    ?>
 
                         <form  action=# method ="POST" class ="text-center"> 
                                 <div class="form-group">
-                                <label for="comment">Testo messaggio:</label>
-                                <textarea class="form-control" rows="5" name="messaggio" placeholder="Messaggio..."></textarea>
+                                <label for="comment">Note:</label>
+                                <textarea class="form-control" rows="5" name="note" placeholder="Note..."></textarea>
                             </div>
                                   
-                            <button type="submit" class="btn btn-outline-danger" name="invio">Invio</button>
+                            <button type="submit" class="btn btn-outline-danger" name="Segnala">Segnala</button>
                             <br></br>
                             <a href = "/ebiblio/admin/rubrica_messaggio.php">Indietro</a>                   
 

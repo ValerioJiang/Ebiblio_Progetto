@@ -46,9 +46,6 @@ $scaffale = $_GET['Scaffale'];
                     <th>Stato Conservazione</th>
                     <th>Scaffale</th>
 
-
-
-
                 </tr>
             </thead>
             <tbody>
