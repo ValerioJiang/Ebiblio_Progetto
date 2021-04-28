@@ -78,6 +78,17 @@ class ConsegnaController
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function getClassificaConsegna(){
+        $query = "SELECT nome, cognome, count(volontario)as 'Tot.Consegne'  from volontario join consegna on volontario = email
+        group by volontario order by count(volontario) desc";
+        $stmt = Dbh::getInstance()
+        ->getDb()
+        ->prepare($query);
+
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     /**
      * UPDATE
      */
@@ -114,5 +125,7 @@ class ConsegnaController
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     }
+
+
 
 }

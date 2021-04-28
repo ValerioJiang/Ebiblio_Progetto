@@ -33,6 +33,7 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
               <tr>
                 <th>Nome</th>
                 <th>Indirizzo</th>
+                
               </tr>
             </thead>
             <tbody>

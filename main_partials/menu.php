@@ -66,7 +66,7 @@ $utente_res = $utente_con->list();
                         <a class="dropdown-item" href="/ebiblio/Ebook.php">Accesso Ebook</a>
                     </div>
                 </div>
-                <a href="#" class="nav-item nav-link">Statistiche</a>
+                <a href="/ebiblio/statistiche.php" class="nav-item nav-link">Statistiche</a>
             </div>
 
             <div class="navbar-nav ml-auto">
