@@ -7,6 +7,7 @@
 select @@default_storage_engine;
 SET @@global.sql_mode= 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
 SET @@time_zone = 'SYSTEM';
+SET GLOBAL event_scheduler = ON;
 
  
 
@@ -89,7 +90,7 @@ create table EBOOK(
     Genere varchar(20),
     AnnoPubblicazione int,
     Dimensione decimal(8,2),
-    /*PDF*/
+    Pdf varchar(255),
     NumAccessi int
 );
  
