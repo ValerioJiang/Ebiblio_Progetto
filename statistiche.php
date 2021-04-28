@@ -68,8 +68,7 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
                 $prestito_res= $prestitoCon->getClassificaPrestito();
 
                 for ($i = 0; $i < count($prestito_res); $i++) {
-                   // echo '<tr ' . '&Codice=' . $consegna_res[$i]['Nome'] . '\');"' . '>';
-                   echo '<tr>';
+                   
                   echo '<td>' . $prestito_res[$i]['Titolo'] . '</td>';
                   echo '<td>' . $prestito_res[$i]['Autore'] . '</td>';
                   echo '<td>' . $prestito_res[$i]['Edizione'] . '</td>';

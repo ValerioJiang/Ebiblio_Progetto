@@ -200,7 +200,7 @@ create table PRENOTAZIONE_POSTO_LETTURA(
     DataPrenotazione date not null,
     Inizio time, # 
     Fine time, 
-    primary key(Posto,Biblioteca,Utilizzatore)
+    primary key(Posto,Biblioteca,Utilizzatore,DataPrenotazione,Inizio)
 );
 
  
