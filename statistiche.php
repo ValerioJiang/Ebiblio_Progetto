@@ -4,6 +4,7 @@
 include('/xampp/htdocs/ebiblio/main_partials/menu.php');
 
 $consegnaCon = new ConsegnaController();
+$prestitoCon = new PrestitoController();
 
 
 ?>
@@ -51,22 +52,31 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
           </table>
 
 
-          <h5>Altra classifica</h5> 
+          <h5>Classifica libri più richiesti in prestito</h5> 
           <table class="table table-hover">
             <thead>
-              <tr>ewee</th>
-                <th>Cogneweome</th>
-                <th>Conseweweegne effettuate</th>
+              <tr>
+              <th>Titolo</th>
+                <th>Autore</th>
+                <th>Edizione</th>
+                <th>Genere</th>
+                <th>Numero Pagine</th>
+                <th>Biblioteca</th>
+                <th>Prestiti totali</th>
 
                 <?php
-                $consegna_res= $consegnaCon->getClassificaConsegna();
+                $prestito_res= $prestitoCon->getClassificaPrestito();
 
-                for ($i = 0; $i < count($consegna_res); $i++) {
+                for ($i = 0; $i < count($prestito_res); $i++) {
                    // echo '<tr ' . '&Codice=' . $consegna_res[$i]['Nome'] . '\');"' . '>';
                    echo '<tr>';
-                  echo '<td>' . $consegna_res[$i]['nome'] . '</td>';
-                  echo '<td>' . $consegna_res[$i]['cognome'] . '</td>';
-                  echo '<td>' . $consegna_res[$i]['Tot.Consegne'] . '</td>';
+                  echo '<td>' . $prestito_res[$i]['Titolo'] . '</td>';
+                  echo '<td>' . $prestito_res[$i]['Autore'] . '</td>';
+                  echo '<td>' . $prestito_res[$i]['Edizione'] . '</td>';
+                  echo '<td>' . $prestito_res[$i]['Genere'] . '</td>';
+                  echo '<td>' . $prestito_res[$i]['NumeroPagine'] . '</td>';
+                  echo '<td>' . $prestito_res[$i]['Biblioteca'] . '</td>';
+                  echo '<td>' . $prestito_res[$i]['Tot.Prestiti'] . '</td>';
                   echo '</tr>';
                 }
               

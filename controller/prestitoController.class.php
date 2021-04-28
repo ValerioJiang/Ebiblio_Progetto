@@ -85,4 +85,17 @@ class PrestitoController
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function getClassificaPrestito(){
+        $query = "SELECT *, count(cartaceo.codice) as 'Tot.Prestiti' from cartaceo join prestito on cartaceo.codice= libro
+        group by cartaceo.codice order by count(cartaceo.codice) desc";
+        
+        $stmt = Dbh::getInstance()
+        ->getDb()
+        ->prepare($query);
+
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    }
+
 }
