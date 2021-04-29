@@ -38,9 +38,8 @@ $consCon = new ConsegnaController();
 
                     if(isset($_GET['presaIncarico'])){
                         $cons_upd = $consCon -> updateVolontario($_SESSION['email'],$_GET['codConsegna']);
-                        echo "<script type='text/javascript'>alert('Presa in carico effetuata con successo');
-                                window.location = 'http://localhost/ebiblio/volontario'; 
-                              </script>";
+                        echo "Presa in carico effetuata con successo";
+                        
                     }
 
                     ?>

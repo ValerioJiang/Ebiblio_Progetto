@@ -126,6 +126,18 @@ class ConsegnaController
 
     }
 
+    
+    public function deleteConsegna($CodicePrestito){
+        $query = "DELETE from consegna where codicePrestito = $CodicePrestito";
+        $stmt = Dbh::getInstance()
+        ->getDb()
+        ->prepare($query);
+
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+    }
+
 
 
 }
