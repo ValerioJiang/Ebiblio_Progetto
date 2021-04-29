@@ -104,12 +104,23 @@ $utente_res = $utente_con->list();
                     </div>
                 </div>
 
-                <a href="#" class="nav-item nav-link">Statistiche</a>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle nav-item nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Statistiche
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="/ebiblio/statistiche/postazione_statistiche.php">Postazione letture meno utilizzate</a>
+                        <a class="dropdown-item" href="/ebiblio/statistiche/volontario_statistiche.php">Volontari che hanno effettuato più consegne</a>
+                        <a class="dropdown-item" href="/ebiblio/statistiche/libro_statistiche.php">Libri più richiesti</a>
+                        <a class="dropdown-item" href="/ebiblio/statistiche/ebook_statistiche.php">Ebook con più accessi</a>
+
+                    </div>
+                </div>
             </div>
 
             <div class="navbar-nav ml-auto">
             <?php
-            var_dump($_SESSION);
+            //var_dump($_SESSION);
             if(isset($_SESSION["email"])){
                 
                echo"<a href='/ebiblio/utilizzatore/logout.php' class='nav-item nav-link'>Logout</a></li>";
