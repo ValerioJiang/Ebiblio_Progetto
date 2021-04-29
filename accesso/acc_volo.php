@@ -29,7 +29,7 @@ require_once('/xampp/htdocs/ebiblio/main_partials/menu.php');
                 ?>
             </div>
             <h2 class="modal-title" id="login">Accesso</h2>
-            <em>volontari:</em><br><br>
+            <em>Volontario:</em><br><br>
 
             <form method="POST" action="/ebiblio/volontario/index.php" class="text-center">
                 E-mail:
@@ -45,7 +45,6 @@ require_once('/xampp/htdocs/ebiblio/main_partials/menu.php');
 
 
             <div class="modal-footer m-3">
-                <em>Utente non registrato? </em> <a href="registrazione.php">Registrati</a>
             </div>
         </div>
     </div>

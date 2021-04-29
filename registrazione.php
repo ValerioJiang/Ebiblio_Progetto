@@ -39,8 +39,6 @@ $utente_res = $utente_con->list();
                             $utente_new = $utente_con->createUtilizzatore($nometrim,$cognometrim, $datatrim,$luogotrim,$telefonotrim,$professionetrim,$emailtrim,$passwordtrim);
                             echo "Iscrizione eseguita con successo!";
                         }
-
-                       
                         
                         } 
                     ?>
