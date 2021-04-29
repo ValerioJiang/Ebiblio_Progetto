@@ -190,13 +190,9 @@ $prenot_con = new PrenotazionePostoLetturaController();
             }
             else{
             $prenot_res = $prenot_con -> createPrenotazione($_SESSION['email'],$_GET['Prenotazione'],$_GET['NomeBiblio'], $_GET['data'] ,$_GET['oraInizio']);
-            if($prenot_res){
-              $message = "Posto lettura prenotato con successo";
-                        echo "<script type='text/javascript'>alert('$message');
-                        </script>";
+              echo "<h5>Posto lettura prenotato con successo</h5>";
             }
           }
-        }
           
         
         

@@ -25,9 +25,11 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
                     <label>Periodo Prestito: <?php echo date('d-m-Y', strtotime("+ 1 days")); ?> <?php echo date('d-m-Y', strtotime(' + 16 days')); ?></label>
                 </div>
                 <form method="post">
+                <br>
                     <input type="submit" name="confBtn" id="test" class="btn btn-primary" value="Conferma" /><br/>
                 </form>
-                <a class="btn btn-secondary" role="button" href="http://localhost/ebiblio">Annulla</a>
+                <br>
+                <a  href="http://localhost/ebiblio/utilizzatore/libro.php">Annulla</a>
             
             </br>
             </br>
@@ -37,9 +39,8 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
                     $pres_res = $pres_con -> createPrestito($_SESSION['email'], $_GET['codLibro'],date('Y-m-d',strtotime('+1 days'))); 
                     
                     if($pres_res){
-                        $message = "Ritiro con libro prenotato con successo";
-                        echo "<script type='text/javascript'>alert('$message');
-                        </script>";
+                        echo "<h5>Prenotazione libro andata a buon fine</h5>";
+                        
                     }
 
                 }

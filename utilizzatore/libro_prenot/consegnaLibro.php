@@ -21,7 +21,7 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
             </br>
             
                 <div class="form-group">
-                    <label>Biblioteca: <?php echo $_GET['nomeBiblio']; ?></label>
+                    <label>Biblioteca: <?php  $_GET['nomeBiblio']; ?></label>
                     <br>
                     <label>Indirizzo: <?php $biblio_res = $biblio_con->getBiblioteca($_GET['nomeBiblio']);
                                         echo $biblio_res[0]['Indirizzo']; ?></label>
@@ -29,9 +29,11 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
                     <label>Periodo Prestito: verrà inviata una notifica quando il verrà il consegnato il libro da uno dei nostri volontari</label>
                 </div>
                 <form method="post">
+                <br>
                     <input type="submit" name="confBtn" id="test" class="btn btn-primary" value="Conferma" /><br/>
                 </form>
-                <a class="btn btn-secondary" role="button" href="http://localhost/ebiblio">Annulla</a>
+                <br>
+                <a  href="http://localhost/ebiblio/utilizzatore/libro.php">Indietro</a>
             
             </br>
             </br>
@@ -46,11 +48,7 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
 
 
                     if($pres_res){
-                        $message = "Consegna libro prenotato con successo";
-                        echo "<script type='text/javascript'>alert('$message');
-                        document.location.href = 'http://localhost/ebiblio';
-                        </script>";
-                        
+                        echo"<h5>Consegna libro prenotato con successo</h5>";
                     }
                 }
             ?>
