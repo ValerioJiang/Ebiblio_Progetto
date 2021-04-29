@@ -10,30 +10,45 @@ $utente_res = $utente_con->list();
         <div class="card" style="width: 60%;">
             <div class="card-body p-5 align-self-center">
 
-                <!--messaggi d'errore-->
                 <div  class ="text-center">
                     <?php
-                        if(isset($_GET["error"])){
-                            if($_GET["error"]== "emptyinput"){
-                                echo "<p class='bg-warning text-white h5'>ERRORE: <em>Riempire tutti i campi</em></p>";
-                            }else if($_GET["error"]== "invalidemail"){
-                                echo "<p class='bg-warning text-white h5'>ERRORE: <em>Email inserita non valida</p>";
-                            }else if($_GET["error"]== "passwordsdontmatch"){
-                                echo "<p class='bg-warning text-white h5'>ERRORE: <em>Le password inserite non coincidono</p>";
-                            }else if($_GET["error"]== "stmtfailed"){
-                                echo "<p class='bg-warning text-white h5'>ERRORE: <em>Qualcosa è andato storto, prova ancora</p>";
-                            }else if($_GET["error"]== "emailtaken"){
-                                echo "<p class='bg-warning text-white h5'>ERRORE: <em>Email inserità già in utilizzo.</p>";
-                            }else if($_GET["error"]== "null"){
-                                echo "<p class= 'bg-success text-white h5'><em>Iscrizione eseguita con successo!</p>";
-                                echo"<p><a href='accesso.php'>Esegui accesso</a></p>";
-                            }
+                      if (isset($_POST['iscriviti'])){
+                        $nometrim= $_POST['nome'];
+                        $cognometrim = $_POST['cognome'];
+                        $datatrim = $_POST['data'];
+                        $luogotrim = $_POST['luogonascita'];
+                        $telefonotrim = $_POST['telefono'];
+                        $professionetrim = $_POST['professione'];
+                        $emailtrim = $_POST['email'];
+                        $passwordtrim = $_POST['password'];
+                        $rptpasswordtrim = $_POST['rptpassword'];
+
+                        $email_res=$utente_con->checkIscrizione($emailtrim);
+                       
+
+                        if ((ctype_space($nometrim)||$nometrim=='')||(ctype_space($cognometrim)||$cognometrim=='')|| (ctype_space($datatrim)||$datatrim=='')||(ctype_space($telefonotrim)||$telefonotrim=='')||(ctype_space($professionetrim)||$professionetrim=='')||(ctype_space($emailtrim)||$emailtrim=='')||(ctype_space($passwordtrim)||$passwordtrim=='')||(ctype_space($rptpasswordtrim)||$rptpasswordtrim=='')){
+                            echo "Per favore riempire tutti i campi";
+                        }else if (!filter_var($emailtrim, FILTER_VALIDATE_EMAIL)) {
+                            echo "Email non valida";
+                        }else if(!strcasecmp($passwordtrim, $rptpasswordtrim) == 0){
+                            echo 'Le password inserite non coincidono';
+                        }else if (count($email_res)>0){
+                            echo "Email inserita già in uso";
+
+                        }else{
+                            $utente_new = $utente_con->createUtilizzatore($nometrim,$cognometrim, $datatrim,$luogotrim,$telefonotrim,$professionetrim,$emailtrim,$passwordtrim);
+                            echo "Iscrizione eseguita con successo!";
+                            echo"<p><a href='accesso.php'>Esegui accesso</a></p>";
+                        }
+
+                       
+                        
                         } 
                     ?>
                 </div>
                 <h1 class="font-weight-light">Registrazione</h1>
             
-                <form  action="includes/registrazione.inc.php" method ="POST" class ="text-center"> 
+                <form   method ="POST" class ="text-center"> 
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
@@ -50,9 +65,14 @@ $utente_res = $utente_con->list();
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            Data di nascita:
-                            <br>
-                            <input type="text" name="datanascita" size="20" maxlength="50" placeholder="Data nascita..."/><br>
+                 
+                         Data di nascita:                       
+                        <input id="data" type="date" name="data" <?php
+                         echo date("Y-m-d"); ?> 
+                         width="100%" />
+                        </br>
+                        </br>
+                        
                         </div>
                         <div class="form-group col-md-6">
                             Luogo di nascita:

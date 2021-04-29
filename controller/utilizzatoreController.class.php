@@ -67,8 +67,16 @@
             ->prepare($query);
             $stmt->execute();
             return $stmt ->fetchAll(PDO::FETCH_ASSOC);  
+        }
 
+        public function createUtilizzatore($Nome,$Cognome,$Data,$LuogoNascita,$Telefono,$Professione,$Email,$Password){
+            $query = "INSERT into utilizzatore values('$Email','$Password','$Nome','$Cognome','$Data','$LuogoNascita','$Telefono',now(),'$Professione','Attivo')";
 
+            $stmt = Dbh::getInstance()
+            ->getDb()
+            ->prepare($query);
+            $stmt->execute();
+            return $stmt ->fetchAll(PDO::FETCH_ASSOC); 
         }
 
         
