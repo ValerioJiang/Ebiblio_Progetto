@@ -5,6 +5,10 @@ include('/xampp/htdocs/ebiblio/main_partials/menu.php');
 
 $consegnaCon = new ConsegnaController();
 $prestitoCon = new PrestitoController();
+$bibliotecaCon = new BibliotecaController();
+$postoCon = new PostoLetturaController();
+$prenotazioneCon = new PrenotazionePostoLetturaController();
+
 
 
 ?>
@@ -51,7 +55,7 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
             </tbody>
           </table>
 
-
+          <br><br><br>
           <h5>Classifica libri più richiesti in prestito</h5> 
           <table class="table table-hover">
             <thead>
@@ -66,7 +70,7 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
 
                 <?php
                 $prestito_res= $prestitoCon->getClassificaPrestito();
-
+    
                 for ($i = 0; $i < count($prestito_res); $i++) {
                    
                   echo '<td>' . $prestito_res[$i]['Titolo'] . '</td>';
@@ -82,19 +86,44 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
               ?>
               </tr>
             </thead>
-
-
-
-
-
-
-
-
-            
             <tbody>
 
             </tbody>
           </table>
+
+
+            <br><br><br>
+
+          <h5>Classifica posti lettura più usati</h5> 
+          <table class="table table-hover">
+            <thead>
+              <tr>
+              <th>Biblioteca</th>
+                <th>Posti totali</th>
+                <th>Percentuale posti utilizzati</th>
+
+                <?php
+                  $biblioteca_res = $bibliotecaCon->list();
+                  $denominatore_res = $postoCon->getDenominatoreStatistica();
+
+                  $prenotazione_res;
+                  for ($i = 0; $i < count($biblioteca_res); $i++) {
+                    $prenotazione_res=$prenotazioneCon->createStatisticaPosto( $denominatore_res[$i]['den'],$biblioteca_res[$i]['Nome']);
+
+                    echo '<td>' . $biblioteca_res[$i]['Nome'] . '</td>';
+                    echo '<td>' . $denominatore_res[$i]['den'] . '</td>';
+                    echo '<td>' . $prenotazione_res[$i]['percentuale'] . '</td>';                   
+                    echo '</tr>';
+                }
+              
+              ?>
+              </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+          </table>
+        
 
 
 
