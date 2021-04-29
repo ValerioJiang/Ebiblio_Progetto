@@ -29,7 +29,7 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
                     <input type="submit" name="confBtn" id="test" class="btn btn-primary" value="Conferma" /><br/>
                 </form>
                 <br>
-                <a  href="http://localhost/ebiblio/utilizzatore/libro.php">Annulla</a>
+                <a  href="http://localhost/ebiblio/utilizzatore/libro.php">Indietro</a>
             
             </br>
             </br>
