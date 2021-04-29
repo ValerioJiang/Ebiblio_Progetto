@@ -109,10 +109,10 @@ $utente_res = $utente_con->list();
                         Statistiche
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="/ebiblio/statistiche/postazione_statistiche.php">Postazione letture meno utilizzate</a>
-                        <a class="dropdown-item" href="/ebiblio/statistiche/volontario_statistiche.php">Volontari che hanno effettuato più consegne</a>
-                        <a class="dropdown-item" href="/ebiblio/statistiche/libro_statistiche.php">Libri più richiesti</a>
-                        <a class="dropdown-item" href="/ebiblio/statistiche/ebook_statistiche.php">Ebook con più accessi</a>
+                        <a class="dropdown-item" href="/ebiblio/utilizzatore/statistiche_utilizzatore/postazione_statistiche.php">Postazione letture meno utilizzate</a>
+                        <a class="dropdown-item" href="/ebiblio/utilizzatore/statistiche_utilizzatore/volontario_statistiche.php">Volontari che hanno effettuato più consegne</a>
+                        <a class="dropdown-item" href="/ebiblio/utilizzatore/statistiche_utilizzatore/libro_statistiche.php">Libri più richiesti</a>
+                        <a class="dropdown-item" href="/ebiblio/utilizzatore/statistiche_utilizzatore/ebook_statistiche.php">Ebook con più accessi</a>
 
                     </div>
                 </div>
