@@ -36,16 +36,23 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
 
                 <?php
                   $biblioteca_res = $bibliotecaCon->list();
-                  $denominatore_res = $postoCon->getDenominatoreStatistica();
 
 
                   for ($i = 0; $i < count($biblioteca_res); $i++) {
+                    $denominatore_res = $postoCon->getDenominatoreStatistica();
+
                     $prenotazione_res=$prenotazioneCon->createStatisticaPosto( $denominatore_res[$i]['den'],$biblioteca_res[$i]['Nome']);
+
+                    var_dump($biblioteca_res);
+                    var_dump($denominatore_res);
+                    var_dump($prenotazione_res);
+                    /*
                     echo '<tr>';
+                    
                     echo '<td>' . $biblioteca_res[$i]['Nome'] . '</td>';
                     echo '<td>' . $denominatore_res[$i]['den'] . '</td>';
                     echo '<td>' . $prenotazione_res[$i]['percentuale'] . '%</td>';
-                    echo '</tr>';
+                    echo '</tr>';*/
                   }
               
                 ?>

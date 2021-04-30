@@ -82,7 +82,7 @@ function infoBoxLogin($msg) {
             <div class="navbar-nav">
                 <a href="/ebiblio/admin/" class="nav-item nav-link">Home</a>
                 <a href="/ebiblio/admin/Libro_admin.php" class="nav-item nav-link">Libro</a>
-                <a href="#" class="nav-item nav-link">Ebook</a>
+                <a href="/ebiblio/admin/ebook_admin.php" class="nav-item nav-link">Ebook</a>
 
 
             </div>
