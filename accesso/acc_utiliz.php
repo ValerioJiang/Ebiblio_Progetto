@@ -47,7 +47,7 @@ $utiliz_con = new UtilizzatoreController();
 
             
             <div class="modal-footer m-3">
-                <em>Utente non registrato? </em> <a href="registrazione.php">Registrati</a>
+                <em>Utente non registrato? </em> <a href="/ebiblio/registrazione.php">Registrati</a>
             </div>
         </div>
     </div>     

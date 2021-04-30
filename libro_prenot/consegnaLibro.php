@@ -29,7 +29,7 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
                     <label>Indirizzo: <?php $biblio_res = $biblio_con->getBiblioteca($_GET['nomeBiblio']);
                                         echo $biblio_res[0]['Indirizzo']; ?></label>
                     <br>
-                    <label>Periodo Prestito: </label>
+                    <label>Periodo Prestito: Il perido inizierà a partire dall'avvenuta consegna da parte di uno dei nostri volontari </label>
                 </div>
                 <form method="post">
                     <input type="submit" name="confBtn" id="test" class="btn btn-primary" value="Conferma" /><br/>
