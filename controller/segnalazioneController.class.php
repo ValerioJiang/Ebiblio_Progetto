@@ -26,8 +26,8 @@
         /**
          * LIST
          */
-        public function list(){
-            $query = "SELECT * FROM segnalazione";
+        public function list($Amministratore){
+            $query = "SELECT * FROM segnalazione where amministratore like '$Amministratore'";
 
             $stmt = Dbh::getInstance()
                 ->getDb()
