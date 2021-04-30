@@ -39,7 +39,7 @@ class ConsegnaController
     }
 
     public function listConsInCaricoVolo($volon){
-        $query = "SELECT * FROM Consegna where volontario = '$volon'";
+        $query = "SELECT * FROM Consegna where volontario = '$volon' and dataconsegna is null";
         $stmt = Dbh::getInstance()
             ->getDb()
             ->prepare($query);
@@ -80,6 +80,26 @@ class ConsegnaController
     public function getClassificaConsegna(){
         $query = "SELECT nome, cognome, count(volontario)as 'Tot.Consegne'  from volontario join consegna on volontario = email
         group by volontario order by count(volontario) desc";
+        $stmt = Dbh::getInstance()
+        ->getDb()
+        ->prepare($query);
+
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function listConsEffetuate($volon){
+        $query = "SELECT * FROM Consegna WHERE Volontario = '$volon' AND DataConsegna is not null";
+        $stmt = Dbh::getInstance()
+        ->getDb()
+        ->prepare($query);
+
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function consegnaUtil($util){
+        $query = "select * from consegna where CodicePrestito in (select codice from prestito where Utilizzatore ='$util')";
         $stmt = Dbh::getInstance()
         ->getDb()
         ->prepare($query);

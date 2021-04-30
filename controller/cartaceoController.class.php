@@ -77,6 +77,17 @@
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
         
+
+        public function getLikeLibroConsegna($codPrestito){
+            $query="SELECT * FROM Cartaceo WHERE Codice in (SELECT Libro From Prestito where Codice = $codPrestito)";
+            $stmt = Dbh::getInstance()
+            -> getDb()
+            -> prepare($query);
+
+            $stmt -> execute();
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        }
+
         //controllo esistenza autore(cartaceo)
         public function getLikeAutoreCartaceo($Nome,$Cognome){
         $query = "SELECT * FROM AUTORE where LOWER(Cognome) LIKE CONCAT"."('%',LOWER('$Cognome'),'%')"."and LOWER(Nome) LIKE CONCAT"."('%',LOWER('$Nome'),'%')";

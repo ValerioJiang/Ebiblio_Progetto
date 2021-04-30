@@ -4,7 +4,6 @@ require_once('/xampp/htdocs/ebiblio/utilizzatore/main_partials/menu.php');
 $cartaCon = new CartaceoController();
 
 $presCon = new PrestitoController();
-$pres_res = $presCon -> getLikePrestitoUtente($_SESSION['email']);
 
 $consCon = new ConsegnaController();
 
@@ -31,53 +30,42 @@ $consCon = new ConsegnaController();
 
                 <?php
 
-                        $pres_res = $presCon -> getLikePrestitoUtente($_SESSION['email']); 
+                        $pres_res = $presCon -> getLikePrestitoUtenteNoConsegna($_SESSION['email']); 
+                        //creare array con tutte le consegne relative a un particolare utente
+                        $consUtil = $consCon -> consegnaUtil($_SESSION['email']);
 
-                        for ($i = 0; $i < count($pres_res); $i++) {
-                            $carta_res = $cartaCon -> getById($pres_res[$i]['Libro']);
-
-                            $cons_res = $consCon -> getByPrestito($pres_res[$i]['Codice']); 
-                            $pres_codPres = $presCon -> getById($pres_res[$i]['Codice']);
-
-                            if(count($cons_res)==count($pres_codPres)){
-                                if($cons_res[0]['TipoConsegna']=='Affidamento'){
-                                    if(is_null($cons_res[0]['Volontario'])){
-                                        $status = "Consegna in attesa di presa in carico da volontario";
-                                        $dataInizio= "Parte dal giorno dell'avvenuta consegna";
-                                        $dataFine= "Non ancora definita";
-                                    }
-                                    else if(is_null($pres_codPres[0]['DataInizio'])&&is_null($pres_codPres[0]['DataFine'])){
-                                        $status = "Consegna presa in carico da volontario: ".$cons_res[0]['Volontario'];
-                                        $dataInizio= "Parte dal giorno dell'avvenuta consegna";
-                                        $dataFine= "Non ancora definita";
-                                    }
-                                }
-                                else if($cons_res[0]['TipoConsegna']=='Consegnato'){
-                                    $status = "Consegnato in data ".$cons_res[0]['DataConsegna']." da volontario ".$cons_res[0]['Volontario'];
-                                }
-                                else{
-                                    $status = "Riaffidamento da volontario ".$cons_res[0]['Volontario'];
-                                    $dataInizio= $pres_res[$i]['DataInizio'];
-                                    $dataFine= $pres_res[$i]['DataInizio'];
-                                }
-                            }
-                            else {
-                                $status="Ritiro in biblioteca";
-                                $dataInizio= $pres_res[$i]['DataInizio'];
-                                $dataFine= $pres_res[$i]['DataInizio'];
-                            }
-
-
+                        for ($i = 0; $i < count($consUtil); $i++) {
+                            $cartaRes = $cartaCon -> getLikeLibroConsegna($consUtil[$i]['CodicePrestito']);
                             echo '<tr>';
-                            echo '<td>' . $carta_res[0]['Titolo'] . '</td>';
-                            echo '<td>'  . $carta_res[0]['Biblioteca'] . '</td>';
-                            echo '<td>'  . $dataInizio . '</td>';
-                            echo '<td>'  . $dataFine . '</td>';
-                            echo '<td>'  . $status . '</td>';
+                            echo '<td>' . $cartaRes[0]['Titolo'] . '</td>';
+                            echo '<td>'  . $cartaRes[0]['Biblioteca'] . '</td>';
+                            if($consUtil[$i]['DataConsegna'] == null){
+                                echo '<td>'  . "Inizia con la consegna effettiva del libro" . '</td>';
+                                echo '<td>'  . "15 giorni dopo la data di inizio" . '</td>';    
+                            }
+                            else{
+                                echo '<td>'  . $consUtil[$i]['DataConsegna'] . '</td>';
+                                $newDate = strtotime('+15 days',$consUtil[$i]['DataConsegna']);
+                                echo '<td>'  . $newDate . '</td>';
+                            }
+                            
+                            if($consUtil[$i]['DataConsegna'] == null){
+                                echo '<td>'  . "In attesa della consegna di un volontario " . '</td>';
+                            }
+                            else{
+                                echo '<td>'  . "Presa in carico da ".$consUtil[$i]['Volontario'] . '</td>';
+                            }
+                            echo '</tr>';
+                        }
 
-                            /*if($cons_res[0]['Note'] != NULL){
-                                echo '<td>'  . $cons_res[0]['Note'] . '</td>';
-                            }*/
+
+                        for ($j = 0; $j < count($pres_res); $j++) {
+                            $cartaRes = $cartaCon -> getLikeLibroConsegna($pres_res[$i]['CodicePrestito']);
+                            echo '<tr>';
+                            echo '<td>' . $cartaRes[0]['Titolo'] . '</td>';
+                            echo '<td>'  . $cartaRes[0]['Biblioteca'] . '</td>';
+                            echo '<td>'  . $$pres_res[$i]['DataInizio'] . '</td>';
+                            echo '<td>'  . $$pres_res[$i]['DataFine'] . '</td>';
                             echo '</tr>';
                         }
                     

@@ -237,6 +237,6 @@ create table ACCESSO_EBOOK(
     foreign key (Ebook) references EBOOK(Codice) on delete cascade on update cascade,
     Utilizzatore varchar(255),
     foreign key(Utilizzatore) references UTILIZZATORE(Email) on delete cascade on update cascade,
-    DataAccesso date not null,
-    primary key(Ebook,DataAccesso)
+    DataAccesso datetime not null,
+    primary key(Ebook,Utilizzatore,DataAccesso)
     );

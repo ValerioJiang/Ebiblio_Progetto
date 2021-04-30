@@ -24,7 +24,8 @@
          * RETRIEVE
          */
         public function createAccessoEbook($Ebook,$Utilizzatore){
-            $query="INSERT into accesso_ebook value($Ebook,'$Utilizzatore',now())";
+            $dateNow = date('Y-m-d h:i:sa');
+            $query="INSERT into accesso_ebook value($Ebook,'$Utilizzatore','$dateNow')";
             $stmt = Dbh::getInstance()
             -> getDb()
             -> prepare($query);

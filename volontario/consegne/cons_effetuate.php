@@ -24,7 +24,7 @@ $consCon = new ConsegnaController();
                 <tbody>
 
                     <?php
-                    $cons_res = $consCon -> listConsInCaricoVolo($_SESSION['email']);
+                    $cons_res = $consCon -> listConsEffetuate($_SESSION['email']);
 
                     for ($i = 0; $i < count($cons_res); $i++) {
 

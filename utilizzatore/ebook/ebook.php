@@ -6,6 +6,7 @@ require_once('/xampp/htdocs/ebiblio/utilizzatore/main_partials/menu.php');
 $ebookCon = new EbookController();
 $ebook_res = $ebookCon->list();
 
+
 ?>
 
 <div class="container" style="background-color: white;">
@@ -79,12 +80,18 @@ $ebook_res = $ebookCon->list();
                             echo '<td>Accedere per visionare ebook</td>';
                             echo '<td>Accedere per il download</td>';
                         } else {
-                            echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/pdf_ebook/' . $ebook_res[$i]['Titolo'] . '.pdf">Visiona</a></td>';
-                            echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/pdf_ebook" download="' . $ebook_res[$i]['Titolo'] . '.pdf">Download</a></td>';
+                            // echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/pdf_ebook/' . $ebook_res[$i]['Titolo'] . '.pdf">Visiona</a></td>';
+                            echo '<td><a  class="btn btn-info" role="button" href="http://localhost/ebiblio/utilizzatore/ebook/visiona.php?visiona=true&file='.$ebook_res[$i]['Titolo'].'.pdf&codEbook='.$ebook_res[$i]['Codice'].'" > Visiona</a></td>';
+
+                            echo '<td><a  class="btn btn-info" role="button" href="http://localhost/ebiblio/pdf_ebook/" download="' . $ebook_res[$i]['Titolo'] . '.pdf">Download</a></td>';
+
+
                         }
                         echo '</tr>';
                     }
                 }
+
+
 
 
 

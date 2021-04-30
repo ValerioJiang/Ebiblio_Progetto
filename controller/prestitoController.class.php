@@ -51,9 +51,20 @@ class PrestitoController
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getLikePrestitoUtente($Utilizzatore)
+    public function getLikePrestitoUtenteNoConsegna($Utilizzatore)
     {
-        $query = "SELECT * FROM Prestito where Utilizzatore = '$Utilizzatore' ";
+        $query = "SELECT * FROM Prestito where Utilizzatore = '$Utilizzatore' AND Codice not in (SELECT CodicePrestito From consegna)";
+        $stmt = Dbh::getInstance()
+            ->getDb()
+            ->prepare($query);
+
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getLikePrestitoUtenteSiConsegna($Utilizzatore)
+    {
+        $query = "SELECT * FROM Prestito where Utilizzatore = '$Utilizzatore' AND Codice in (SELECT CodicePrestito From consegna)";
         $stmt = Dbh::getInstance()
             ->getDb()
             ->prepare($query);
