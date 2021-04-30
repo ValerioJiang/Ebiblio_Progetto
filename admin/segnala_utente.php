@@ -43,7 +43,7 @@ $segnalazioneCon = new SegnalazioneController();
                                   
                             <button type="submit" class="btn btn-outline-danger" name="segnala">Segnala</button>
                             <br></br>
-                            <a href = "/ebiblio/admin/rubrica_messaggio.php">Indietro</a>                   
+                            <a href = "/ebiblio/admin/rubrica.php">Indietro</a>                   
 
                         </form>
 

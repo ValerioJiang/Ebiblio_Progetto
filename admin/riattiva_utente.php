@@ -37,7 +37,7 @@ $email = $_GET['Email'];
         </table>
         <div style='text-align:right'>
         <br><br>
-        <a href = '/ebiblio/admin/rubrica_messaggio.php' >Indietro</a>
+        <a href = '/ebiblio/admin/rubrica.php' >Indietro</a>
         </div>
     </div>
 </div>

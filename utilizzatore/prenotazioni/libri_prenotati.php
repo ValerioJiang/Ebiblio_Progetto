@@ -56,7 +56,7 @@ $consCon = new ConsegnaController();
                                 echo '<td>'  . "Presa in carico da ".$consUtil[$i]['Volontario'] . '</td>';
                             }
                             if(!$consUtil[$i]['Note'] == null){
-                                echo '<td>'  . "Presa in carico da ".$consUtil[$i]['Note'] . '</td>';
+                                echo '<td>'  . $consUtil[$i]['Note'] . '</td>';
                             }
                             echo '</tr>';
                         }
