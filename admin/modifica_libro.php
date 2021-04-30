@@ -73,10 +73,7 @@ $mod_con = new cartaceoController();
                                 echo "Libro aggiornato con successo!";
 
                             }
-
-                                   
-                                     
-                                       
+      
                                 }
                             echo "<br><a href = '/ebiblio/admin/libro_admin.php'>Indietro</a>";
                             ?>
