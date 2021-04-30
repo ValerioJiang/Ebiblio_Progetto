@@ -33,7 +33,7 @@ $carta_res = $cartaCon->listUtil();
                     <th>Biblioteca</th>
                     <th>Disponibilita</th>
                     <th>Condizioni</th>
-                    <th>Modalita</th>
+                    <th>Modalità</th>
                     <th></th>
                 </tr>
             </thead>
@@ -62,7 +62,7 @@ $carta_res = $cartaCon->listUtil();
                             echo '<td>'  . $carta_like[$i]['StatoConservazione'] . '</td>';
                             if($carta_like[$i]['StatoPrestito'] != "Disponibile" || $carta_like[$i]['StatoConservazione'] == "Scadente"){
                                 echo '<td>Non è il possibile il ritiro</td>';
-                                echo '<td>Non è possibiòe la consegna</td>';
+                                echo '<td>Non è possibile la consegna</td>';
                             }
                             else{
                                 echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/utilizzatore/libro_prenot/ritiroLibro.php?codLibro='.$carta_like[$i]['Codice'].'&ritiroLibro=true&Titolo='.$carta_like[$i]['Titolo'].'&nomeBiblio='.$carta_like[$i]['Biblioteca'].'"'.'>Ritiro in biblioteca</a></td>';
