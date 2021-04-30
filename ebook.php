@@ -80,10 +80,7 @@ $ebook_res = $ebookCon->list();
                             echo '<td>Accedere per visionare ebook</td>';
                             echo '<td>Accedere per il download</td>';
                         } else {
-                            //echo '<td><a class="btn btn-info" role="button" name="visiona" href="http://localhost/ebiblio/pdf_ebook/' . $ebook_res[$i]['Titolo'] . '.pdf">Visiona</a></td>';
-                         echo '<td><a class="btn btn-info" role="button" name="visiona"</td>';
 
-                            echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/pdf_ebook" download="' . $ebook_res[$i]['Titolo'] . '.pdf">Download</a></td>';
 
                             if (isset($_GET['visiona'])){
                                 $accesso_res=$accessoCon->createAccessoEbook($ebook_res[$i]['Codice'], $_SESSION['email']);
