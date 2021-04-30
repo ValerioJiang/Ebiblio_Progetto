@@ -295,3 +295,26 @@ insert into ebook(Titolo, Edizione, Genere, AnnoPubblicazione, Dimensione, Pdf) 
 ("Robotic process automation for dummies","Prima","Saggistica",2015,3653,"C:/xampp/htdocs/Ebiblio/pdf_ebook/Robotic process automation for dummies"),
 ("Tableau for dummies","Prima","Saggistica",2015,3406,"C:/xampp/htdocs/Ebiblio/pdf_ebook/Tableau for dummies")
 ;
+
+insert into autore(nome, cognome) values("Umberto","Eco");
+insert into autore(nome,cognome) value("Niccolò","Ammaniti");
+insert into autore(nome,cognome) value("Thomas","Piketty");
+insert into autore(nome,cognome) value("George","Orwell");
+insert into autore(nome,cognome) value("Tahar","Ben Jelloun");
+insert into autore(nome,cognome) value("Karl","Marx");
+insert into autore(nome,cognome) value("Friedrich","Engels");
+
+
+insert into autore_libro values(1,1);
+insert into autore_libro values(2,2);
+insert into autore_libro values(3,3);
+insert into autore_libro values(4,4);
+insert into autore_libro values(5,4);
+insert into autore_libro values(6,5);
+insert into autore_libro values(7,1);
+insert into autore_libro values(8,2);
+insert into autore_libro values(9,3);
+insert into autore_libro values(10,4);
+insert into autore_libro values(11,4);
+insert into autore_libro values(12,6);
+insert into autore_libro values(12,7);
