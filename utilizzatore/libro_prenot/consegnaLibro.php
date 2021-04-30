@@ -26,7 +26,7 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
                     <label>Indirizzo: <?php $biblio_res = $biblio_con->getBiblioteca($_GET['nomeBiblio']);
                                         echo $biblio_res[0]['Indirizzo']; ?></label>
                     <br>
-                    <label>Periodo Prestito:</label>
+                    <label>Periodo Prestito: Sarà comunicato non appena un nostro volontario effettuerà la consegna</label>
                 </div>
                 <form method="post">
                 <br>
