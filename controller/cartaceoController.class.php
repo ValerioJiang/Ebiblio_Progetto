@@ -103,9 +103,9 @@
         
 
         //creare nuovo libro cartaceo
-        public function createCartaceo($Titolo,$Autore,$Edizione,$Genere,$AnnoPubblicazione,$NumPagine,$StatoConservazione,$Scaffale,$Biblioteca){
+        public function createCartaceo($Titolo,$Edizione,$Genere,$AnnoPubblicazione,$NumPagine,$StatoConservazione,$Scaffale,$Biblioteca){
             
-            $query = "INSERT INTO cartaceo(Titolo,Autore,Edizione,Genere,AnnoPubblicazione,NumeroPagine,StatoConservazione,StatoPrestito,Scaffale,Biblioteca) VALUES ('$Titolo','$Autore','$Edizione','$Genere',$AnnoPubblicazione,$NumPagine,'$StatoConservazione','Disponibile','$Scaffale','$Biblioteca')";
+            $query = "INSERT INTO cartaceo(Titolo,Edizione,Genere,AnnoPubblicazione,NumeroPagine,StatoConservazione,StatoPrestito,Scaffale,Biblioteca) VALUES ('$Titolo','$Edizione','$Genere',$AnnoPubblicazione,$NumPagine,'$StatoConservazione','Disponibile','$Scaffale','$Biblioteca')";
             $stmt = Dbh::getInstance()
                 ->getDb()
                 ->prepare($query);

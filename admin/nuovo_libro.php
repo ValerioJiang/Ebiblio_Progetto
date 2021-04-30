@@ -19,35 +19,12 @@ $biblio_res = $amministratoreCon->getLikeAmministratoreBiblio($_SESSION['email']
                     <div class="card-body p-5 align-self-center">
                         <div  class ="text-center">
 
-                            <?php
-
-                                $biblioteca=$amministratoreCon->getLikeAmministratoreBiblio($_SESSION['email']);
-                                   
-                                if (isset($_POST['nuovolibro'])) {
-                                    $titolotrim = trim($_POST['titolo']);
-                                    $autoretrim = trim($_POST['autore']);
-                                    $edizionetrim = trim($_POST['edizione']);
-                                    $generetrim = trim($_POST['genere']);
-                                    $annotrim = trim($_POST['anno']);
-                                    $paginetrim = trim($_POST['pagine']);  
-                                    $conservazionetrim = trim($_POST['stato']);
-                                    $scaffaletrim = trim($_POST['scaffale']);
-                                    
-                                    if ((ctype_space($titolotrim)||$titolotrim=='')||(ctype_space($autoretrim)||$autoretrim=='')|| (ctype_space($edizionetrim)||$edizionetrim=='')||(ctype_space($generetrim)||$generetrim=='')||(ctype_space($annotrim)||$annotrim=='')||(ctype_space($paginetrim)||$paginetrim=='')||(ctype_space($conservazionetrim)||$conservazionetrim=='')||(ctype_space($scaffaletrim)||$scaffaletrim=='')){
-                                        echo "Per favore riempire tutti i campi";
-                                    }else{
-                                       $creazionecartaceo = $cartaceo_Con->createCartaceo($titolotrim,$autoretrim,$edizionetrim,$generetrim,$annotrim,$paginetrim,$conservazionetrim,$scaffaletrim,$biblio_res[0]['BibliotecaGestita']);
-                                        echo "Libro inserito con successo";
-                                    }
-                                }
-                                     
-                               
-                            ?>
+                            
                     </div>
             
                     <h1 class="font-weight-light">Inserimento nuovo libro</h1>
             
-                    <form  action=# method ="POST" class ="text-center"> 
+                    <form  action="/ebiblio/admin/nuovo_autori.php" method ="GET" class ="text-center"> 
 
                         <div class="form-row">
                             <div class="form-group col-md-6">
@@ -57,14 +34,6 @@ $biblio_res = $amministratoreCon->getLikeAmministratoreBiblio($_SESSION['email']
                             </div>
                         </div>
 
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                            Autore:
-:
-                                <br>
-                                <input type="text" name="autore" size="70" maxlength="50"placeholder="Autore..."/><br>
-                            </div>
-                        </div>
 
                         <div class="form-row">
                             <div class="form-group col-md-6">
