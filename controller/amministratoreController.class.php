@@ -29,7 +29,7 @@
          * RETRIEVE
          */
         public function getLikeAmministratore($emailAmminis){
-            $query = "SELECT * FROM Amministratore WHERE LOWER(Email) LIKE CONCAT"."('%',LOWER('$$emailAmminis'),'%')";
+            $query = "SELECT * FROM Amministratore WHERE email like '$emailAmminis'";
             $stmt = Dbh::getInstance()
                 ->getDb()
                 ->prepare($query);
@@ -60,7 +60,7 @@
             ->getDb() //creazione oggetto dbh
             ->prepare($query);
             $stmt-> execute();//esecuzione
-            echo $query;
+           // echo $query;
             return $stmt -> fetchAll(PDO::FETCH_ASSOC); //organizzazione righe in array associativo
             
         }

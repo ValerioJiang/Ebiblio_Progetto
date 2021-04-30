@@ -32,7 +32,6 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
             if (isset($_POST['confBtn'])) {
                 $cons_con = new ConsegnaController();
                 $cons_res = $cons_con->updateConsegnaEffettiva($_SESSION['email'], $_GET['codConsegna'],date('Y-m-d', strtotime('+1 days')),$_POST['note']);
-                $cons_del = $cons_con->deleteConsegna($_GET['codprestito']);
                
                 echo"Consegna effettuata.";
             }

@@ -45,11 +45,11 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
 
                     $cons_con = new ConsegnaController();
                     $cons_res = $cons_con -> createConsegna($_GET['codLibro'],'Affidamento');
+                    echo"<h5>Consegna libro prenotato con successo</h5>";
 
-
-                    if($pres_res){
+                   /* if($pres_res){
                         echo"<h5>Consegna libro prenotato con successo</h5>";
-                    }
+                    }*/
                 }
             ?>
            

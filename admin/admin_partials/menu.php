@@ -81,11 +81,7 @@ function infoBoxLogin($msg) {
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
                 <a href="/ebiblio/admin/" class="nav-item nav-link">Home</a>
-                <a href="/ebiblio/admin/biblioteche_admin.php" class="nav-item nav-link">Biblioteche</a>
                 <a href="/ebiblio/admin/Libro_admin.php" class="nav-item nav-link">Libro</a>
-                
-                
-                <a href="#" class="nav-item nav-link">Statistiche</a>
 
             </div>
             <div class="dropdown">
@@ -103,12 +99,11 @@ function infoBoxLogin($msg) {
 
 
             <div class="navbar-nav ml-auto">
-                <a href="#" class="nav-item nav-link">Profilo</a>
-                <a href="#" class="nav-item nav-link">Logout</a>
-            </div>
-
-                
-
+                <?php
+                    if (isset($_SESSION["email"])) {
+                        echo "<a class='nav-item nav-link' href='/ebiblio/volontario/logout.php?email=" . $_SESSION['email'] . "'>Logout</a>";
+                    }
+                ?>
             </div>
         </div>
     </nav>
