@@ -1,7 +1,7 @@
 <?php
 
 
-require_once('/xampp/htdocs/ebiblio/utilizzatore/main_partials/menu.php');
+include('/xampp/htdocs/ebiblio/utilizzatore/main_partials/menu.php');
 
 $consegnaCon = new ConsegnaController();
 ?>

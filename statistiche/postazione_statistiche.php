@@ -20,7 +20,7 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
 
   <div class="container" style="background-color: white;">
     <br>
-        <div class="container">
+      <div class="container">
           <h2>Classifiche</h2>
           </br>
           </br>
@@ -35,30 +35,26 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
                 <th>Percentuale posti usati</th>
 
                 <?php
-               $biblioteca_res = $bibliotecaCon->list();
-               $denominatore_res = $postoCon->getDenominatoreStatistica();
+                  $biblioteca_res = $bibliotecaCon->list();
+                  $denominatore_res = $postoCon->getDenominatoreStatistica();
 
 
-                for ($i = 0; $i < count($biblioteca_res); $i++) {
+                  for ($i = 0; $i < count($biblioteca_res); $i++) {
                     $prenotazione_res=$prenotazioneCon->createStatisticaPosto( $denominatore_res[$i]['den'],$biblioteca_res[$i]['Nome']);
-                   echo '<tr>';
-                  echo '<td>' . $biblioteca_res[$i]['Nome'] . '</td>';
-                  echo '<td>' . $denominatore_res[$i]['den'] . '</td>';
-                  echo '<td>' . $prenotazione_res[$i]['percentuale'] . '%</td>';
-                  echo '</tr>';
-                }
+                    echo '<tr>';
+                    echo '<td>' . $biblioteca_res[$i]['Nome'] . '</td>';
+                    echo '<td>' . $denominatore_res[$i]['den'] . '</td>';
+                    echo '<td>' . $prenotazione_res[$i]['percentuale'] . '%</td>';
+                    echo '</tr>';
+                  }
               
-              ?>
+                ?>
               </tr>
             </thead>
             <tbody>
 
             </tbody>
           </table>
-
-
-
-
 
     </div>
   </div>
