@@ -1,21 +1,17 @@
 <?php
-    class Ebook{
-        public $Codice; 
-        public $Titolo; 
-        public $Edizione; 
-        public $Genere; 
-        public $AnnoPubblicazione; 
-        public $Dimensione; 
-        public $PDF;
-        public $NumAccessi;
+    class AccessoEbook{
+        public $Ebook; 
+        public $Utilizzatore; 
+        public $DataAccesso; 
+        
     }
 
-    class EbookController{
+    class AccessoEbookController{
         /**
          * LIST
          */
         public function list(){
-            $query ="SELECT * FROM Ebook";
+            $query ="SELECT * FROM Accesso_Ebook";
             $stmt = Dbh::getInstance()
                 -> getDb()
                 -> prepare($query);
@@ -27,8 +23,8 @@
         /**
          * RETRIEVE
          */
-        public function getLikeEbook($tit){
-            $query="SELECT * FROM Ebook WHERE LOWER(Titolo) LIKE CONCAT"."('%',LOWER('$tit'),'%')";
+        public function createAccessoEbook($Ebook,$Utilizzatore){
+            $query="INSERT into accesso_ebook value($Ebook,'$Utilizzatore',now())";
             $stmt = Dbh::getInstance()
             -> getDb()
             -> prepare($query);
