@@ -52,7 +52,7 @@ class ConsegnaController
     /**
      * CREATE
      */
-    public function createConsegna($CodicePrestito, $TipoConsegna)
+    public function createConsegna($CodicePrestito,$TipoConsegna)
     {
         $query = "INSERT INTO CONSEGNA(CodicePrestito, TipoConsegna) VALUES($CodicePrestito,'$TipoConsegna')";
         $stmt = Dbh::getInstance()
@@ -60,7 +60,6 @@ class ConsegnaController
             ->prepare($query);
 
         $stmt->execute();
-        echo $query;
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 

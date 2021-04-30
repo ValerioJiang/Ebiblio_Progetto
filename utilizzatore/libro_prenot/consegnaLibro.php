@@ -26,7 +26,7 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
                     <label>Indirizzo: <?php $biblio_res = $biblio_con->getBiblioteca($_GET['nomeBiblio']);
                                         echo $biblio_res[0]['Indirizzo']; ?></label>
                     <br>
-                    <label>Periodo Prestito: verrà inviata una notifica quando il verrà il consegnato il libro da uno dei nostri volontari</label>
+                    <label>Periodo Prestito:</label>
                 </div>
                 <form method="post">
                 <br>
@@ -41,10 +41,11 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
                 if(isset($_POST['confBtn'])){
                     $pres_con = new PrestitoController();
                     $pres_res = $pres_con -> createPrestitoConsegna($_SESSION['email'], $_GET['codLibro']); 
-            
+
+                    $pres_cod = $pres_con -> getLikePrestito($_SESSION['email'], $_GET['codLibro']);
 
                     $cons_con = new ConsegnaController();
-                    $cons_res = $cons_con -> createConsegna($_GET['codLibro'],'Affidamento');
+                    $cons_res = $cons_con -> createConsegna($pres_cod[0]['Codice'],'Affidamento');
                     echo"<h5>Consegna libro prenotato con successo</h5>";
 
                    /* if($pres_res){
