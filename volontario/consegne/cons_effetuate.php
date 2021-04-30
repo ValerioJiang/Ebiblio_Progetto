@@ -36,7 +36,6 @@ $consCon = new ConsegnaController();
                         echo '<td>' . $cons_res[$i]['Note'] . '</td>';
                         echo '</tr>';
                     }
-
                     
                     ?>
 

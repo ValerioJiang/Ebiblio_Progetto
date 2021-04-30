@@ -32,15 +32,16 @@ $consCon = new ConsegnaController();
                         echo '<td>' . $cons_res[$i]['Codice'] . '</td>';
                         echo '<td>' . $cons_res[$i]['CodicePrestito'] . '</td>';
                         echo '<td>' . $cons_res[$i]['TipoConsegna'] . '</td>';
-                        echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/volontario/consegne/riepilogo_consegna.php?codConsegna=' . $cons_res[$i]['Codice'] . '&codprestito=' .$cons_res[$i]['CodicePrestito']. ' ">Effettua consegna</a></td>';
+                        echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/volontario/consegne/riepilogo_consegna.php?codConsegna=' . $cons_res[$i]['Codice'] .'">Effettua consegna</a></td>';
                         echo '<td><a class="btn btn-danger" role="button" href="http://localhost/ebiblio/volontario/consegne/tutte_consegne.php?disdire=true&codConsegna=' . $cons_res[$i]['Codice'] .'">Disdire</a></td>';
                         echo '</tr>';
                     }
 
                     if(isset($_GET['disdire'])){
                         $cons_upd = $consCon -> updateDisdire($_SESSION['email'],$_GET['codConsegna']);
-                        echo "Presa in carico effetuata con successo";
-                             
+                        echo "<script type='text/javascript'>alert('Presa in carico effetuata con successo');
+                                window.location = 'http://localhost/ebiblio/volontario'; 
+                              </script>";
                     }
                     
                     ?>

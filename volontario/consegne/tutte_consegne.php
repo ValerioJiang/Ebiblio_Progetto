@@ -36,13 +36,11 @@ $consCon = new ConsegnaController();
                         echo '</tr>';
                     }
 
-                    
-
                     if(isset($_GET['presaIncarico'])){
                         $cons_upd = $consCon -> updateVolontario($_SESSION['email'],$_GET['codConsegna']);
-                       
-                        echo '<script>alert(Presa in carico effetuata con successo")</script>';
-                       // header("location://ebiblio/volontario/consegne/tutte_consegne.php");
+                        echo "<script type='text/javascript'>alert('Presa in carico effetuata con successo');
+                                window.location = 'http://localhost/ebiblio/volontario'; 
+                              </script>";
                     }
 
                     ?>

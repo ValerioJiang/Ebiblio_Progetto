@@ -74,9 +74,9 @@ $consCon = new ConsegnaController();
                             echo '<td>'  . $dataInizio . '</td>';
                             echo '<td>'  . $dataFine . '</td>';
                             echo '<td>'  . $status . '</td>';
-                           /* if($cons_res[0]['Note'] != NULL){
+                            if($cons_res[0]['Note'] != NULL){
                                 echo '<td>'  . $cons_res[0]['Note'] . '</td>';
-                            }*/
+                            }
                             echo '</tr>';
                         }
                     

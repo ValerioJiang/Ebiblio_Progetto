@@ -18,13 +18,10 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
                 <label>Consegna effettuata <?php echo date('d-m-Y'); ?></label>
             </div>
             <form method="post">
-            
                 <input type="text" name="note" placeholder="Inserire note es. messo dentro buca lettere"><br />
-                <br>
                 <input type="submit" name="confBtn" id="test" class="btn btn-primary" value="Conferma" /><br />
             </form>
-            <br>
-            <a class="btn btn-secondary" role="button" href="http://localhost/ebiblio/volontario/consegne/consegne_in_carico.php">Annulla</a>
+            <a class="btn btn-secondary" role="button" href="http://localhost/ebiblio">Annulla</a>
 
             </br>
             </br>
@@ -32,8 +29,11 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
             if (isset($_POST['confBtn'])) {
                 $cons_con = new ConsegnaController();
                 $cons_res = $cons_con->updateConsegnaEffettiva($_SESSION['email'], $_GET['codConsegna'],date('Y-m-d', strtotime('+1 days')),$_POST['note']);
-               
-                echo"Consegna effettuata.";
+
+                $message = "Consegna ";
+                echo "<script type='text/javascript'>alert('$message');
+                        document.location.href = 'http://localhost/ebiblio/volontario';
+                        </script>";
             }
             ?>
 
