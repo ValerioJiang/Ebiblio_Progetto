@@ -41,7 +41,7 @@
         }
 
         public function listUtil(){
-            $query=" SELECT * from Cartaceo";
+            $query=" SELECT * from Cartaceo where statoconservazione not like 'Scadente'";
             $stmt = Dbh::getInstance()
             -> getDb()
             -> prepare($query);
