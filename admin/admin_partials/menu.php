@@ -82,6 +82,8 @@ function infoBoxLogin($msg) {
             <div class="navbar-nav">
                 <a href="/ebiblio/admin/" class="nav-item nav-link">Home</a>
                 <a href="/ebiblio/admin/Libro_admin.php" class="nav-item nav-link">Libro</a>
+                <a href="#" class="nav-item nav-link">Ebook</a>
+
 
             </div>
             <div class="dropdown">
@@ -91,7 +93,7 @@ function infoBoxLogin($msg) {
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="/Ebiblio/admin/prenotazioni_postolettura.php">Visualizza prenotazioni posti lettura</a>
                     <a class="dropdown-item" href="/Ebiblio/admin/prestito_libro.php">Visualizza prestiti libri</a>
-                    <a class="dropdown-item" href="/Ebiblio/admin/rubrica_messaggio.php">Visualizza rubrica utilizzatori</a>
+                    <a class="dropdown-item" href="/Ebiblio/admin/rubrica.php">Visualizza rubrica utilizzatori</a>
                     <a class="dropdown-item" href="/Ebiblio/admin/bacheca_utilizzatore.php">Visualizza messaggi</a>
               
                 </div>        

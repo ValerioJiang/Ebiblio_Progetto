@@ -80,6 +80,8 @@ $ebook_res = $ebookCon->list();
                             echo '<td>Accedere per visionare ebook</td>';
                             echo '<td>Accedere per il download</td>';
                         } else {
+                        echo '<td><a class="btn btn-info" role="button" name="visiona" href="http://localhost/ebiblio/pdf_ebook/' . $ebook_res[$i]['Titolo'] . '.pdf">Visiona</a></td>';
+                         echo '<td><a class="btn btn-info" role="button" name="visiona"</td>';
 
 
                             if (isset($_GET['visiona'])){

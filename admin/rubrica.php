@@ -31,6 +31,8 @@ $utilizz_res = $utilizzCon->list();
                     <th>Nome</th>
                     <th>Cognome</th>
                     <th>Stato</th>
+                    <th></th>
+                    <th></th>
 
                 </tr>
             </thead>
