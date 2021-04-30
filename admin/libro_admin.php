@@ -4,6 +4,7 @@ include('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
 
 $cartaCon = new CartaceoController();
 $carta_res = $cartaCon->list_admin($_SESSION['email']);
+
 ?>
 
 <div class="container" style="background-color: white;">
@@ -30,7 +31,6 @@ $carta_res = $cartaCon->list_admin($_SESSION['email']);
                 <tr>
                     <th>Codice libro</th>
                     <th>Titolo</th>
-                    <th>Autore</th>
                     <th>Genere</th>
                     <th>Anno di pubblicazione</th>
                     <th>Edizione</th>
@@ -64,7 +64,6 @@ $carta_res = $cartaCon->list_admin($_SESSION['email']);
                             
                             echo '<td>' .  $carta_like[$i]['Codice'] . '</td>';
                             echo '<td>' .  $carta_like[$i]['Titolo'] . '</td>';
-                            echo '<td>' .  $carta_like[$i]['Autore'] . '</td>';
                             echo '<td>' .  $carta_like[$i]['Genere'] . '</td>';
                             echo '<td>' .  $carta_like[$i]['AnnoPubblicazione'] . '</td>';
                             echo '<td>'  .  $carta_like[$i]['Edizione'] . '</td>';
@@ -72,8 +71,8 @@ $carta_res = $cartaCon->list_admin($_SESSION['email']);
                             echo '<td>'  .  $carta_like[$i]['StatoConservazione'] . '</td>';
                             echo '<td>'  .  $carta_like[$i]['Scaffale'] . '</td>';
 
-                            echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/admin/modifica_libro.php?Titolo=' . $carta_like[$i]['Titolo'] .'&Autore=' . $carta_like[$i]['Autore'] .  '&Cod='. $carta_like[$i]['Codice'] . '&Genere=' . $carta_like[$i]['Genere'] .'&AnnoPubblicazione=' . $carta_like[$i]['AnnoPubblicazione'] . '&Edizione=' . $carta_like[$i]['Edizione'] .'&Pagine=' . $carta_like[$i]['NumeroPagine'] . '&Scaffale=' . $carta_like[$i]['Scaffale'].'"'.'>Modifica</a></td>';
-                            echo '<td><a class="btn btn btn-danger" role="button" href="http://localhost/ebiblio/admin/elimina_libro.php?Titolo=' . $carta_like[$i]['Titolo'] .'&Autore=' . $carta_like[$i]['Autore'] .  '&Cod='. $carta_like[$i]['Codice'] . '&Genere=' . $carta_like[$i]['Genere'] .'&AnnoPubblicazione=' . $carta_like[$i]['AnnoPubblicazione'] . '&Edizione=' . $carta_like[$i]['Edizione'] .'&Pagine=' . $carta_like[$i]['NumeroPagine'] . '&Scaffale=' . $carta_like[$i]['Scaffale'].'"'.'>Elimina</a></td>';
+                            echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/admin/modifica_libro.php?Titolo=' . $carta_like[$i]['Titolo'] . '&Cod='. $carta_like[$i]['Codice'] . '&Genere=' . $carta_like[$i]['Genere'] .'&AnnoPubblicazione=' . $carta_like[$i]['AnnoPubblicazione'] . '&Edizione=' . $carta_like[$i]['Edizione'] .'&Pagine=' . $carta_like[$i]['NumeroPagine'] . '&Scaffale=' . $carta_like[$i]['Scaffale'].'"'.'>Modifica</a></td>';
+                            echo '<td><a class="btn btn btn-danger" role="button" href="http://localhost/ebiblio/admin/elimina_libro.php?Titolo=' . $carta_like[$i]['Titolo'] .  '&Cod='. $carta_like[$i]['Codice'] . '&Genere=' . $carta_like[$i]['Genere'] .'&AnnoPubblicazione=' . $carta_like[$i]['AnnoPubblicazione'] . '&Edizione=' . $carta_like[$i]['Edizione'] .'&Pagine=' . $carta_like[$i]['NumeroPagine'] . '&Scaffale=' . $carta_like[$i]['Scaffale'].'"'.'>Elimina</a></td>';
     
                         }
                     }
@@ -84,7 +83,6 @@ $carta_res = $cartaCon->list_admin($_SESSION['email']);
                             
                         echo '<td>' . $carta_res[$i]['Codice'] . '</td>';
                         echo '<td>' . $carta_res[$i]['Titolo'] . '</td>';
-                        echo '<td>' . $carta_res[$i]['Autore'] . '</td>';
                         echo '<td>' . $carta_res[$i]['Genere'] . '</td>';
                         echo '<td>' . $carta_res[$i]['AnnoPubblicazione'] . '</td>';
                         echo '<td>'  . $carta_res[$i]['Edizione'] . '</td>';
@@ -93,8 +91,8 @@ $carta_res = $cartaCon->list_admin($_SESSION['email']);
                         echo '<td>'  . $carta_res[$i]['Scaffale'] . '</td>';
                         
                 
-                        echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/admin/modifica_libro.php?Titolo=' . $carta_res[$i]['Titolo'] .'&Autore=' . $carta_res[$i]['Autore'] .  '&Cod='. $carta_res[$i]['Codice'] . '&Genere=' . $carta_res[$i]['Genere'] .'&AnnoPubblicazione=' . $carta_res[$i]['AnnoPubblicazione'] . '&Edizione=' . $carta_res[$i]['Edizione'] .'&Pagine=' . $carta_res[$i]['NumeroPagine'] . '&Scaffale=' . $carta_res[$i]['Scaffale'].'"'.'>Modifica</a></td>';
-                        echo '<td><a class="btn btn-danger"role="button" href="http://localhost/ebiblio/admin/elimina_libro.php?Titolo=' . $carta_res[$i]['Titolo'] .'&Autore=' . $carta_res[$i]['Autore'] .  '&Cod='. $carta_res[$i]['Codice'] . '&Genere=' . $carta_res[$i]['Genere'] .'&AnnoPubblicazione=' . $carta_res[$i]['AnnoPubblicazione'] . '&Edizione=' . $carta_res[$i]['Edizione'] .'&Pagine=' . $carta_res[$i]['NumeroPagine'] . '&Scaffale=' . $carta_res[$i]['Scaffale'].' &StatoConservazione=' . $carta_res[$i]['StatoConservazione'] . '"'.'>Elimina</a></td>';
+                        echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/admin/modifica_libro.php?Titolo=' . $carta_res[$i]['Titolo'] .  '&Cod='. $carta_res[$i]['Codice'] . '&Genere=' . $carta_res[$i]['Genere'] .'&AnnoPubblicazione=' . $carta_res[$i]['AnnoPubblicazione'] . '&Edizione=' . $carta_res[$i]['Edizione'] .'&Pagine=' . $carta_res[$i]['NumeroPagine'] . '&Scaffale=' . $carta_res[$i]['Scaffale'].'"'.'>Modifica</a></td>';
+                        echo '<td><a class="btn btn-danger"role="button" href="http://localhost/ebiblio/admin/elimina_libro.php?Titolo=' . $carta_res[$i]['Titolo'] . '&Cod='. $carta_res[$i]['Codice'] . '&Genere=' . $carta_res[$i]['Genere'] .'&AnnoPubblicazione=' . $carta_res[$i]['AnnoPubblicazione'] . '&Edizione=' . $carta_res[$i]['Edizione'] .'&Pagine=' . $carta_res[$i]['NumeroPagine'] . '&Scaffale=' . $carta_res[$i]['Scaffale'].' &StatoConservazione=' . $carta_res[$i]['StatoConservazione'] . '"'.'>Elimina</a></td>';
 
                     }
                 }

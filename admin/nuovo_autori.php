@@ -1,6 +1,8 @@
 <?php
 
 include('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
+$autoreCon = new AutoreController();
+
 
 if (!isset($_GET['nuovolibro'])) {
     echo "<script type='text/javascript'>alert('Errore ritornare home');
@@ -107,6 +109,7 @@ $scaffaletrim = trim($_GET['scaffale']);
             
             $creazionecartaceo = $cartaceo_Con->createCartaceo($titolotrim, $edizionetrim, $generetrim, $annotrim, $paginetrim, $conservazionetrim, $scaffaletrim, $biblioteca[0]['BibliotecaGestita']);
             echo "Libro inserito con successo";
+            echo"<br><a href=/ebiblio/admin/libro_admin.php>Indietro</a>";
 
             $cart_cod = $cartaceo_Con -> getLikeLibroUtil($titolotrim);
             $codLibro = $cart_cod[0]['Codice'];
@@ -114,13 +117,21 @@ $scaffaletrim = trim($_GET['scaffale']);
             $aut_list = array();
 
             for($i=0; $i < $numAut; $i++){
+                $autore_res = $autoreCon->getLikeAutoreCartaceo($_GET['nomaut'.$i], $_GET['cogaut'.$i]);
+                
+                if(count($autore_res)<1){
                 $aut_crea = $autCon -> createAutore($_GET['nomaut'.$i], $_GET['cogaut'.$i]);
+                
                 $aut_cod = $autCon -> getAutCod($_GET['nomaut'.$i], $_GET['cogaut'.$i]);
                 $aut_list[] = $aut_cod[0]['Codice'];
+                }
+                
             }
 
             for($j = 0; $j < count($aut_list); $j++){
+            
                 $autlib_res = $autLibCon -> createAutLib($aut_list[$j],$codLibro);
+                
             }
 
             

@@ -6,7 +6,6 @@ include('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
 $cartaCon = new CartaceoController();
 $codice = $_GET['Cod'];
 $titolo = $_GET['Titolo'];
-$autore = $_GET['Autore'];
 $genere = $_GET['Genere'];
 $anno = $_GET['AnnoPubblicazione'];
 $edizione = $_GET['Edizione'];
@@ -38,7 +37,6 @@ $scaffale = $_GET['Scaffale'];
                 <tr>
                     <th>Codice libro</th>
                     <th>Titolo</th>
-                    <th>Autore</th>
                     <th>Genere</th>
                     <th>Anno di pubblicazione</th>
                     <th>Edizione</th>
@@ -55,7 +53,6 @@ $scaffale = $_GET['Scaffale'];
 
                     echo '<td>' . $codice . '</td>';
                     echo '<td>' . $titolo . '</td>';
-                    echo '<td>' . $autore . '</td>';
                     echo '<td>' . $genere. '</td>';
                     echo '<td>' . $anno . '</td>';
                     echo '<td>'  . $edizione . '</td>';

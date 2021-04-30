@@ -21,7 +21,6 @@ $mod_con = new cartaceoController();
                         <?php
                             $titolo = $_GET['Titolo'];
                             $codice = $_GET['Cod'];
-                            $autore = $_GET['Autore'];
                             $genere = $_GET['Genere'];
                             $anno = $_GET['AnnoPubblicazione'];
                             $edizione = $_GET['Edizione'];
@@ -31,7 +30,6 @@ $mod_con = new cartaceoController();
                             echo  "<h1 class='font-weight-light'>Modifica libro esistente</h1>";
                             echo"<form  action=# method ='POST' class ='text-center'>"; 
                             echo"<div class='form-row'><div class='form-group col-md-6'>Titolo:<br><input type=text name=titolo size=70 maxlength=50 placeholder=Titolo... value= '$titolo'  /><br></div></div>";
-                            echo"<div class='form-row'><div class='form-group col'>Autore:<br><input type='text' name='autore' size='70' maxlength='50'placeholder ='Autore...' value ='$autore'/><br></div></div>";
                             echo"<div class='form-row'><div class='form-group col'>Edizione:<br><input type='text' name='edizione' size='70' maxlength='50'placeholder ='Edizione...' value ='$edizione'/><br></div></div>";
                             echo "<div class='form-row'><div class='form-group col-md'>Genere:<br><input type='text' name='genere' size='30' maxlength='50' placeholder='Genere...' value ='$genere'/><br></div>";
                             echo "<div class='form-group col-md'>Anno di pubblicazione<br><input type='text' name='anno' size='30' maxlength='50'placeholder ='Anno di pubblicazione...'value = '$anno'/><br></div></div>";
@@ -39,7 +37,7 @@ $mod_con = new cartaceoController();
                             echo "<div class='form-group col-md'>Scaffale<br><input type='text' name='scaffale' size='30' maxlength='50'placeholder ='Scaffale...'value = '$scaffale'/><br></div></div>";
                             
                           echo" <label for='statolibro'>Stato libro</label>
-                            <select multiple class='form-control' name = 'statolibro' id='statolibro'>
+                            <select multiple class='form-control' name = 'statolibro' id='statolibro' >
                               <option>Ottimo</option>
                               <option>Buono</option>
                               <option>Non buono</option>
@@ -54,7 +52,6 @@ $mod_con = new cartaceoController();
                             
                             if (isset($_POST['modificalibro'])) {
                                 $titolotrim = trim($_POST['titolo']);
-                                $autoretrim = trim($_POST['autore']);
                                 $edizionetrim = trim($_POST['edizione']);
                                 $generetrim = trim($_POST['genere']);
                                 $annotrim = trim($_POST['anno']);
@@ -62,17 +59,21 @@ $mod_con = new cartaceoController();
                                 $paginetrim = trim($_POST['pagine']);
                                 $statotrim = trim($_POST['statolibro']);
                                
-
+                        if ((ctype_space($titolotrim)||$titolotrim=='')||(ctype_space($edizionetrim)||$edizionetrim=='')|| (ctype_space($generetrim)||$generetrim=='')||(ctype_space($annotrim)||$annotrim=='')||(ctype_space($paginetrim)||$paginetrim=='')||(ctype_space($scaffaletrim)||$scaffaletrim=='')||(ctype_space($statotrim)||$statotrim=='')){
+                            echo "Per favore riempire tutti i campi";
+                        }else{
                                 $mod_titolo=$mod_con->updateTitolo($codice,$titolotrim);
-                                $mod_autore=$mod_con->updateAutore($codice,$autoretrim);
                                 $mod_edizione=$mod_con->updateEdizione($codice,$edizionetrim);
                                 $mod_genere=$mod_con->updateGenere($codice,$generetrim);
                                 $mod_anno=$mod_con->updateAnno($codice,$annotrim);
                                 $mod_pagine=$mod_con->updatePagine($codice,$paginetrim);
                                 $mod_scaffale=$mod_con->updateScaffale($codice,$scaffaletrim);
                                 $mod_stato=$mod_con->updateStato($codice,$statotrim);
-
+                               
                                 echo "Libro aggiornato con successo!";
+
+                            }
+
                                    
                                      
                                        

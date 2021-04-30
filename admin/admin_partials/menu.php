@@ -70,7 +70,7 @@ function infoBoxLogin($msg) {
 <body>
 
     <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
-        <a href="/ebiblio" class="navbar-brand">
+        <a href=# class="navbar-brand">
             <img src="http:\ebiblio\images\book-half.svg" height="28">
             EBIBLIOXUNIBO
         </a>
