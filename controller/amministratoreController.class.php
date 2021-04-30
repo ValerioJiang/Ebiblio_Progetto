@@ -60,7 +60,7 @@
             ->getDb() //creazione oggetto dbh
             ->prepare($query);
             $stmt-> execute();//esecuzione
-           // echo $query;
+           
             return $stmt -> fetchAll(PDO::FETCH_ASSOC); //organizzazione righe in array associativo
             
         }

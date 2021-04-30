@@ -123,11 +123,11 @@ class ConsegnaController
     }
 
     public function updateDisdire($volon, $codConsegna){
-        $query = "UPDATE CONSEGNA SET Volontario = null WHERE Volontario = '$volon' and Codice = $codConsegna";
+        $query = "UPDATE CONSEGNA SET Volontario = NULL WHERE Volontario = '$volon' and Codice = $codConsegna";
         $stmt = Dbh::getInstance()
             ->getDb()
             ->prepare($query);
-
+        
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
 

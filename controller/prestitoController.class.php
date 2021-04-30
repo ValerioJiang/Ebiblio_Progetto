@@ -33,7 +33,7 @@ class PrestitoController
         $stmt = Dbh::getInstance()
             ->getDb()
             ->prepare($query);
-        echo $query;
+    
         return $stmt->execute();
     }
 

@@ -37,7 +37,7 @@ class AutoreController{
         -> prepare($query);
 
         $stmt -> execute();
-        echo $query;
+        
         return $stmt -> fetchAll(PDO::FETCH_ASSOC);
     }
 
