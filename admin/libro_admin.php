@@ -37,7 +37,8 @@ $carta_res = $cartaCon->list_admin($_SESSION['email']);
                     <th>Num.Pagine</th>
                     <th>Stato Conservazione</th>
                     <th>Scaffale</th>
-
+                    <th></th>
+                    <th></th>
 
 
 
