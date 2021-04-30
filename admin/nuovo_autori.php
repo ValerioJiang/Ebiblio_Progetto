@@ -84,6 +84,7 @@ $scaffaletrim = trim($_GET['scaffale']);
             for ($i = 0; $i < $_GET['numAut']; $i++) {
                 echo "<div class='form-row'>";
                 echo "<input type='text' class='form-control' name='nomaut" . $i . "' id='titoloId' aria-describedby='emailHelp' placeholder='Inserire nome autore " . $i . "'>";
+                echo "<br>";
                 echo "<input type='text' class='form-control' name='cogaut" . $i . "' id='titoloId' aria-describedby='emailHelp' placeholder='Inserire cognome autore " . $i . "'>";
                 echo "<br>";
                 echo "</div>";

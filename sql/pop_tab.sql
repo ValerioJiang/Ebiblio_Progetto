@@ -283,3 +283,15 @@ insert into Utilizzatore values("ciao@gmail.com","123","Ual","Erio",'1998-12-12'
 insert into Amministratore values("amministratore@gmail.com","123","amministratore","de amministris", '1998-12-12', "Prato", "37048511793","AFM","Biblioteca Universitaria di Bologna");
 insert into Amministratore values("amministratoreeco@gmail.com","123","amministratore","de amministris", '1998-12-12', "Prato", "37048511793","AFM","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali");
 insert into volontario values("volontario@gmail.com","123","volontario","de volontaris", '1998-12-12', "Prato", "37048511793","Bici");
+insert into ebook(Titolo, Edizione, Genere, AnnoPubblicazione, Dimensione, Pdf) values
+("Algorithms for Dummies","Prima","Saggistica",2017,4850,"C:/xampp/htdocs/Ebiblio/pdf_ebook/Algorithms for Dummies"),
+("Bitcoin For Dummies","Prima","Saggistica",2016,3243,"C:/xampp/htdocs/Ebiblio/pdf_ebook/Bitcoin For Dummies"),
+("Electronics For Dummies","Prima","Saggistica",2017,3243,"C:/xampp/htdocs/Ebiblio/pdf_ebook/Electronics For Dummies"),
+("Networking all in one for dummies","Prima","Saggistica",2013,38756,"C:/xampp/htdocs/Ebiblio/pdf_ebook/Networking all in one for dummies"),
+("Nosql for dummies","Prima","Saggistica",2015,3406,"C:/xampp/htdocs/Ebiblio/pdf_ebook/Nosql for dummies"),
+("PHP MySQL JavaScript HTML5 All in One For Dummies","Prima","Saggistica",2015,14193,"C:/xampp/htdocs/Ebiblio/pdf_ebook/PHP MySQL JavaScript HTML5 All in One For Dummies"),
+("Programming Interviews For Dummies","Prima","Saggistica",2015,5769,"C:/xampp/htdocs/Ebiblio/pdf_ebook/Programming Interviews For Dummies"),
+("Raspberry Pi Projects For Dummies","Prima","Saggistica",2015,16700,"C:/xampp/htdocs/Ebiblio/pdf_ebook/Raspberry Pi Projects For Dummies"),
+("Robotic process automation for dummies","Prima","Saggistica",2015,3653,"C:/xampp/htdocs/Ebiblio/pdf_ebook/Robotic process automation for dummies"),
+("Tableau for dummies","Prima","Saggistica",2015,3406,"C:/xampp/htdocs/Ebiblio/pdf_ebook/Tableau for dummies")
+;
