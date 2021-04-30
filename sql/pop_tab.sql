@@ -1,10 +1,22 @@
+
 insert into Biblioteca values
 ("Biblioteca Universitaria di Bologna", "bub.info@unibo.it","http://www.bub.unibo.it/","Via Zamboni, 33-35 Bologna 40126 BO",44.496888812159334, 11.35242160179635,"Sospensione visite guidate A seguito del DPCM del 14 gennaio 2021, le visite guidate alle sale monumentali della biblioteca sono sospese a tempo indeterminato. Scopri i luoghi e i tesori della Biblioteca Universitaria direttamente a casa tua. Norme sui servizi della BUB a seguito Ord. Reg. n. 25 del 3 marzo 2021 Fino al 21 marzo i servizi bibliotecari sono attivi solo per utenti Unibo e solo su prenotazione. Riduzione orario di apertura al pubblico della BUB Per contrastare ulteriormente la riduzione del contagio da Covid19, da venerdì 13 marzo e per tutta la durata della fascia rossa BUB sarà chiusa al pubblico nei pomeriggi di lunedì, mercoledì e venerdì. Consulta la pagina degli orari per maggiori informazioni. "),
-("Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali","info.bigiavi@unibo.it","http://bigiavi.sba.unibo.it/","Via delle Belle Arti 33 ; Piazza Scaravilli 1 Bologna 40126 BO", 44.497863979106405, 11.351878097972945,"Dal 1983 nuova denominazione dei BO129 - Istituto di Ragioneria e BO132 - Istituto di Tecnica Economica. Dal 2002 assorbe BO127 Biblioteca della Sezione di merceologia-Area tecnologia e valorizzazione risorse del Dipartimento di discipline economico-aziendali.");
+("Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali","info.bigiavi@unibo.it","http://bigiavi.sba.unibo.it/","Via delle Belle Arti 33 ; Piazza Scaravilli 1 Bologna 40126 BO", 44.497863979106405, 11.351878097972945,"Dal 1983 nuova denominazione dei BO129 - Istituto di Ragioneria e BO132 - Istituto di Tecnica Economica. Dal 2002 assorbe BO127 Biblioteca della Sezione di merceologia-Area tecnologia e valorizzazione risorse del Dipartimento di discipline economico-aziendali."),
+("Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale","bibclinicabianchi.info@unibo.it","http://clinica.sba.unibo.it/","Via Massarenti 9 Bologna 40138 BO", 44.491739867747434, 11.359933045847738,"Nuova denominazione della biblioteca Centralizzata. Istituto di Clinica Medica e Gastroentologia. Dal 1984 assorbe BO334 - Biblioteca dell'Istituto di Radiologia e Radioterapia L. Galvani. Dal 2009 ha assorbito la Biblioteca del Dipartimento di Medicina Clinica e Biotecnologia applicata D.Campanacci (BO339). Dal 2011 ha assorbito il Fondo Librario. Sezione Malattie Infettive. Dipartimento di Medicina Clinica Specialistica e Sperimentale (BO306)"),
+("Biblioteca di Medicina. Biblioteca Biomedica","bibbiomed.info@unibo.it","http://biomedica.sba.unibo.it/","Via Filippo Re, 8 Bologna 40126 BO",44.50049332034816, 11.35545321494052,"Dal 2011 ha assorbito la Biblioteca di Scienze Motorie (BO663)"),
+("Biblioteca Centrale Roberto Ruffilli del Campus di Forlì","bibliotecaruffilli.info@unibo.it","http://www.unibo.it/it/campus-forli/biblioteche","via S. Pellegrino Laziosi, 13 Forlì 47121 FC", 44.21964505873354, 12.043822732122477,
+"Dal 1.1.95 assorbe BO229 Biblioteca della Scuola Superiore di lingue moderne per interpreti e traduttori. Dal 27.5.96 la BO229 torna ad essere autonoma.")
+;
 
 insert into Telefono values("Biblioteca Universitaria di Bologna", "051/2088300"),
 ("Biblioteca Universitaria di Bologna", "051/2088385"),
-("Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali", "051/2098092")
+("Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali", "051/2098092"),
+("Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale","051 300061"),
+("Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale","051 2086114"),
+("Biblioteca di Medicina. Biblioteca Biomedica","051 2091701"),
+("Biblioteca di Medicina. Biblioteca Biomedica","051 2091702"),
+("Biblioteca Centrale Roberto Ruffilli del Campus di Forlì","0543/374001"),
+("Biblioteca Centrale Roberto Ruffilli del Campus di Forlì","051/2086319")
 ;
 
 
