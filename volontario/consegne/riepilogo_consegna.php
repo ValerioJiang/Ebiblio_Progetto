@@ -16,13 +16,15 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
 
             <div class="form-group">
                 <label>Consegna effettuata <?php echo date('d-m-Y'); ?></label>
-            </div>
+            
             <form method="post">
-                <input type="text" name="note" placeholder="Inserire note es. messo dentro buca lettere"><br />
-                <input type="submit" name="confBtn" id="test" class="btn btn-primary" value="Conferma" /><br />
+                <input type="text" name="note" placeholder="Inserire note es. messo dentro buca lettere"><br/>
+                <br/>
+                <input type="submit" name="confBtn" id="test" class="btn btn-primary" value="Conferma" /><br/>
+                <br/>
             </form>
             <a class="btn btn-secondary" role="button" href="http://localhost/ebiblio">Annulla</a>
-
+            <br/>
             </br>
             </br>
             <?php
