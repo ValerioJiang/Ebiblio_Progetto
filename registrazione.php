@@ -7,10 +7,14 @@ $utente_res = $utente_con->list();
 <section>
 <div class="container-fluid " style="background: url('/ebiblio/images/scaffa.jpg') no-repeat;">
     <div class="row justify-content-center">
+    
         <div class="card" style="width: 60%;">
+        
             <div class="card-body p-5 align-self-center">
+            
 
                 <div  class ="text-center">
+                <h1 class="font-weight-light">Registrazione</h1>
                     <?php
                       if (isset($_POST['iscriviti'])){
                         $nometrim= $_POST['nome'];
@@ -38,12 +42,13 @@ $utente_res = $utente_con->list();
                         }else{
                             $utente_new = $utente_con->createUtilizzatore($nometrim,$cognometrim, $datatrim,$luogotrim,$telefonotrim,$professionetrim,$emailtrim,$passwordtrim);
                             echo "Iscrizione eseguita con successo!";
+                            echo"<br><a href ='/ebiblio/accesso/acc_utiliz.php'>Esegui l'accesso</a>";
                         }
                         
                         } 
                     ?>
                 </div>
-                <h1 class="font-weight-light">Registrazione</h1>
+                
             
                 <form   method ="POST" class ="text-center"> 
 
