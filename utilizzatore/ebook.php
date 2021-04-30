@@ -22,7 +22,7 @@ $ebook_res = $ebookCon->list();
             </div>
 
             <input type="submit" name="ebookform_submitted" class="btn btn-primary" value="Ricerca"></input>
-            
+
         </form>
         </br>
         </br>
@@ -33,6 +33,8 @@ $ebook_res = $ebookCon->list();
                     <th>Anno Pubblicazione</th>
                     <th>Edizione</th>
                     <th>Dimensione</th>
+                    <th>Visiona</th>
+                    <th>Download</th>
                 </tr>
             </thead>
             <tbody>
@@ -42,8 +44,8 @@ $ebook_res = $ebookCon->list();
 
                 if (isset($_POST['ebookform_submitted'])) {
                     $tit = trim($_POST['Titolo']);
-                    
-                    if (ctype_space($tit)||$tit=='') {
+
+                    if (ctype_space($tit) || $tit == '') {
                         echo "Titolo libro nullo";
                     } else {
                         $ebook_like = $ebookCon->getLikeEbook($tit);
@@ -51,31 +53,50 @@ $ebook_res = $ebookCon->list();
                             echo "Nessun risultato corrispondente";
                         }
                         for ($i = 0; $i < count($ebook_like); $i++) {
-                            echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/libro_prenot/libroinfo.php?Titolo=' . $ebook_like[$i]['Titolo'] .
-                                '&codLibro=' . $ebook_like[$i]['Codice'] . '\');"' . '>';
+                            echo '<tr>';
                             echo '<td>' . $ebook_like[$i]['Titolo'] . '</td>';
                             echo '<td>' . $ebook_like[$i]['AnnoPubblicazione'] . '</td>';
                             echo '<td>'  . $ebook_like[$i]['Edizione'] . '</td>';
+                            echo '<td>'  . $ebook_like[$i]['Dimensione'] . 'KB</td>';
+                            if (!isset($_SESSION['email'])) {
+                                echo '<td>Accedere per visionare ebook</td>';
+                                echo '<td>Accedere per il download</td>';
+                            } else {
+                                echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/pdf_ebook/' . $ebook_like[$i]['Titolo'] . '.pdf">Visiona</a></td>';
+                                echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/pdf_ebook" download="' . $ebook_like[$i]['Titolo'] . '.pdf">Download</a></td>';
+                            }
                             echo '</tr>';
                         }
                     }
                 } else {
                     for ($i = 0; $i < count($ebook_res); $i++) {
-                        echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/libro_prenot/libroinfo.php?Titolo=' . $ebook_res[$i]['Titolo'] .
-                            '&codLibro=' . $ebook_res[$i]['Codice'] . '\');"' . '>';
+                        echo "<tr>";
                         echo '<td>' . $ebook_res[$i]['Titolo'] . '</td>';
                         echo '<td>' . $ebook_res[$i]['AnnoPubblicazione'] . '</td>';
                         echo '<td>'  . $ebook_res[$i]['Edizione'] . '</td>';
+                        echo '<td>'  . $ebook_res[$i]['Dimensione'] . 'KB</td>';
+                        if (!isset($_SESSION['email'])) {
+                            echo '<td>Accedere per visionare ebook</td>';
+                            echo '<td>Accedere per il download</td>';
+                        } else {
+                            echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/pdf_ebook/' . $ebook_res[$i]['Titolo'] . '.pdf">Visiona</a></td>';
+                            echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/pdf_ebook" download="' . $ebook_res[$i]['Titolo'] . '.pdf">Download</a></td>';
+                        }
                         echo '</tr>';
                     }
                 }
+
+
+
+
                 ?>
 
             </tbody>
         </table>
+
     </div>
 </div>
 
 <?php
-  require_once('/xampp/htdocs/ebiblio/main_partials/footer.php');
-  ?>
+require_once('/xampp/htdocs/ebiblio/main_partials/footer.php');
+?>

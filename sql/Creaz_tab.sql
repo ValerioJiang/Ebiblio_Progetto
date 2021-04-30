@@ -84,11 +84,11 @@ create table CARTACEO(
 
 create table EBOOK(
     Codice int primary key auto_increment not null,
-    Titolo varchar(20),
-    Edizione varchar(20),
-    Genere varchar(20),
+    Titolo varchar(255),
+    Edizione varchar(255),
+    Genere varchar(255),
     AnnoPubblicazione int,
-    Dimensione decimal(8,2),
+    Dimensione int,
     Pdf varchar(255),
     NumAccessi int
 );
