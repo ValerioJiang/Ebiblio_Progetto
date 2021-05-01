@@ -1,5 +1,5 @@
 <?php
-
+require_once('/xampp/htdocs/Ebiblio/vendor/autoload.php');
 require_once('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
 
 $util_con = new UtilizzatoreController();
@@ -13,6 +13,13 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
 
     if (count($util_checkEsistenza) == 1) {
         session_start();
+        $client = new MongoDB\Client("mongodb://localhost:27017");
+  
+        $companydb = $client -> ebiblio;
+
+        $log_events = $companydb -> log_events;
+
+        $insertOneResult = $log_events -> insertOne(['Utente' => $_POST['email'], 'Evento' => 'Accesso', 'TipologiaUtente' =>'Utilizzatore' ,'Timestamp' => date("Y-m-d h:i:sa")]);
         $_SESSION['email'] = $_POST['email'];
         $_SESSION['esistenza'] = true;
     } else {

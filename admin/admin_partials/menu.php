@@ -18,7 +18,7 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
 
         $log_events = $companydb -> log_events;
 
-        $insertOneResult = $log_events -> insertOne(['Utente' => $_POST['email'], 'Evento' => 'Accesso Amministratore', 'Timestamp' => date("Y-m-d h:i:sa")]);
+        $insertOneResult = $log_events -> insertOne(['Utente' => $_POST['email'], 'Evento' => 'Accesso', 'TipologiaUtente' =>'Amministratore', 'Timestamp' => date("Y-m-d h:i:sa")]);
         session_start();
         $_SESSION['email'] = $_POST['email'];
         $_SESSION['esistenza'] = true;
