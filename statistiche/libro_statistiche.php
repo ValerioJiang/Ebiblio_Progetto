@@ -25,7 +25,6 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
             <thead>
               <tr>
                 <th>Titolo</th>
-                <th>Autore</th>
                 <th>Edizione</th>
                 <th>Genere</th>
                 <th>Numero pagine</th>
@@ -39,7 +38,6 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
                   for ($i = 0; $i < count($prestito_res); $i++) {
                     echo '<tr>';
                     echo '<td>' . $prestito_res[$i]['Titolo'] . '</td>';
-                    echo '<td>' . $prestito_res[$i]['Autore'] . '</td>';
                     echo '<td>' . $prestito_res[$i]['Edizione'] . '</td>';
                     echo '<td>' . $prestito_res[$i]['Genere'] . '</td>';
                     echo '<td>' . $prestito_res[$i]['NumeroPagine'] . '</td>';

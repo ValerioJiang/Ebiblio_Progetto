@@ -23,7 +23,9 @@ $consCon = new ConsegnaController();
                     <th>Data Inizio</th>
                     <th>Data Fine</th>
                     <th>Status</th>
-                    <th>Note consegna</th>
+                    <th>Note consegna</th>                   
+                     <th>Restituzione libro tramite volontario</th>
+
                 </tr>
             </thead>
             <tbody>
@@ -57,7 +59,10 @@ $consCon = new ConsegnaController();
                             }
                             if(!$consUtil[$i]['Note'] == null){
                                 echo '<td>'  . $consUtil[$i]['Note'] . '</td>';
-                            }
+                                echo '<td><a class="btn btn-info" role="button" >Restituisci libro</a></td>';
+                                
+                            }                         
+
                             echo '</tr>';
                         }
 
