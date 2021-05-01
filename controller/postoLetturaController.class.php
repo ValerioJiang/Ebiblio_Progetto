@@ -53,7 +53,9 @@
 
 
         public function getDenominatoreStatistica(){
-            $query = "SELECT count(*) as 'den' from posto_lettura group by biblioteca ";
+            $query = "SELECT *, count(numero) as den
+            from biblioteca join posto_lettura on nome = biblioteca
+            group by biblioteca";
 
             $stmt = Dbh::getInstance()
             -> getDb()
