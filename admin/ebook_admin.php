@@ -21,7 +21,7 @@ $ebook_res = $ebookCon->list();
             </div>
 
             <input type="submit" name="cartaform_submitted" class="btn btn-primary" value="Ricerca"></input>
-            <a name="nuovabiblio" class="btn btn-primary" href="/Ebiblio/admin/nuovo_libro.php">Aggiungi</a>
+            <a name="nuovabiblio" class="btn btn-primary" href="/Ebiblio/admin/nuovo_ebook.php">Aggiungi</a>
             
         </form>
         </br>
