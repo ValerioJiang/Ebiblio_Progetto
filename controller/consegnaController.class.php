@@ -1,4 +1,5 @@
 <?php
+require 'vendor/autoload.php';
 class Consegna
 {
     public $Codice;

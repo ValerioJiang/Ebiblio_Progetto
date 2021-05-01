@@ -1,5 +1,5 @@
 <?php
-
+require 'vendor/autoload.php';
 require_once('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
 
 

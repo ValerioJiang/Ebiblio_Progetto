@@ -11,7 +11,7 @@
      *     echo '<br>';
      *   }
      */
-    
+    require 'vendor/autoload.php';
     class Segnalazione{
         public $Amministratore;
         public $Utilizzatore;

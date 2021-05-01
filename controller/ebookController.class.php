@@ -1,4 +1,5 @@
 <?php
+    require 'vendor/autoload.php';
     class Ebook{
         public $Codice; 
         public $Titolo; 

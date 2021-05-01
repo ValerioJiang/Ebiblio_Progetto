@@ -1,4 +1,7 @@
 <?php
+
+    require 'vendor/autoload.php';
+    
     class AccessoEbook{
         public $Ebook; 
         public $Utilizzatore; 

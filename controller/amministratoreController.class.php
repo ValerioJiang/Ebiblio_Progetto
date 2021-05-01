@@ -1,4 +1,7 @@
 <?php
+
+    require 'vendor/autoload.php';
+
     class Amministratore{
         public $Email; 
         public $Password; 

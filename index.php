@@ -9,6 +9,8 @@ require_once('/xampp/htdocs/ebiblio/main_partials/menu.php');
 background: url('./images/bibliofull.jpg') no-repeat  ;
 
 ">
+
+
   <div class="row justify-content-center">
     <div class="card" style="width: 60%;">
       <div class="card-body p-5 align-self-center">

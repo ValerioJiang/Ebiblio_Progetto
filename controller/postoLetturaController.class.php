@@ -1,4 +1,5 @@
 <?php
+    require 'vendor/autoload.php';
     class PostoLettura{
         public $Numero;
         public $Biblioteca;

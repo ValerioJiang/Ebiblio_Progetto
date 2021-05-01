@@ -1,4 +1,7 @@
 <?php
+
+    require 'vendor/autoload.php';
+
     class AutoreEbook{
         public $Ebook;
         public $Autore;

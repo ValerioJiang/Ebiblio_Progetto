@@ -1,4 +1,5 @@
 <?php
+    require 'vendor/autoload.php';
     class Messaggio{
         public $Amministratore; 
         public $Utilizzatore; 

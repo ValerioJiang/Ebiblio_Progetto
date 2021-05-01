@@ -1,4 +1,5 @@
 <?php
+require 'vendor/autoload.php';
     class Volontario{
         public $Email;  
         public $Password; 

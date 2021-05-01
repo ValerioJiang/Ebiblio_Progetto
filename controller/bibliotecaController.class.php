@@ -1,5 +1,8 @@
 <?php
-        class Biblioteca{
+
+require 'vendor/autoload.php';
+
+    class Biblioteca{
         public $Nome;
         public $Email;
         public $SitoWeb;

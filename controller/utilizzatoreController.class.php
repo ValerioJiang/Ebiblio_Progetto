@@ -5,6 +5,7 @@
      * 
      */
 
+    require 'vendor/autoload.php';
      class UtilizzatoreController{
 
         /**
