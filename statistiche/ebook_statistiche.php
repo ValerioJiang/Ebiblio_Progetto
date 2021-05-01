@@ -30,17 +30,21 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
                 <th>Accessi totali</th>
 
                 <?php
-                   $accesso_res= $accessoCon->getClassificaEbook();
+                  
+               
+                $accesso_res= $accessoCon->getClassificaEbook();
+           
 
+                for ($i = 0; $i < count($accesso_res); $i++) {
+                  echo '<tr>';
+                  echo '<td>' . $accesso_res[$i]['Titolo'] . '</td>';
+                  echo '<td>' . $accesso_res[$i]['Edizione'] . '</td>';
+                  echo '<td>' . $accesso_res[$i]['Genere'] . '</td>';
+                  echo '<td>' . $accesso_[$i]['NumAccessi'] . '</td>';
 
-                  for ($i = 0; $i < count($accesso_res); $i++) {
-                    echo '<tr>';
-                    echo '<td>' . $accesso_res[$i]['Titolo'] . '</td>';
-                    echo '<td>' . $accesso_res[$i]['Edizione'] . '</td>';
-                    echo '<td>' . $accesso_res[$i]['Genere'] . '</td>';
-                    echo '<td>' . $prestito_res[$i]['NumAccessi'] . '</td>';
+                  echo '</tr>';
 
-                    echo '</tr>';
+           
                   }
               
                 ?>
