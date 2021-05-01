@@ -1,6 +1,6 @@
 <?php
 
-include('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
+require_once('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
 $autoreCon = new AutoreController();
 
 
@@ -68,7 +68,7 @@ $annotrim = trim($_GET['anno']);
         } else {
 
             echo '<div class="container">';
-            echo '<form action="/ebiblio/admin/nuovi_autori_ebook.php" method="GET">';
+            echo '<form action="/ebiblio/admin/caricapdf.php" method="GET">';
             echo '<div class="form-group">';
             echo '<input type="hidden" name="numAut" class="btn btn-primary" value="'. $_GET['numAut'] .'"></input>';
 
@@ -88,58 +88,12 @@ $annotrim = trim($_GET['anno']);
                 echo "</div>";
                 echo "<br>";
             }
-            echo '<input type="file" name="pdf" id="pdf" accept="application/pdf">';
-            echo '<br>';
-            echo '<br>';
+            echo "<br>";
+            
             echo '<button type="submit" class="btn btn-outline-danger" name="insDef">Salva libro con autori</button>';
             
         }
     }
-
-    if(isset($_GET['insDef'])){
-            $titolotrim = trim($_GET['titolo']);
-            $edizionetrim = trim($_GET['edizione']);
-            $generetrim = trim($_GET['genere']);
-            $annotrim = $_GET['anno'];
-            $numAut = $_GET['numAut'];
-            
-            $creazioneebook = $ebook_Con -> createEbook($titolotrim, $edizionetrim, $generetrim, $annotrim);
-            
-            echo "Libro inserito con successo";
-            echo"<br><a href=/ebiblio/admin/libro_admin.php>Indietro</a>";
-
-            $ebook_cod = $ebook_Con -> getLikeLibroUtil($titolotrim);
-            
-            $codLibro = $ebook_cod[0]['Codice'];
-
-            $aut_list = array();
-
-            for($i=0; $i < $numAut; $i++){
-                $autore_res = $autoreCon->getLikeAutoreCartaceo($_GET['nomaut'.$i], $_GET['cogaut'.$i]);
-                
-                if(count($autore_res)<1){
-                    $aut_crea = $autCon -> createAutore($_GET['nomaut'.$i], $_GET['cogaut'.$i]);
-                
-                    $aut_cod = $autCon -> getAutCod($_GET['nomaut'.$i], $_GET['cogaut'.$i]);
-                    $aut_list[] = $aut_cod[0]['Codice'];
-                }
-
-                
-            }
-
-            for($j = 0; $j < count($aut_list); $j++){
-            
-                $autlib_res = $autLibCon -> createAutLib($aut_list[$j],$codLibro);
-                
-            }
-
-            
-
-    }
-
-
-
-
     ?>
 </div>
 

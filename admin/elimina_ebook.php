@@ -54,7 +54,8 @@ $pagine = $_GET['Pagine'];
                     echo '<td>' . $anno . '</td>';
                     echo '<td>'  . $edizione . '</td>';
                     echo '<td>'  . $pagine . '</td>';
-                     
+                    $path = "C:\\xampp\\htdocs\\Ebiblio\\pdf_ebook\\".$titolo;
+                    unlink(realpath($path));
                 
                 ?>
          

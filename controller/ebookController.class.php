@@ -28,11 +28,11 @@
          * CREATE
          */
 
-         public function createEbook($Titolo, $Edizione, $Genere, $AnnoPubblicazione){
+         public function createEbook($Titolo, $Edizione, $Genere, $AnnoPubblicazione, $Dimensione){
              //dimensione la calcoliamo dopo aver caricato il file
             $pdfPath = "C:/xampp/htdocs/Ebiblio/pdf_ebook/".$Titolo.".pdf";
 
-            $query ="INSERT INTO Ebook(Titolo, Edizione, Genere, AnnoPubblicazione, PDF) VALUES('$Titolo', '$Edizione','$Genere', $AnnoPubblicazione , '$pdfPath')";
+            $query ="INSERT INTO Ebook(Titolo, Edizione, Genere, AnnoPubblicazione, PDF, Dimensione) VALUES('$Titolo', '$Edizione','$Genere', $AnnoPubblicazione , '$pdfPath', $Dimensione)";
             $stmt = Dbh::getInstance()
                 -> getDb()
                 -> prepare($query);
