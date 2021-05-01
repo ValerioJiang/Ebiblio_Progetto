@@ -59,7 +59,7 @@ $consCon = new ConsegnaController();
                             }
                             if(!$consUtil[$i]['Note'] == null){
                                 echo '<td>'  . $consUtil[$i]['Note'] . '</td>';
-                                echo '<td><a class="btn btn-info" role="button"  >Restituisci libro</a></td>';
+                                echo '<td><a class="btn btn-info" role="button"  >Restituisci libro</a></td>'; ooio
 
                             }                         
 
