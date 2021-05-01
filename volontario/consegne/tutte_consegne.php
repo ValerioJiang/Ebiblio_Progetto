@@ -17,6 +17,7 @@ $consCon = new ConsegnaController();
                         <th>Codice consegna</th>
                         <th>Riferimento codice prestito</th>
                         <th>Tipo Consegna</th>
+                        <th>Data</th>
                         <th></th>
                         
                     </tr>
@@ -32,6 +33,13 @@ $consCon = new ConsegnaController();
                         echo '<td>' . $cons_res[$i]['Codice'] . '</td>';
                         echo '<td>' . $cons_res[$i]['CodicePrestito'] . '</td>';
                         echo '<td>' . $cons_res[$i]['TipoConsegna'] . '</td>';
+                        if($cons_res[$i]['DataConsegna']!=NULL){
+                            echo '<td>' . $cons_res[$i]['DataConsegna'] . '</td>';
+                        }
+                        else{
+                            echo '<td>' . "Non definito" . '</td>';
+                        }
+                        
                         echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/volontario/consegne/tutte_consegne.php?presaIncarico=true&codConsegna=' . $cons_res[$i]['Codice'] .'">Prendi in carico</a></td>';
                         echo '</tr>';
                     }

@@ -73,7 +73,44 @@
             $stmt -> execute();
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
+        /**
+         * UPDATE
+         */
+        public function updateTitolo($Codice,$TitoloNuovo){
+            $query = "UPDATE Ebook set titolo = '$TitoloNuovo' where codice = $Codice";
+            $stmt = Dbh::getInstance()
+            ->getDb()
+            ->prepare($query);
+            $stmt-> execute();
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        }
 
+        public function updateEdizione($Codice,$Edizione){
+            $query = "UPDATE Ebook set Edizione = '$Edizione' where codice = $Codice";
+            $stmt = Dbh::getInstance()
+            ->getDb()
+            ->prepare($query);
+            $stmt-> execute();
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        public function updateGenere($Codice,$Genere){
+            $query = "UPDATE Ebook set Genere = '$Genere' where codice = $Codice";
+            $stmt = Dbh::getInstance()
+            ->getDb()
+            ->prepare($query);
+            $stmt-> execute();
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        public function updateAnno($Codice,$Anno){
+            $query = "UPDATE Ebook set AnnoPubblicazione = '$Anno' where codice = $Codice";
+            $stmt = Dbh::getInstance()
+            ->getDb()
+            ->prepare($query);
+            $stmt-> execute();
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        }
 
         public function getAccessi($Codice){
             $query="SELECT *  from ebook  WHERE Codice = $Codice";

@@ -23,7 +23,6 @@ $consCon = new ConsegnaController();
                     <th>Data Inizio</th>
                     <th>Data Fine</th>
                     <th>Status</th>
-                    <th>Affida restituzione</th>
                     <th>Note consegna</th>
                     
 
@@ -48,9 +47,16 @@ $consCon = new ConsegnaController();
                                 echo '<td>'  . "15 giorni dopo la data di inizio" . '</td>';    
                             }
                             else{
-                                echo '<td>'  . $consUtil[$i]['DataConsegna'] . '</td>';
-                                $newDate = date('Y-m-d',strtotime('+15 day', strtotime($consUtil[$i]['DataConsegna'])));
-                                echo '<td>'  . $newDate . '</td>';
+
+                                if($consUtil[$i]['TipoConsegna']=="Affidamento"){
+                                    echo '<td>'  . $consUtil[$i]['DataConsegna'] . '</td>';
+                                    $newDate = date('Y-m-d',strtotime('+15 day', strtotime($consUtil[$i]['DataConsegna'])));
+                                    echo '<td>'  . $newDate . '</td>';
+                            
+                                }
+                                else if($consUtil[$i]['TipoConsegna']=="Restituzione"){
+                                    echo '<td> Data in cui passa volontario per restituzione '  . $consUtil[$i]['DataConsegna'] . '</td>';
+                                }
                             }
                             
                             if($consUtil[$i]['Volontario'] == null){
@@ -58,8 +64,7 @@ $consCon = new ConsegnaController();
                             }
                             else{
                                 echo '<td>'  . "Presa in carico da ".$consUtil[$i]['Volontario'] . '</td>';
-                            }
-                            echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/utilizzatore/libro_prenot/libro_restituzione.php?codLibro='.$consUtil[$i]['Codice'].'&consegnaLibro=true"'.'">Restituisci</a></td>';            
+                            }            
                             
                             if(!$consUtil[$i]['Note'] == null){
                                 echo '<td>'  . $consUtil[$i]['Note'] . '</td>';

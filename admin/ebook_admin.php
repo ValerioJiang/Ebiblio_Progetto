@@ -36,6 +36,8 @@ $ebook_res = $ebookCon->list();
                     <th>Edizione</th>
                     <th>Dimensione</th>
                     <th></th>
+                    <th></th>
+                    <th></th>
 
 
 
@@ -66,7 +68,7 @@ $ebook_res = $ebookCon->list();
                             echo '<td>' .  $ebook_like[$i]['AnnoPubblicazione'] . '</td>';
                             echo '<td>'  .  $ebook_like[$i]['Edizione'] . '</td>';
                             echo '<td>'  . $ebook_like[$i]['Dimensione'] . '</td>';
-                            echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/admin/modifica_libro.php?Titolo=' . $carta_like[$i]['Titolo'] . '&Cod='. $carta_like[$i]['Codice'] . '&Genere=' . $carta_like[$i]['Genere'] .'&AnnoPubblicazione=' . $carta_like[$i]['AnnoPubblicazione'] . '&Edizione=' . $carta_like[$i]['Edizione'] .'&Pagine=' . $carta_like[$i]['NumeroPagine'] . '&Scaffale=' . $carta_like[$i]['Scaffale'].'"'.'>Modifica</a></td>';
+                            echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/admin/modifica_ebook.php?Titolo=' . $ebook_like[$i]['Titolo'] . '&Cod='. $ebook_like[$i]['Codice'] . '&Genere=' . $ebook_like[$i]['Genere'] .'&AnnoPubblicazione=' . $ebook_like[$i]['AnnoPubblicazione'] . '&Edizione=' . $ebook_like[$i]['Edizione'] .'"'.'>Modifica</a></td>';
                             echo '<td><a class="btn btn-danger" role="button" href="http://localhost/ebiblio/admin/elimina_ebook.php?Titolo=' . $ebook_like[$i]['Titolo'] . '&Cod='. $ebook_like[$i]['Codice'] . '&Genere=' . $ebook_like[$i]['Genere'] .'&AnnoPubblicazione=' . $ebook_like[$i]['AnnoPubblicazione'] . '&Edizione=' . $ebook_like[$i]['Edizione'] .'&Pagine=' . $ebook_like[$i]['Dimensione'] . '"'.'>Elimina</a></td>';
     
                         }
@@ -82,7 +84,7 @@ $ebook_res = $ebookCon->list();
                         echo '<td>' . $ebook_res[$i]['AnnoPubblicazione'] . '</td>';
                         echo '<td>'  . $ebook_res[$i]['Edizione'] . '</td>';
                         echo '<td>'  . $ebook_res[$i]['Dimensione'] . '</td>';
-                        echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/admin/modifica_libro.php?Titolo=' . $carta_like[$i]['Titolo'] . '&Cod='. $carta_like[$i]['Codice'] . '&Genere=' . $carta_like[$i]['Genere'] .'&AnnoPubblicazione=' . $carta_like[$i]['AnnoPubblicazione'] . '&Edizione=' . $carta_like[$i]['Edizione'] .'&Pagine=' . $carta_like[$i]['NumeroPagine'] . '&Scaffale=' . $carta_like[$i]['Scaffale'].'"'.'>Modifica</a></td>';
+                        echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/admin/modifica_ebook.php?Titolo=' . $ebook_res[$i]['Titolo'] . '&Cod='. $ebook_res[$i]['Codice'] . '&Genere=' . $ebook_res[$i]['Genere'] .'&AnnoPubblicazione=' . $ebook_res[$i]['AnnoPubblicazione'] . '&Edizione=' . $ebook_res[$i]['Edizione'] .'"'.'>Modifica</a></td>';
                         echo '<td><a class="btn btn-danger" role="button" href="http://localhost/ebiblio/admin/elimina_ebook.php?Titolo=' . $ebook_res[$i]['Titolo'] . '&Cod='. $ebook_res[$i]['Codice'] . '&Genere=' . $ebook_res[$i]['Genere'] .'&AnnoPubblicazione=' . $ebook_res[$i]['AnnoPubblicazione'] . '&Edizione=' . $ebook_res[$i]['Edizione'] .'&Pagine=' . $ebook_res[$i]['Dimensione'] . '"'.'>Elimina</a></td>';
 
                     }

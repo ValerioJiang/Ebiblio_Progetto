@@ -63,6 +63,17 @@ class ConsegnaController
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function createConsegnaRestituzione($CodicePrestito,$TipoConsegna, $DataConsegna)
+    {
+        $query = "INSERT INTO CONSEGNA(CodicePrestito, TipoConsegna, DataConsegna) VALUES($CodicePrestito,'$TipoConsegna','$DataConsegna')";
+        $stmt = Dbh::getInstance()
+            ->getDb()
+            ->prepare($query);
+        echo $query;
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     /**
      * RETRIEVE
      */
