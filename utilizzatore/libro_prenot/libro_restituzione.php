@@ -31,19 +31,19 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
                     <input type="submit" name="confBtn" id="test" class="btn btn-primary" value="Conferma" /><br/>
                 </form>
                 <br>
-                <a  href="http://localhost/ebiblio/utilizzatore/prenotazioni/posti_prenotati.php">Indietro</a>
+                <a  href="http://localhost/ebiblio/utilizzatore/prenotazioni/libri_prenotati.php">Indietro</a>
             
             </br>
             </br>
             <?php
                 if(isset($_POST['confBtn'])){
-                  /*  $pres_con = new PrestitoController();
-                    $pres_res = $pres_con -> createPrestitoConsegna($_SESSION['email'], $_GET['codLibro']); 
+                     $pres_con = new PrestitoController();
+                    //$pres_res = $pres_con -> createPrestitoConsegna($_SESSION['email'], $_GET['codLibro']); 
 
                     $pres_cod = $pres_con -> getLikePrestito($_SESSION['email'], $_GET['codLibro']);
 
                     $cons_con = new ConsegnaController();
-                    $cons_res = $cons_con -> createConsegna($pres_cod[0]['Codice'],'Affidamento');*/
+                    $cons_res = $cons_con -> createConsegna($pres_cod[0]['Codice'],'Restituzione');
                     echo"<h5>Richiesta registrata con successo.</h5>";
 
                    /* if($pres_res){
