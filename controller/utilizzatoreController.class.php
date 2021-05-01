@@ -5,7 +5,7 @@
      * 
      */
 
-    require 'vendor/autoload.php';
+    require_once('/xampp/htdocs/Ebiblio/vendor/autoload.php');
      class UtilizzatoreController{
 
         /**

@@ -1,4 +1,5 @@
 <?php
+require_once('/xampp/htdocs/Ebiblio/vendor/autoload.php');
 require_once('/xampp/htdocs/Ebiblio/includes/autoloader.inc.php');
 
 $admin_con = new AmministratoreController();
@@ -11,6 +12,13 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
     $admin_checkEsistenza = $admin_con->checkEsistenza($email, $password);
 
     if (count($admin_checkEsistenza) == 1) {
+        $client = new MongoDB\Client("mongodb://localhost:27017");
+  
+        $companydb = $client -> ebiblio;
+
+        $log_events = $companydb -> log_events;
+
+        $insertOneResult = $log_events -> insertOne(['Utente' => $_POST['email'], 'Evento' => 'Accesso Amministratore', 'Timestamp' => date("Y-m-d h:i:sa")]);
         session_start();
         $_SESSION['email'] = $_POST['email'];
         $_SESSION['esistenza'] = true;
