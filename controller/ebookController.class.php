@@ -37,5 +37,16 @@
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
 
+        public function deleteEbook($Codice){
+            $query="DELETE FROM Ebook WHERE codice = $Codice";
+            $stmt = Dbh::getInstance()
+            -> getDb()
+            -> prepare($query);
+
+            $stmt -> execute();
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        }
+
+
     }
 ?>

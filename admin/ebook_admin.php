@@ -1,7 +1,6 @@
 <?php
 
-    require_once('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
-
+include('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
 
 $ebookCon = new EbookController();
 $ebook_res = $ebookCon->list();
@@ -20,22 +19,25 @@ $ebook_res = $ebookCon->list();
                     </div>
                 </div>
             </div>
-            <input type="submit" name="ebookform_submitted" class="btn btn-primary" value="Ricerca"></input>
-            <a name="nuovabiblio" class="btn btn-primary" href="/Ebiblio/admin/nuovo_ebook.php">Aggiungi</a>
 
-        </form>
-
+            <input type="submit" name="cartaform_submitted" class="btn btn-primary" value="Ricerca"></input>
+            <a name="nuovabiblio" class="btn btn-primary" href="/Ebiblio/admin/nuovo_libro.php">Aggiungi</a>
             
+        </form>
         </br>
         </br>
         <table class="table table-hover">
             <thead>
                 <tr>
+                    <th>Codice Ebook</th>
                     <th>Titolo</th>
-                    <th>Anno Pubblicazione</th>
+                    <th>Genere</th>
+                    <th>Anno di pubblicazione</th>
                     <th>Edizione</th>
+                    <th>Dimensione</th>
                     <th></th>
-                    <th></th>
+
+
 
                 </tr>
             </thead>
@@ -43,50 +45,56 @@ $ebook_res = $ebookCon->list();
 
                 <?php
 
+                if (isset($_POST['cartaform_submitted'])) {
+                    $titolotrim = trim($_POST['Titolo']);
 
-                if (isset($_POST['ebookform_submitted'])) {
-                    $tit = trim($_POST['Titolo']);
-                    
-                    if (ctype_space($tit)||$tit=='') {
+                    if (ctype_space($titolotrim)||$titolotrim=='') {
                         echo "Titolo libro nullo";
                     } else {
-                        $ebook_like = $ebookCon->getLikeEbook($tit);
+                        $ebook_like = $ebookCon->getLikeEbook($titolotrim);
                         if (count($ebook_like) <= 0) {
                             echo "Nessun risultato corrispondente";
                         }
+
                         for ($i = 0; $i < count($ebook_like); $i++) {
-                            echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/libro_prenot/libroinfo.php?Titolo=' . $ebook_like[$i]['Titolo'] .
-                                '&codLibro=' . $ebook_like[$i]['Codice'] . '\');"' . '>';
-                            echo '<td>' . $ebook_like[$i]['Titolo'] . '</td>';
-                            echo '<td>' . $ebook_like[$i]['AnnoPubblicazione'] . '</td>';
-                            echo '<td>'  . $ebook_like[$i]['Edizione'] . '</td>';
-                            echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/admin/modifica_libro.php?Titolo=' . $carta_like[$i]['Titolo'] . '&Cod='. $carta_like[$i]['Codice'] . '&Genere=' . $carta_like[$i]['Genere'] .'&AnnoPubblicazione=' . $carta_like[$i]['AnnoPubblicazione'] . '&Edizione=' . $carta_like[$i]['Edizione'] .'&Pagine=' . $carta_like[$i]['NumeroPagine'] . '&Scaffale=' . $carta_like[$i]['Scaffale'].'"'.'>Modifica</a></td>';
-                            echo '<td><a class="btn btn btn-danger" role="button" href="http://localhost/ebiblio/admin/elimina_libro.php?Titolo=' . $carta_like[$i]['Titolo'] .  '&Cod='. $carta_like[$i]['Codice'] . '&Genere=' . $carta_like[$i]['Genere'] .'&AnnoPubblicazione=' . $carta_like[$i]['AnnoPubblicazione'] . '&Edizione=' . $carta_like[$i]['Edizione'] .'&Pagine=' . $carta_like[$i]['NumeroPagine'] . '&Scaffale=' . $carta_like[$i]['Scaffale'].'"'.'>Elimina</a></td>';
-                            echo '</tr>';
+                            echo '<tr ' . $ebook_like[$i]['Titolo'] .
+                            '&Codice=' .  $ebook_like[$i]['Titolo'] . '\');"' . '>';
+                            
+                            echo '<td>' .  $ebook_like[$i]['Codice'] . '</td>';
+                            echo '<td>' .  $ebook_like[$i]['Titolo'] . '</td>';
+                            echo '<td>' .  $ebook_like[$i]['Genere'] . '</td>';
+                            echo '<td>' .  $ebook_like[$i]['AnnoPubblicazione'] . '</td>';
+                            echo '<td>'  .  $ebook_like[$i]['Edizione'] . '</td>';
+                            echo '<td>'  . $ebook_like[$i]['Dimensione'] . '</td>';
+
+                            echo '<td><a class="btn btn-danger" role="button" href="http://localhost/ebiblio/admin/elimina_ebook.php?Titolo=' . $ebook_like[$i]['Titolo'] . '&Cod='. $ebook_like[$i]['Codice'] . '&Genere=' . $ebook_like[$i]['Genere'] .'&AnnoPubblicazione=' . $ebook_like[$i]['AnnoPubblicazione'] . '&Edizione=' . $ebook_like[$i]['Edizione'] .'&Pagine=' . $ebook_like[$i]['Dimensione'] . '"'.'>Elimina</a></td>';
+    
                         }
                     }
-                } 
-                else {
+                } else {
                     for ($i = 0; $i < count($ebook_res); $i++) {
-                        echo '<tr ' . 'onclick="window.location.assign(\'http://localhost/ebiblio/libro_prenot/libroinfo.php?Titolo=' . $ebook_res[$i]['Titolo'] .
-                            '&codLibro=' . $ebook_res[$i]['Codice'] . '\');"' . '>';
+                        echo '<tr ' . $ebook_res[$i]['Titolo'] .
+                            '&Codice=' . $ebook_res[$i]['Titolo'] . '\');"' . '>';
+                            
+                        echo '<td>' . $ebook_res[$i]['Codice'] . '</td>';
                         echo '<td>' . $ebook_res[$i]['Titolo'] . '</td>';
+                        echo '<td>' . $ebook_res[$i]['Genere'] . '</td>';
                         echo '<td>' . $ebook_res[$i]['AnnoPubblicazione'] . '</td>';
                         echo '<td>'  . $ebook_res[$i]['Edizione'] . '</td>';
-                        
-                        echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/admin/modifica_libro.php?Titolo=' . $carta_res[$i]['Titolo'] .  '&Cod='. $carta_res[$i]['Codice'] . '&Genere=' . $carta_res[$i]['Genere'] .'&AnnoPubblicazione=' . $carta_res[$i]['AnnoPubblicazione'] . '&Edizione=' . $carta_res[$i]['Edizione'] .'&Pagine=' . $carta_res[$i]['NumeroPagine'] . '&Scaffale=' . $carta_res[$i]['Scaffale'].'"'.'>Modifica</a></td>';
-                        echo '<td><a class="btn btn-danger"role="button" href="http://localhost/ebiblio/admin/elimina_libro.php?Titolo=' . $carta_res[$i]['Titolo'] . '&Cod='. $carta_res[$i]['Codice'] . '&Genere=' . $carta_res[$i]['Genere'] .'&AnnoPubblicazione=' . $carta_res[$i]['AnnoPubblicazione'] . '&Edizione=' . $carta_res[$i]['Edizione'] .'&Pagine=' . $carta_res[$i]['NumeroPagine'] . '&Scaffale=' . $carta_res[$i]['Scaffale'].' &StatoConservazione=' . $carta_res[$i]['StatoConservazione'] . '"'.'>Elimina</a></td>';
-                        echo '</tr>';
+                        echo '<td>'  . $ebook_res[$i]['Dimensione'] . '</td>';
+                
+                        echo '<td><a class="btn btn-danger" role="button" href="http://localhost/ebiblio/admin/elimina_ebook.php?Titolo=' . $ebook_res[$i]['Titolo'] . '&Cod='. $ebook_res[$i]['Codice'] . '&Genere=' . $ebook_res[$i]['Genere'] .'&AnnoPubblicazione=' . $ebook_res[$i]['AnnoPubblicazione'] . '&Edizione=' . $ebook_res[$i]['Edizione'] .'&Pagine=' . $ebook_res[$i]['Dimensione'] . '"'.'>Elimina</a></td>';
+
                     }
                 }
-
                 ?>
 
+                   
             </tbody>
         </table>
     </div>
 </div>
 
 <?php
-    require_once('/xampp/htdocs/ebiblio/admin/admin_partials/footer.php');
-?>
+  include('/xampp/htdocs/ebiblio/admin/admin_partials/footer.php');
+  ?>
