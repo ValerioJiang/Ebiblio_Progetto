@@ -1,4 +1,5 @@
 <?php
+require_once('/xampp/htdocs/Ebiblio/vendor/autoload.php');
 require_once('/xampp/htdocs/ebiblio/main_partials/menu.php');
 $utente_con = new UtilizzatoreController();
 $utente_res = $utente_con->list();      
@@ -40,6 +41,14 @@ $utente_res = $utente_con->list();
                             echo "Email inserita già in uso";
 
                         }else{
+
+                            $client = new MongoDB\Client("mongodb://localhost:27017");
+  
+                            $companydb = $client -> ebiblio;
+                    
+                            $log_events = $companydb -> log_events;
+                    
+                            $insertOneResult = $log_events -> insertOne(['Utente' => $nometrim, 'Evento' => 'Registrazione', 'TipologiaUtente' =>'Utilizzatore', 'Timestamp' => date("Y-m-d h:i:sa")]);
                             $utente_new = $utente_con->createUtilizzatore($nometrim,$cognometrim, $datatrim,$luogotrim,$telefonotrim,$professionetrim,$emailtrim,$passwordtrim);
                             echo "Iscrizione eseguita con successo!";
                             echo"<br><a href ='/ebiblio/accesso/acc_utiliz.php'>Esegui l'accesso</a>";

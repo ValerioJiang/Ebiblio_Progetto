@@ -1,4 +1,5 @@
 <?php
+require_once('/xampp/htdocs/Ebiblio/vendor/autoload.php');
 require_once('/xampp/htdocs/ebiblio/volontario/main_partials/menu.php');
 
 
@@ -32,7 +33,17 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
                 $cons_con = new ConsegnaController();
                 $cons_res = $cons_con->updateConsegnaEffettiva($_SESSION['email'], $_GET['codConsegna'],date('Y-m-d', strtotime('+1 days')),$_POST['note']);
                 $cons_pi = $cons_con->createConsegnaRestituzione($_GET['codConsegna'],"Restituzione",date('Y-m-d', strtotime('+16 days')));
-                $message = "Consegna ";
+                
+                $client = new MongoDB\Client("mongodb://localhost:27017");
+
+                $companydb = $client->ebiblio;
+
+                $log_events = $companydb->log_events;
+
+                $insertOneResult = $log_events->insertOne(['Utente' => $_SESSION['email'], 'Evento' => 'Consegna effettuata', 'TipologiaUtente' => 'Volontario', 'Timestamp' => date("Y-m-d h:i:sa")]);
+
+
+                $message = "Consegna effettuata con successo";
                 echo "<script type='text/javascript'>alert('$message');
                         document.location.href = 'http://localhost/ebiblio/volontario';
                         </script>";

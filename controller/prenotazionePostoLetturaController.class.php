@@ -46,6 +46,14 @@
             -> prepare($query);
             
             $stmt -> execute();
+
+            $client = new MongoDB\Client("mongodb://localhost:27017");
+  
+            $companydb = $client -> ebiblio;
+                    
+            $log_events = $companydb -> log_events;
+                    
+            $insertOneResult = $log_events -> insertOne(['Utente' => $Utilizzatore, 'Evento' => 'Prenotazione Posto Lettura', 'TipologiaUtente' =>'Utilizzatore', 'Timestamp' => date("Y-m-d h:i:sa")]);
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
 

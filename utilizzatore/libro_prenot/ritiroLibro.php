@@ -1,6 +1,6 @@
 <?php
 
- 
+require_once('/xampp/htdocs/Ebiblio/vendor/autoload.php');
 require_once('/xampp/htdocs/ebiblio/utilizzatore/main_partials/menu.php');
 $biblio_con = new BibliotecaController();
 
@@ -37,6 +37,14 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
                 if(isset($_POST['confBtn'])){
                     $pres_con = new PrestitoController();
                     $pres_res = $pres_con -> createPrestito($_SESSION['email'], $_GET['codLibro'],date('Y-m-d',strtotime('+1 days'))); 
+                    
+                    $client = new MongoDB\Client("mongodb://localhost:27017");
+  
+                    $companydb = $client -> ebiblio;
+                    
+                    $log_events = $companydb -> log_events;
+                    
+                    $insertOneResult = $log_events -> insertOne(['Utente' => $_SESSION['email'], 'Evento' => 'Ritiro Libro', 'TipologiaUtente' =>'Utilizzatore', 'Timestamp' => date("Y-m-d h:i:sa")]);
                     
                     if($pres_res){
                         echo "<h5>Prenotazione libro andata a buon fine</h5>";

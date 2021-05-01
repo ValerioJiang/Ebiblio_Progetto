@@ -1,4 +1,5 @@
 <?php
+require_once('/xampp/htdocs/Ebiblio/vendor/autoload.php');
 require_once('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
 
 $amministratoreCon = new AmministratoreController();
@@ -89,6 +90,13 @@ background: url('/ebiblio/images/bibliofull.jpg') no-repeat  ;
                         $autlib_res = $autLibCon->createAutLib($aut_list[$j], $codLibro);
                     }
                     echo "Libro inserito con successo";
+                    $client = new MongoDB\Client("mongodb://localhost:27017");
+  
+                            $companydb = $client -> ebiblio;
+                    
+                            $log_events = $companydb -> log_events;
+                    
+                            $insertOneResult = $log_events -> insertOne(['Utente' => $_SESSION['email'], 'Evento' => 'Creazione Ebook', 'TipologiaUtente' =>'Amministratore', 'Timestamp' => date("Y-m-d h:i:sa")]);
                     echo "<br><a href=/ebiblio/admin/libro_admin.php>Indietro</a>";
                     move_uploaded_file($tmp_dir, $upload_dir . $coverpic);
                     echo "uploading Done";

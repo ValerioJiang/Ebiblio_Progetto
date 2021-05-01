@@ -1,5 +1,5 @@
 <?php
-
+require_once('/xampp/htdocs/Ebiblio/vendor/autoload.php');
 include('/xampp/htdocs/ebiblio/admin/admin_partials/menu.php');
 $autoreCon = new AutoreController();
 
@@ -110,6 +110,14 @@ $scaffaletrim = trim($_GET['scaffale']);
             $creazionecartaceo = $cartaceo_Con->createCartaceo($titolotrim, $edizionetrim, $generetrim, $annotrim, $paginetrim, $conservazionetrim, $scaffaletrim, $biblioteca[0]['BibliotecaGestita']);
             echo "Libro inserito con successo";
             echo"<br><a href=/ebiblio/admin/libro_admin.php>Indietro</a>";
+            $client = new MongoDB\Client("mongodb://localhost:27017");
+  
+                            $companydb = $client -> ebiblio;
+                    
+                            $log_events = $companydb -> log_events;
+                    
+                            $insertOneResult = $log_events -> insertOne(['Utente' => $_SESSION['email'], 'Evento' => 'Creazione Cartaceo', 'TipologiaUtente' =>'Amministratore', 'Timestamp' => date("Y-m-d h:i:sa")]);
+                    
 
             $cart_cod = $cartaceo_Con -> getLikeLibroUtil($titolotrim);
             $codLibro = $cart_cod[0]['Codice'];

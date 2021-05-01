@@ -1,7 +1,7 @@
 <?php
 
 
-
+require_once('/xampp/htdocs/Ebiblio/vendor/autoload.php');
 require_once('/xampp/htdocs/ebiblio/utilizzatore/main_partials/menu.php');
 
 
@@ -46,6 +46,13 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
 
                     $cons_con = new ConsegnaController();
                     $cons_res = $cons_con -> createConsegna($pres_cod[0]['Codice'],'Affidamento');
+                    $client = new MongoDB\Client("mongodb://localhost:27017");
+  
+                    $companydb = $client -> ebiblio;
+                    
+                    $log_events = $companydb -> log_events;
+                    
+                    $insertOneResult = $log_events -> insertOne(['Utente' => $_SESSION['email'], 'Evento' => 'Registrazione', 'TipologiaUtente' =>'Utilizzatore', 'Timestamp' => date("Y-m-d h:i:sa")]);
                     echo"<h5>Consegna libro prenotato con successo</h5>";
 
                    /* if($pres_res){
