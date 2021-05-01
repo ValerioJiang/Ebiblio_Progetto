@@ -21,36 +21,34 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
             </br>
             
                 <div class="form-group">
-                    <!--<label>Biblioteca: <//?php  $_GET['nomeBiblio']; ?></label>
+                  
                     <br>
-                    <label>Indirizzo: <//?php $biblio_res = $biblio_con->getBiblioteca($_GET['nomeBiblio']);
-                                        echo $biblio_res[0]['Indirizzo']; ?></label>
-                    <br>-->
-                    <label>Periodo Restituzione: Sarà comunicato non appena un nostro volontario si prenderà carico della restituzione del libro</label>
+                    <br>
+                    <label>Periodo : Sarà comunicato non appena un nostro volontario prenderà in carico la consegna</label>
                 </div>
                 <form method="post">
                 <br>
                     <input type="submit" name="confBtn" id="test" class="btn btn-primary" value="Conferma" /><br/>
                 </form>
                 <br>
-                <a  href="http://localhost/ebiblio/utilizzatore/libro.php">Indietro</a>
+                <a  href="http://localhost/ebiblio/utilizzatore/prenotazioni/posti_prenotati.php">Indietro</a>
             
             </br>
             </br>
             <?php
                 if(isset($_POST['confBtn'])){
-                    # metodi per effettuare riconsegna
-
-                    $pres_con = new PrestitoController();
-                    /*$pres_res = $pres_con -> createPrestitoConsegna($_SESSION['email'], $_GET['codLibro']); 
+                  /*  $pres_con = new PrestitoController();
+                    $pres_res = $pres_con -> createPrestitoConsegna($_SESSION['email'], $_GET['codLibro']); 
 
                     $pres_cod = $pres_con -> getLikePrestito($_SESSION['email'], $_GET['codLibro']);
 
                     $cons_con = new ConsegnaController();
-                    $cons_res = $cons_con -> createConsegna($pres_cod[0]['Codice'],'Affidamento');
-                    echo"<h5>Richiesta di restituzione libro avvenuta con successo</h5>";
+                    $cons_res = $cons_con -> createConsegna($pres_cod[0]['Codice'],'Affidamento');*/
+                    echo"<h5>Richiesta registrata con successo.</h5>";
 
-                 */
+                   /* if($pres_res){
+                        echo"<h5>Consegna libro prenotato con successo</h5>";
+                    }*/
                 }
             ?>
            

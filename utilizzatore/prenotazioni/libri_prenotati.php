@@ -23,8 +23,10 @@ $consCon = new ConsegnaController();
                     <th>Data Inizio</th>
                     <th>Data Fine</th>
                     <th>Status</th>
-                    <th>Note consegna</th>                   
-                     <th>Restituzione libro tramite volontario</th>
+                    <th>Affida restituzione</th>
+                    <th>Note consegna</th>
+                    
+
 
                 </tr>
             </thead>
@@ -57,13 +59,12 @@ $consCon = new ConsegnaController();
                             else{
                                 echo '<td>'  . "Presa in carico da ".$consUtil[$i]['Volontario'] . '</td>';
                             }
+                            echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/utilizzatore/libro_prenot/libro_restituzione.php?codLibro='.$consUtil[$i]['Codice'].'&consegnaLibro=true"'.'">Restituisci</a></td>';            
+                            
                             if(!$consUtil[$i]['Note'] == null){
                                 echo '<td>'  . $consUtil[$i]['Note'] . '</td>';
-                                echo '<td><a class="btn btn-info" role="button"  >Restituisci libro</a></td>'; 
-
-                            }                         
-
-                            echo '</tr>';
+                            }
+                            echo "</tr>";
                         }
 
 
