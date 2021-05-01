@@ -19,7 +19,7 @@ require_once('/xampp/htdocs/Ebiblio/vendor/autoload.php');
          * LIST
          */
         public function list(){
-            $query = "SELECT * FROM Biblioteca";
+            $query = "call getAllBiblio()";
 
             $stmt = Dbh::getInstance()
                 ->getDb()

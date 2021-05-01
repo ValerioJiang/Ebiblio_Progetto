@@ -38,7 +38,7 @@
 
         //controllo esistenza dell'utente(per amministratore)
         public function checkEsistenza_Admin($utilizzatore){
-        $query= "SELECT * from utilizzatore WHERE LOWER(Email) LIKE CONCAT"."('%',LOWER('$utilizzatore'),'%') or  LOWER(nome) LIKE CONCAT"."('%',LOWER('$utilizzatore'),'%') or LOWER(cognome) LIKE CONCAT"."('%',LOWER('$utilizzatore'),'%')";
+        $query= "CALL call checkEsisAdmin('$utilizzatore')";
 
         $stmt = Dbh::getInstance()
         ->getDb() 
@@ -50,7 +50,7 @@
 
         public function checkIscrizione($email){
             //TRUE se utente non esiste altrimenti FALSE
-            $query = "SELECT * FROM Utilizzatore WHERE email ='$email'";
+            $query = "call getUtilByMail('$email')";
 
             $stmt = Dbh::getInstance()
             ->getDb()
@@ -71,7 +71,7 @@
         }
 
         public function createUtilizzatore($Nome,$Cognome,$Data,$LuogoNascita,$Telefono,$Professione,$Email,$Password){
-            $query = "INSERT into utilizzatore values('$Email','$Password','$Nome','$Cognome','$Data','$LuogoNascita','$Telefono',now(),'$Professione','Attivo')";
+            $query = "CALL createUtilizzatore('$Email','$Password','$Nome','$Cognome','$Data','$LuogoNascita','$Telefono','$Professione')";
 
             $stmt = Dbh::getInstance()
             ->getDb()

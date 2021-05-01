@@ -19,7 +19,7 @@
          * LIST
          */
         public function list(){
-            $query="SELECT * FROM Amministratore";
+            $query="call getAllAmmi()";
             $stmt = $stmt = Dbh::getInstance()//
                 ->getDb()
                 ->prepare($query);
@@ -43,7 +43,7 @@
         }
 
         public function getLikeAmministratoreBiblio($emailAmminis){
-            $query = "SELECT * from Amministratore where email = '$emailAmminis'";
+            $query = "call getAmmi('$emailAmminis')";
 
             $stmt = Dbh::getInstance()
                 ->getDb()
