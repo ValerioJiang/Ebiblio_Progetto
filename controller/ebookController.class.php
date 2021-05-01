@@ -75,4 +75,28 @@
         }
 
 
+        public function getAccessi($Codice){
+            $query="SELECT *  from ebook  WHERE Codice = $Codice";
+            
+            $stmt = Dbh::getInstance()
+            -> getDb()
+            -> prepare($query);
+
+            $stmt -> execute();
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        }
+        public function updateNumeroAccessi($Codice,$NumeroAccessi){
+            $query="UPDATE Ebook  set NumAccessi = 1+$NumeroAccessi WHERE Codice = $Codice";
+            
+            $stmt = Dbh::getInstance()
+            -> getDb()
+            -> prepare($query);
+
+            $stmt -> execute();
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        }
+        
+        
+
+
     }

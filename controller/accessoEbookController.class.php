@@ -34,10 +34,21 @@
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
 
-        public function getClassificaEbook(){
+        public function updateNumeroAccessi($codice){
 
 
         }
+
+
+        public function getClassificaEbook(){
+            $query ="UPDATE  * FROM Accesso_Ebook";
+            $stmt = Dbh::getInstance()
+            -> getDb()
+            -> prepare($query);
+
+            $stmt -> execute();
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+    }
 
 
     }
