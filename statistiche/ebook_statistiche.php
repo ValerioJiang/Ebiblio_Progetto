@@ -4,8 +4,7 @@
 
 include('/xampp/htdocs/ebiblio/main_partials/menu.php');
 
-$accessoCon = new AccessoEbookController();
-?>
+$accessoCon = new EbookController();?>
 
 
 <div class="container-fluid " style="  
@@ -40,7 +39,7 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
                   echo '<td>' . $accesso_res[$i]['Titolo'] . '</td>';
                   echo '<td>' . $accesso_res[$i]['Edizione'] . '</td>';
                   echo '<td>' . $accesso_res[$i]['Genere'] . '</td>';
-                  echo '<td>' . $accesso_[$i]['NumAccessi'] . '</td>';
+                  echo '<td>' . $accesso_res[$i]['NumAccessi'] . '</td>';
 
                   echo '</tr>';
 
