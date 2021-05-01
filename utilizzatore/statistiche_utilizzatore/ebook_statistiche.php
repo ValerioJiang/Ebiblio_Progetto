@@ -35,12 +35,10 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
 
                   for ($i = 0; $i < count($accesso_res); $i++) {
                     echo '<tr>';
-                    echo '<td>' . $prestito_res[$i]['Titolo'] . '</td>';
-                    echo '<td>' . $prestito_res[$i]['Edizione'] . '</td>';
-                    echo '<td>' . $prestito_res[$i]['Genere'] . '</td>';
-                    echo '<td>' . $prestito_res[$i]['NumeroPagine'] . '</td>';
-                    echo '<td>' . $prestito_res[$i]['Biblioteca'] . '</td>';
-                    echo '<td>' . $prestito_res[$i]['Tot.Prestiti'] . '</td>';
+                    echo '<td>' . $accesso_res[$i]['Titolo'] . '</td>';
+                    echo '<td>' . $accesso_res[$i]['Edizione'] . '</td>';
+                    echo '<td>' . $accesso_res[$i]['Genere'] . '</td>';
+                    echo '<td>' . $prestito_res[$i]['NumAccessi'] . '</td>';
 
                     echo '</tr>';
                   }
