@@ -66,6 +66,7 @@ create table POSTO_LETTURA(
 create table CARTACEO(
     Codice int auto_increment primary key,
     Titolo varchar(255),
+    Autore varchar(255),
     Edizione varchar(255),
     Genere varchar(255),
     AnnoPubblicazione int,
@@ -237,6 +238,7 @@ create table ACCESSO_EBOOK(
     foreign key (Ebook) references EBOOK(Codice) on delete cascade on update cascade,
     Utilizzatore varchar(255),
     foreign key(Utilizzatore) references UTILIZZATORE(Email) on delete cascade on update cascade,
-    DataAccesso datetime not null,
+    DataAccesso DATETIME not null,
     primary key(Ebook,Utilizzatore,DataAccesso)
     );
+    

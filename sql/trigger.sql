@@ -1,13 +1,12 @@
-drop event if exists scadenza_prenot;
+drop event if exists scadenza_prestito;
 
-CREATE EVENT scadenza_prenot
+CREATE EVENT scadenza_prestito
 ON SCHEDULE EVERY 1 DAY 
 STARTS CURRENT_TIMESTAMP
 DO
-	UPDATE CARTACEO SET StatoPrestito = "Disponibile" WHERE CODICE IN(SELECT LIBRO FROM Prestito WHERE DATAFINE <= CURDATE()) AND StatoPrestito <> "Disponibile";
-
-
-   drop trigger if exists fine_prestito;
+	UPDATE CARTACEO SET StatoPrestito = "Disponibile" WHERE CODICE IN(SELECT LIBRO FROM Prestito WHERE DATAFINE >= CURDATE()) AND StatoPrestito <> "Disponibile";
+    
+drop trigger if exists fine_prestito;
 delimiter //
 create trigger fine_prestito
 AFTER UPDATE

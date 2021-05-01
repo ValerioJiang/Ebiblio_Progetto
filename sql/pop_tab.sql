@@ -275,21 +275,323 @@ insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) valu
 insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (26, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', true, false);
 insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (27, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', false, false);
 
-insert into Cartaceo(Titolo, Edizione, Genere, AnnoPubblicazione, NumeroPagine, StatoConservazione, StatoPrestito, Scaffale, Biblioteca) values
-("Il nome della rosa","Illustrata","Romanzo Storico",2014,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
-("Io non ho paura","Prima","Romanzo",2001,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
-("Il capitale nel XXI secolo","Prima","Saggio politico",2013,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
-("1984","Prima","Fantascienza",1950,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
-("La fattoria degli animali","Prima","Romanzo",1947,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
-("L'amicizia","Prima","Romanzo",1947,576,"Scadente","Disponibile","1A","Biblioteca Universitaria di Bologna"),
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (1, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (2, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (3, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (4, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (5, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (6, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (7, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (8, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (9, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (10, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (11, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (12, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (13, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (14, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (15, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (16, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (17, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (18, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (19, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (20, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (21, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (22, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (23, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (24, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (25, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (26, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (27, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (28, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (29, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (30, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (31, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (32, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (33, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (34, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (35, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (36, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (37, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (38, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (39, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (40, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (41, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (42, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (43, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (44, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (45, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (46, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (47, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (48, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, false);
 
-("Il nome della rosa","Illustrata","Romanzo Storico",2014,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
-("Io non ho paura","Prima","Romanzo",2001,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
-("Il capitale nel XXI secolo","Prima","Saggio politico",2013,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
-("1984","Prima","Fantascienza",1950,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
-("La fattoria degli animali","Prima","Romanzo",1947,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
-("Manifesto Comunista","Prima","Saggio politico",1918, 576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali")
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (1, 'Biblioteca di Medicina. Biblioteca Biomedica', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (2, 'Biblioteca di Medicina. Biblioteca Biomedica', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (3, 'Biblioteca di Medicina. Biblioteca Biomedica', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (4, 'Biblioteca di Medicina. Biblioteca Biomedica', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (5, 'Biblioteca di Medicina. Biblioteca Biomedica', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (6, 'Biblioteca di Medicina. Biblioteca Biomedica', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (7, 'Biblioteca di Medicina. Biblioteca Biomedica', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (8, 'Biblioteca di Medicina. Biblioteca Biomedica', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (9, 'Biblioteca di Medicina. Biblioteca Biomedica', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (10, 'Biblioteca di Medicina. Biblioteca Biomedica', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (11, 'Biblioteca di Medicina. Biblioteca Biomedica', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (12, 'Biblioteca di Medicina. Biblioteca Biomedica', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (13, 'Biblioteca di Medicina. Biblioteca Biomedica', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (14, 'Biblioteca di Medicina. Biblioteca Biomedica', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (15, 'Biblioteca di Medicina. Biblioteca Biomedica', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (16, 'Biblioteca di Medicina. Biblioteca Biomedica', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (17, 'Biblioteca di Medicina. Biblioteca Biomedica', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (18, 'Biblioteca di Medicina. Biblioteca Biomedica', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (19, 'Biblioteca di Medicina. Biblioteca Biomedica', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (20, 'Biblioteca di Medicina. Biblioteca Biomedica', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (21, 'Biblioteca di Medicina. Biblioteca Biomedica', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (22, 'Biblioteca di Medicina. Biblioteca Biomedica', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (23, 'Biblioteca di Medicina. Biblioteca Biomedica', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (24, 'Biblioteca di Medicina. Biblioteca Biomedica', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (25, 'Biblioteca di Medicina. Biblioteca Biomedica', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (26, 'Biblioteca di Medicina. Biblioteca Biomedica', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (27, 'Biblioteca di Medicina. Biblioteca Biomedica', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (28, 'Biblioteca di Medicina. Biblioteca Biomedica', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (29, 'Biblioteca di Medicina. Biblioteca Biomedica', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (30, 'Biblioteca di Medicina. Biblioteca Biomedica', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (31, 'Biblioteca di Medicina. Biblioteca Biomedica', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (32, 'Biblioteca di Medicina. Biblioteca Biomedica', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (33, 'Biblioteca di Medicina. Biblioteca Biomedica', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (34, 'Biblioteca di Medicina. Biblioteca Biomedica', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (35, 'Biblioteca di Medicina. Biblioteca Biomedica', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (36, 'Biblioteca di Medicina. Biblioteca Biomedica', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (37, 'Biblioteca di Medicina. Biblioteca Biomedica', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (38, 'Biblioteca di Medicina. Biblioteca Biomedica', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (39, 'Biblioteca di Medicina. Biblioteca Biomedica', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (40, 'Biblioteca di Medicina. Biblioteca Biomedica', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (41, 'Biblioteca di Medicina. Biblioteca Biomedica', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (42, 'Biblioteca di Medicina. Biblioteca Biomedica', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (43, 'Biblioteca di Medicina. Biblioteca Biomedica', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (44, 'Biblioteca di Medicina. Biblioteca Biomedica', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (45, 'Biblioteca di Medicina. Biblioteca Biomedica', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (46, 'Biblioteca di Medicina. Biblioteca Biomedica', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (47, 'Biblioteca di Medicina. Biblioteca Biomedica', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (48, 'Biblioteca di Medicina. Biblioteca Biomedica', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (49, 'Biblioteca di Medicina. Biblioteca Biomedica', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (50, 'Biblioteca di Medicina. Biblioteca Biomedica', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (51, 'Biblioteca di Medicina. Biblioteca Biomedica', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (52, 'Biblioteca di Medicina. Biblioteca Biomedica', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (53, 'Biblioteca di Medicina. Biblioteca Biomedica', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (54, 'Biblioteca di Medicina. Biblioteca Biomedica', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (55, 'Biblioteca di Medicina. Biblioteca Biomedica', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (56, 'Biblioteca di Medicina. Biblioteca Biomedica', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (57, 'Biblioteca di Medicina. Biblioteca Biomedica', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (58, 'Biblioteca di Medicina. Biblioteca Biomedica', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (59, 'Biblioteca di Medicina. Biblioteca Biomedica', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (60, 'Biblioteca di Medicina. Biblioteca Biomedica', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (61, 'Biblioteca di Medicina. Biblioteca Biomedica', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (62, 'Biblioteca di Medicina. Biblioteca Biomedica', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (63, 'Biblioteca di Medicina. Biblioteca Biomedica', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (64, 'Biblioteca di Medicina. Biblioteca Biomedica', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (65, 'Biblioteca di Medicina. Biblioteca Biomedica', false, true);
+
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (1, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (2, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (3, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (4, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (5, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (6, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (7, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (8, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (9, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (10, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (11, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (12, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (13, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (14, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (15, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (16, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (17, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (18, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (19, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (20, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (21, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (22, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (23, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (24, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (25, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (26, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (27, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (28, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (29, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (30, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (31, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (32, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (33, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (34, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (35, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (36, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (37, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (38, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (39, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (40, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (41, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (42, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (43, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (44, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (45, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (46, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (47, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (48, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (49, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (50, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (51, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (52, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (53, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (54, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (55, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (56, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (57, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (58, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (59, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (60, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (61, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (62, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (63, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (64, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (65, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (66, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (67, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (68, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (69, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (70, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (71, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (72, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (73, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (74, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (75, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (76, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (77, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (78, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (79, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (80, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (81, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (82, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (83, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (84, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (85, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (86, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (87, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (88, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (89, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (90, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (91, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (92, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (93, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (94, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (95, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (96, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (97, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (98, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (99, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (100, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (101, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (102, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (103, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (104, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (105, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (106, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (107, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (108, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (109, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (110, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (111, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (112, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (113, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (114, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (115, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (116, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (117, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (118, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (119, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (120, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (121, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (122, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (123, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (124, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (125, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (126, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (127, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (128, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (129, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (130, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (131, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (132, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (133, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (134, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (135, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (136, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (137, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (138, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (139, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (140, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (141, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (142, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (143, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (144, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (145, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (146, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (147, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (148, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (149, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (150, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (151, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (152, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (153, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (154, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (155, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (156, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (157, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (158, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (159, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (160, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (161, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (162, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (163, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (164, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (165, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (166, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (167, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (168, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (169, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (170, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (171, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (172, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (173, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (174, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (175, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (176, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (177, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (178, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (179, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (180, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
+
+
+insert into Cartaceo(Titolo,Autore, Edizione, Genere, AnnoPubblicazione, NumeroPagine, StatoConservazione, StatoPrestito, Scaffale, Biblioteca) values
+("Il nome della rosa","Umberto Eco","Illustrata","Romanzo Storico",2014,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
+("Io non ho paura","Niccolò Ammaniti","Prima","Romanzo",2001,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
+("Il capitale nel XXI secolo","Thomas Piketty","Prima","Saggio politico",2013,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
+("1984","George Orwell","Prima","Fantascienza",1950,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
+("La fattoria degli animali","George Orwell","Prima","Romanzo",1947,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
+("L'amicizia","Tahar Ben Jelloun","Prima","Romanzo",1947,576,"Scadente","Disponibile","1A","Biblioteca Universitaria di Bologna"),
+
+("Il nome della rosa","Umberto Eco","Illustrata","Romanzo Storico",2014,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
+("Io non ho paura", "Niccolò Ammaniti","Prima","Romanzo",2001,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
+("Il capitale nel XXI secolo","Thomas Piketty","Prima","Saggio politico",2013,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
+("1984","George Orwell","Prima","Fantascienza",1950,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
+("La fattoria degli animali","George Orwell","Prima","Romanzo",1947,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
+("Manifesto Comunista","Karl Marx,Friedrich Engels","Prima","Saggio politico",1918, 576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali")
 ;
+
+
+
+
+
 
 insert into Utilizzatore values("ciao@gmail.com","123","Ual","Erio",'1998-12-12',"Prato","123456",now(),"Poliziotto","Attivo");
 insert into Amministratore values("amministratore@gmail.com","123","amministratore","de amministris", '1998-12-12', "Prato", "37048511793","AFM","Biblioteca Universitaria di Bologna");
@@ -307,26 +609,3 @@ insert into ebook(Titolo, Edizione, Genere, AnnoPubblicazione, Dimensione, Pdf) 
 ("Robotic process automation for dummies","Prima","Saggistica",2015,3653,"C:/xampp/htdocs/Ebiblio/pdf_ebook/Robotic process automation for dummies"),
 ("Tableau for dummies","Prima","Saggistica",2015,3406,"C:/xampp/htdocs/Ebiblio/pdf_ebook/Tableau for dummies")
 ;
-
-insert into autore(nome, cognome) values("Umberto","Eco");
-insert into autore(nome,cognome) value("Niccolò","Ammaniti");
-insert into autore(nome,cognome) value("Thomas","Piketty");
-insert into autore(nome,cognome) value("George","Orwell");
-insert into autore(nome,cognome) value("Tahar","Ben Jelloun");
-insert into autore(nome,cognome) value("Karl","Marx");
-insert into autore(nome,cognome) value("Friedrich","Engels");
-
-
-insert into autore_libro values(1,1);
-insert into autore_libro values(2,2);
-insert into autore_libro values(3,3);
-insert into autore_libro values(4,4);
-insert into autore_libro values(5,4);
-insert into autore_libro values(6,5);
-insert into autore_libro values(7,1);
-insert into autore_libro values(8,2);
-insert into autore_libro values(9,3);
-insert into autore_libro values(10,4);
-insert into autore_libro values(11,4);
-insert into autore_libro values(12,6);
-insert into autore_libro values(12,7);
