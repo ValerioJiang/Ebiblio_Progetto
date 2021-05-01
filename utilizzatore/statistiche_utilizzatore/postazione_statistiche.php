@@ -35,21 +35,26 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
                 <th>Percentuale posti usati</th>
 
                 <?php
-               $biblioteca_res = $bibliotecaCon->list();
-
-
-                for ($i = 0; $i < count($biblioteca_res); $i++) {
-                  $denominatore_res = $postoCon->getDenominatoreStatistica();
-                  $prenotazione_res=$prenotazioneCon->createStatisticaPosto( $denominatore_res[$i]['den'],$biblioteca_res[$i]['Nome']);
                   
-                  echo '<tr>';
-                  echo '<td>' . $biblioteca_res[$i]['Nome'] . '</td>';
-                  echo '<td>' . $denominatore_res[$i]['den'] . '</td>';
-                  echo '<td>' . $prenotazione_res[$i]['percentuale'] . '%</td>';
-                  echo '</tr>';
-                }
+               $biblio_res = $bibliotecaCon->list();
+
+                  for ($i = 0; $i < count($biblio_res); $i++) {
+                    $denominatore_res = $postoCon->getDenominatoreStatistica();                  
+                  }
+                
+                  $prenotazione_res=$prenotazioneCon->createStatisticaPosto( $denominatore_res[0]['den'],$denominatore_res[0]['Biblioteca']);
+
+                  for($i = 0; $i < count($prenotazione_res); $i++) {
+
+                    echo '<tr>';   
+                    echo '<td>' . $prenotazione_res[$i]['Biblioteca'] . '</td>';
+                    echo '<td>' . $denominatore_res[$i]['den'] . '</td>';
+                    echo '<td>' . $prenotazione_res[$i]['percentuale'] . '%</td>';
+                    echo '</tr>';
+                  }
+                
               
-              ?>
+                ?>
               </tr>
             </thead>
             <tbody>

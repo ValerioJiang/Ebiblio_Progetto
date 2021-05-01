@@ -73,13 +73,6 @@
 
 
         public function createStatisticaPosto($Denominatore,$Biblioteca){
-            /*$query= "SELECT  100-(count(*)/$Denominatore)*100 as 'percentuale'
-            from posto_lettura 
-            where numero not in
-           (select posto from prenotazione_posto_lettura where biblioteca not like'$Biblioteca')
-           GROUP BY biblioteca
-           ORDER BY percentuale DESC";*/
-
            $query= "SELECT *, (count(*)/$Denominatore)*100 as percentuale
            from prenotazione_posto_lettura
            where posto  in
