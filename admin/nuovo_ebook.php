@@ -24,7 +24,7 @@ $biblio_res = $amministratoreCon->getLikeAmministratoreBiblio($_SESSION['email']
             
                     <h1 class="font-weight-light">Inserimento nuovo Ebook</h1>
             
-                    <form  action="/ebiblio/admin/nuovo_autori.php" method ="GET" class ="text-center"> 
+                    <form  action="/ebiblio/admin/nuovi_autori_ebook.php" method ="GET" class ="text-center"> 
 
                         <div class="form-row">
                             <div class="form-group col-md-6">
@@ -57,19 +57,7 @@ $biblio_res = $amministratoreCon->getLikeAmministratoreBiblio($_SESSION['email']
                             </div>
                         </div>
 
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                               <!-- Dimensione:
-                                <br>
-                                <input type="text" name="pagine" size="30" maxlength="50"placeholder ="Numero pagine..."/><br>
-                            </div>
-                            <div class="form-group col-md-6">--->
-                                Pdf:
-                                <br>
-                                <input type="text" name="scaffale" size="70" maxlength="50"placeholder ="Pdf..."/><br>
-                            </div>
-                        </div>
-
+                        <input type="hidden" name="nuovolibro" size="70" maxlength="50" />
                         <button type="submit" class="btn btn-outline-danger" name="nuovoebook">Salva nuovo ebook</button>
                         <br></br>
                         <a href = "/ebiblio/admin/ebook_admin.php">Indietro</a>

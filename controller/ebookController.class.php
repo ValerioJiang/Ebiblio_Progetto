@@ -25,6 +25,23 @@
         }
 
         /**
+         * CREATE
+         */
+
+         public function createEbook($Titolo, $Edizione, $Genere, $AnnoPubblicazione){
+             //dimensione la calcoliamo dopo aver caricato il file
+            $pdfPath = "C:/xampp/htdocs/Ebiblio/pdf_ebook/".$Titolo.".pdf";
+
+            $query ="INSERT INTO Ebook(Titolo, Edizione, Genere, AnnoPubblicazione, PDF) VALUES('$Titolo', '$Edizione','$Genere', $AnnoPubblicazione , '$pdfPath')";
+            $stmt = Dbh::getInstance()
+                -> getDb()
+                -> prepare($query);
+                $stmt -> execute();
+                
+                return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+         }
+
+        /**
          * RETRIEVE
          */
         public function getLikeEbook($tit){
@@ -47,8 +64,15 @@
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
         }
 
-        
+        public function getLikeLibroUtil($Titolo){
+            $query="SELECT * FROM Ebook WHERE LOWER(Titolo) LIKE CONCAT"."('%',LOWER('$Titolo'),'%')";
+            $stmt = Dbh::getInstance()
+            -> getDb()
+            -> prepare($query);
+
+            $stmt -> execute();
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        }
 
 
     }
-?>
