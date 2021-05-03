@@ -7,7 +7,7 @@ require_once('/xampp/htdocs/ebiblio/utilizzatore/main_partials/menu.php');
 ?>
 
 <div class="container-fluid " style="  
-background: url('./images/bibliofull.jpg') no-repeat  ;
+background: url('http://localhost/ebiblio/images/bibliofull.jpg') no-repeat  ;
 
 ">
   <div class="row justify-content-center">
