@@ -94,7 +94,7 @@
 
            $query = "SELECT *, 100-(count(*)/$Denominatore)*100 as percentuale
            from posto_lettura
-           where posto not in
+           where numero not in
            (select posto 
            from prenotazione_posto_lettura where biblioteca not like '$Biblioteca')
            group by biblioteca
