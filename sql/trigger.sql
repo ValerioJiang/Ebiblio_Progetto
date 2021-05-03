@@ -38,9 +38,9 @@ begin
     DECLARE not_valid_Inizio TIME;
     DECLARE not_valid_Fine TIME;
     
-    SELECT COUNT(*) INTO rowNr FROM PRENOTAZIONE_POSTO_LETTURA WHERE (Inizio  BETWEEN NEW.Inizio and NEW.Fine) AND (Fine  BETWEEN NEW.Inizio and NEW.Fine) AND DataPrenotazione = NEW.DataPrenotazione AND Posto = NEW.Posto;
-    SELECT MIN(Inizio) into not_valid_Inizio FROM PRENOTAZIONE_POSTO_LETTURA WHERE (Inizio  BETWEEN NEW.Inizio and NEW.Fine) AND (Fine  BETWEEN NEW.Inizio and NEW.Fine) AND DataPrenotazione = NEW.DataPrenotazione;
-    SELECT MAX(Fine) into not_valid_Fine FROM PRENOTAZIONE_POSTO_LETTURA WHERE (Inizio  BETWEEN NEW.Inizio and NEW.Fine) AND (Fine  BETWEEN NEW.Inizio and NEW.Fine) AND DataPrenotazione = NEW.DataPrenotazione;
+    SELECT COUNT(*) INTO rowNr FROM PRENOTAZIONE_POSTO_LETTURA WHERE (Inizio  BETWEEN NEW.Inizio and NEW.Fine) AND (Fine  BETWEEN NEW.Inizio and NEW.Fine) AND DataPrenotazione = NEW.DataPrenotazione AND Posto = NEW.Posto AND Biblioteca = NEW.Biblioteca;
+    SELECT MIN(Inizio) into not_valid_Inizio FROM PRENOTAZIONE_POSTO_LETTURA WHERE (Inizio  BETWEEN NEW.Inizio and NEW.Fine) AND (Fine  BETWEEN NEW.Inizio and NEW.Fine) AND DataPrenotazione = NEW.DataPrenotazione AND Biblioteca = NEW.Biblioteca;
+    SELECT MAX(Fine) into not_valid_Fine FROM PRENOTAZIONE_POSTO_LETTURA WHERE (Inizio  BETWEEN NEW.Inizio and NEW.Fine) AND (Fine  BETWEEN NEW.Inizio and NEW.Fine) AND DataPrenotazione = NEW.DataPrenotazione AND Biblioteca = NEW.Biblioteca;
     
     SET errMsg = CONCAT('Prenotazione posto lettura nr: ',NEW.Posto,'\n Biblioteca: ',NEW.Biblioteca,'\n Status: Occupato da ',not_valid_Inizio,' a ', not_valid_Fine);
     
@@ -51,6 +51,7 @@ begin
 		
 END//
 delimiter ;
+
 
 
 

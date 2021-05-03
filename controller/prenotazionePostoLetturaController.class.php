@@ -44,7 +44,7 @@
             $stmt = Dbh:: getInstance()
             -> getDb()
             -> prepare($query);
-            
+            echo $query;
             $stmt -> execute();
 
             $client = new MongoDB\Client("mongodb://localhost:27017");

@@ -15,14 +15,14 @@
             $oraFine = date("H:i:s", strtotime("{$OraInizio}+3 hours"));
 
             if($PresaCorrente !== '' && $ReteEthernet !==''){
-                $query = "select * from posto_lettura where Biblioteca = '$NomeBiblio' and PresaCorrente = $PresaCorrente and ReteEthernet = $ReteEthernet and numero not in ( select posto from prenotazione_posto_lettura where dataprenotazione = '$Data' And Inizio ='$OraInizio' AND Fine ='$oraFine')";
+                $query = "select * from posto_lettura where Biblioteca = '$NomeBiblio' and PresaCorrente = $PresaCorrente and ReteEthernet = $ReteEthernet and numero not in ( select posto from prenotazione_posto_lettura where dataprenotazione = '$Data' And Inizio ='$OraInizio' AND Fine ='$oraFine' AND Biblioteca ='$NomeBiblio')";
             }
             else{
                 if($PresaCorrente !== ''){
-                    $query = "select * from posto_lettura where Biblioteca = '$NomeBiblio' and PresaCorrente = $PresaCorrente and numero not in ( select posto from prenotazione_posto_lettura where dataprenotazione = '$Data' And Inizio ='$OraInizio' AND Fine ='$oraFine')";
+                    $query = "select * from posto_lettura where Biblioteca = '$NomeBiblio' and PresaCorrente = $PresaCorrente and numero not in ( select posto from prenotazione_posto_lettura where dataprenotazione = '$Data' And Inizio ='$OraInizio' AND Fine ='$oraFine' AND Biblioteca ='$NomeBiblio')";
                 }
                 else if($ReteEthernet !==''){
-                    $query = "select * from posto_lettura where Biblioteca = '$NomeBiblio' and ReteEthernet = $ReteEthernet and numero not in ( select posto from prenotazione_posto_lettura where dataprenotazione = '$Data' And Inizio ='$OraInizio' AND Fine ='$oraFine')";
+                    $query = "select * from posto_lettura where Biblioteca = '$NomeBiblio' and ReteEthernet = $ReteEthernet and numero not in ( select posto from prenotazione_posto_lettura where dataprenotazione = '$Data' And Inizio ='$OraInizio' AND Fine ='$oraFine' AND Biblioteca ='$NomeBiblio')";
                 }
                 else{
                     $query = "select * from posto_lettura where Biblioteca = '$NomeBiblio' and numero not in ( select posto from prenotazione_posto_lettura where dataprenotazione = '$Data'And Inizio ='$OraInizio' AND Fine ='$oraFine' AND Biblioteca ='$NomeBiblio')";
@@ -33,7 +33,7 @@
             $stmt = Dbh::getInstance()
             -> getDb()
             -> prepare($query);
-            
+            echo $query;
             $stmt -> execute();
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
           
