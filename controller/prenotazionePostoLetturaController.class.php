@@ -83,16 +83,24 @@
 
 
         public function createStatisticaPosto($Denominatore,$Biblioteca){
+            /*
            $query= "SELECT *, (count(*)/$Denominatore)*100 as percentuale
            from prenotazione_posto_lettura
            where posto  in
            (select numero
            from posto_lettura where biblioteca not like'$Biblioteca' )
            group by biblioteca
+           order by percentuale";*/
+
+           $query = "SELECT *, 100-(count(*)/$Denominatore)*100 as percentuale
+           from posto_lettura
+           where posto not in
+           (select posto 
+           from prenotazione_posto_lettura where biblioteca not like '$Biblioteca')
+           group by biblioteca
            order by percentuale";
            
-           
-
+        
             $stmt = Dbh:: getInstance()
             -> getDb()
             -> prepare($query);
