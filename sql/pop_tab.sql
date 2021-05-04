@@ -32,7 +32,7 @@ insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) valu
 insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (9, 'Biblioteca Universitaria di Bologna', true, true);
 insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (10, 'Biblioteca Universitaria di Bologna', false, true);
 insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (11, 'Biblioteca Universitaria di Bologna', false, true);
-/*insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (12, 'Biblioteca Universitaria di Bologna', true, false);
+insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (12, 'Biblioteca Universitaria di Bologna', true, false);
 insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (13, 'Biblioteca Universitaria di Bologna', false, true);
 insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (14, 'Biblioteca Universitaria di Bologna', true, false);
 insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (15, 'Biblioteca Universitaria di Bologna', true, false);
@@ -274,7 +274,6 @@ insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) valu
 insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (25, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', false, false);
 insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (26, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', true, false);
 insert into Posto_Lettura (Numero, Biblioteca, ReteEthernet, PresaCorrente) values (27, 'Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali', false, false);
-*/
 insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (1, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, false);
 insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (2, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', true, true);
 insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (3, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, false);
@@ -285,7 +284,7 @@ insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) val
 insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (8, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', true, true);
 insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (9, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, true);
 insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (10, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, false);
-/*insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (11, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', true, false);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (11, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', true, false);
 insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (12, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, false);
 insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (13, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', true, false);
 insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (14, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', true, true);
@@ -323,7 +322,7 @@ insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) val
 insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (46, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, false);
 insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (47, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', true, true);
 insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (48, 'Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale', false, false);
-*/
+
 insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (1, 'Biblioteca di Medicina. Biblioteca Biomedica', true, false);
 insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (2, 'Biblioteca di Medicina. Biblioteca Biomedica', false, true);
 insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (3, 'Biblioteca di Medicina. Biblioteca Biomedica', false, true);
@@ -334,7 +333,7 @@ insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) val
 insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (8, 'Biblioteca di Medicina. Biblioteca Biomedica', true, false);
 insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (9, 'Biblioteca di Medicina. Biblioteca Biomedica', false, false);
 insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (10, 'Biblioteca di Medicina. Biblioteca Biomedica', true, true);
-/*insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (11, 'Biblioteca di Medicina. Biblioteca Biomedica', true, true);
+insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (11, 'Biblioteca di Medicina. Biblioteca Biomedica', true, true);
 insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (12, 'Biblioteca di Medicina. Biblioteca Biomedica', false, true);
 insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (13, 'Biblioteca di Medicina. Biblioteca Biomedica', false, true);
 insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (14, 'Biblioteca di Medicina. Biblioteca Biomedica', true, true);
@@ -570,7 +569,7 @@ insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) val
 insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (178, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, false);
 insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (179, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', true, true);
 insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (180, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
-*/
+
 
 insert into Cartaceo(Titolo,Autore, Edizione, Genere, AnnoPubblicazione, NumeroPagine, StatoConservazione, StatoPrestito, Scaffale, Biblioteca) values
 ("Il nome della rosa","Umberto Eco","Illustrata","Romanzo Storico",2014,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
@@ -593,10 +592,27 @@ insert into Cartaceo(Titolo,Autore, Edizione, Genere, AnnoPubblicazione, NumeroP
 
 
 
-insert into Utilizzatore values("ciao@gmail.com","123","Ual","Erio",'1998-12-12',"Prato","123456",now(),"Poliziotto","Attivo");
-insert into Amministratore values("amministratore@gmail.com","123","amministratore","de amministris", '1998-12-12', "Prato", "37048511793","AFM","Biblioteca Universitaria di Bologna");
-insert into Amministratore values("amministratoreeco@gmail.com","123","amministratore","de amministris", '1998-12-12', "Prato", "37048511793","AFM","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali");
-insert into volontario values("volontario@gmail.com","123","volontario","de volontaris", '1998-12-12', "Prato", "37048511793","Bici");
+insert into Utilizzatore values("ciao@gmail.com","123","Ual","Erio",'1998-12-12',"Prato","123456",now(),"Poliziotto","Attivo"),
+("utente1@gmail.com","123","Mar","Uao",'1998-12-12',"Prato","123456",now(),"Studente","Attivo"),
+("utente2@gmail.com","123","cia","one",'1998-12-12',"Prato","123456",now(),"Docente","Attivo"),
+("utente3@gmail.com","123","Io","So",'1998-12-12',"Prato","123456",now(),"Ragioniere","Attivo"),
+("utente4@gmail.com","123","Lillo","Ernia",'1998-12-12',"Prato","123456",now(),"Disoccupato","Attivo")
+;
+
+insert into Amministratore values("amministratore@gmail.com","123","amministratore","de amministris", '1998-12-12', "Prato", "37048511793","AFM","Biblioteca Universitaria di Bologna"),
+("amministratore2@gmail.com","123","antonio","lo giudice", '1998-12-12', "Prato", "37048511793","AFM","Biblioteca Universitaria di Bologna"),
+("ammtestoni@gmail.com","123","fabio","fabianovic", '1998-12-12', "Prato", "37048511793","AFM","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
+("ammclin@gmail.com","123","quando","dove", '1998-12-12', "Prato", "37048511793","AFM","Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale"),
+("ammforli@gmail.com","123","ciao","sono", '1998-12-12', "Prato", "37048511793","AFM","Biblioteca Centrale Roberto Ruffilli del Campus di Forlì"),
+("ammbiom@gmail.com","123","wowowo","wowowo", '1998-12-12', "Prato", "37048511793","AFM","Biblioteca di Medicina. Biblioteca Biomedica")
+;
+
+insert into volontario values("volontario@gmail.com","123","volontario","de volontaris", '1998-12-12', "Prato", "37048511793","Bici"),
+("volontario1@gmail.com","123","Angelo","Di Iorio", '1998-12-12', "Loiano", "37048511793","Piedi"),
+("volontario2@gmail.com","123","Marco","De Marchis", '1998-12-12', "Legnano", "37048511793","Bici"),
+("volontario3@gmail.com","123","Angelo","Marzolla", '1998-12-12', "Afragola", "37048511793","Piedi"),
+("volontario4@gmail.com","123","MarcoDaniele","Margine", '1998-12-12', "Ragusa", "37048511793","Bici")
+;
 insert into ebook(Titolo, Edizione, Genere, AnnoPubblicazione, Dimensione, Pdf) values
 ("Algorithms for Dummies","Prima","Saggistica",2017,4850,"C:/xampp/htdocs/Ebiblio/pdf_ebook/Algorithms for Dummies"),
 ("Bitcoin For Dummies","Prima","Saggistica",2016,3243,"C:/xampp/htdocs/Ebiblio/pdf_ebook/Bitcoin For Dummies"),

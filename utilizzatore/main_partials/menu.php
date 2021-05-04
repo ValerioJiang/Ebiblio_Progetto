@@ -89,6 +89,8 @@ $utente_res = $utente_con->list();
             <div class="navbar-nav">
                 <a href="/ebiblio/utilizzatore" class="nav-item nav-link">Home</a>
                 <a href="/ebiblio/utilizzatore/biblioteche.php" class="nav-item nav-link">Biblioteche</a>
+                <a href="/ebiblio/utilizzatore/messaggi.php" class="nav-item nav-link">Messaggi</a>
+                <a href="/ebiblio/utilizzatore/segnalazioni.php" class="nav-item nav-link">Segnalazioni</a>
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle nav-item nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Servizi
@@ -123,6 +125,7 @@ $utente_res = $utente_con->list();
 
                     </div>
                 </div>
+
             </div>
 
             <div class="navbar-nav ml-auto">

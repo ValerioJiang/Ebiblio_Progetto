@@ -47,4 +47,18 @@
             return $stmt ->fetchAll(PDO::FETCH_ASSOC);
         }
 
+
+        /**
+         * RETRIEVE
+         */
+        public function getMsgUtil($util){
+            $query ="select * from messaggio where Utilizzatore ='$util'";
+            $stmt = Dbh::getInstance()
+            ->getDb()
+            ->prepare($query);
+            $stmt->execute();
+            return $stmt ->fetchAll(PDO::FETCH_ASSOC);
+
+        }
+
 }

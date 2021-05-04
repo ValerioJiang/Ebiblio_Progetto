@@ -65,6 +65,23 @@
 
         }
 
+
+        /**
+         * Retrieve
+         */
+        public function segnUtil($util){
+            $query = "SELECT * from segnalazione where utilizzatore = '$util'";
+
+            $stmt = Dbh::getInstance()
+            ->getDb()
+            ->prepare($query);
+            $stmt-> execute();
+
+        return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+
+        }
+        
+
         
 
     
