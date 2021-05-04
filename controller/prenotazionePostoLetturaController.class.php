@@ -44,7 +44,7 @@
             $stmt = Dbh:: getInstance()
             -> getDb()
             -> prepare($query);
-            echo $query;
+            
             $stmt -> execute();
 
             $client = new MongoDB\Client("mongodb://localhost:27017");
@@ -82,7 +82,7 @@
         }
 
 
-        public function createStatisticaPosto($Denominatore,$Biblioteca){
+        public function createStatisticaPosto($Biblioteca){
             /*
            $query= "SELECT *, (count(*)/$Denominatore)*100 as percentuale
            from prenotazione_posto_lettura
@@ -92,19 +92,13 @@
            group by biblioteca
            order by percentuale";*/
 
-           $query = "SELECT *, 100-(count(*)/$Denominatore)*100 as percentuale
-           from posto_lettura
-           where numero not in
-           (select posto 
-           from prenotazione_posto_lettura where biblioteca not like '$Biblioteca')
-           group by biblioteca
-           order by percentuale";
-           
+           $query = "select round(avg((a.cnt*100)/(select count(Numero) from posto_lettura where Biblioteca ='$Biblioteca')),2) as Percentuale, Biblioteca from (select count(distinct posto) as cnt, Biblioteca from prenotazione_posto_lettura Where Biblioteca ='$Biblioteca' group by DataPrenotazione) as a";           
         
             $stmt = Dbh:: getInstance()
             -> getDb()
             -> prepare($query);
             $stmt -> execute();
+        
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
 
 
