@@ -122,7 +122,7 @@ require_once('/xampp/htdocs/Ebiblio/vendor/autoload.php');
                 ->getDb()
                 ->prepare($query);
             $stmt-> execute();
-            
+        
             return $stmt -> fetchAll(PDO::FETCH_ASSOC);
 
         }

@@ -571,20 +571,20 @@ insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) val
 insert into Posto_Lettura (Numero , Biblioteca, ReteEthernet, PresaCorrente) values (180, 'Biblioteca Centrale Roberto Ruffilli del Campus di Forlì', false, true);
 
 
-insert into Cartaceo(Titolo,Autore, Edizione, Genere, AnnoPubblicazione, NumeroPagine, StatoConservazione, StatoPrestito, Scaffale, Biblioteca) values
-("Il nome della rosa","Umberto Eco","Illustrata","Romanzo Storico",2014,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
-("Io non ho paura","Niccolò Ammaniti","Prima","Romanzo",2001,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
-("Il capitale nel XXI secolo","Thomas Piketty","Prima","Saggio politico",2013,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
-("1984","George Orwell","Prima","Fantascienza",1950,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
-("La fattoria degli animali","George Orwell","Prima","Romanzo",1947,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
-("L'amicizia","Tahar Ben Jelloun","Prima","Romanzo",1947,576,"Scadente","Disponibile","1A","Biblioteca Universitaria di Bologna"),
+insert into Cartaceo(Titolo, Edizione, Genere, AnnoPubblicazione, NumeroPagine, StatoConservazione, StatoPrestito, Scaffale, Biblioteca) values
+("Il nome della rosa","Illustrata","Romanzo Storico",2014,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
+("Io non ho paura","Prima","Romanzo",2001,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
+("Il capitale nel XXI secolo","Prima","Saggio politico",2013,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
+("1984","Prima","Fantascienza",1950,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
+("La fattoria degli animali","Prima","Romanzo",1947,576,"Ottimo","Disponibile","1A","Biblioteca Universitaria di Bologna"),
+("L'amicizia","Prima","Romanzo",1947,576,"Scadente","Disponibile","1A","Biblioteca Universitaria di Bologna"),
 
-("Il nome della rosa","Umberto Eco","Illustrata","Romanzo Storico",2014,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
-("Io non ho paura", "Niccolò Ammaniti","Prima","Romanzo",2001,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
-("Il capitale nel XXI secolo","Thomas Piketty","Prima","Saggio politico",2013,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
-("1984","George Orwell","Prima","Fantascienza",1950,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
-("La fattoria degli animali","George Orwell","Prima","Romanzo",1947,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
-("Manifesto Comunista","Karl Marx,Friedrich Engels","Prima","Saggio politico",1918, 576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali")
+("Il nome della rosa","Illustrata","Romanzo Storico",2014,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
+("Io non ho paura", "Prima","Romanzo",2001,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
+("Il capitale nel XXI secolo","Prima","Saggio politico",2013,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
+("1984","Prima","Fantascienza",1950,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
+("La fattoria degli animali","Prima","Romanzo",1947,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
+("Manifesto Comunista","Prima","Saggio politico",1918, 576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali")
 ;
 
 

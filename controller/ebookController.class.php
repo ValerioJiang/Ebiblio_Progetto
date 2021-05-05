@@ -135,7 +135,7 @@
         }
 
         public function getClassificaEbook(){
-            $query="SELECT * from ebook group by NumAccessi Desc";
+            $query="SELECT * from ebook order by NumAccessi Desc";
             $stmt = Dbh::getInstance()
             -> getDb()
             -> prepare($query);
