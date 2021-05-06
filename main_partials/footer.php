@@ -1,7 +1,7 @@
 
 <div class="container-fluid bg-danger text-white text-center">
     
-        <h6>Copyright© cucc corp</h6>
+        <h6>Copyright© BD2021 corp</h6>
     
 </div>
 

@@ -32,7 +32,6 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
               <tr>
                 <th>Biblioteca</th>
                 <th>Percentuale posti usati rispetto al totale</th>
-
                 <?php
                   
                   $biblio_res = $bibliotecaCon->list();
