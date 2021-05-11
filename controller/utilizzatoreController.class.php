@@ -31,14 +31,25 @@
             ->getDb() //creazione oggetto dbh
             ->prepare($query);
             $stmt-> execute();//esecuzione
+            return $stmt -> fetchAll(PDO::FETCH_ASSOC); //organizzazione righe in array associativo
             
+        }
+
+        public function checkEsistenzaNonSos($email, $password){
+            //TRUE se utente esiste altrimenti FALSE
+            $query ="SELECT * FROM Utilizzatore WHERE Stato <> 'Sospeso' AND email ='$email' AND password ='$password'";
+            
+            $stmt = Dbh::getInstance()//entro in classe dbh.php che è statico (due puntini)
+            ->getDb() //creazione oggetto dbh
+            ->prepare($query);
+            $stmt-> execute();//esecuzione
             return $stmt -> fetchAll(PDO::FETCH_ASSOC); //organizzazione righe in array associativo
             
         }
 
         //controllo esistenza dell'utente(per amministratore)
         public function checkEsistenza_Admin($utilizzatore){
-        $query= "CALL call checkEsisAdmin('$utilizzatore')";
+        $query= "CALL checkEsisAdmin('$utilizzatore')";
 
         $stmt = Dbh::getInstance()
         ->getDb() 

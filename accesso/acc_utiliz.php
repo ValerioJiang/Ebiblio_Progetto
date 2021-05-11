@@ -11,39 +11,8 @@ $utiliz_con = new UtilizzatoreController();
 
     <div class="container-fluid " style="background: url('/ebiblio/images/scaffa.jpg') no-repeat;">
         <div class="container" style="background-color: white;">
-
-            <!--messaggi d'errore-->
-            <div  class ="text-center">
-                <?php
-                if(isset($_POST['submit'])){
-                $emailtrim = $_POST['email'];
-                $statoutente -> checkEsistenza($emailtrim);
-    
-                if($statoutente['Stato']=='Sospeso'){
-
-                    echo "<script type='text/javascript'>alert('Accoun sospeso');
-                    window.location = 'http://localhost/ebiblio'; 
-                    </script>";             
-                    
-                    
-
-                }
-            }
-                /*
-                    if(isset($_GET["error"])){
-                        if($_GET["error"]== "emptyinput"){
-                            echo "<p class='bg-warning text-white h5'>ERRORE: <em>Riempire tutti i campi</em></p>";
-                        }else if($_GET["error"]== "emailorpasswordwrong"){
-                            echo "<p class='bg-warning text-white h5'>ERRORE: <em>Email o Password errata.</p>";                        
-                        }else if($_GET["error"]== "stmtfailed"){
-                            echo "<p class='bg-warning text-white h5'>ERRORE: <em>Qualcosa è andato storto, prova ancora</p>";
-                        }else if($_GET["error"]== "null"){
-                            echo "<p class= 'bg-success text-white h5'><em>Accesso eseguito</p>";
- 
-                        }
-                    } */
-                ?>
-                </div>
+        <div  class ="text-center">
+        </div>
             <h2 class="modal-title" id="login">Accesso</h2>
             <em>Utilizzatore:</em><br><br>
 

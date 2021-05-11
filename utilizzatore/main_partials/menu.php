@@ -7,9 +7,8 @@ $util_con = new UtilizzatoreController();
 if (isset($_POST["email"]) && isset($_POST["password"])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $utili_res = $util_con->checkEsistenza($email, $password);
     //controllo riempimento di tutti i campi:
-    $util_checkEsistenza = $util_con->checkEsistenza($email, $password);
+    $util_checkEsistenza = $util_con->checkEsistenzaNonSos($email, $password);
 
     if (count($util_checkEsistenza) == 1) {
         session_start();
