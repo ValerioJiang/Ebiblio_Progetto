@@ -15,6 +15,20 @@ $utiliz_con = new UtilizzatoreController();
             <!--messaggi d'errore-->
             <div  class ="text-center">
                 <?php
+                if(isset($_POST['submit'])){
+                $emailtrim = $_POST['email'];
+                $statoutente -> checkEsistenza($emailtrim);
+    
+                if($statoutente['Stato']=='Sospeso'){
+
+                    echo "<script type='text/javascript'>alert('Accoun sospeso');
+                    window.location = 'http://localhost/ebiblio'; 
+                    </script>";             
+                    
+                    
+
+                }
+            }
                 /*
                     if(isset($_GET["error"])){
                         if($_GET["error"]== "emptyinput"){

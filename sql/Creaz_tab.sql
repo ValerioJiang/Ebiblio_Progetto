@@ -198,7 +198,7 @@ create table PRENOTAZIONE_POSTO_LETTURA(
     foreign key(Biblioteca) references BIBLIOTECA(Nome) on delete cascade on update cascade,
     foreign key(Posto) references POSTO_LETTURA(Numero) on delete cascade on update cascade,
     DataPrenotazione date not null,
-    Inizio time, # 
+    Inizio time, 
     Fine time, 
     primary key(Posto,Biblioteca,Utilizzatore,DataPrenotazione,Inizio)
 );
