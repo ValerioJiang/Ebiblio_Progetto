@@ -1,3 +1,24 @@
+
+drop trigger if exists prenotato_consegnato;
+delimiter //
+create trigger prenotato_consegnato
+AFTER UPDATE
+ON CONSEGNA FOR EACH ROW
+BEGIN
+
+DECLARE codLibro INT;
+DECLARE codPrestito INT;
+DECLARE not_valid_Fine TIME;
+    
+if (NEW.TipoConsegna = 'Affidamento') then
+	select CodicePrestito into codPrestito from consegna where Volontario = NEW.Volontario and DataConsegna = NEW.DataConsegna and TipoConsegna = 'Affidamento';
+    select Libro into codLibro from Prestito where Codice = codPrestito;
+    
+    update cartaceo set StatoPrestito='Consegnato' where codice = codLibro;
+end if;
+END//
+delimiter;
+
 drop event if exists scadenza_prestito;
 
 CREATE EVENT scadenza_prestito
