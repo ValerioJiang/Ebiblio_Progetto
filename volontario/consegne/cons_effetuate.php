@@ -10,7 +10,7 @@ $consCon = new ConsegnaController();
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-4 d-flex flex-column align-items-center justify-content-center">
-            <h3 class="mb-5">Scegliere le consegne da effettuare</h3>
+            <h3 class="mb-5">Consegne effettuate</h3>
             <table class="table table-hover">
                 <thead>
                     <tr>
