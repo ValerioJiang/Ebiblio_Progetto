@@ -24,8 +24,6 @@ $consCon = new ConsegnaController();
                     <th>Data Fine</th>
                     <th>Status</th>
                     <th>Note consegna</th>
-                    
-
 
                 </tr>
             </thead>
@@ -64,11 +62,13 @@ $consCon = new ConsegnaController();
                             }
                             else{
                                 echo '<td>'  . "Presa in carico da ".$consUtil[$i]['Volontario'] . '</td>';
+                                
                             }            
                             
                             if(!$consUtil[$i]['Note'] == null){
                                 echo '<td>'  . $consUtil[$i]['Note'] . '</td>';
                             }
+
                             echo "</tr>";
                         }
 
@@ -84,6 +84,9 @@ $consCon = new ConsegnaController();
                             echo '<td>'  . "Ritiro in biblioteca" . '</td>';
                             echo '</tr>';
                         }
+
+
+                   
                     
                 ?>
 
