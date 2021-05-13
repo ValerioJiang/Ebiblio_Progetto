@@ -1,3 +1,4 @@
+
 drop procedure if exists createUtilizzatore;
 delimiter \ 
 create procedure createUtilizzatore(Email varchar(255), Password varchar(255), Nome varchar(255), Cognome varchar(255), DataNascita Date,  LuogoNascita varchar(255), Telefono varchar(15), Professione varchar(255))

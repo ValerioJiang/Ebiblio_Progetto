@@ -85,6 +85,7 @@ class PrestitoController
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+
     public function getLikePrestitoBiblioAdmin($Admin){
 
      $query = "SELECT * from prestito where libro in(select codice from cartaceo where biblioteca in(select bibliotecagestita from amministratore where email like '$Admin'))";

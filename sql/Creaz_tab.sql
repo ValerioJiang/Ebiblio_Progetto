@@ -240,4 +240,3 @@ create table ACCESSO_EBOOK(
     DataAccesso DATETIME not null,
     primary key(Ebook,Utilizzatore,DataAccesso)
     );
-    

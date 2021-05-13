@@ -625,3 +625,40 @@ insert into ebook(Titolo, Edizione, Genere, AnnoPubblicazione, Dimensione, Pdf) 
 ("Robotic process automation for dummies","Prima","Saggistica",2015,3653,"C:/xampp/htdocs/Ebiblio/pdf_ebook/Robotic process automation for dummies"),
 ("Tableau for dummies","Prima","Saggistica",2015,3406,"C:/xampp/htdocs/Ebiblio/pdf_ebook/Tableau for dummies")
 ;
+
+
+insert into prestito(utilizzatore,Libro) values("ciao@gmail.com",1);
+insert into consegna(codiceprestito,tipoconsegna) values(1,'Affidamento');
+update consegna set volontario = 'volontario@gmail.com' where codiceprestito = 1;
+
+update consegna set dataconsegna = now() where codice = 1;
+
+insert into prestito(utilizzatore,Libro) values("ciao@gmail.com",2);
+insert into consegna(codiceprestito,tipoconsegna) values(2,'Affidamento');
+update consegna set volontario = 'volontario@gmail.com' where codiceprestito = 2;
+
+update consegna set dataconsegna = now(), note="consegnato a un micio" where codice = 2;
+
+
+
+
+
+
+
+insert into prestito(utilizzatore,Libro) values("ciao@gmail.com",3);
+insert into consegna(codiceprestito,tipoconsegna) values(3,'Affidamento');
+update consegna set volontario = 'volontario@gmail.com' where codiceprestito = 3;
+
+update consegna set dataconsegna = now(), note="consegnato a un mao" where codice = 3;
+
+
+
+insert into prestito(utilizzatore,Libro) values("ciao@gmail.com",4);
+insert into consegna(codiceprestito,tipoconsegna) values(4,'Affidamento');
+update consegna set volontario = 'volontario@gmail.com' where codiceprestito = 4;
+
+update consegna set dataconsegna = current_date-INTERVAL 20 day, note="consegnato a un mao" where codice = 4;
+
+
+insert into consegna(volontario, CodicePrestito, dataconsegna, tipoconsegna) values('volontario@gmail.com', 1, '2021-05-15','Restituzione');
+insert into consegna(volontario, CodicePrestito, dataconsegna, tipoconsegna) values('volontario@gmail.com', 3, '2021-05-15','Restituzione');

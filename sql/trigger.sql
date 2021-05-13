@@ -1,8 +1,8 @@
 
-drop trigger if exists prenotato_consegnato;
+drop trigger if exists consegnato_disponibile;
 delimiter //
-create trigger prenotato_consegnato
-AFTER UPDATE
+create trigger consegnato_disponibile
+AFTER INSERT
 ON CONSEGNA FOR EACH ROW
 BEGIN
 
@@ -10,14 +10,15 @@ DECLARE codLibro INT;
 DECLARE codPrestito INT;
 DECLARE not_valid_Fine TIME;
     
-if (NEW.TipoConsegna = 'Affidamento') then
-	select CodicePrestito into codPrestito from consegna where Volontario = NEW.Volontario and DataConsegna = NEW.DataConsegna and TipoConsegna = 'Affidamento';
+if (NEW.TipoConsegna = 'Restituzione') then
+	select CodicePrestito into codPrestito from consegna where Volontario = NEW.Volontario and DataConsegna = NEW.DataConsegna and TipoConsegna = 'Restituzione' and CodicePrestito = new.CodicePrestito;
     select Libro into codLibro from Prestito where Codice = codPrestito;
     
-    update cartaceo set StatoPrestito='Consegnato' where codice = codLibro;
+    update cartaceo set StatoPrestito='Disponibile' where codice = codLibro;
 end if;
 END//
 delimiter;
+
 
 drop event if exists scadenza_prestito;
 
@@ -27,15 +28,28 @@ STARTS CURRENT_TIMESTAMP
 DO
 	UPDATE CARTACEO SET StatoPrestito = "Disponibile" WHERE CODICE IN(SELECT LIBRO FROM Prestito WHERE DATAFINE >= CURDATE()) AND StatoPrestito <> "Disponibile";
     
-drop trigger if exists fine_prestito;
+drop trigger if exists fine_prestito_prenotato_consegnato;
 delimiter //
-create trigger fine_prestito
+create trigger fine_prestito_prenotato_consegnato
 AFTER UPDATE
 ON CONSEGNA FOR EACH ROW
 BEGIN
+
+DECLARE codLibro INT;
+DECLARE codPrestito INT;
+DECLARE not_valid_Fine TIME;
+
 if NEW.DataConsegna is not null then
 UPDATE PRESTITO SET DataFine = ADDDATE(NEW.DataConsegna, INTERVAL 15 DAY), DataInizio = NEW.DataConsegna
 WHERE PRESTITO.Codice = NEW.CodicePrestito;
+
+
+select CodicePrestito into codPrestito from consegna where Volontario = NEW.Volontario and DataConsegna = NEW.DataConsegna and TipoConsegna = 'Affidamento' and CodicePrestito = new.CodicePrestito;
+    select Libro into codLibro from Prestito where Codice = codPrestito;
+    
+    update cartaceo set StatoPrestito='Consegnato' where codice = codLibro;
+
+
 end if;
 END//
 delimiter;

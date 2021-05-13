@@ -25,14 +25,21 @@ $consCon = new ConsegnaController();
 
                     <?php
                     $cons_res = $consCon -> listConsInCaricoVolo($_SESSION['email']);
-
+                    $presCon = new PrestitoController();
                     for ($i = 0; $i < count($cons_res); $i++) {
-
+                        
+                        $pres_lib = $presCon -> getById($cons_res[$i]['CodicePrestito']);
+                        
                         echo '<tr>';
                         echo '<td>' . $cons_res[$i]['Codice'] . '</td>';
                         echo '<td>' . $cons_res[$i]['CodicePrestito'] . '</td>';
                         echo '<td>' . $cons_res[$i]['TipoConsegna'] . '</td>';
-                        echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/volontario/consegne/riepilogo_consegna.php?codConsegna=' . $cons_res[$i]['Codice'] .'">Effettua consegna</a></td>';
+                        if($cons_res[$i]['TipoConsegna']=='Affidamento'){
+                            echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/volontario/consegne/riepilogo_consegna.php?codConsegna=' . $cons_res[$i]['Codice'] .'">Effettua consegna</a></td>';
+                        }
+                        else{
+                            echo '<td><a class="btn btn-info" role="button" href="http://localhost/ebiblio/volontario/consegne/restituzione.php?restit=true&codConsegna=' . $cons_res[$i]['Codice'] .'&codLib='.$pres_lib[0]['Libro'].'\">Effettua riconsegna</a></td>';
+                        }
                         echo '<td><a class="btn btn-danger" role="button" href="http://localhost/ebiblio/volontario/consegne/disdetta.php?disdire=true&codConsegna=' . $cons_res[$i]['Codice'] .'">Disdire</a></td>';
                         echo '</tr>';
                     }

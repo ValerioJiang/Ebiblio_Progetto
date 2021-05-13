@@ -32,7 +32,6 @@ background: url('/ebiblio/images/scaffa.jpg') no-repeat  ;
             if (isset($_POST['confBtn'])) {
                 $cons_con = new ConsegnaController();
                 $cons_res = $cons_con->updateConsegnaEffettiva($_SESSION['email'], $_GET['codConsegna'],date('Y-m-d', strtotime('+1 days')),$_POST['note']);
-                $cons_pi = $cons_con->createConsegnaRestituzione($_GET['codConsegna'],"Restituzione",date('Y-m-d', strtotime('+16 days')));
                 
                 $client = new MongoDB\Client("mongodb://localhost:27017");
 
