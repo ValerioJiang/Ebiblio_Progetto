@@ -584,34 +584,50 @@ insert into Cartaceo(Titolo, Edizione, Genere, AnnoPubblicazione, NumeroPagine, 
 ("Il capitale nel XXI secolo","Prima","Saggio politico",2013,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
 ("1984","Prima","Fantascienza",1950,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
 ("La fattoria degli animali","Prima","Romanzo",1947,576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
-("Manifesto Comunista","Prima","Saggio politico",1918, 576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali")
+("Manifesto Comunista","Prima","Saggio politico",1918, 576,"Ottimo","Disponibile","1A","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
+
+("Il nome della rosa","Illustrata","Romanzo Storico",2014,576,"Ottimo","Disponibile","1A","Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale"),
+("Io non ho paura","Prima","Romanzo",2001,576,"Ottimo","Disponibile","1A","Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale"),
+("Il capitale nel XXI secolo","Prima","Saggio politico",2013,576,"Ottimo","Disponibile","1A","Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale"),
+("1984","Prima","Fantascienza",1950,576,"Ottimo","Disponibile","1A","Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale"),
+("La fattoria degli animali","Prima","Romanzo",1947,576,"Ottimo","Disponibile","1A","Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale"),
+("L'amicizia","Prima","Romanzo",1947,576,"Scadente","Disponibile","1A","Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale"),
+
+("Il nome della rosa","Illustrata","Romanzo Storico",2014,576,"Ottimo","Disponibile","1A","Biblioteca di Medicina. Biblioteca Biomedica"),
+("Io non ho paura","Prima","Romanzo",2001,576,"Ottimo","Disponibile","1A","Biblioteca di Medicina. Biblioteca Biomedica"),
+("Il capitale nel XXI secolo","Prima","Saggio politico",2013,576,"Ottimo","Disponibile","1A","Biblioteca di Medicina. Biblioteca Biomedica"),
+("1984","Prima","Fantascienza",1950,576,"Ottimo","Disponibile","1A","Biblioteca di Medicina. Biblioteca Biomedica"),
+("La fattoria degli animali","Prima","Romanzo",1947,576,"Ottimo","Disponibile","1A","Biblioteca di Medicina. Biblioteca Biomedica"),
+("L'amicizia","Prima","Romanzo",1947,576,"Scadente","Disponibile","1A","Biblioteca di Medicina. Biblioteca Biomedica"),
+
+("Il nome della rosa","Illustrata","Romanzo Storico",2014,576,"Ottimo","Disponibile","1A","Biblioteca Centrale Roberto Ruffilli del Campus di Forlì"),
+("Io non ho paura","Prima","Romanzo",2001,576,"Ottimo","Disponibile","1A","Biblioteca Centrale Roberto Ruffilli del Campus di Forlì"),
+("Il capitale nel XXI secolo","Prima","Saggio politico",2013,576,"Ottimo","Disponibile","1A","Biblioteca Centrale Roberto Ruffilli del Campus di Forlì"),
+("1984","Prima","Fantascienza",1950,576,"Ottimo","Disponibile","1A","Biblioteca Centrale Roberto Ruffilli del Campus di Forlì"),
+("La fattoria degli animali","Prima","Romanzo",1947,576,"Ottimo","Disponibile","1A","Biblioteca Centrale Roberto Ruffilli del Campus di Forlì"),
+("L'amicizia","Prima","Romanzo",1947,576,"Scadente","Disponibile","1A","Biblioteca Centrale Roberto Ruffilli del Campus di Forlì");
+
+
+insert into Utilizzatore values("valerio.jiang@gmail.com","123","Valerio","Jiang",'1998-07-10',"Prato","3278937583",now(),"Studente","Attivo"),
+("serena.russo@gmail.com","123","Serena","Russo",'1997-12-13',"Pescara","088900313",now(),"Studente","Attivo"),
+("luca.lisurici@gmail.com","123","Luca","Lisurici",'1999-96-02',"Matera","3285739471",now(),"Studente","Attivo"),
+("mario.rossi@gmail.com","123","Mario","Rossi",'1972-12-12',"Bologna","374829103",now(),"Docente","Attivo"),
+("laura.gialli@gmail.com","123","Laura","Gialli",'1980-05-03',"Bolzano","123456",now(),"Docente","Attivo")
 ;
 
-
-
-
-
-
-insert into Utilizzatore values("ciao@gmail.com","123","Ual","Erio",'1998-12-12',"Prato","123456",now(),"Poliziotto","Attivo"),
-("utente1@gmail.com","123","Mar","Uao",'1998-12-12',"Prato","123456",now(),"Studente","Attivo"),
-("utente2@gmail.com","123","cia","one",'1998-12-12',"Prato","123456",now(),"Docente","Attivo"),
-("utente3@gmail.com","123","Io","So",'1998-12-12',"Prato","123456",now(),"Ragioniere","Attivo"),
-("utente4@gmail.com","123","Lillo","Ernia",'1998-12-12',"Prato","123456",now(),"Disoccupato","Attivo")
+insert into Amministratore values("marco.rossi@gmail.com","123","Marco","Rossi", '1979-01-12', "Bologna", "37048511793","AFM","Biblioteca Universitaria di Bologna"),
+("antonio.logiudice@gmail.com","123","Antonio","Lo Giudice", '1983-12-12', "Modena", "362738471","AFM","Biblioteca Universitaria di Bologna"),
+("fabio.rossi@gmail.com","123","Fabio","Rossi", '1978-10-14', "Prato", "327163548","AFM","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
+("sara.bianchi@gmail.com","123","Sara","Bianchi", '1978-12-23', "Pescara", "3272517364","AFM","Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale"),
+("lucia.longhi@gmail.com","123","Lucia","Longhi", '1985-07-07', "Forlì", "328009372","AFM","Biblioteca Centrale Roberto Ruffilli del Campus di Forlì"),
+("sergio.rossi@gmail.com","123","Sergio","Rossi", '1973-10-09', "Cesena", "37048511793","AFM","Biblioteca di Medicina. Biblioteca Biomedica")
 ;
 
-insert into Amministratore values("amministratore@gmail.com","123","amministratore","de amministris", '1998-12-12', "Prato", "37048511793","AFM","Biblioteca Universitaria di Bologna"),
-("amministratore2@gmail.com","123","antonio","lo giudice", '1998-12-12', "Prato", "37048511793","AFM","Biblioteca Universitaria di Bologna"),
-("ammtestoni@gmail.com","123","fabio","fabianovic", '1998-12-12', "Prato", "37048511793","AFM","Biblioteca Giuseppe Testoni del Dipartimento di Scienze aziendali"),
-("ammclin@gmail.com","123","quando","dove", '1998-12-12', "Prato", "37048511793","AFM","Biblioteca di Medicina. Biblioteca Clinica F. B. Bianchi. Sezione Centrale"),
-("ammforli@gmail.com","123","ciao","sono", '1998-12-12', "Prato", "37048511793","AFM","Biblioteca Centrale Roberto Ruffilli del Campus di Forlì"),
-("ammbiom@gmail.com","123","wowowo","wowowo", '1998-12-12', "Prato", "37048511793","AFM","Biblioteca di Medicina. Biblioteca Biomedica")
-;
-
-insert into volontario values("volontario@gmail.com","123","volontario","de volontaris", '1998-12-12', "Prato", "37048511793","Bici"),
-("volontario1@gmail.com","123","Angelo","Di Iorio", '1998-12-12', "Loiano", "37048511793","Piedi"),
-("volontario2@gmail.com","123","Marco","De Marchis", '1998-12-12', "Legnano", "37048511793","Bici"),
-("volontario3@gmail.com","123","Angelo","Marzolla", '1998-12-12', "Afragola", "37048511793","Piedi"),
-("volontario4@gmail.com","123","MarcoDaniele","Margine", '1998-12-12', "Ragusa", "37048511793","Bici")
+insert into volontario values("serena.rossi@gmail.com","123","Serena","Rossi", '1997-13-12', "Pescara", "37048511793","Bici"),
+("valerio.rossi@gmail.com","123","Valerio","Rossi", '1998-07-10', "Loiano", "37048511793","Piedi"),
+("luca.rossi@gmail.com","123","Luca","Rossi", '1999-06-02', "Legnano", "37048511793","Bici"),
+("angelo.rossi@gmail.com","123","Angelo","Rossi", '1995-10-12', "Afragola", "37048511793","Piedi"),
+("daniele.rossi@gmail.com","123","Daniele","Rossi", '1994-10-10', "Ragusa", "37048511793","Bici")
 ;
 insert into ebook(Titolo, Edizione, Genere, AnnoPubblicazione, Dimensione, Pdf) values
 ("Algorithms for Dummies","Prima","Saggistica",2017,4850,"C:/xampp/htdocs/Ebiblio/pdf_ebook/Algorithms for Dummies"),
@@ -625,40 +641,3 @@ insert into ebook(Titolo, Edizione, Genere, AnnoPubblicazione, Dimensione, Pdf) 
 ("Robotic process automation for dummies","Prima","Saggistica",2015,3653,"C:/xampp/htdocs/Ebiblio/pdf_ebook/Robotic process automation for dummies"),
 ("Tableau for dummies","Prima","Saggistica",2015,3406,"C:/xampp/htdocs/Ebiblio/pdf_ebook/Tableau for dummies")
 ;
-
-
-insert into prestito(utilizzatore,Libro) values("ciao@gmail.com",1);
-insert into consegna(codiceprestito,tipoconsegna) values(1,'Affidamento');
-update consegna set volontario = 'volontario@gmail.com' where codiceprestito = 1;
-
-update consegna set dataconsegna = now() where codice = 1;
-
-insert into prestito(utilizzatore,Libro) values("ciao@gmail.com",2);
-insert into consegna(codiceprestito,tipoconsegna) values(2,'Affidamento');
-update consegna set volontario = 'volontario@gmail.com' where codiceprestito = 2;
-
-update consegna set dataconsegna = now(), note="consegnato a un micio" where codice = 2;
-
-
-
-
-
-
-
-insert into prestito(utilizzatore,Libro) values("ciao@gmail.com",3);
-insert into consegna(codiceprestito,tipoconsegna) values(3,'Affidamento');
-update consegna set volontario = 'volontario@gmail.com' where codiceprestito = 3;
-
-update consegna set dataconsegna = now(), note="consegnato a un mao" where codice = 3;
-
-
-
-insert into prestito(utilizzatore,Libro) values("ciao@gmail.com",4);
-insert into consegna(codiceprestito,tipoconsegna) values(4,'Affidamento');
-update consegna set volontario = 'volontario@gmail.com' where codiceprestito = 4;
-
-update consegna set dataconsegna = current_date-INTERVAL 20 day, note="consegnato a un mao" where codice = 4;
-
-
-insert into consegna(volontario, CodicePrestito, dataconsegna, tipoconsegna) values('volontario@gmail.com', 1, '2021-05-15','Restituzione');
-insert into consegna(volontario, CodicePrestito, dataconsegna, tipoconsegna) values('volontario@gmail.com', 3, '2021-05-15','Restituzione');
